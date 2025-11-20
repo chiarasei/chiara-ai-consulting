@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Luxury color palette - rich purples, golds, and deep blues */
+    /* Premium color palette - Indigo Blue, Bright Aqua, and Soft Purple */
     --background: 250 40% 98%;
     --foreground: 250 30% 15%;
 
@@ -18,34 +18,38 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 250 30% 15%;
 
-    --primary: 262 83% 58%;
+    --primary: 239 97% 64%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 280 40% 96%;
+    --secondary: 266 40% 96%;
     --secondary-foreground: 250 30% 15%;
 
-    --muted: 270 30% 94%;
+    --muted: 266 30% 94%;
     --muted-foreground: 250 20% 45%;
 
-    --accent: 45 95% 60%;
+    --accent: 174 72% 56%;
     --accent-foreground: 250 30% 15%;
+
+    --purple: 266 73% 66%;
+    --purple-foreground: 0 0% 100%;
 
     --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 270 25% 90%;
-    --input: 270 25% 90%;
-    --ring: 262 83% 58%;
+    --border: 266 25% 90%;
+    --input: 266 25% 90%;
+    --ring: 239 97% 64%;
 
     --radius: 0.75rem;
     
-    /* Luxury design tokens - rich gradients and elegant shadows */
-    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(280 70% 50%) 50%, hsl(300 75% 45%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(45 95% 60%) 0%, hsl(35 95% 55%) 50%, hsl(25 90% 50%) 100%);
-    --gradient-luxury: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(220 90% 56%) 100%);
-    --shadow-soft: 0 4px 20px -4px hsl(262 70% 50% / 0.15);
-    --shadow-medium: 0 8px 32px -8px hsl(262 70% 50% / 0.2);
-    --shadow-glow: 0 0 40px hsl(262 83% 58% / 0.3);
+    /* Premium gradients with new color scheme */
+    --gradient-primary: linear-gradient(135deg, hsl(239 97% 64%) 0%, hsl(266 73% 66%) 50%, hsl(174 72% 56%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(174 72% 56%) 0%, hsl(174 72% 50%) 100%);
+    --gradient-luxury: linear-gradient(135deg, hsl(266 73% 66%) 0%, hsl(239 97% 64%) 100%);
+    --gradient-purple: linear-gradient(135deg, hsl(266 73% 66%) 0%, hsl(280 70% 60%) 100%);
+    --shadow-soft: 0 4px 20px -4px hsl(239 80% 60% / 0.15);
+    --shadow-medium: 0 8px 32px -8px hsl(239 80% 60% / 0.2);
+    --shadow-glow: 0 0 40px hsl(239 97% 64% / 0.3);
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
