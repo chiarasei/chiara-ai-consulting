@@ -54,20 +54,6 @@ const Hero = () => {
               View Our Services
             </Button>
           </div>
-
-          <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            {[
-              { value: "100+", label: "Happy Clients" },
-              { value: "24/7", label: "AI Support" },
-              { value: "50%", label: "Time Saved" },
-              { value: "95%", label: "Satisfaction" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary">{stat.value}</div>
-                <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

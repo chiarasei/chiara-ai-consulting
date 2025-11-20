@@ -20,7 +20,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-foreground">Navigation</h4>
             <ul className="space-y-2 text-sm">
-              {["Home", "Services", "Industries", "About", "Contact"].map((item) => (
+              {["Home", "Services", "Industries", "Pricing", "About", "Contact"].map((item) => (
                 <li key={item}>
                   <button
                     onClick={() => scrollToSection(item.toLowerCase() === "home" ? "hero" : item.toLowerCase())}
