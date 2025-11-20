@@ -38,7 +38,9 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
             Ready to <span className="bg-gradient-primary bg-clip-text text-transparent">Transform</span> Your Business?
           </h2>
-          
+          <p className="text-xl text-muted-foreground font-medium">
+            Book a call or send us an email
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -63,7 +65,7 @@ const Contact = () => {
           </Card>
 
           <Card className="p-10 text-center border-2 border-primary/30 hover:border-primary bg-gradient-to-br from-card to-primary/5 hover:shadow-glow transition-all duration-500 hover:-translate-y-1">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-luxury text-white mb-6 shadow-medium">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary text-white mb-6 shadow-medium">
               <MapPin size={24} strokeWidth={2} />
             </div>
             <h3 className="font-bold mb-3 text-card-foreground">Location</h3>

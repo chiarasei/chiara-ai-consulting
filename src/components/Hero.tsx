@@ -11,7 +11,7 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center pt-32 pb-24 px-6 overflow-hidden">
-      {/* Luxury gradient background with animated glow */}
+      {/* Professional gradient background with animated glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/30 to-accent/10 -z-10" />
       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-primary/5 to-transparent -z-10 animate-pulse" style={{ animationDuration: '4s' }} />
       
@@ -32,7 +32,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium">
-              Transform your café, restaurant, or salon with premium AI voice agents and intelligent automation that work 24/7
+              Transform your café, restaurant, or salon with professional AI voice agents and intelligent automation that work 24/7
             </p>
           </div>
           

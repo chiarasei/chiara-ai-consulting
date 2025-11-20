@@ -52,10 +52,10 @@ const Services = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-20 space-y-5">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
-            Premium <span className="bg-gradient-primary bg-clip-text text-transparent">AI Services</span>
+            Professional <span className="bg-gradient-primary bg-clip-text text-transparent">AI Services</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
-            Luxury automation solutions that help you grow and focus on what matters most
+            Smart automation solutions that help you grow and focus on what matters most
           </p>
         </div>
 

@@ -14,7 +14,7 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-xl mb-5 bg-gradient-primary bg-clip-text text-transparent">ChiaraAI Consulting</h3>
             <p className="text-sm text-muted-foreground leading-relaxed font-medium">
-              Premium AI automation for small businesses. We help you save time and grow with luxury solutions.
+              Professional AI automation for small businesses. We help you save time and grow with effective solutions.
             </p>
           </div>
 

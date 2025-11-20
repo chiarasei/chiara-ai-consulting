@@ -36,10 +36,10 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-muted-foreground leading-relaxed text-lg font-medium">
               <p>
-                ChiaraAI Consulting was founded with a vision to make premium AI automation accessible and affordable for small businesses. We understand the challenges small businesses face – time constraints, limited resources, and the need to compete with larger players.
+                ChiaraAI Consulting was founded with a vision to make professional AI automation accessible and affordable for small businesses. We understand the challenges small businesses face – time constraints, limited resources, and the need to compete with larger players.
               </p>
               <p>
-                Our founder has extensive experience in DevOps, cloud architecture, and automation of complex systems. Now we use this expertise to help local businesses grow through luxury AI technology.
+                Our founder has extensive experience in DevOps, cloud architecture, and automation of complex systems. Now we use this expertise to help local businesses grow through advanced AI technology.
               </p>
               <p>
                 We believe in personal service, long-term relationships, and solutions that deliver real results – not just promises.
