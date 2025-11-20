@@ -43,7 +43,7 @@ const Navigation = () => {
             onClick={() => scrollToSection("hero")}
             className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-300 tracking-tight"
           >
-            ChiaraAI
+            chiaraAIconsulting.se
           </button>
 
           {/* Desktop Navigation */}
