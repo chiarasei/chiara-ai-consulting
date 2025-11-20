@@ -23,12 +23,12 @@ const Navigation = () => {
   };
 
   const navLinks = [
-    { label: "Hem", id: "hero" },
-    { label: "Tjänster", id: "services" },
-    { label: "Branscher", id: "industries" },
-    { label: "Priser", id: "pricing" },
-    { label: "Om Oss", id: "about" },
-    { label: "Kontakt", id: "contact" },
+    { label: "Home", id: "hero" },
+    { label: "Services", id: "services" },
+    { label: "Industries", id: "industries" },
+    { label: "Pricing", id: "pricing" },
+    { label: "About", id: "about" },
+    { label: "Contact", id: "contact" },
   ];
 
   return (
@@ -58,7 +58,7 @@ const Navigation = () => {
               </button>
             ))}
             <Button onClick={() => scrollToSection("contact")} className="bg-gradient-accent">
-              Boka Gratis Konsultation
+              Book Free Consultation
             </Button>
           </div>
 
@@ -84,7 +84,7 @@ const Navigation = () => {
               </button>
             ))}
             <Button onClick={() => scrollToSection("contact")} className="w-full bg-gradient-accent">
-              Boka Gratis Konsultation
+              Book Free Consultation
             </Button>
           </div>
         )}

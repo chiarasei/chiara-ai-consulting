@@ -18,7 +18,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // In a real implementation, this would send to an API
-    toast.success("Tack för ditt meddelande! Vi återkommer inom 24 timmar.");
+    toast.success("Thank you for your message! We'll get back to you within 24 hours.");
     setFormData({ name: "", email: "", phone: "", business: "", message: "" });
   };
 
@@ -34,10 +34,10 @@ const Contact = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            Kom Igång Idag
+            Get Started Today
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Boka en kostnadsfri konsultation så går vi igenom hur AI kan hjälpa just ditt företag
+            Book a free consultation and let's discuss how AI can help your specific business
           </p>
         </div>
 
@@ -46,7 +46,7 @@ const Contact = () => {
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
               <Mail size={24} />
             </div>
-            <h3 className="font-semibold mb-2 text-card-foreground">E-post</h3>
+            <h3 className="font-semibold mb-2 text-card-foreground">Email</h3>
             <a href="mailto:info@chiaraaiconsulting.se" className="text-primary hover:underline">
               info@chiaraaiconsulting.se
             </a>
@@ -56,7 +56,7 @@ const Contact = () => {
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
               <Phone size={24} />
             </div>
-            <h3 className="font-semibold mb-2 text-card-foreground">Telefon</h3>
+            <h3 className="font-semibold mb-2 text-card-foreground">Phone</h3>
             <a href="tel:+46701234567" className="text-primary hover:underline">
               +46 70 123 45 67
             </a>
@@ -66,8 +66,8 @@ const Contact = () => {
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
               <MapPin size={24} />
             </div>
-            <h3 className="font-semibold mb-2 text-card-foreground">Plats</h3>
-            <p className="text-muted-foreground">Stockholm, Sverige</p>
+            <h3 className="font-semibold mb-2 text-card-foreground">Location</h3>
+            <p className="text-muted-foreground">Stockholm, Sweden</p>
           </Card>
         </div>
 
@@ -76,7 +76,7 @@ const Contact = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2 text-card-foreground">
-                  Namn *
+                  Name *
                 </label>
                 <Input
                   id="name"
@@ -84,12 +84,12 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder="Ditt namn"
+                  placeholder="Your name"
                 />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2 text-card-foreground">
-                  E-post *
+                  Email *
                 </label>
                 <Input
                   id="email"
@@ -98,7 +98,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="din@email.se"
+                  placeholder="your@email.com"
                 />
               </div>
             </div>
@@ -106,7 +106,7 @@ const Contact = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium mb-2 text-card-foreground">
-                  Telefon
+                  Phone
                 </label>
                 <Input
                   id="phone"
@@ -114,26 +114,26 @@ const Contact = () => {
                   type="tel"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+46 70 123 45 67"
+                  placeholder="+1 234 567 8900"
                 />
               </div>
               <div>
                 <label htmlFor="business" className="block text-sm font-medium mb-2 text-card-foreground">
-                  Företag/Bransch
+                  Business/Industry
                 </label>
                 <Input
                   id="business"
                   name="business"
                   value={formData.business}
                   onChange={handleChange}
-                  placeholder="T.ex. Café, Salong"
+                  placeholder="e.g. Café, Salon"
                 />
               </div>
             </div>
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium mb-2 text-card-foreground">
-                Berätta om ditt behov
+                Tell us about your needs
               </label>
               <Textarea
                 id="message"
@@ -141,12 +141,12 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}
-                placeholder="Vad vill du automatisera i din verksamhet?"
+                placeholder="What would you like to automate in your business?"
               />
             </div>
 
             <Button type="submit" size="lg" className="w-full bg-gradient-accent">
-              Skicka Förfrågan
+              Send Inquiry
             </Button>
           </form>
         </Card>

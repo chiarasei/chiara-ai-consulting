@@ -13,17 +13,17 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4 text-foreground">ChiaraAI Consulting</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              AI-automation för svenska småföretag. Vi hjälper dig att spara tid och växa.
+              AI automation for small businesses. We help you save time and grow.
             </p>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4 text-foreground">Navigation</h4>
             <ul className="space-y-2 text-sm">
-              {["Hem", "Tjänster", "Branscher", "Priser", "Om Oss", "Kontakt"].map((item) => (
+              {["Home", "Services", "Industries", "Pricing", "About", "Contact"].map((item) => (
                 <li key={item}>
                   <button
-                    onClick={() => scrollToSection(item.toLowerCase().replace(" ", "-") === "hem" ? "hero" : item.toLowerCase().replace(" ", "-").replace("å", "a"))}
+                    onClick={() => scrollToSection(item.toLowerCase() === "home" ? "hero" : item.toLowerCase())}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {item}
@@ -34,27 +34,27 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-foreground">Tjänster</h4>
+            <h4 className="font-semibold mb-4 text-foreground">Services</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>AI-Chatbots</li>
-              <li>Röstassistenter</li>
-              <li>Bokningssystem</li>
-              <li>Marknadsautomation</li>
+              <li>AI Chatbots</li>
+              <li>Voice Assistants</li>
+              <li>Booking Systems</li>
+              <li>Marketing Automation</li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-foreground">Kontakt</h4>
+            <h4 className="font-semibold mb-4 text-foreground">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>info@chiaraaiconsulting.se</li>
               <li>+46 70 123 45 67</li>
-              <li>Stockholm, Sverige</li>
+              <li>Stockholm, Sweden</li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© 2025 ChiaraAI Consulting. Alla rättigheter förbehållna.</p>
+          <p>© 2025 ChiaraAI Consulting. All rights reserved.</p>
         </div>
       </div>
     </footer>

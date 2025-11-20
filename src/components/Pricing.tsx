@@ -6,47 +6,47 @@ const Pricing = () => {
   const plans = [
     {
       name: "Starter",
-      price: "2 995",
-      period: "kr/mån",
-      description: "Perfekt för nystartade företag",
+      price: "$299",
+      period: "/month",
+      description: "Perfect for new businesses",
       features: [
-        "AI-Chatbot på hemsidan",
-        "Grundläggande automatisering",
-        "E-postsupport",
-        "Upp till 500 konversationer/mån",
+        "AI Chatbot on website",
+        "Basic automation",
+        "Email support",
+        "Up to 500 conversations/month",
         "1 integration",
       ],
     },
     {
       name: "Professional",
-      price: "5 995",
-      period: "kr/mån",
-      description: "För växande verksamheter",
+      price: "$599",
+      period: "/month",
+      description: "For growing businesses",
       features: [
-        "AI-Chatbot + Röstassistent",
-        "Automatiskt bokningssystem",
-        "Prioriterad support",
-        "Obegränsade konversationer",
-        "5 integrationer",
-        "Lojalitetsprogram",
-        "Anpassad design",
+        "AI Chatbot + Voice Assistant",
+        "Automated booking system",
+        "Priority support",
+        "Unlimited conversations",
+        "5 integrations",
+        "Loyalty program",
+        "Custom design",
       ],
       popular: true,
     },
     {
       name: "Enterprise",
-      price: "Kontakta oss",
+      price: "Contact us",
       period: "",
-      description: "Skräddarsydda lösningar",
+      description: "Custom solutions",
       features: [
-        "Alla Professional-funktioner",
-        "Dedikerad AI-konsult",
-        "Anpassade integrationer",
-        "Prioriterad 24/7 support",
-        "Avancerad analys & rapporter",
-        "Multisite-stöd",
-        "API-åtkomst",
-        "Träna egna AI-modeller",
+        "All Professional features",
+        "Dedicated AI consultant",
+        "Custom integrations",
+        "Priority 24/7 support",
+        "Advanced analytics & reports",
+        "Multi-site support",
+        "API access",
+        "Train custom AI models",
       ],
     },
   ];
@@ -56,10 +56,10 @@ const Pricing = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            Transparenta Priser
+            Transparent Pricing
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Välj den plan som passar din verksamhet bäst. Alla planer inkluderar gratis installation och support.
+            Choose the plan that best fits your business. All plans include free installation and support.
           </p>
         </div>
 
@@ -75,7 +75,7 @@ const Pricing = () => {
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-accent text-white px-4 py-1 rounded-full text-sm font-medium">
-                  Populärast
+                  Most Popular
                 </div>
               )}
               
@@ -107,14 +107,14 @@ const Pricing = () => {
                   if (element) element.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                Kom Igång
+                Get Started
               </Button>
             </Card>
           ))}
         </div>
 
         <p className="text-center text-sm text-muted-foreground mt-12">
-          Alla priser är exklusive moms. Ingen bindningstid. Avsluta när som helst.
+          All prices exclude VAT. No commitment. Cancel anytime.
         </p>
       </div>
     </section>

@@ -5,43 +5,43 @@ const Services = () => {
   const services = [
     {
       icon: <MessageCircle className="w-8 h-8" />,
-      title: "AI-Chatbots",
-      description: "Intelligent chatbots som svarar på kundfrågor dygnet runt, ökar försäljningen och förbättrar kundservice.",
+      title: "AI Chatbots",
+      description: "Intelligent chatbots that answer customer questions 24/7, increase sales, and improve customer service.",
     },
     {
       icon: <Phone className="w-8 h-8" />,
-      title: "AI-Röstassistenter",
-      description: "Automatisera telefonsamtal och hantera bokningar, beställningar och kundförfrågningar med naturlig röstinteraktion.",
+      title: "AI Voice Assistants",
+      description: "Automate phone calls and handle bookings, orders, and customer inquiries with natural voice interaction.",
     },
     {
       icon: <Calendar className="w-8 h-8" />,
-      title: "Automatiska Bokningssystem",
-      description: "Låt kunderna boka tider själva när som helst, minska no-shows och maximera din kalender.",
+      title: "Automated Booking Systems",
+      description: "Let customers book appointments anytime, reduce no-shows, and maximize your calendar.",
     },
     {
       icon: <MessageSquare className="w-8 h-8" />,
-      title: "Automatisering av Kundmeddelanden",
-      description: "Skicka automatiska påminnelser, bekräftelser och uppföljningar via SMS och e-post.",
+      title: "Customer Message Automation",
+      description: "Send automatic reminders, confirmations, and follow-ups via SMS and email.",
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
-      title: "AI-Driven Marknadsföring",
-      description: "Personaliserade kampanjer och riktade erbjudanden baserade på kundbeteende och preferenser.",
+      title: "AI-Powered Marketing",
+      description: "Personalized campaigns and targeted offers based on customer behavior and preferences.",
     },
     {
       icon: <Share2 className="w-8 h-8" />,
-      title: "Automatisering av Sociala Medier",
-      description: "Schemalägg inlägg, generera innehåll och svara på kommentarer automatiskt.",
+      title: "Social Media Automation",
+      description: "Schedule posts, generate content, and respond to comments automatically.",
     },
     {
       icon: <Gift className="w-8 h-8" />,
-      title: "Lojalitetsprogram",
-      description: "Bygg kundlojalitet med automatiserade belöningssystem och personliga erbjudanden.",
+      title: "Loyalty Programs",
+      description: "Build customer loyalty with automated reward systems and personalized offers.",
     },
     {
       icon: <Workflow className="w-8 h-8" />,
-      title: "Arbetsflödesautomation",
-      description: "Effektivisera administrativa uppgifter, fakturering och lagerhantering med AI.",
+      title: "Workflow Automation",
+      description: "Streamline administrative tasks, invoicing, and inventory management with AI.",
     },
   ];
 
@@ -50,10 +50,10 @@ const Services = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            Våra AI-Tjänster
+            Our AI Services
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Skräddarsydda lösningar som hjälper dig att automatisera, växa och fokusera på det som är viktigt
+            Custom solutions that help you automate, grow, and focus on what matters most
           </p>
         </div>
 
