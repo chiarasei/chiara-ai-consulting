@@ -1,5 +1,6 @@
 import { MessageCircle, Phone, Calendar, MessageSquare, TrendingUp, Share2, Gift, Workflow } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import React from "react";
 
 const Services = () => {
   const services = [
@@ -46,25 +47,27 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 px-6 bg-secondary/30">
+    <section id="services" className="py-32 px-6">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+        <div className="text-center mb-20 space-y-5">
+          <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight">
             Our AI Services
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-normal">
             Custom solutions that help you automate, grow, and focus on what matters most
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <Card
               key={index}
-              className="p-6 hover:shadow-medium transition-all duration-300 hover:-translate-y-1 border-border bg-card"
+              className="p-8 hover:shadow-soft transition-all duration-500 hover:-translate-y-0.5 border border-border bg-card group"
             >
-              <div className="text-primary mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold mb-3 text-card-foreground">{service.title}</h3>
+              <div className="text-primary mb-5 transition-transform duration-500 group-hover:scale-105">
+                {React.cloneElement(service.icon, { strokeWidth: 1.5 })}
+              </div>
+              <h3 className="text-lg font-semibold mb-3 text-card-foreground">{service.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
             </Card>
           ))}
