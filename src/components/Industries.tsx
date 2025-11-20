@@ -64,7 +64,7 @@ const Industries = () => {
             Industries We <span className="bg-gradient-accent bg-clip-text text-transparent">Transform</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
-            Bringing premium AI automation to businesses across multiple sectors
+            Bringing professional AI automation to businesses across multiple sectors
           </p>
         </div>
 

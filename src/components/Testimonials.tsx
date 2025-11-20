@@ -26,7 +26,7 @@ const Testimonials = () => {
             Client <span className="bg-gradient-accent bg-clip-text text-transparent">Success Stories</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
-            Discover how premium businesses are transforming with our AI solutions
+            Discover how local businesses are transforming with our AI solutions
           </p>
         </div>
 

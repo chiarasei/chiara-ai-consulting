@@ -12,7 +12,7 @@ const Pricing = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center space-y-8 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Premium</span> Pricing
+            <span className="bg-gradient-primary bg-clip-text text-transparent">Custom</span> Pricing
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed font-medium">
             Pricing is customized based on your business needs. Every solution is tailored to deliver maximum value.
