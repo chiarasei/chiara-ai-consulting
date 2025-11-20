@@ -20,7 +20,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-foreground">Navigation</h4>
             <ul className="space-y-2 text-sm">
-              {["Home", "Services", "Industries", "Pricing", "About", "Contact"].map((item) => (
+              {["Home", "Services", "Industries", "About", "Contact"].map((item) => (
                 <li key={item}>
                   <button
                     onClick={() => scrollToSection(item.toLowerCase() === "home" ? "hero" : item.toLowerCase())}
@@ -47,8 +47,8 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-foreground">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>info@chiaraaiconsulting.se</li>
-              <li>+46 70 123 45 67</li>
-              <li>Stockholm, Sweden</li>
+              <li>+46 73 531 69 50</li>
+              <li>Gothenburg, Sweden</li>
             </ul>
           </div>
         </div>
