@@ -7,42 +7,42 @@ const Services = () => {
     {
       icon: <MessageCircle className="w-8 h-8" />,
       title: "AI Chatbots",
-      description: "Intelligent chatbots that answer customer questions 24/7, increase sales, and improve customer service.",
+      description: "24/7 intelligent chatbots that handle customer questions, process orders, and provide instant support on your website. Increase conversions while reducing response time.",
     },
     {
       icon: <Phone className="w-8 h-8" />,
       title: "AI Voice Assistants",
-      description: "Automate phone calls and handle bookings, orders, and customer inquiries with natural voice interaction.",
+      description: "Human-like voice agents that answer phone calls, manage bookings, take orders, and handle customer inquiries with natural conversation. Never miss a call again, even during busy hours.",
     },
     {
       icon: <Calendar className="w-8 h-8" />,
       title: "Automated Booking Systems",
-      description: "Let customers book appointments anytime, reduce no-shows, and maximize your calendar.",
+      description: "Smart scheduling that lets customers book appointments 24/7 through voice, chat, or web. Automatic reminders reduce no-shows by up to 70%, and intelligent calendar management maximizes your availability.",
     },
     {
       icon: <MessageSquare className="w-8 h-8" />,
-      title: "Customer Message Automation",
-      description: "Send automatic reminders, confirmations, and follow-ups via SMS and email.",
+      title: "Customer Communication",
+      description: "Automated SMS and email campaigns for appointment reminders, order confirmations, follow-ups, and personalized offers. Build stronger customer relationships without manual effort.",
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "AI-Powered Marketing",
-      description: "Personalized campaigns and targeted offers based on customer behavior and preferences.",
+      description: "Intelligent marketing automation that analyzes customer behavior, sends personalized campaigns, and optimizes timing for maximum engagement. Increase repeat business automatically.",
     },
     {
       icon: <Share2 className="w-8 h-8" />,
       title: "Social Media Automation",
-      description: "Schedule posts, generate content, and respond to comments automatically.",
+      description: "AI-generated content, scheduled posting, and automated responses to comments and messages. Maintain an active social presence without spending hours online.",
     },
     {
       icon: <Gift className="w-8 h-8" />,
-      title: "Loyalty Programs",
-      description: "Build customer loyalty with automated reward systems and personalized offers.",
+      title: "Loyalty & Rewards Programs",
+      description: "Automated customer loyalty systems that track visits, offer personalized rewards, and send timely promotions. Turn one-time customers into regulars.",
     },
     {
       icon: <Workflow className="w-8 h-8" />,
-      title: "Workflow Automation",
-      description: "Streamline administrative tasks, invoicing, and inventory management with AI.",
+      title: "Business Workflow Automation",
+      description: "Streamline invoicing, inventory tracking, staff scheduling, and administrative tasks. Free up hours each week to focus on growing your business instead of paperwork.",
     },
   ];
 

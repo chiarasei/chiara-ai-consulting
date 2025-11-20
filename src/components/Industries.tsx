@@ -6,52 +6,52 @@ const Industries = () => {
     {
       icon: <Coffee className="w-10 h-10" />,
       title: "Cafés",
-      useCase: "AI chatbot for menu questions and voice assistant for phone orders. Increase takeaway sales.",
+      useCase: "AI voice assistant takes phone orders during busy hours, chatbot answers menu questions and handles dietary restrictions. Automated order confirmations and loyalty rewards for regulars. Increase takeaway sales by 30-50%.",
     },
     {
       icon: <Utensils className="w-10 h-10" />,
       title: "Restaurants",
-      useCase: "Automatic table booking 24/7 and AI-assisted customer support for allergy and dietary questions.",
+      useCase: "24/7 voice-powered table booking system that handles reservations, special requests, and modifications. AI assistant answers questions about allergens, ingredients, and daily specials. Reduce no-shows with automated reminders.",
     },
     {
       icon: <Scissors className="w-10 h-10" />,
       title: "Hair Salons",
-      useCase: "Smart booking system with automatic reminders and loyalty programs for regular customers.",
+      useCase: "Voice booking system available after hours. Clients call anytime to book, reschedule, or check availability. Automated appointment reminders reduce no-shows by 70%. Smart loyalty program tracks visits and offers personalized rewards.",
     },
     {
       icon: <Sparkles className="w-10 h-10" />,
       title: "Beauty Salons",
-      useCase: "Personalized treatment recommendations and automated follow-up after visits.",
+      useCase: "AI voice assistant helps clients book treatments, explains services, and recommends personalized beauty routines. Automated follow-ups after treatments with care tips. Smart rebooking reminders at optimal intervals.",
     },
     {
       icon: <Palette className="w-10 h-10" />,
       title: "Nail Salons",
-      useCase: "Online booking with image gallery and automatic maintenance reminders.",
+      useCase: "Voice-enabled booking with natural conversation flow. AI shows available slots based on preferred stylist and service type. Image gallery integration for design inspiration. Automated maintenance reminders every 2-3 weeks.",
     },
     {
       icon: <Heart className="w-10 h-10" />,
       title: "Tattoo Studios",
-      useCase: "Manage consultations, portfolios, and long-term bookings with AI assistant.",
+      useCase: "AI voice assistant handles initial consultations, explains process and pricing, manages complex multi-session bookings. Portfolio showcase through chatbot. Automated care instructions and healing progress check-ins.",
     },
     {
       icon: <Dumbbell className="w-10 h-10" />,
       title: "Spa & Wellness",
-      useCase: "Package bookings, membership management, and personalized wellness recommendations.",
+      useCase: "Voice booking for multiple services and package deals. AI assistant recommends treatment combinations based on client needs. Membership management and automatic renewal reminders. Personalized wellness tips between visits.",
     },
     {
       icon: <Hotel className="w-10 h-10" />,
       title: "Hotels",
-      useCase: "Multilingual chatbot for guest questions and automatic check-in/check-out messages.",
+      useCase: "Multilingual AI voice concierge answers guest questions 24/7. Automated check-in reminders, room service ordering, and local recommendations. Post-stay follow-up for reviews. Handle high call volumes during peak season.",
     },
     {
       icon: <ShoppingBag className="w-10 h-10" />,
       title: "Retail Shops",
-      useCase: "Product recommendations, inventory notifications, and social media automation.",
+      useCase: "AI assistant answers product questions, checks inventory in real-time, and processes phone orders. Automated notifications when requested items are back in stock. Personalized shopping recommendations based on purchase history.",
     },
     {
       icon: <Store className="w-10 h-10" />,
       title: "All Small Businesses",
-      useCase: "Custom solutions tailored to your industry. Contact us for a free consultation.",
+      useCase: "Whatever your industry, AI voice agents and automation can handle customer communications, reduce admin workload, and increase sales. We design custom solutions tailored to your specific business needs and workflow.",
     },
   ];
 
