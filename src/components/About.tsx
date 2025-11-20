@@ -1,4 +1,5 @@
 import { Award, Cloud, Code, Target } from "lucide-react";
+import React from "react";
 
 const About = () => {
   const values = [
@@ -25,14 +26,14 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 px-6">
+    <section id="about" className="py-32 px-6">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+        <div className="grid md:grid-cols-2 gap-20 items-center">
+          <div className="space-y-8">
+            <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight">
               About ChiaraAI Consulting
             </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <div className="space-y-6 text-muted-foreground leading-relaxed font-normal">
               <p>
                 ChiaraAI Consulting was founded with a vision to make AI automation accessible and affordable for small businesses. We understand the challenges small businesses face – time constraints, limited resources, and the need to compete with larger players.
               </p>
@@ -49,11 +50,13 @@ const About = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="p-6 rounded-lg border border-border bg-card hover:shadow-soft transition-all"
+                className="p-8 rounded-lg border border-border bg-card hover:shadow-soft transition-all duration-500"
               >
-                <div className="text-primary mb-3">{value.icon}</div>
-                <h3 className="font-semibold mb-2 text-card-foreground">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">{value.description}</p>
+                <div className="text-primary mb-4">
+                  {React.cloneElement(value.icon, { strokeWidth: 1.5 })}
+                </div>
+                <h3 className="font-semibold mb-3 text-card-foreground text-base">{value.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>

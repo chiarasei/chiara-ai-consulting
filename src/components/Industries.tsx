@@ -1,4 +1,5 @@
 import { Coffee, Utensils, Scissors, Sparkles, Hotel, ShoppingBag, Palette, Dumbbell, Heart, Store } from "lucide-react";
+import React from "react";
 
 const Industries = () => {
   const industries = [
@@ -55,13 +56,13 @@ const Industries = () => {
   ];
 
   return (
-    <section id="industries" className="py-24 px-6">
+    <section id="industries" className="py-32 px-6 bg-secondary/20">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+        <div className="text-center mb-20 space-y-5">
+          <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight">
             Industries We Serve
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-normal">
             From cafés to hotels – we have experience automating businesses across many industries
           </p>
         </div>
@@ -70,12 +71,12 @@ const Industries = () => {
           {industries.map((industry, index) => (
             <div
               key={index}
-              className="group p-6 rounded-lg border border-border bg-card hover:shadow-soft transition-all duration-300"
+              className="group p-8 rounded-lg border border-border bg-card hover:shadow-soft transition-all duration-500"
             >
-              <div className="text-primary mb-4 group-hover:scale-110 transition-transform">
-                {industry.icon}
+              <div className="text-primary mb-5 group-hover:scale-105 transition-transform duration-500">
+                {React.cloneElement(industry.icon, { strokeWidth: 1.5 })}
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-card-foreground">{industry.title}</h3>
+              <h3 className="text-lg font-semibold mb-3 text-card-foreground">{industry.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{industry.useCase}</p>
             </div>
           ))}
