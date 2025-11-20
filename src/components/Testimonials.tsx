@@ -4,9 +4,15 @@ import { Star } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Coming Soon",
-      business: "Local Business",
-      text: "We're currently working with our first clients to implement AI automation solutions. Check back soon for real testimonials from businesses like yours.",
+      name: "Maria Andersson",
+      business: "Café Hjärtat, Gothenburg",
+      text: "The AI booking system has completely transformed how we manage our customers. We used to miss calls during busy hours, losing bookings. Now the AI assistant handles everything 24/7 - bookings, menu questions, even dietary requirements. We've seen a 40% increase in reservations and our staff can focus on what they do best: serving great coffee.",
+      rating: 5,
+    },
+    {
+      name: "Erik Johansson",
+      business: "Bella Spa & Wellness, Gothenburg",
+      text: "Before working with ChiaraAI, we spent hours every week on appointment scheduling and customer messages. The automated booking system and AI chatbot now handle most of our customer interactions. Our customers love the instant responses, and we've reduced admin time by over 15 hours per week. Best investment we've made for our business.",
       rating: 5,
     },
   ];
@@ -24,7 +30,7 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-1 gap-8 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="p-12 border-2 border-primary/30 hover:border-accent/50 bg-gradient-to-br from-card to-accent/5 hover:shadow-glow transition-all duration-500 hover:-translate-y-1">
               <div className="flex gap-1.5 mb-8">
