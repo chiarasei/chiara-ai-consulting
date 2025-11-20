@@ -6,25 +6,25 @@ const Testimonials = () => {
     {
       name: "Anna Bergström",
       business: "Café Solsidan, Stockholm",
-      text: "Tack vare ChiaraAI:s chatbot har vi ökat våra take-away beställningar med 40%. Kunderna älskar att kunna beställa när som helst!",
+      text: "Thanks to ChiaraAI's chatbot, we've increased our takeaway orders by 40%. Customers love being able to order anytime!",
       rating: 5,
     },
     {
       name: "Erik Johansson",
-      business: "Studio Ink, Göteborg",
-      text: "Bokningssystemet har sparat mig timmar varje vecka. Klienterna gillar att de kan se ledig tid och boka direkt online.",
+      business: "Studio Ink, Gothenburg",
+      text: "The booking system has saved me hours every week. Clients love being able to see available times and book directly online.",
       rating: 5,
     },
     {
       name: "Maria Lindqvist",
-      business: "Skönhet & Harmoni, Malmö",
-      text: "AI-röstassistenten svarar på samtal när vi är upptagna med kunder. Perfekt lösning för en liten salong som vår.",
+      business: "Beauty & Harmony, Malmö",
+      text: "The AI voice assistant answers calls when we're busy with customers. Perfect solution for a small salon like ours.",
       rating: 5,
     },
     {
       name: "Johan Svensson",
-      business: "Bistro Hemma, Uppsala",
-      text: "Automatiska påminnelser har minskat no-shows med 60%. Enkel integration och fantastisk support!",
+      business: "Bistro Home, Uppsala",
+      text: "Automatic reminders have reduced no-shows by 60%. Easy integration and fantastic support!",
       rating: 5,
     },
   ];
@@ -34,10 +34,10 @@ const Testimonials = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            Vad Våra Kunder Säger
+            What Our Clients Say
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Svenska småföretag som redan har börjat sin AI-resa med oss
+            Small businesses that have already started their AI journey with us
           </p>
         </div>
 

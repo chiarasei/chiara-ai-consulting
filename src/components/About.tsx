@@ -4,23 +4,23 @@ const About = () => {
   const values = [
     {
       icon: <Target className="w-8 h-8" />,
-      title: "Resultatfokus",
-      description: "Vi levererar mätbara resultat som gör verklig skillnad för din verksamhet.",
+      title: "Results Focused",
+      description: "We deliver measurable results that make a real difference to your business.",
     },
     {
       icon: <Code className="w-8 h-8" />,
-      title: "Teknisk Expertis",
-      description: "Djup erfarenhet inom DevOps, molntjänster och AI-automation.",
+      title: "Technical Expertise",
+      description: "Deep experience in DevOps, cloud services, and AI automation.",
     },
     {
       icon: <Cloud className="w-8 h-8" />,
-      title: "Skalbarhet",
-      description: "Lösningar som växer med dig – från startup till etablerat företag.",
+      title: "Scalability",
+      description: "Solutions that grow with you – from startup to established business.",
     },
     {
       icon: <Award className="w-8 h-8" />,
-      title: "Kvalitet & Support",
-      description: "Pålitlig support och kontinuerlig optimering av dina AI-lösningar.",
+      title: "Quality & Support",
+      description: "Reliable support and continuous optimization of your AI solutions.",
     },
   ];
 
@@ -30,17 +30,17 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-              Om ChiaraAI Consulting
+              About ChiaraAI Consulting
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                ChiaraAI Consulting grundades med en vision om att göra AI-automation tillgänglig och prisvärt för svenska småföretag. Vi förstår utmaningarna som små verksamheter står inför – tidsbrist, begränsade resurser och behovet av att konkurrera med större aktörer.
+                ChiaraAI Consulting was founded with a vision to make AI automation accessible and affordable for small businesses. We understand the challenges small businesses face – time constraints, limited resources, and the need to compete with larger players.
               </p>
               <p>
-                Vår grundare har mångårig erfarenhet inom DevOps, molnarkitektur och automatisering av komplexa system. Nu använder vi denna expertis för att hjälpa lokala företag att växa genom smart AI-teknik.
+                Our founder has extensive experience in DevOps, cloud architecture, and automation of complex systems. Now we use this expertise to help local businesses grow through smart AI technology.
               </p>
               <p>
-                Vi tror på personlig service, långsiktiga relationer och lösningar som faktiskt fungerar i verkligheten – inte bara på papperet.
+                We believe in personal service, long-term relationships, and solutions that actually work in the real world – not just on paper.
               </p>
             </div>
           </div>

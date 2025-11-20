@@ -4,53 +4,53 @@ const Industries = () => {
   const industries = [
     {
       icon: <Coffee className="w-10 h-10" />,
-      title: "Kaféer",
-      useCase: "AI-chatbot för menyfrågor och röstassistent för telefon­beställningar. Öka take-away försäljning.",
+      title: "Cafés",
+      useCase: "AI chatbot for menu questions and voice assistant for phone orders. Increase takeaway sales.",
     },
     {
       icon: <Utensils className="w-10 h-10" />,
-      title: "Restauranger",
-      useCase: "Automatisk bordsbokning 24/7 och AI-assisterad kundsupport för allergifrågor och specialkost.",
+      title: "Restaurants",
+      useCase: "Automatic table booking 24/7 and AI-assisted customer support for allergy and dietary questions.",
     },
     {
       icon: <Scissors className="w-10 h-10" />,
-      title: "Frisörsalonger",
-      useCase: "Smart bokningssystem med automatiska påminnelser och lojalitetsprogram för stamkunder.",
+      title: "Hair Salons",
+      useCase: "Smart booking system with automatic reminders and loyalty programs for regular customers.",
     },
     {
       icon: <Sparkles className="w-10 h-10" />,
-      title: "Skönhetssalonger",
-      useCase: "Personliga behandlings­rekommendationer och automatiserad uppföljning efter besök.",
+      title: "Beauty Salons",
+      useCase: "Personalized treatment recommendations and automated follow-up after visits.",
     },
     {
       icon: <Palette className="w-10 h-10" />,
-      title: "Nagelsalonger",
-      useCase: "Online-bokning med bildgalleri och automatisk påminnelse om tid för underhåll.",
+      title: "Nail Salons",
+      useCase: "Online booking with image gallery and automatic maintenance reminders.",
     },
     {
       icon: <Heart className="w-10 h-10" />,
-      title: "Tatueringsstudios",
-      useCase: "Hantera konsultationer, portfolios och långtids­bokningar med AI-assistent.",
+      title: "Tattoo Studios",
+      useCase: "Manage consultations, portfolios, and long-term bookings with AI assistant.",
     },
     {
       icon: <Dumbbell className="w-10 h-10" />,
       title: "Spa & Wellness",
-      useCase: "Paketbokningar, medlemskaps­hantering och personliga wellness­rekommendationer.",
+      useCase: "Package bookings, membership management, and personalized wellness recommendations.",
     },
     {
       icon: <Hotel className="w-10 h-10" />,
-      title: "Hotell",
-      useCase: "Multilingual chatbot för gäst­frågor och automatiska check-in/check-out meddelanden.",
+      title: "Hotels",
+      useCase: "Multilingual chatbot for guest questions and automatic check-in/check-out messages.",
     },
     {
       icon: <ShoppingBag className="w-10 h-10" />,
-      title: "Butiker",
-      useCase: "Produkt­rekommendationer, lager­notifieringar och social media automation.",
+      title: "Retail Shops",
+      useCase: "Product recommendations, inventory notifications, and social media automation.",
     },
     {
       icon: <Store className="w-10 h-10" />,
-      title: "Alla Småföretag",
-      useCase: "Skräddarsydda lösningar för just din bransch. Kontakta oss för en gratis konsultation.",
+      title: "All Small Businesses",
+      useCase: "Custom solutions tailored to your industry. Contact us for a free consultation.",
     },
   ];
 
@@ -59,10 +59,10 @@ const Industries = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            Branscher Vi Hjälper
+            Industries We Serve
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Från kaféer till hotell – vi har erfarenhet av att automatisera verksamheter i många olika branscher
+            From cafés to hotels – we have experience automating businesses across many industries
           </p>
         </div>
 
