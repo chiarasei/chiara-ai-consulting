@@ -27,7 +27,7 @@ const Hero = () => {
               Automate Your Business
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                With Luxury AI Solutions
+                With AI Solutions
               </span>
             </h1>
             
