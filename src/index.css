@@ -8,42 +8,44 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Scandinavian minimal palette - light neutrals with subtle blue accents */
-    --background: 0 0% 100%;
-    --foreground: 220 15% 25%;
+    /* Luxury color palette - rich purples, golds, and deep blues */
+    --background: 250 40% 98%;
+    --foreground: 250 30% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 25%;
+    --card-foreground: 250 30% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 25%;
+    --popover-foreground: 250 30% 15%;
 
-    --primary: 215 20% 35%;
+    --primary: 262 83% 58%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 15% 96%;
-    --secondary-foreground: 220 15% 25%;
+    --secondary: 280 40% 96%;
+    --secondary-foreground: 250 30% 15%;
 
-    --muted: 210 12% 94%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 270 30% 94%;
+    --muted-foreground: 250 20% 45%;
 
-    --accent: 210 18% 40%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 95% 60%;
+    --accent-foreground: 250 30% 15%;
 
-    --destructive: 0 65% 50%;
+    --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 215 20% 35%;
+    --border: 270 25% 90%;
+    --input: 270 25% 90%;
+    --ring: 262 83% 58%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     
-    /* Scandinavian design tokens - minimal and clean */
-    --gradient-primary: linear-gradient(135deg, hsl(215 20% 35%) 0%, hsl(210 18% 40%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(215 18% 38%) 0%, hsl(210 20% 42%) 100%);
-    --shadow-soft: 0 2px 16px -4px hsl(220 15% 40% / 0.06);
-    --shadow-medium: 0 4px 24px -6px hsl(220 15% 40% / 0.08);
+    /* Luxury design tokens - rich gradients and elegant shadows */
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(280 70% 50%) 50%, hsl(300 75% 45%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(45 95% 60%) 0%, hsl(35 95% 55%) 50%, hsl(25 90% 50%) 100%);
+    --gradient-luxury: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(220 90% 56%) 100%);
+    --shadow-soft: 0 4px 20px -4px hsl(262 70% 50% / 0.15);
+    --shadow-medium: 0 8px 32px -8px hsl(262 70% 50% / 0.2);
+    --shadow-glow: 0 0 40px hsl(262 83% 58% / 0.3);
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
@@ -112,7 +114,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     letter-spacing: -0.01em;
   }
   
@@ -121,6 +123,7 @@ All colors MUST be HSL.
   }
   
   h1, h2, h3, h4, h5, h6 {
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    font-weight: 600;
   }
 }

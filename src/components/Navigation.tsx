@@ -34,14 +34,14 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-soft border-b border-border" : "bg-transparent"
+        isScrolled ? "bg-background/95 backdrop-blur-xl shadow-medium border-b border-primary/20" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-xl font-semibold text-foreground hover:text-primary transition-colors duration-300 tracking-tight"
+            className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-300 tracking-tight"
           >
             ChiaraAI Consulting
           </button>
@@ -52,14 +52,14 @@ const Navigation = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-300"
+                className="text-sm font-semibold text-foreground hover:text-primary transition-colors duration-300"
               >
                 {link.label}
               </button>
             ))}
             <Button 
               onClick={() => scrollToSection("contact")} 
-              className="bg-primary hover:bg-primary/90 font-medium transition-all duration-300"
+              className="bg-gradient-primary hover:shadow-glow text-white font-semibold transition-all duration-500 hover:scale-105"
             >
               Book Free Consultation
             </Button>

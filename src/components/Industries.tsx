@@ -56,14 +56,15 @@ const Industries = () => {
   ];
 
   return (
-    <section id="industries" className="py-32 px-6 bg-secondary/20">
+    <section id="industries" className="py-32 px-6 bg-gradient-to-b from-secondary/40 to-accent/10 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-accent/5 -z-10" />
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-20 space-y-5">
-          <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight">
-            Industries We Serve
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
+            Industries We <span className="bg-gradient-accent bg-clip-text text-transparent">Transform</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-normal">
-            From cafés to hotels – we have experience automating businesses across many industries
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
+            Bringing premium AI automation to businesses across multiple sectors
           </p>
         </div>
 
@@ -71,13 +72,14 @@ const Industries = () => {
           {industries.map((industry, index) => (
             <div
               key={index}
-              className="group p-8 rounded-lg border border-border bg-card hover:shadow-soft transition-all duration-500"
+              className="group p-8 rounded-xl border-2 border-primary/20 hover:border-accent/50 bg-gradient-to-br from-card to-accent/5 hover:shadow-medium transition-all duration-500 hover:-translate-y-1 relative overflow-hidden"
             >
-              <div className="text-primary mb-5 group-hover:scale-105 transition-transform duration-500">
-                {React.cloneElement(industry.icon, { strokeWidth: 1.5 })}
+              <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
+              <div className="text-primary group-hover:text-accent mb-5 group-hover:scale-110 transition-all duration-500 relative z-10">
+                {React.cloneElement(industry.icon, { strokeWidth: 2 })}
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-card-foreground">{industry.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{industry.useCase}</p>
+              <h3 className="text-lg font-bold mb-3 text-card-foreground relative z-10">{industry.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed relative z-10">{industry.useCase}</p>
             </div>
           ))}
         </div>
