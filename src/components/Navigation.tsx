@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/chiara-ai-logo.png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,12 +41,9 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection("hero")}
-            className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300"
+            className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-300 tracking-tight"
           >
-            <img src={logo} alt="ChiaraAI Logo" className="h-10 w-10" />
-            <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent tracking-tight">
-              ChiaraAI
-            </span>
+            ChiaraAI
           </button>
 
           {/* Desktop Navigation */}
