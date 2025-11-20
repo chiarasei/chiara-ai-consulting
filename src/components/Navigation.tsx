@@ -26,7 +26,6 @@ const Navigation = () => {
     { label: "Home", id: "hero" },
     { label: "Services", id: "services" },
     { label: "Industries", id: "industries" },
-    { label: "Pricing", id: "pricing" },
     { label: "About", id: "about" },
     { label: "Contact", id: "contact" },
   ];

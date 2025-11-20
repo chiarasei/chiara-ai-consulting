@@ -57,8 +57,8 @@ const Contact = () => {
               <Phone size={24} />
             </div>
             <h3 className="font-semibold mb-2 text-card-foreground">Phone</h3>
-            <a href="tel:+46701234567" className="text-primary hover:underline">
-              +46 70 123 45 67
+            <a href="tel:+46735316950" className="text-primary hover:underline">
+              +46 73 531 69 50
             </a>
           </Card>
 
@@ -67,7 +67,7 @@ const Contact = () => {
               <MapPin size={24} />
             </div>
             <h3 className="font-semibold mb-2 text-card-foreground">Location</h3>
-            <p className="text-muted-foreground">Stockholm, Sweden</p>
+            <p className="text-muted-foreground">Gothenburg, Sweden</p>
           </Card>
         </div>
 
