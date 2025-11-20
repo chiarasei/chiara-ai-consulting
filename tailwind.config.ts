@@ -13,7 +13,7 @@ export default {
       },
     },
     fontFamily: {
-      sans: ['DM Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+      sans: ['Outfit', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
     },
     extend: {
       colors: {
@@ -64,10 +64,12 @@ export default {
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-accent': 'var(--gradient-accent)',
+        'gradient-luxury': 'var(--gradient-luxury)',
       },
       boxShadow: {
         'soft': 'var(--shadow-soft)',
         'medium': 'var(--shadow-medium)',
+        'glow': 'var(--shadow-glow)',
       },
       transitionTimingFunction: {
         'smooth': 'var(--transition-smooth)',

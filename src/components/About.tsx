@@ -26,22 +26,23 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-32 px-6">
+    <section id="about" className="py-32 px-6 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent -z-10" />
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-20 items-center">
           <div className="space-y-8">
-            <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight">
-              About ChiaraAI Consulting
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
+              About <span className="bg-gradient-primary bg-clip-text text-transparent">ChiaraAI</span> Consulting
             </h2>
-            <div className="space-y-6 text-muted-foreground leading-relaxed font-normal">
+            <div className="space-y-6 text-muted-foreground leading-relaxed text-lg font-medium">
               <p>
-                ChiaraAI Consulting was founded with a vision to make AI automation accessible and affordable for small businesses. We understand the challenges small businesses face – time constraints, limited resources, and the need to compete with larger players.
+                ChiaraAI Consulting was founded with a vision to make premium AI automation accessible and affordable for small businesses. We understand the challenges small businesses face – time constraints, limited resources, and the need to compete with larger players.
               </p>
               <p>
-                Our founder has extensive experience in DevOps, cloud architecture, and automation of complex systems. Now we use this expertise to help local businesses grow through smart AI technology.
+                Our founder has extensive experience in DevOps, cloud architecture, and automation of complex systems. Now we use this expertise to help local businesses grow through luxury AI technology.
               </p>
               <p>
-                We believe in personal service, long-term relationships, and solutions that actually work in the real world – not just on paper.
+                We believe in personal service, long-term relationships, and solutions that deliver real results – not just promises.
               </p>
             </div>
           </div>
@@ -50,13 +51,14 @@ const About = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="p-8 rounded-lg border border-border bg-card hover:shadow-soft transition-all duration-500"
+                className="p-8 rounded-xl border-2 border-primary/20 hover:border-accent/40 bg-gradient-to-br from-card to-primary/5 hover:shadow-medium transition-all duration-500 hover:-translate-y-1 relative overflow-hidden group"
               >
-                <div className="text-primary mb-4">
-                  {React.cloneElement(value.icon, { strokeWidth: 1.5 })}
+                <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
+                <div className="text-primary group-hover:text-accent mb-4 transition-colors duration-500 relative z-10">
+                  {React.cloneElement(value.icon, { strokeWidth: 2 })}
                 </div>
-                <h3 className="font-semibold mb-3 text-card-foreground text-base">{value.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
+                <h3 className="font-bold mb-3 text-card-foreground text-base relative z-10">{value.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed relative z-10">{value.description}</p>
               </div>
             ))}
           </div>
