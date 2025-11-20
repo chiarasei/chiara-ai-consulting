@@ -8,48 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Refined color palette - Toned down Indigo Blue, Aqua, and Purple */
-    --background: 250 40% 98%;
-    --foreground: 250 30% 15%;
+    /* Swedish IT Professional color palette - Clean blues and grays */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 250 30% 15%;
+    --card-foreground: 215 25% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 250 30% 15%;
+    --popover-foreground: 215 25% 20%;
 
-    --primary: 239 55% 58%;
+    --primary: 210 80% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 266 30% 96%;
-    --secondary-foreground: 250 30% 15%;
+    --secondary: 210 15% 92%;
+    --secondary-foreground: 215 25% 20%;
 
-    --muted: 266 20% 94%;
-    --muted-foreground: 250 20% 45%;
+    --muted: 210 15% 94%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 174 48% 52%;
-    --accent-foreground: 250 30% 15%;
+    --accent: 200 70% 48%;
+    --accent-foreground: 0 0% 100%;
 
-    --purple: 266 52% 62%;
+    --purple: 220 60% 55%;
     --purple-foreground: 0 0% 100%;
 
     --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 266 20% 90%;
-    --input: 266 20% 90%;
-    --ring: 239 55% 58%;
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 210 80% 45%;
 
     --radius: 0.75rem;
     
-    /* Refined gradients with toned down colors */
-    --gradient-primary: linear-gradient(135deg, hsl(239 55% 58%) 0%, hsl(266 52% 62%) 50%, hsl(174 48% 52%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(174 48% 52%) 0%, hsl(174 45% 48%) 100%);
-    --gradient-luxury: linear-gradient(135deg, hsl(266 52% 62%) 0%, hsl(239 55% 58%) 100%);
-    --gradient-purple: linear-gradient(135deg, hsl(266 52% 62%) 0%, hsl(280 50% 58%) 100%);
-    --shadow-soft: 0 4px 20px -4px hsl(239 50% 55% / 0.12);
-    --shadow-medium: 0 8px 32px -8px hsl(239 50% 55% / 0.18);
-    --shadow-glow: 0 0 40px hsl(239 55% 58% / 0.25);
+    /* Professional Swedish gradients - Clean blues and subtle grays */
+    --gradient-primary: linear-gradient(135deg, hsl(210 80% 45%) 0%, hsl(200 70% 48%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(200 70% 48%) 0%, hsl(190 65% 50%) 100%);
+    --gradient-luxury: linear-gradient(135deg, hsl(220 60% 55%) 0%, hsl(210 80% 45%) 100%);
+    --gradient-purple: linear-gradient(135deg, hsl(220 60% 55%) 0%, hsl(230 55% 58%) 100%);
+    --shadow-soft: 0 4px 20px -4px hsl(210 70% 40% / 0.10);
+    --shadow-medium: 0 8px 32px -8px hsl(210 70% 40% / 0.15);
+    --shadow-glow: 0 0 40px hsl(210 80% 45% / 0.20);
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;

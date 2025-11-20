@@ -38,7 +38,7 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-6 py-5">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-12">
           <button
             onClick={() => scrollToSection("hero")}
             className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-300 tracking-tight"
