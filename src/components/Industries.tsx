@@ -56,30 +56,30 @@ const Industries = () => {
   ];
 
   return (
-    <section id="industries" className="py-32 px-6 bg-gradient-to-b from-secondary/40 to-accent/10 relative overflow-hidden">
+    <section id="industries" className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-b from-secondary/40 to-accent/10 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-accent/5 -z-10" />
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-20 space-y-5">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
+        <div className="text-center mb-12 md:mb-20 space-y-3 md:space-y-5">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight">
             Industries We <span className="bg-gradient-accent bg-clip-text text-transparent">Transform</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
+          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
             Bringing professional AI automation to businesses across multiple sectors
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {industries.map((industry, index) => (
             <div
               key={index}
-              className="group p-8 rounded-xl border-2 border-primary/20 hover:border-accent/50 bg-gradient-to-br from-card to-accent/5 hover:shadow-medium transition-all duration-500 hover:-translate-y-1 relative overflow-hidden"
+              className="group p-5 md:p-8 rounded-xl border-2 border-primary/20 hover:border-accent/50 bg-gradient-to-br from-card to-accent/5 hover:shadow-medium transition-all duration-500 hover:-translate-y-1 relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
-              <div className="text-primary group-hover:text-accent mb-5 group-hover:scale-110 transition-all duration-500 relative z-10">
-                {React.cloneElement(industry.icon, { strokeWidth: 2 })}
+              <div className="text-primary group-hover:text-accent mb-3 md:mb-5 group-hover:scale-110 transition-all duration-500 relative z-10">
+                {React.cloneElement(industry.icon, { strokeWidth: 2, className: "w-8 h-8 md:w-10 md:h-10" })}
               </div>
-              <h3 className="text-lg font-bold mb-3 text-card-foreground relative z-10">{industry.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed relative z-10">{industry.useCase}</p>
+              <h3 className="text-base md:text-lg font-bold mb-2 md:mb-3 text-card-foreground relative z-10">{industry.title}</h3>
+              <p className="text-muted-foreground text-xs md:text-sm leading-relaxed relative z-10">{industry.useCase}</p>
             </div>
           ))}
         </div>

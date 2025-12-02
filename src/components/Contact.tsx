@@ -31,51 +31,51 @@ const Contact = () => {
       [e.target.name]: e.target.value
     });
   };
-  return <section id="contact" className="py-32 px-6 bg-gradient-to-b from-primary/5 via-accent/5 to-background relative overflow-hidden">
+  return <section id="contact" className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-b from-primary/5 via-accent/5 to-background relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-accent/10 -z-10" />
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-20 space-y-5">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
+        <div className="text-center mb-12 md:mb-20 space-y-3 md:space-y-5">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight">
             Ready to <span className="bg-gradient-primary bg-clip-text text-transparent">Transform</span> Your Business?
           </h2>
-          <p className="text-xl text-muted-foreground font-medium">
+          <p className="text-base md:text-xl text-muted-foreground font-medium">
             Book a call or send us an email
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <Card className="p-10 text-center border-2 border-primary/30 hover:border-primary bg-gradient-to-br from-card to-primary/5 hover:shadow-glow transition-all duration-500 hover:-translate-y-1">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary text-white mb-6 shadow-medium">
-              <Mail size={24} strokeWidth={2} />
+        <div className="grid md:grid-cols-3 gap-4 md:gap-8 mb-10 md:mb-16">
+          <Card className="p-6 md:p-10 text-center border-2 border-primary/30 hover:border-primary bg-gradient-to-br from-card to-primary/5 hover:shadow-glow transition-all duration-500 hover:-translate-y-1">
+            <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-primary text-white mb-4 md:mb-6 shadow-medium">
+              <Mail size={20} strokeWidth={2} className="md:w-6 md:h-6" />
             </div>
-            <h3 className="font-bold mb-3 text-card-foreground">Email</h3>
-            <a href="mailto:info@chiaraaiconsulting.se" className="text-primary hover:text-primary/80 transition-colors duration-300 font-medium">
+            <h3 className="font-bold mb-2 md:mb-3 text-card-foreground text-sm md:text-base">Email</h3>
+            <a href="mailto:info@chiaraaiconsulting.se" className="text-primary hover:text-primary/80 transition-colors duration-300 font-medium text-xs md:text-sm break-all">
               info@chiaraaiconsulting.se
             </a>
           </Card>
 
-          <Card className="p-10 text-center border-2 border-accent/30 hover:border-accent bg-gradient-to-br from-card to-accent/5 hover:shadow-medium transition-all duration-500 hover:-translate-y-1">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-accent text-white mb-6 shadow-medium">
-              <Phone size={24} strokeWidth={2} />
+          <Card className="p-6 md:p-10 text-center border-2 border-accent/30 hover:border-accent bg-gradient-to-br from-card to-accent/5 hover:shadow-medium transition-all duration-500 hover:-translate-y-1">
+            <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-accent text-white mb-4 md:mb-6 shadow-medium">
+              <Phone size={20} strokeWidth={2} className="md:w-6 md:h-6" />
             </div>
-            <h3 className="font-bold mb-3 text-card-foreground">Phone</h3>
-            <a href="tel:+46735316950" className="text-primary hover:text-primary/80 transition-colors duration-300 font-medium">
+            <h3 className="font-bold mb-2 md:mb-3 text-card-foreground text-sm md:text-base">Phone</h3>
+            <a href="tel:+46735316950" className="text-primary hover:text-primary/80 transition-colors duration-300 font-medium text-xs md:text-sm">
               +46 73 531 69 50
             </a>
           </Card>
 
-          <Card className="p-10 text-center border-2 border-primary/30 hover:border-primary bg-gradient-to-br from-card to-primary/5 hover:shadow-glow transition-all duration-500 hover:-translate-y-1">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary text-white mb-6 shadow-medium">
-              <MapPin size={24} strokeWidth={2} />
+          <Card className="p-6 md:p-10 text-center border-2 border-primary/30 hover:border-primary bg-gradient-to-br from-card to-primary/5 hover:shadow-glow transition-all duration-500 hover:-translate-y-1">
+            <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-primary text-white mb-4 md:mb-6 shadow-medium">
+              <MapPin size={20} strokeWidth={2} className="md:w-6 md:h-6" />
             </div>
-            <h3 className="font-bold mb-3 text-card-foreground">Location</h3>
-            <p className="text-muted-foreground font-medium">Gothenburg, Sweden</p>
+            <h3 className="font-bold mb-2 md:mb-3 text-card-foreground text-sm md:text-base">Location</h3>
+            <p className="text-muted-foreground font-medium text-xs md:text-sm">Gothenburg, Sweden</p>
           </Card>
         </div>
 
-        <Card className="p-12 md:p-16 max-w-3xl mx-auto border-2 border-primary/30 bg-gradient-to-br from-card via-card to-primary/5 shadow-glow">
-          <form onSubmit={handleSubmit} className="space-y-7">
-            <div className="grid md:grid-cols-2 gap-7">
+        <Card className="p-6 md:p-12 lg:p-16 max-w-3xl mx-auto border-2 border-primary/30 bg-gradient-to-br from-card via-card to-primary/5 shadow-glow">
+          <form onSubmit={handleSubmit} className="space-y-5 md:space-y-7">
+            <div className="grid md:grid-cols-2 gap-5 md:gap-7">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-3 text-card-foreground">
                   Name *
@@ -90,7 +90,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-7">
+            <div className="grid md:grid-cols-2 gap-5 md:gap-7">
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium mb-3 text-card-foreground">
                   Phone

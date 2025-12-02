@@ -10,20 +10,20 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-32 pb-24 px-6 overflow-hidden">
+    <section id="hero" className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 overflow-hidden">
       {/* Professional gradient background with animated glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/30 to-accent/10 -z-10" />
       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-primary/5 to-transparent -z-10 animate-pulse" style={{ animationDuration: '4s' }} />
       
       <div className="container mx-auto max-w-5xl">
-        <div className="text-center space-y-12 animate-fade-in-up">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-primary text-white text-sm font-semibold tracking-wide shadow-glow">
-              <Sparkles size={18} strokeWidth={2} className="animate-pulse" />
+        <div className="text-center space-y-8 md:space-y-12 animate-fade-in-up">
+          <div className="space-y-4 md:space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 rounded-full bg-gradient-primary text-white text-xs md:text-sm font-semibold tracking-wide shadow-glow">
+              <Sparkles size={16} strokeWidth={2} className="animate-pulse" />
               AI Automation for Small Businesses
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.05] tracking-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] md:leading-[1.05] tracking-tight px-2">
               Automate Your Business
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
@@ -31,24 +31,24 @@ const Hero = () => {
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium">
+            <p className="text-base md:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium px-2">
               Transform your café, restaurant, or salon with professional AI voice agents and intelligent automation that work 24/7
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-5 pt-4 md:pt-6">
             <Button 
               size="lg" 
-              className="bg-gradient-primary hover:shadow-glow text-white text-lg px-12 py-8 font-semibold transition-all duration-500 shadow-medium hover:scale-105"
+              className="bg-gradient-primary hover:shadow-glow text-white text-base md:text-lg px-8 md:px-12 py-6 md:py-8 font-semibold transition-all duration-500 shadow-medium hover:scale-105 w-full sm:w-auto"
               onClick={scrollToContact}
             >
               Book Free Consultation
-              <ArrowRight className="ml-2" size={20} strokeWidth={2.5} />
+              <ArrowRight className="ml-2" size={18} strokeWidth={2.5} />
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="text-lg px-12 py-8 font-semibold border-2 border-primary/30 hover:bg-primary/5 hover:border-primary transition-all duration-500"
+              className="text-base md:text-lg px-8 md:px-12 py-6 md:py-8 font-semibold border-2 border-primary/30 hover:bg-primary/5 hover:border-primary transition-all duration-500 w-full sm:w-auto"
               onClick={() => {
                 const element = document.getElementById("services");
                 if (element) element.scrollIntoView({ behavior: "smooth" });
