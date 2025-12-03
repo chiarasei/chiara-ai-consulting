@@ -1,14 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 const Hero = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="hero" className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 overflow-hidden">
       {/* Professional gradient background with animated glow */}
@@ -37,14 +30,6 @@ const Hero = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-5 pt-4 md:pt-6">
-            <Button 
-              size="lg" 
-              className="bg-gradient-primary hover:shadow-glow text-white text-base md:text-lg px-8 md:px-12 py-6 md:py-8 font-semibold transition-all duration-500 shadow-medium hover:scale-105 w-full sm:w-auto"
-              onClick={scrollToContact}
-            >
-              Book Free Consultation
-              <ArrowRight className="ml-2" size={18} strokeWidth={2.5} />
-            </Button>
             <Button 
               size="lg" 
               variant="outline" 
