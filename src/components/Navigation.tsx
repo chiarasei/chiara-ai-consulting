@@ -47,7 +47,7 @@ const Navigation = () => {
             <img 
               src={logoImage} 
               alt="ChiaraAI Consulting Logo" 
-              className="h-14 w-14 object-contain drop-shadow-[0_0_12px_hsl(var(--primary)/0.5)] transition-all duration-300 hover:drop-shadow-[0_0_18px_hsl(var(--primary)/0.7)]"
+              className="h-20 w-20 object-contain drop-shadow-[0_0_12px_hsl(var(--primary)/0.5)] transition-all duration-300 hover:drop-shadow-[0_0_18px_hsl(var(--primary)/0.7)]"
             />
             <span className="text-lg font-bold bg-gradient-primary bg-clip-text text-transparent tracking-tight">
               chiaraAIconsulting.se
