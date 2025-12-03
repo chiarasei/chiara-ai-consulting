@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logoImage from "@/assets/chiara-ai-logo-new.png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,13 +38,20 @@ const Navigation = () => {
         isScrolled ? "bg-background/95 backdrop-blur-xl shadow-medium border-b border-primary/20" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 py-5">
-        <div className="flex items-center justify-between gap-12">
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between gap-8">
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-300 tracking-tight"
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300"
           >
-            chiaraAIconsulting.se
+            <img 
+              src={logoImage} 
+              alt="ChiaraAI Consulting Logo" 
+              className="h-10 w-10 object-contain"
+            />
+            <span className="text-lg font-bold bg-gradient-primary bg-clip-text text-transparent tracking-tight hidden sm:inline">
+              chiaraAIconsulting.se
+            </span>
           </button>
 
           {/* Desktop Navigation */}
