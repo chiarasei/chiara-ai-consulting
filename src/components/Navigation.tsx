@@ -72,7 +72,7 @@ const Navigation = () => {
         </div>
 
         {/* Bottom Row: Desktop Navigation Links */}
-        <div className="hidden md:flex items-center justify-center gap-10 mt-3 pt-3 border-t border-primary/10">
+        <div className="hidden md:flex items-center justify-center gap-6 mt-3 pt-3 border-t border-primary/10">
           {navLinks.map((link) => (
             <button
               key={link.id}
