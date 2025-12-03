@@ -38,8 +38,9 @@ const Navigation = () => {
         isScrolled ? "bg-background/95 backdrop-blur-xl shadow-medium border-b border-primary/20" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between gap-8">
+      <div className="container mx-auto px-6 py-3">
+        {/* Top Row: Logo and Company Name */}
+        <div className="flex items-center justify-center md:justify-between">
           <button
             onClick={() => scrollToSection("hero")}
             className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300"
@@ -49,37 +50,39 @@ const Navigation = () => {
               alt="ChiaraAI Consulting Logo" 
               className="h-10 w-10 object-contain"
             />
-            <span className="text-lg font-bold bg-gradient-primary bg-clip-text text-transparent tracking-tight hidden sm:inline">
+            <span className="text-lg font-bold bg-gradient-primary bg-clip-text text-transparent tracking-tight">
               chiaraAIconsulting.se
             </span>
           </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-16">
-            {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className="text-sm font-semibold text-foreground hover:text-primary transition-colors duration-300"
-              >
-                {link.label}
-              </button>
-            ))}
-            <Button 
-              onClick={() => scrollToSection("contact")} 
-              className="bg-gradient-primary hover:shadow-glow text-white font-semibold transition-all duration-500 hover:scale-105"
-            >
-              Book Free Consultation
-            </Button>
-          </div>
-
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden absolute right-6 text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
           </button>
+
+          {/* Desktop CTA Button */}
+          <Button 
+            onClick={() => scrollToSection("contact")} 
+            className="hidden md:inline-flex bg-gradient-primary hover:shadow-glow text-white font-semibold transition-all duration-500 hover:scale-105"
+          >
+            Book Free Consultation
+          </Button>
+        </div>
+
+        {/* Bottom Row: Desktop Navigation Links */}
+        <div className="hidden md:flex items-center justify-center gap-10 mt-3 pt-3 border-t border-primary/10">
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => scrollToSection(link.id)}
+              className="text-sm font-semibold text-foreground hover:text-primary transition-colors duration-300"
+            >
+              {link.label}
+            </button>
+          ))}
         </div>
 
         {/* Mobile Menu */}
