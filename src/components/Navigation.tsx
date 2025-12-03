@@ -76,19 +76,19 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-6 pb-6 space-y-5 animate-fade-in">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-xl border-b border-primary/20 shadow-lg z-50 px-6 py-6 space-y-4 animate-fade-in">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="block w-full text-left text-sm font-medium text-foreground hover:text-primary transition-colors duration-300 py-2"
+                className="block w-full text-left text-sm font-medium text-foreground hover:text-primary transition-colors duration-300 py-2 break-words"
               >
                 {link.label}
               </button>
             ))}
             <Button 
               onClick={() => scrollToSection("contact")} 
-              className="w-full bg-primary hover:bg-primary/90 font-medium transition-all duration-300"
+              className="w-full bg-primary hover:bg-primary/90 font-medium transition-all duration-300 whitespace-normal break-words"
             >
               Book Free Consultation
             </Button>
