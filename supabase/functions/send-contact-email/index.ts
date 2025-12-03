@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { SmtpClient } from "https://deno.land/x/smtp@v0.7.0/mod.ts";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
+import { SMTPClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -18,8 +18,8 @@ const contactSchema = z.object({
 
 // Simple in-memory rate limiting
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT = 5; // max requests
-const RATE_WINDOW = 60 * 60 * 1000; // 1 hour in ms
+const RATE_LIMIT = 5;
+const RATE_WINDOW = 60 * 60 * 1000; // 1 hour
 
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
@@ -38,7 +38,7 @@ function checkRateLimit(ip: string): boolean {
   return true;
 }
 
-// HTML escape function to prevent XSS in emails
+// HTML escape function to prevent XSS
 function escapeHtml(text: string): string {
   const htmlEscapes: Record<string, string> = {
     '&': '&amp;',
@@ -51,30 +51,23 @@ function escapeHtml(text: string): string {
 }
 
 const handler = async (req: Request): Promise<Response> => {
-  // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    // Get client IP for rate limiting
     const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || 
                      req.headers.get("cf-connecting-ip") || 
                      "unknown";
     
-    // Check rate limit
     if (!checkRateLimit(clientIp)) {
       console.log("Rate limit exceeded for IP:", clientIp);
       return new Response(
         JSON.stringify({ error: "Too many requests. Please try again later." }),
-        {
-          status: 429,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
-        }
+        { status: 429, headers: { "Content-Type": "application/json", ...corsHeaders } }
       );
     }
 
-    // Parse and validate input
     const rawBody = await req.json();
     const validationResult = contactSchema.safeParse(rawBody);
     
@@ -82,16 +75,12 @@ const handler = async (req: Request): Promise<Response> => {
       console.log("Validation failed:", validationResult.error.errors);
       return new Response(
         JSON.stringify({ error: "Invalid input data", details: validationResult.error.errors }),
-        {
-          status: 400,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
-        }
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
       );
     }
 
     const { name, email, phone, business, message } = validationResult.data;
 
-    // Sanitize all inputs for HTML
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
     const safePhone = escapeHtml(phone || "Not provided");
@@ -109,17 +98,20 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error("SMTP credentials not configured");
     }
 
-    const client = new SmtpClient();
-
-    // Connect to Zoho SMTP
-    await client.connectTLS({
-      hostname: "smtp.zoho.eu",
-      port: 465,
-      username: smtpUser,
-      password: smtpPassword,
+    // Create denomailer SMTP client for Zoho
+    const client = new SMTPClient({
+      connection: {
+        hostname: "smtp.zoho.eu",
+        port: 465,
+        tls: true,
+        auth: {
+          username: smtpUser,
+          password: smtpPassword,
+        },
+      },
     });
 
-    console.log("Connected to Zoho SMTP");
+    console.log("Created Zoho SMTP client");
 
     // 1. Send notification email to business owner
     const notificationHtml = `
@@ -136,7 +128,6 @@ const handler = async (req: Request): Promise<Response> => {
       from: fromEmail,
       to: fromEmail,
       subject: `New Contact: ${safeName} - ChiaraAI Consulting`,
-      content: notificationHtml,
       html: notificationHtml,
     });
 
@@ -164,7 +155,6 @@ const handler = async (req: Request): Promise<Response> => {
       from: fromEmail,
       to: email,
       subject: "We received your message - ChiaraAI Consulting",
-      content: confirmationHtml,
       html: confirmationHtml,
     });
 
@@ -180,10 +170,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.error("Error in send-contact-email function:", error);
     return new Response(
       JSON.stringify({ error: "Failed to send message. Please try again later." }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
-      }
+      { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
     );
   }
 };
