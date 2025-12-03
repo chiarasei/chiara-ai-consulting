@@ -3,7 +3,7 @@ import { Sparkles } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 overflow-hidden">
+    <section id="hero" className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center pt-36 md:pt-44 pb-16 md:pb-24 px-4 md:px-6 overflow-hidden">
       {/* Professional gradient background with animated glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/30 to-accent/10 -z-10" />
       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-primary/5 to-transparent -z-10 animate-pulse" style={{ animationDuration: '4s' }} />
