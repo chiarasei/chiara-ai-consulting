@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -13,17 +14,33 @@ const Contact = () => {
     business: "",
     message: ""
   });
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real implementation, this would send to an API
-    toast.success("Thank you for your message! We'll get back to you within 24 hours.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      business: "",
-      message: ""
-    });
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
+
+      if (error) throw error;
+
+      toast.success("Thank you for your message! We'll get back to you within 24 hours. Check your email for confirmation.");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        business: "",
+        message: ""
+      });
+    } catch (error: any) {
+      console.error("Error sending message:", error);
+      toast.error("Failed to send message. Please try again or email us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -112,8 +129,20 @@ const Contact = () => {
               <Textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={5} placeholder="What would you like to automate in your business?" className="resize-none" />
             </div>
 
-            <Button type="submit" size="lg" className="w-full h-14 bg-gradient-primary hover:shadow-glow text-white font-bold text-lg transition-all duration-500 hover:scale-[1.02]">
-              Send Inquiry
+            <Button 
+              type="submit" 
+              size="lg" 
+              disabled={isSubmitting}
+              className="w-full h-14 bg-gradient-primary hover:shadow-glow text-white font-bold text-lg transition-all duration-500 hover:scale-[1.02] disabled:opacity-70"
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                "Send Inquiry"
+              )}
             </Button>
           </form>
         </Card>
