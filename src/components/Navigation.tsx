@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logoImage from "@/assets/chiara-ai-logo-brain.png";
@@ -6,6 +7,8 @@ import logoImage from "@/assets/chiara-ai-logo-brain.png";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,8 +18,8 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
+  const scrollToContact = () => {
+    const element = document.getElementById("contact");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
@@ -24,12 +27,13 @@ const Navigation = () => {
   };
 
   const navLinks = [
-    { label: "Home", id: "hero" },
-    { label: "Services", id: "services" },
-    { label: "Industries", id: "industries" },
-    { label: "Pricing", id: "pricing" },
-    { label: "About", id: "about" },
+    { label: "Home", path: "/" },
+    { label: "Services", path: "/services" },
+    { label: "Industries", path: "/industries" },
+    { label: "Pricing", path: "/pricing" },
   ];
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav
@@ -40,8 +44,8 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-3">
         {/* Top Row: Logo and Company Name */}
         <div className="flex items-center justify-center md:justify-between">
-          <button
-            onClick={() => scrollToSection("hero")}
+          <Link
+            to="/"
             className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300"
           >
             <img 
@@ -52,7 +56,7 @@ const Navigation = () => {
             <span className="text-lg font-bold bg-gradient-primary bg-clip-text text-transparent tracking-tight">
               chiaraAIconsulting.se
             </span>
-          </button>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
@@ -64,7 +68,7 @@ const Navigation = () => {
 
           {/* Desktop CTA Button */}
           <Button 
-            onClick={() => scrollToSection("contact")} 
+            onClick={scrollToContact} 
             className="hidden md:inline-flex bg-gradient-primary hover:shadow-glow text-white font-semibold transition-all duration-500 hover:scale-105"
           >
             Book Free Consultation
@@ -74,13 +78,15 @@ const Navigation = () => {
         {/* Bottom Row: Desktop Navigation Links */}
         <div className="hidden md:flex items-center justify-center gap-6 mt-3 pt-3 border-t border-primary/10">
           {navLinks.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => scrollToSection(link.id)}
-              className="text-base font-bold text-foreground hover:text-primary transition-colors duration-300"
+            <Link
+              key={link.path}
+              to={link.path}
+              className={`text-base font-bold transition-colors duration-300 ${
+                isActive(link.path) ? "text-primary" : "text-foreground hover:text-primary"
+              }`}
             >
               {link.label}
-            </button>
+            </Link>
           ))}
         </div>
 
@@ -88,16 +94,19 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-xl border-b border-primary/20 shadow-lg z-50 px-6 py-6 space-y-4 animate-fade-in">
             {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className="block w-full text-left text-sm font-medium text-foreground hover:text-primary transition-colors duration-300 py-2 break-words"
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block w-full text-left text-sm font-medium transition-colors duration-300 py-2 break-words ${
+                  isActive(link.path) ? "text-primary" : "text-foreground hover:text-primary"
+                }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
             <Button 
-              onClick={() => scrollToSection("contact")} 
+              onClick={scrollToContact} 
               className="w-full bg-primary hover:bg-primary/90 font-medium transition-all duration-300 whitespace-normal break-words"
             >
               Book Free Consultation
