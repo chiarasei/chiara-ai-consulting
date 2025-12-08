@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logoImage from "@/assets/chiara-ai-logo-brain.png";
@@ -8,7 +8,6 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,14 +16,6 @@ const Navigation = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
-  };
 
   const navLinks = [
     { label: "Home", path: "/" },
@@ -67,12 +58,13 @@ const Navigation = () => {
           </button>
 
           {/* Desktop CTA Button */}
-          <Button 
-            onClick={scrollToContact} 
-            className="hidden md:inline-flex bg-gradient-primary hover:shadow-glow text-white font-semibold transition-all duration-500 hover:scale-105"
-          >
-            Book Free Consultation
-          </Button>
+          <Link to="/contact">
+            <Button 
+              className="hidden md:inline-flex bg-gradient-primary hover:shadow-glow text-white font-semibold transition-all duration-500 hover:scale-105"
+            >
+              Book Free Consultation
+            </Button>
+          </Link>
         </div>
 
         {/* Bottom Row: Desktop Navigation Links */}
@@ -105,12 +97,13 @@ const Navigation = () => {
                 {link.label}
               </Link>
             ))}
-            <Button 
-              onClick={scrollToContact} 
-              className="w-full bg-primary hover:bg-primary/90 font-medium transition-all duration-300 whitespace-normal break-words"
-            >
-              Book Free Consultation
-            </Button>
+            <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+              <Button 
+                className="w-full bg-primary hover:bg-primary/90 font-medium transition-all duration-300 whitespace-normal break-words"
+              >
+                Book Free Consultation
+              </Button>
+            </Link>
           </div>
         )}
       </div>
