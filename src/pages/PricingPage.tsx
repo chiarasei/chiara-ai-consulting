@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Pricing from "@/components/Pricing";
-import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
 const PricingPage = () => {
@@ -9,7 +8,6 @@ const PricingPage = () => {
       <Navigation />
       <div className="pt-32" />
       <Pricing />
-      <Testimonials />
       <Footer />
     </div>
   );
