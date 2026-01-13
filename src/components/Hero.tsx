@@ -25,7 +25,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-base md:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium px-2">
-              Transform your café, restaurant, or salon with professional AI voice agents and intelligent automation that work 24/7
+              Transform your hotels, restaurants, cafés and salons with professional AI chatbots, assistants and voice agents
             </p>
           </div>
           
