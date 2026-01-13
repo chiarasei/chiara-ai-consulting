@@ -17,15 +17,21 @@ const Hero = () => {
             </div>
             
             <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] md:leading-[1.05] tracking-tight px-2">
-              Automate Your Business
+              Smarter Customer Communication
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                With AI Solutions
+                for Hotels and Small Businesses
               </span>
             </h1>
             
-            <p className="text-base md:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium px-2">
-              Transform your hotels, restaurants, cafés and salons with professional AI chatbots, assistants and voice agents
+            <p className="text-base md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium px-2">
+              We help hotels, restaurants, cafés, and salons automate customer communication with AI chatbots, AI assistants, and voice agents — so you never miss a booking, call, or message again.
+            </p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto px-2">
+            <p className="text-sm md:text-base lg:text-lg text-muted-foreground/80 leading-relaxed">
+              From answering guest questions 24/7 to handling bookings and phone calls automatically, our AI solutions reduce manual workload, improve customer experience, and support your staff — without complex systems or expensive software.
             </p>
           </div>
           
