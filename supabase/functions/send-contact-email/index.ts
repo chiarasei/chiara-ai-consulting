@@ -101,7 +101,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Create denomailer SMTP client for Zoho
     const client = new SMTPClient({
       connection: {
-        hostname: "smtp.zoho.eu",
+        hostname: "smtppro.zoho.eu",
         port: 465,
         tls: true,
         auth: {
