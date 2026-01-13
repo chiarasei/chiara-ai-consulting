@@ -17,10 +17,10 @@ const Hero = () => {
             </div>
             
             <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] md:leading-[1.05] tracking-tight px-2">
-              Smarter Customer Communication
+              Automate Your Business
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                for Hotels and Small Businesses
+                With AI Solutions
               </span>
             </h1>
             
