@@ -25,7 +25,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-base md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium px-2">
-              We help hotels, restaurants, cafés, and salons automate customer communication with AI chatbots, AI assistants, and voice agents — so you never miss a booking, call, or message again.
+              We help hotels, restaurants, cafés, and salons automate customer communication with multilingual AI chatbots, AI assistants, and voice agents in Swedish and English — so you never miss a booking, call, or message again.
             </p>
           </div>
           
