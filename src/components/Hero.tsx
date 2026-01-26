@@ -41,18 +41,7 @@ const Hero = () => {
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-5 pt-4 md:pt-6">
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="text-base md:text-lg px-8 md:px-12 py-6 md:py-8 font-semibold border-2 border-primary/30 hover:bg-primary/5 hover:border-primary transition-all duration-500 w-full sm:w-auto"
-              onClick={() => {
-                const element = document.getElementById("services");
-                if (element) element.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              View Our Services
-            </Button>
+          <div className="flex items-center justify-center pt-4 md:pt-6">
             <Button 
               size="lg" 
               className="text-base md:text-lg px-8 md:px-12 py-6 md:py-8 font-semibold bg-gradient-primary hover:opacity-90 transition-all duration-500 w-full sm:w-auto shadow-glow"
