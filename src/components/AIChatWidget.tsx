@@ -15,13 +15,13 @@ const translations = {
     title: "ChiaraAI Assistant",
     placeholder: "Type your message...",
     welcome: "Hello! I'm the ChiaraAI Assistant. How can I help you with AI automation for your business today?",
-    switchLang: "Svenska",
+    currentLang: "🇬🇧 EN",
   },
   sv: {
     title: "ChiaraAI Assistent",
     placeholder: "Skriv ditt meddelande...",
     welcome: "Hej! Jag är ChiaraAI Assistent. Hur kan jag hjälpa dig med AI-automatisering för ditt företag idag?",
-    switchLang: "English",
+    currentLang: "🇸🇪 SV",
   },
 };
 
@@ -171,10 +171,10 @@ export const AIChatWidget = () => {
               variant="ghost"
               size="sm"
               onClick={handleLanguageSwitch}
-              className="text-white hover:bg-white/20 gap-1 text-xs"
+              className="text-white hover:bg-white/20 gap-1 text-xs font-medium"
             >
               <Globe size={14} />
-              {t.switchLang}
+              {t.currentLang}
             </Button>
           </div>
 
