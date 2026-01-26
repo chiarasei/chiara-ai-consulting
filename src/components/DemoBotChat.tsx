@@ -12,20 +12,20 @@ const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/chat`;
 
 const translations = {
   en: {
-    title: "Demo Bot",
-    placeholder: "Type your message...",
-    welcome: "Hello! I'm the ChiaraAI Demo Bot. Ask me anything about AI automation for your business!",
+    title: "Chat with us",
+    placeholder: "Write a message...",
+    welcome: "Hi there! I'm here to answer your questions. How can I help you today?",
     currentLang: "🇬🇧",
-    openButton: "Try Our Demo Bot",
-    subtitle: "Chat in English or Swedish",
+    openButton: "Chat with our bot",
+    subtitle: "We speak English and Swedish",
   },
   sv: {
-    title: "Demo Bot",
-    placeholder: "Skriv ditt meddelande...",
-    welcome: "Hej! Jag är ChiaraAI Demo Bot. Fråga mig vad som helst om AI-automatisering för ditt företag!",
+    title: "Chatta med oss",
+    placeholder: "Skriv ett meddelande...",
+    welcome: "Hej! Jag är här för att svara på dina frågor. Hur kan jag hjälpa dig?",
     currentLang: "🇸🇪",
-    openButton: "Testa Vår Demo Bot",
-    subtitle: "Chatta på svenska eller engelska",
+    openButton: "Chatta med vår bot",
+    subtitle: "Vi pratar svenska och engelska",
   },
 };
 
