@@ -1,6 +1,5 @@
-import { MessageCircle, Phone, Calendar, MessageSquare, TrendingUp, Share2, Gift, Workflow, Bot } from "lucide-react";
+import { MessageCircle, Phone, Calendar, MessageSquare, TrendingUp, Share2, Gift, Workflow } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import React from "react";
 
 const Services = () => {
@@ -47,13 +46,6 @@ const Services = () => {
     },
   ];
 
-  const openBotpressChat = () => {
-    // Botpress webchat API to open the chat
-    if (typeof window !== 'undefined' && (window as any).botpress) {
-      (window as any).botpress.open();
-    }
-  };
-
   return (
     <section id="services" className="py-16 md:py-32 px-4 md:px-6 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent -z-10" />
@@ -65,30 +57,6 @@ const Services = () => {
           <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
             Smart automation solutions that help you grow and focus on what matters most
           </p>
-        </div>
-
-        {/* Demo Bot Card */}
-        <div className="flex justify-center mb-8 md:mb-12">
-          <Card 
-            onClick={openBotpressChat}
-            className="p-6 md:p-8 cursor-pointer hover:shadow-glow transition-all duration-500 hover:-translate-y-1 border-2 border-primary/40 hover:border-primary bg-gradient-to-br from-primary/10 to-primary/5 group relative overflow-hidden max-w-md w-full"
-          >
-            <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
-            <div className="flex flex-col items-center text-center space-y-4 relative z-10">
-              <div className="text-primary transition-transform duration-500 group-hover:scale-110">
-                <Bot className="w-12 h-12 md:w-16 md:h-16" strokeWidth={1.5} />
-              </div>
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold mb-2 text-card-foreground">Demo Bot</h3>
-                <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                  Try our AI chatbot live! Click to experience how our multilingual bot can assist your customers in Swedish and English.
-                </p>
-              </div>
-              <Button variant="outline" className="border-primary/50 hover:bg-primary/10 group-hover:border-primary">
-                Chat Now
-              </Button>
-            </div>
-          </Card>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
