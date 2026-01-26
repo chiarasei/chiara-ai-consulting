@@ -16,7 +16,7 @@ const translations = {
     placeholder: "Type your message...",
     welcome: "Hello! I'm the ChiaraAI Demo Bot. Ask me anything about AI automation for your business!",
     currentLang: "🇬🇧",
-    openButton: "Try Demo Bot",
+    openButton: "Try Our Demo Bot",
     subtitle: "Chat in English or Swedish",
   },
   sv: {
@@ -24,7 +24,7 @@ const translations = {
     placeholder: "Skriv ditt meddelande...",
     welcome: "Hej! Jag är ChiaraAI Demo Bot. Fråga mig vad som helst om AI-automatisering för ditt företag!",
     currentLang: "🇸🇪",
-    openButton: "Testa Demo Bot",
+    openButton: "Testa Vår Demo Bot",
     subtitle: "Chatta på svenska eller engelska",
   },
 };
