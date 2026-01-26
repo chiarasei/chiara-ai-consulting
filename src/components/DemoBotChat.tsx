@@ -15,16 +15,16 @@ const translations = {
     title: "Demo Bot",
     placeholder: "Type your message...",
     welcome: "Hello! I'm the ChiaraAI Demo Bot. Ask me anything about AI automation for your business!",
-    currentLang: "🇬🇧 EN",
-    openButton: "Try Our Demo Bot",
+    currentLang: "🇬🇧",
+    openButton: "Try Demo Bot",
     subtitle: "Chat in English or Swedish",
   },
   sv: {
     title: "Demo Bot",
     placeholder: "Skriv ditt meddelande...",
     welcome: "Hej! Jag är ChiaraAI Demo Bot. Fråga mig vad som helst om AI-automatisering för ditt företag!",
-    currentLang: "🇸🇪 SV",
-    openButton: "Testa Vår Demo Bot",
+    currentLang: "🇸🇪",
+    openButton: "Testa Demo Bot",
     subtitle: "Chatta på svenska eller engelska",
   },
 };
@@ -156,37 +156,36 @@ export const DemoBotChat = () => {
 
   if (!isOpen) {
     return (
-      <div className="w-full max-w-lg mx-auto text-center">
+      <div className="w-full max-w-md mx-auto text-center px-4">
         <Button
           size="lg"
           onClick={() => setIsOpen(true)}
-          className="text-base md:text-lg px-8 md:px-12 py-6 md:py-8 font-semibold bg-gradient-primary hover:opacity-90 transition-all duration-500 shadow-glow"
+          className="text-sm md:text-base px-6 md:px-10 py-5 md:py-6 font-semibold bg-gradient-primary hover:opacity-90 transition-all duration-500 shadow-glow w-full sm:w-auto"
         >
-          <Bot className="w-5 h-5 mr-2" />
+          <Bot className="w-4 h-4 md:w-5 md:h-5 mr-2" />
           {t.openButton}
         </Button>
-        <p className="text-sm text-muted-foreground mt-3">{t.subtitle}</p>
+        <p className="text-xs md:text-sm text-muted-foreground mt-2">{t.subtitle}</p>
       </div>
     );
   }
 
   return (
-    <div className="w-full max-w-lg mx-auto animate-fade-in">
-      <div className="bg-background/80 backdrop-blur-sm border border-border rounded-2xl shadow-2xl overflow-hidden">
+    <div className="w-full max-w-md mx-auto px-2 sm:px-4 animate-fade-in">
+      <div className="bg-background/95 backdrop-blur-sm border border-border rounded-xl md:rounded-2xl shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-primary text-white p-4 flex items-center justify-between">
+        <div className="bg-gradient-primary text-white p-3 md:p-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Bot size={20} />
-            <h3 className="font-semibold">{t.title}</h3>
+            <Bot size={18} className="md:w-5 md:h-5" />
+            <h3 className="font-semibold text-sm md:text-base">{t.title}</h3>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <Button
               variant="ghost"
               size="sm"
               onClick={handleLanguageSwitch}
-              className="text-white hover:bg-white/20 gap-1 text-xs font-medium"
+              className="text-white hover:bg-white/20 text-base md:text-lg h-8 w-8 p-0"
             >
-              <Globe size={14} />
               {t.currentLang}
             </Button>
             <Button
@@ -195,28 +194,28 @@ export const DemoBotChat = () => {
               onClick={() => setIsOpen(false)}
               className="text-white hover:bg-white/20 h-8 w-8"
             >
-              <X size={18} />
+              <X size={16} className="md:w-[18px] md:h-[18px]" />
             </Button>
           </div>
         </div>
 
         {/* Messages */}
-        <ScrollArea className="h-[280px] p-4" ref={scrollRef}>
-          <div className="space-y-4">
+        <ScrollArea className="h-[220px] sm:h-[260px] md:h-[300px] p-3 md:p-4" ref={scrollRef}>
+          <div className="space-y-3">
             {messages.map((msg, idx) => (
               <div
                 key={idx}
                 className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 <div
-                  className={`max-w-[85%] rounded-2xl px-4 py-2 text-sm ${
+                  className={`max-w-[88%] rounded-xl md:rounded-2xl px-3 md:px-4 py-2 text-xs md:text-sm ${
                     msg.role === "user"
                       ? "bg-primary text-primary-foreground rounded-br-sm"
                       : "bg-muted text-foreground rounded-bl-sm"
                   }`}
                 >
                   {msg.role === "assistant" ? (
-                    <div className="prose prose-sm dark:prose-invert max-w-none">
+                    <div className="prose prose-xs md:prose-sm dark:prose-invert max-w-none [&>p]:my-1 [&>ul]:my-1 [&>ol]:my-1">
                       <ReactMarkdown>{msg.content}</ReactMarkdown>
                     </div>
                   ) : (
@@ -227,8 +226,8 @@ export const DemoBotChat = () => {
             ))}
             {isLoading && messages[messages.length - 1]?.role === "user" && (
               <div className="flex justify-start">
-                <div className="bg-muted rounded-2xl rounded-bl-sm px-4 py-2">
-                  <Loader2 className="w-4 h-4 animate-spin text-muted-foreground" />
+                <div className="bg-muted rounded-xl md:rounded-2xl rounded-bl-sm px-3 md:px-4 py-2">
+                  <Loader2 className="w-3 h-3 md:w-4 md:h-4 animate-spin text-muted-foreground" />
                 </div>
               </div>
             )}
@@ -236,7 +235,7 @@ export const DemoBotChat = () => {
         </ScrollArea>
 
         {/* Input */}
-        <div className="p-4 border-t border-border">
+        <div className="p-3 md:p-4 border-t border-border">
           <div className="flex gap-2">
             <Input
               value={input}
@@ -244,15 +243,15 @@ export const DemoBotChat = () => {
               onKeyDown={handleKeyDown}
               placeholder={t.placeholder}
               disabled={isLoading}
-              className="flex-1"
+              className="flex-1 text-sm md:text-base h-10 md:h-11"
             />
             <Button
               onClick={handleSend}
               disabled={!input.trim() || isLoading}
               size="icon"
-              className="bg-gradient-primary hover:opacity-90"
+              className="bg-gradient-primary hover:opacity-90 h-10 w-10 md:h-11 md:w-11 shrink-0"
             >
-              <Send size={18} />
+              <Send size={16} className="md:w-[18px] md:h-[18px]" />
             </Button>
           </div>
         </div>
