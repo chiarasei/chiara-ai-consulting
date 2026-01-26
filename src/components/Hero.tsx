@@ -1,13 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { Sparkles, Bot } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 const Hero = () => {
-  const openBotpressChat = () => {
-    if (typeof window !== 'undefined' && (window as any).botpress) {
-      (window as any).botpress.open();
-    }
-  };
-
   return (
     <section id="hero" className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center pt-36 md:pt-44 pb-16 md:pb-24 px-4 md:px-6 overflow-hidden">
       {/* Professional gradient background with animated glow */}
@@ -42,14 +35,9 @@ const Hero = () => {
           </div>
           
           <div className="flex items-center justify-center pt-4 md:pt-6">
-            <Button 
-              size="lg" 
-              className="text-base md:text-lg px-8 md:px-12 py-6 md:py-8 font-semibold bg-gradient-primary hover:opacity-90 transition-all duration-500 w-full sm:w-auto shadow-glow"
-              onClick={openBotpressChat}
-            >
-              <Bot className="w-5 h-5 mr-2" />
-              Demo Bot
-            </Button>
+            <p className="text-sm md:text-base text-muted-foreground">
+              Click the chat icon in the bottom right to try our AI assistant in English or Swedish
+            </p>
           </div>
         </div>
       </div>
