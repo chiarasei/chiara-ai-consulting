@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Send, Globe, Loader2, Bot } from "lucide-react";
+import { Send, Globe, Loader2, Bot, X } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
 type Message = { role: "user" | "assistant"; content: string };
@@ -16,16 +16,21 @@ const translations = {
     placeholder: "Type your message...",
     welcome: "Hello! I'm the ChiaraAI Demo Bot. Ask me anything about AI automation for your business!",
     currentLang: "🇬🇧 EN",
+    openButton: "Try Our Demo Bot",
+    subtitle: "Chat in English or Swedish",
   },
   sv: {
     title: "Demo Bot",
     placeholder: "Skriv ditt meddelande...",
     welcome: "Hej! Jag är ChiaraAI Demo Bot. Fråga mig vad som helst om AI-automatisering för ditt företag!",
     currentLang: "🇸🇪 SV",
+    openButton: "Testa Vår Demo Bot",
+    subtitle: "Chatta på svenska eller engelska",
   },
 };
 
 export const DemoBotChat = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [language, setLanguage] = useState<Language>("en");
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -34,8 +39,10 @@ export const DemoBotChat = () => {
   const t = translations[language];
 
   useEffect(() => {
-    setMessages([{ role: "assistant", content: t.welcome }]);
-  }, []);
+    if (isOpen && messages.length === 0) {
+      setMessages([{ role: "assistant", content: t.welcome }]);
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -122,7 +129,7 @@ export const DemoBotChat = () => {
     setIsLoading(true);
 
     try {
-      await streamChat(newMessages.filter((m) => m.content !== t.welcome));
+      await streamChat(newMessages.filter((m) => m.content !== translations.en.welcome && m.content !== translations.sv.welcome));
     } catch (error) {
       console.error("Chat error:", error);
       setMessages((prev) => [
@@ -147,8 +154,24 @@ export const DemoBotChat = () => {
     }
   };
 
+  if (!isOpen) {
+    return (
+      <div className="w-full max-w-lg mx-auto text-center">
+        <Button
+          size="lg"
+          onClick={() => setIsOpen(true)}
+          className="text-base md:text-lg px-8 md:px-12 py-6 md:py-8 font-semibold bg-gradient-primary hover:opacity-90 transition-all duration-500 shadow-glow"
+        >
+          <Bot className="w-5 h-5 mr-2" />
+          {t.openButton}
+        </Button>
+        <p className="text-sm text-muted-foreground mt-3">{t.subtitle}</p>
+      </div>
+    );
+  }
+
   return (
-    <div className="w-full max-w-lg mx-auto">
+    <div className="w-full max-w-lg mx-auto animate-fade-in">
       <div className="bg-background/80 backdrop-blur-sm border border-border rounded-2xl shadow-2xl overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-primary text-white p-4 flex items-center justify-between">
@@ -156,15 +179,25 @@ export const DemoBotChat = () => {
             <Bot size={20} />
             <h3 className="font-semibold">{t.title}</h3>
           </div>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={handleLanguageSwitch}
-            className="text-white hover:bg-white/20 gap-1 text-xs font-medium"
-          >
-            <Globe size={14} />
-            {t.currentLang}
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={handleLanguageSwitch}
+              className="text-white hover:bg-white/20 gap-1 text-xs font-medium"
+            >
+              <Globe size={14} />
+              {t.currentLang}
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(false)}
+              className="text-white hover:bg-white/20 h-8 w-8"
+            >
+              <X size={18} />
+            </Button>
+          </div>
         </div>
 
         {/* Messages */}
