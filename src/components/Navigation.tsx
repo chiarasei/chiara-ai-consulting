@@ -69,7 +69,7 @@ const Navigation = () => {
               className="text-foreground hover:text-primary font-bold text-sm gap-1.5"
             >
               <Globe size={16} />
-              {language === "en" ? "SV" : "EN"}
+              {language === "en" ? "EN" : "SV"}
             </Button>
             <Link to="/contact">
               <Button 
@@ -116,7 +116,7 @@ const Navigation = () => {
               className="w-full justify-start text-foreground hover:text-primary font-bold text-sm gap-1.5"
             >
               <Globe size={16} />
-              {language === "en" ? "Svenska" : "English"}
+              {language === "en" ? "English" : "Svenska"}
             </Button>
             <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
               <Button 
