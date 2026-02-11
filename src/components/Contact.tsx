@@ -1,99 +1,9 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Loader2 } from "lucide-react";
-import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
-import { z } from "zod";
-
-const contactSchema = z.object({
-  name: z.string().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
-  email: z.string().email("Please enter a valid email").max(255, "Email must be less than 255 characters"),
-  phone: z.string().max(20, "Phone must be less than 20 characters").optional().or(z.literal("")),
-  business: z.string().max(100, "Business name must be less than 100 characters").optional().or(z.literal("")),
-  message: z.string().max(2000, "Message must be less than 2000 characters").optional().or(z.literal("")),
-});
-
-type FormErrors = Partial<Record<keyof z.infer<typeof contactSchema>, string>>;
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    business: "",
-    message: ""
-  });
-  const [errors, setErrors] = useState<FormErrors>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const validateForm = (): boolean => {
-    const result = contactSchema.safeParse(formData);
-    if (!result.success) {
-      const fieldErrors: FormErrors = {};
-      result.error.errors.forEach((err) => {
-        const field = err.path[0] as keyof FormErrors;
-        if (!fieldErrors[field]) {
-          fieldErrors[field] = err.message;
-        }
-      });
-      setErrors(fieldErrors);
-      return false;
-    }
-    setErrors({});
-    return true;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!validateForm()) {
-      return;
-    }
-    
-    setIsSubmitting(true);
-
-    try {
-      const { data, error } = await supabase.functions.invoke("send-contact-email", {
-        body: formData,
-      });
-
-      if (error) throw error;
-
-      toast.success("Thank you for your message! We'll get back to you within 24 hours. Check your email for confirmation.");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        business: "",
-        message: ""
-      });
-      setErrors({});
-    } catch (error: any) {
-      console.error("Error sending message:", error);
-      toast.error("Failed to send message. Please try again or email us directly.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-    // Clear error when user starts typing
-    if (errors[name as keyof FormErrors]) {
-      setErrors({
-        ...errors,
-        [name]: undefined
-      });
-    }
-  };
-  return <section id="contact" className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-b from-primary/5 via-accent/5 to-background relative overflow-hidden">
+  return (
+    <section id="contact" className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-b from-primary/5 via-accent/5 to-background relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-accent/10 -z-10" />
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 md:mb-20 space-y-3 md:space-y-5">
@@ -135,68 +45,23 @@ const Contact = () => {
           </Card>
         </div>
 
-        <Card className="p-6 md:p-12 lg:p-16 max-w-3xl mx-auto border-2 border-primary/30 bg-gradient-to-br from-card via-card to-primary/5 shadow-glow">
-          <form onSubmit={handleSubmit} className="space-y-5 md:space-y-7">
-            <div className="grid md:grid-cols-2 gap-5 md:gap-7">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-3 text-card-foreground">
-                  Name *
-                </label>
-                <Input id="name" name="name" value={formData.name} onChange={handleChange} required placeholder="Your name" className={`h-12 ${errors.name ? 'border-destructive' : ''}`} />
-                {errors.name && <p className="text-destructive text-sm mt-1">{errors.name}</p>}
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-3 text-card-foreground">
-                  Email *
-                </label>
-                <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required placeholder="your@email.com" className={`h-12 ${errors.email ? 'border-destructive' : ''}`} />
-                {errors.email && <p className="text-destructive text-sm mt-1">{errors.email}</p>}
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-5 md:gap-7">
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium mb-3 text-card-foreground">
-                  Phone
-                </label>
-                <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="+46 123 456 789" className={`h-12 ${errors.phone ? 'border-destructive' : ''}`} />
-                {errors.phone && <p className="text-destructive text-sm mt-1">{errors.phone}</p>}
-              </div>
-              <div>
-                <label htmlFor="business" className="block text-sm font-medium mb-3 text-card-foreground">
-                  Business/Industry
-                </label>
-                <Input id="business" name="business" value={formData.business} onChange={handleChange} placeholder="e.g. Café, Salon" className={`h-12 ${errors.business ? 'border-destructive' : ''}`} />
-                {errors.business && <p className="text-destructive text-sm mt-1">{errors.business}</p>}
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-3 text-card-foreground">
-                Tell us about your needs
-              </label>
-              <Textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={5} placeholder="What would you like to automate in your business?" className={`resize-none ${errors.message ? 'border-destructive' : ''}`} />
-              {errors.message && <p className="text-destructive text-sm mt-1">{errors.message}</p>}
-            </div>
-
-            <Button 
-              type="submit" 
-              size="lg" 
-              disabled={isSubmitting}
-              className="w-full h-14 bg-gradient-primary hover:shadow-glow text-white font-bold text-lg transition-all duration-500 hover:scale-[1.02] disabled:opacity-70"
-            >
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                  Sending...
-                </>
-              ) : (
-                "Send Inquiry"
-              )}
-            </Button>
-          </form>
-        </Card>
+        <div className="max-w-3xl mx-auto">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfrecdm7q5R7w0vfZ70gxxBzJX2Px41jIWQzQi0ghufJgCfRA/viewform?embedded=true"
+            width="100%"
+            height="800"
+            frameBorder={0}
+            marginHeight={0}
+            marginWidth={0}
+            className="rounded-xl border-2 border-primary/30 shadow-glow bg-card"
+            title="Contact Form"
+          >
+            Loading…
+          </iframe>
+        </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Contact;
