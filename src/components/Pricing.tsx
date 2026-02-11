@@ -1,4 +1,8 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const Pricing = () => {
+  const { t } = useLanguage();
+
   const scrollToContact = () => {
     const element = document.getElementById("contact");
     if (element) {
@@ -12,10 +16,10 @@ const Pricing = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center space-y-6 md:space-y-8 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Custom</span> Pricing
+            <span className="bg-gradient-primary bg-clip-text text-transparent">{t("pricing.title1")}</span>{t("pricing.title2")}
           </h2>
           <p className="text-base md:text-xl text-muted-foreground leading-relaxed font-medium">
-            Pricing is customized based on your business needs. Every solution is tailored to deliver maximum value.
+            {t("pricing.subtitle")}
           </p>
           <div className="pt-4 md:pt-6">
             <button
@@ -23,7 +27,7 @@ const Pricing = () => {
               className="group inline-flex items-center gap-2 md:gap-3 text-primary hover:text-accent font-bold text-lg md:text-xl transition-all duration-500 relative"
             >
               <span className="relative">
-                Get Your Custom Quote
+                {t("pricing.cta")}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-accent group-hover:w-full transition-all duration-500" />
               </span>
               <span className="group-hover:translate-x-2 transition-transform duration-500 text-xl md:text-2xl">→</span>

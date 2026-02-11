@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import logoImage from "@/assets/chiara-ai-logo-brain.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,13 +20,17 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { label: "Home", path: "/" },
-    { label: "Services", path: "/services" },
-    { label: "Industries", path: "/industries" },
-    { label: "Pricing", path: "/pricing" },
+    { label: t("nav.home"), path: "/" },
+    { label: t("nav.services"), path: "/services" },
+    { label: t("nav.industries"), path: "/industries" },
+    { label: t("nav.pricing"), path: "/pricing" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
+
+  const toggleLanguage = () => {
+    setLanguage(language === "en" ? "sv" : "en");
+  };
 
   return (
     <nav
@@ -33,7 +39,6 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-6 py-3">
-        {/* Top Row: Logo and Company Name */}
         <div className="flex items-center justify-center md:justify-between">
           <Link
             to="/"
@@ -49,7 +54,6 @@ const Navigation = () => {
             </span>
           </Link>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden absolute right-6 text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -57,17 +61,26 @@ const Navigation = () => {
             {isMobileMenuOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
           </button>
 
-          {/* Desktop CTA Button */}
-          <Link to="/contact">
-            <Button 
-              className="hidden md:inline-flex bg-gradient-primary hover:shadow-glow text-white font-semibold transition-all duration-500 hover:scale-105"
+          <div className="hidden md:flex items-center gap-3">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleLanguage}
+              className="text-foreground hover:text-primary font-bold text-sm gap-1.5"
             >
-              Book Free Consultation
+              <Globe size={16} />
+              {language === "en" ? "SV" : "EN"}
             </Button>
-          </Link>
+            <Link to="/contact">
+              <Button 
+                className="bg-gradient-primary hover:shadow-glow text-white font-semibold transition-all duration-500 hover:scale-105"
+              >
+                {t("nav.bookConsultation")}
+              </Button>
+            </Link>
+          </div>
         </div>
 
-        {/* Bottom Row: Desktop Navigation Links */}
         <div className="hidden md:flex items-center justify-center gap-6 mt-3 pt-3 border-t border-primary/10">
           {navLinks.map((link) => (
             <Link
@@ -82,7 +95,6 @@ const Navigation = () => {
           ))}
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-xl border-b border-primary/20 shadow-lg z-50 px-6 py-6 space-y-4 animate-fade-in">
             {navLinks.map((link) => (
@@ -97,11 +109,20 @@ const Navigation = () => {
                 {link.label}
               </Link>
             ))}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleLanguage}
+              className="w-full justify-start text-foreground hover:text-primary font-bold text-sm gap-1.5"
+            >
+              <Globe size={16} />
+              {language === "en" ? "Svenska" : "English"}
+            </Button>
             <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
               <Button 
                 className="w-full bg-primary hover:bg-primary/90 font-medium transition-all duration-300 whitespace-normal break-words"
               >
-                Book Free Consultation
+                {t("nav.bookConsultation")}
               </Button>
             </Link>
           </div>
