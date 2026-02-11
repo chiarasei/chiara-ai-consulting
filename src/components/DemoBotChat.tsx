@@ -17,7 +17,7 @@ const translations = {
     placeholder: "Write a message...",
     welcome: "Hi! I'm your ChiaraAI Assistant 👋\n\nWe help small businesses like **hotels, restaurants, cafés, and salons** work smarter with:\n\n• **AI Chatbots** – Answer customer questions 24/7\n• **Voice Assistants** – Never miss a call again\n• **Automated Bookings** – Let customers book anytime\n• **Smart Marketing** – Grow without extra effort\n\nHow can I help your business today?",
     currentLang: "EN",
-    openButton: "Chat with our bot",
+    openButton: "Chat with our multilingual AI assistant",
     subtitle: "We speak English and Swedish",
   },
   sv: {
@@ -25,7 +25,7 @@ const translations = {
     placeholder: "Skriv ett meddelande...",
     welcome: "Hej! Jag är din ChiaraAI-assistent 👋\n\nVi hjälper småföretag som **hotell, restauranger, kaféer och salonger** att jobba smartare med:\n\n• **AI-chatbottar** – Svara på kundfrågor dygnet runt\n• **Röstassistenter** – Missa aldrig ett samtal igen\n• **Automatiska bokningar** – Låt kunder boka när som helst\n• **Smart marknadsföring** – Väx utan extra arbete\n\nHur kan jag hjälpa ditt företag idag?",
     currentLang: "SV",
-    openButton: "Chatta med vår bot",
+    openButton: "Chatta med vår flerspråkiga AI-assistent",
     subtitle: "Vi pratar svenska och engelska",
   },
 };
