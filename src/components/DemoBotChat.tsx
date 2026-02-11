@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Send, Globe, Loader2, Bot, X } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type Message = { role: "user" | "assistant"; content: string };
 type Language = "en" | "sv";
@@ -31,12 +32,21 @@ const translations = {
 
 export const DemoBotChat = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [language, setLanguage] = useState<Language>("en");
+  const { language: globalLanguage } = useLanguage();
+  const [language, setLanguage] = useState<Language>(globalLanguage);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const t = translations[language];
+
+  // Sync with global language
+  useEffect(() => {
+    if (globalLanguage !== language) {
+      setLanguage(globalLanguage);
+      setMessages([{ role: "assistant", content: translations[globalLanguage].welcome }]);
+    }
+  }, [globalLanguage]);
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {

@@ -1,49 +1,20 @@
 import { MessageCircle, Phone, Calendar, MessageSquare, TrendingUp, Share2, Gift, Workflow } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import React from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
+
   const services = [
-    {
-      icon: <MessageCircle className="w-8 h-8" />,
-      title: "AI Chatbots",
-      description: "24/7 intelligent chatbots that handle customer questions, process orders, and provide instant support on your website. Increase conversions while reducing response time.",
-    },
-    {
-      icon: <Phone className="w-8 h-8" />,
-      title: "AI Voice Assistants",
-      description: "Human-like voice agents that answer phone calls, manage bookings, take orders, and handle customer inquiries with natural conversation. Never miss a call again, even during busy hours.",
-    },
-    {
-      icon: <Calendar className="w-8 h-8" />,
-      title: "Automated Booking Systems",
-      description: "Smart scheduling that lets customers book appointments 24/7 through voice, chat, or web. Automatic reminders reduce no-shows by up to 70%, and intelligent calendar management maximizes your availability.",
-    },
-    {
-      icon: <MessageSquare className="w-8 h-8" />,
-      title: "Customer Communication",
-      description: "Automated SMS and email campaigns for appointment reminders, order confirmations, follow-ups, and personalized offers. Build stronger customer relationships without manual effort.",
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: "AI-Powered Marketing",
-      description: "Intelligent marketing automation that analyzes customer behavior, sends personalized campaigns, and optimizes timing for maximum engagement. Increase repeat business automatically.",
-    },
-    {
-      icon: <Share2 className="w-8 h-8" />,
-      title: "Social Media Automation",
-      description: "AI-generated content, scheduled posting, and automated responses to comments and messages. Maintain an active social presence without spending hours online.",
-    },
-    {
-      icon: <Gift className="w-8 h-8" />,
-      title: "Loyalty & Rewards Programs",
-      description: "Automated customer loyalty systems that track visits, offer personalized rewards, and send timely promotions. Turn one-time customers into regulars.",
-    },
-    {
-      icon: <Workflow className="w-8 h-8" />,
-      title: "Business Workflow Automation",
-      description: "Streamline invoicing, inventory tracking, staff scheduling, and administrative tasks. Free up hours each week to focus on growing your business instead of paperwork.",
-    },
+    { icon: <MessageCircle className="w-8 h-8" />, title: t("services.chatbots.title"), description: t("services.chatbots.desc") },
+    { icon: <Phone className="w-8 h-8" />, title: t("services.voice.title"), description: t("services.voice.desc") },
+    { icon: <Calendar className="w-8 h-8" />, title: t("services.booking.title"), description: t("services.booking.desc") },
+    { icon: <MessageSquare className="w-8 h-8" />, title: t("services.communication.title"), description: t("services.communication.desc") },
+    { icon: <TrendingUp className="w-8 h-8" />, title: t("services.marketing.title"), description: t("services.marketing.desc") },
+    { icon: <Share2 className="w-8 h-8" />, title: t("services.social.title"), description: t("services.social.desc") },
+    { icon: <Gift className="w-8 h-8" />, title: t("services.loyalty.title"), description: t("services.loyalty.desc") },
+    { icon: <Workflow className="w-8 h-8" />, title: t("services.workflow.title"), description: t("services.workflow.desc") },
   ];
 
   return (
@@ -52,10 +23,10 @@ const Services = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 md:mb-20 space-y-3 md:space-y-5">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight">
-            Professional <span className="bg-gradient-primary bg-clip-text text-transparent">AI Services</span>
+            {t("services.title1")}<span className="bg-gradient-primary bg-clip-text text-transparent">{t("services.title2")}</span>
           </h2>
           <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
-            Smart automation solutions that help you grow and focus on what matters most
+            {t("services.subtitle")}
           </p>
         </div>
 
