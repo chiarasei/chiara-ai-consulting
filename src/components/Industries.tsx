@@ -1,4 +1,4 @@
-import { Stethoscope, Activity, Scissors, Sparkles, Hotel, ShoppingBag, Palette, Dumbbell, Heart, Store } from "lucide-react";
+import { Stethoscope, Activity, Utensils, Scissors, Sparkles, Hotel, ShoppingBag, Palette, Dumbbell, Heart, Store } from "lucide-react";
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -6,8 +6,9 @@ const Industries = () => {
   const { t } = useLanguage();
 
   const industries = [
-    { icon: <Stethoscope className="w-10 h-10" />, title: t("industries.cafes.title"), useCase: t("industries.cafes.desc") },
-    { icon: <Activity className="w-10 h-10" />, title: t("industries.restaurants.title"), useCase: t("industries.restaurants.desc") },
+    { icon: <Stethoscope className="w-10 h-10" />, title: t("industries.clinics.title"), useCase: t("industries.clinics.desc") },
+    { icon: <Activity className="w-10 h-10" />, title: t("industries.physio.title"), useCase: t("industries.physio.desc") },
+    { icon: <Utensils className="w-10 h-10" />, title: t("industries.restaurants.title"), useCase: t("industries.restaurants.desc") },
     { icon: <Scissors className="w-10 h-10" />, title: t("industries.hair.title"), useCase: t("industries.hair.desc") },
     { icon: <Sparkles className="w-10 h-10" />, title: t("industries.beauty.title"), useCase: t("industries.beauty.desc") },
     { icon: <Palette className="w-10 h-10" />, title: t("industries.nail.title"), useCase: t("industries.nail.desc") },
