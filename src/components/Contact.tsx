@@ -50,7 +50,7 @@ const Contact = () => {
 
         <div className="max-w-3xl mx-auto">
           <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSfrecdm7q5R7w0vfZ70gxxBzJX2Px41jIWQzQi0ghufJgCfRA/viewform?embedded=true"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfrecdm7q5R7w0vfZ70gxxBzJX2Px41jIWQzQi0ghufJgCfRA/viewform?usp=header&embedded=true"
             width="100%"
             height="800"
             frameBorder={0}
