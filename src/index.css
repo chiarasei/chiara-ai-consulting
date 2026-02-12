@@ -2,103 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ChiaraAI Design System — Scandinavian Professional */
 
 @layer base {
   :root {
-    /* Swedish IT Professional color palette - Clean blues and grays */
-    --background: 210 20% 98%;
-    --foreground: 215 25% 20%;
+    --background: 220 20% 97%;
+    --foreground: 220 30% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 20%;
+    --card-foreground: 220 30% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 20%;
+    --popover-foreground: 220 30% 15%;
 
-    --primary: 210 80% 45%;
+    --primary: 215 85% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 15% 92%;
-    --secondary-foreground: 215 25% 20%;
+    --secondary: 220 15% 93%;
+    --secondary-foreground: 220 30% 15%;
 
-    --muted: 210 15% 94%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 220 14% 95%;
+    --muted-foreground: 220 10% 48%;
 
-    --accent: 200 70% 48%;
+    --accent: 195 75% 42%;
     --accent-foreground: 0 0% 100%;
-
-    --purple: 220 60% 55%;
-    --purple-foreground: 0 0% 100%;
 
     --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 88%;
-    --input: 210 20% 88%;
-    --ring: 210 80% 45%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 215 85% 45%;
 
     --radius: 0.75rem;
-    
-    /* Professional Swedish gradients - Clean blues and subtle grays */
-    --gradient-primary: linear-gradient(135deg, hsl(210 80% 45%) 0%, hsl(200 70% 48%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(200 70% 48%) 0%, hsl(190 65% 50%) 100%);
-    --gradient-purple: linear-gradient(135deg, hsl(220 60% 55%) 0%, hsl(230 55% 58%) 100%);
-    --shadow-soft: 0 4px 20px -4px hsl(210 70% 40% / 0.10);
-    --shadow-medium: 0 8px 32px -8px hsl(210 70% 40% / 0.15);
-    --shadow-glow: 0 0 40px hsl(210 80% 45% / 0.20);
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Gradients & Shadows */
+    --gradient-primary: linear-gradient(135deg, hsl(215 85% 45%) 0%, hsl(195 75% 42%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(195 75% 42%) 0%, hsl(185 65% 45%) 100%);
+    --gradient-subtle: linear-gradient(135deg, hsl(220 20% 97%) 0%, hsl(215 30% 95%) 100%);
+    --shadow-soft: 0 2px 12px -2px hsl(215 40% 40% / 0.08);
+    --shadow-medium: 0 8px 30px -6px hsl(215 40% 40% / 0.12);
+    --shadow-glow: 0 0 32px hsl(215 85% 45% / 0.15);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 215 25% 12%;
-    --foreground: 210 40% 98%;
+    --background: 220 25% 10%;
+    --foreground: 210 40% 96%;
 
-    --card: 215 25% 15%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 25% 13%;
+    --card-foreground: 210 40% 96%;
 
-    --popover: 215 25% 15%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 25% 13%;
+    --popover-foreground: 210 40% 96%;
 
-    --primary: 210 100% 55%;
+    --primary: 215 90% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 25% 20%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 210 40% 96%;
 
-    --muted: 215 25% 20%;
-    --muted-foreground: 215 15% 65%;
+    --muted: 220 20% 18%;
+    --muted-foreground: 215 15% 60%;
 
-    --accent: 25 95% 58%;
+    --accent: 195 80% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 20% 25%;
-    --input: 215 20% 25%;
-    --ring: 210 100% 55%;
-    
-    --shadow-soft: 0 4px 24px -4px hsl(210 50% 5% / 0.3);
-    --shadow-medium: 0 8px 32px -8px hsl(210 50% 5% / 0.4);
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 215 90% 55%;
+
+    --shadow-soft: 0 2px 12px -2px hsl(220 30% 5% / 0.3);
+    --shadow-medium: 0 8px 30px -6px hsl(220 30% 5% / 0.4);
+    --shadow-glow: 0 0 32px hsl(215 90% 55% / 0.2);
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -116,17 +104,24 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     letter-spacing: -0.01em;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
-    letter-spacing: -0.03em;
-    font-weight: 600;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }

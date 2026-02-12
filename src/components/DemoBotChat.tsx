@@ -40,7 +40,6 @@ export const DemoBotChat = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const t = translations[language];
 
-  // Sync with global language
   useEffect(() => {
     if (globalLanguage !== language) {
       setLanguage(globalLanguage);
@@ -170,23 +169,23 @@ export const DemoBotChat = () => {
         <Button
           size="lg"
           onClick={() => setIsOpen(true)}
-          className="text-sm md:text-base px-6 md:px-10 py-5 md:py-6 font-semibold bg-gradient-primary hover:opacity-90 transition-all duration-500 shadow-glow w-full sm:w-auto"
+          className="text-sm md:text-base px-8 py-5 md:py-6 font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-soft hover:shadow-medium transition-all duration-300 w-full sm:w-auto gap-2"
         >
-          <Bot className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+          <Bot className="w-4 h-4 md:w-5 md:h-5" />
           {t.openButton}
         </Button>
-        <p className="text-xs md:text-sm text-muted-foreground mt-2">{t.subtitle}</p>
+        <p className="text-xs text-muted-foreground mt-2.5">{t.subtitle}</p>
       </div>
     );
   }
 
   return (
     <div className="w-full max-w-md mx-auto px-2 sm:px-4 animate-fade-in">
-      <div className="bg-background/95 backdrop-blur-sm border border-border rounded-xl md:rounded-2xl shadow-2xl overflow-hidden">
+      <div className="bg-card border border-border rounded-xl shadow-medium overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-primary text-white p-3 md:p-4 flex items-center justify-between">
+        <div className="bg-primary text-primary-foreground p-3 md:p-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Bot size={18} className="md:w-5 md:h-5" />
+            <Bot size={18} />
             <h3 className="font-semibold text-sm md:text-base">{t.title}</h3>
           </div>
           <div className="flex items-center gap-1">
@@ -194,7 +193,7 @@ export const DemoBotChat = () => {
               variant="ghost"
               size="sm"
               onClick={handleLanguageSwitch}
-              className="text-white hover:bg-white/20 text-base md:text-lg h-8 w-8 p-0"
+              className="text-primary-foreground hover:bg-primary-foreground/20 text-sm h-8 w-8 p-0"
             >
               {t.currentLang}
             </Button>
@@ -202,9 +201,9 @@ export const DemoBotChat = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(false)}
-              className="text-white hover:bg-white/20 h-8 w-8"
+              className="text-primary-foreground hover:bg-primary-foreground/20 h-8 w-8"
             >
-              <X size={16} className="md:w-[18px] md:h-[18px]" />
+              <X size={16} />
             </Button>
           </div>
         </div>
@@ -218,7 +217,7 @@ export const DemoBotChat = () => {
                 className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 <div
-                  className={`max-w-[88%] rounded-xl md:rounded-2xl px-3 md:px-4 py-2 text-xs md:text-sm ${
+                  className={`max-w-[88%] rounded-xl px-3 md:px-4 py-2 text-xs md:text-sm ${
                     msg.role === "user"
                       ? "bg-primary text-primary-foreground rounded-br-sm"
                       : "bg-muted text-foreground rounded-bl-sm"
@@ -236,7 +235,7 @@ export const DemoBotChat = () => {
             ))}
             {isLoading && messages[messages.length - 1]?.role === "user" && (
               <div className="flex justify-start">
-                <div className="bg-muted rounded-xl md:rounded-2xl rounded-bl-sm px-3 md:px-4 py-2">
+                <div className="bg-muted rounded-xl rounded-bl-sm px-3 md:px-4 py-2">
                   <Loader2 className="w-3 h-3 md:w-4 md:h-4 animate-spin text-muted-foreground" />
                 </div>
               </div>
@@ -253,15 +252,15 @@ export const DemoBotChat = () => {
               onKeyDown={handleKeyDown}
               placeholder={t.placeholder}
               disabled={isLoading}
-              className="flex-1 text-sm md:text-base h-10 md:h-11"
+              className="flex-1 text-sm h-10"
             />
             <Button
               onClick={handleSend}
               disabled={!input.trim() || isLoading}
               size="icon"
-              className="bg-gradient-primary hover:opacity-90 h-10 w-10 md:h-11 md:w-11 shrink-0"
+              className="bg-primary hover:bg-primary/90 h-10 w-10 shrink-0"
             >
-              <Send size={16} className="md:w-[18px] md:h-[18px]" />
+              <Send size={16} />
             </Button>
           </div>
         </div>

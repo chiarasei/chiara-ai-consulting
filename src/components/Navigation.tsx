@@ -12,9 +12,7 @@ const Navigation = () => {
   const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -27,108 +25,115 @@ const Navigation = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
-
-  const toggleLanguage = () => {
-    setLanguage(language === "en" ? "sv" : "en");
-  };
+  const toggleLanguage = () => setLanguage(language === "en" ? "sv" : "en");
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-background/95 backdrop-blur-xl shadow-medium border-b border-primary/20" : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-6 py-3">
-        <div className="flex items-center justify-center md:justify-between">
-          <Link
-            to="/"
-            className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300"
-          >
-            <img 
-              src={logoImage} 
-              alt="ChiaraAI Consulting Logo" 
-              className="h-16 w-16 object-contain drop-shadow-[0_0_12px_hsl(var(--primary)/0.5)] transition-all duration-300 hover:drop-shadow-[0_0_18px_hsl(var(--primary)/0.7)]"
-            />
-            <span className="text-lg font-bold bg-gradient-primary bg-clip-text text-transparent tracking-tight">
-              chiaraAIconsulting.se
-            </span>
-          </Link>
+    <header>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-card/90 backdrop-blur-xl shadow-soft border-b border-border"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="container mx-auto px-4 md:px-6">
+          {/* Top row */}
+          <div className="flex items-center justify-between h-16 md:h-18">
+            <Link to="/" className="flex items-center gap-2.5 group">
+              <img
+                src={logoImage}
+                alt="ChiaraAI Consulting Logo"
+                className="h-10 w-10 md:h-12 md:w-12 object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+              <span className="hidden sm:block text-base md:text-lg font-bold text-foreground tracking-tight">
+                chiaraAI<span className="text-primary">consulting</span>.se
+              </span>
+            </Link>
 
-          <button
-            className="md:hidden absolute right-6 text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
-          </button>
-
-          <div className="hidden md:flex items-center gap-3">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleLanguage}
-              className="text-foreground hover:text-primary font-bold text-sm gap-1.5"
+            <button
+              className="md:hidden text-foreground p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
-              <Globe size={16} />
-              {language === "en" ? "EN" : "SV"}
-            </Button>
-            <Link to="/contact">
-              <Button 
-                className="bg-gradient-primary hover:shadow-glow text-white font-semibold transition-all duration-500 hover:scale-105"
+              {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+
+            <div className="hidden md:flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleLanguage}
+                className="text-muted-foreground hover:text-foreground font-semibold text-sm gap-1.5 h-9"
               >
-                {t("nav.bookConsultation")}
+                <Globe size={15} />
+                {language === "en" ? "EN" : "SV"}
               </Button>
-            </Link>
+              <Link to="/contact">
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-10 px-5 shadow-soft transition-all duration-300 hover:shadow-medium">
+                  {t("nav.bookConsultation")}
+                </Button>
+              </Link>
+            </div>
           </div>
-        </div>
 
-        <div className="hidden md:flex items-center justify-center gap-6 mt-3 pt-3 border-t border-primary/10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`text-base font-bold transition-colors duration-300 ${
-                isActive(link.path) ? "text-primary" : "text-foreground hover:text-primary"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-
-        {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-xl border-b border-primary/20 shadow-lg z-50 px-6 py-6 space-y-4 animate-fade-in">
+          {/* Nav links row */}
+          <div className="hidden md:flex items-center justify-center gap-8 pb-3">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full text-left text-sm font-medium transition-colors duration-300 py-2 break-words ${
-                  isActive(link.path) ? "text-primary" : "text-foreground hover:text-primary"
+                className={`relative text-sm font-semibold transition-colors duration-200 pb-1 ${
+                  isActive(link.path)
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {link.label}
+                {isActive(link.path) && (
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                )}
               </Link>
             ))}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleLanguage}
-              className="w-full justify-start text-foreground hover:text-primary font-bold text-sm gap-1.5"
-            >
-              <Globe size={16} />
-              {language === "en" ? "English" : "Svenska"}
-            </Button>
-            <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-              <Button 
-                className="w-full bg-primary hover:bg-primary/90 font-medium transition-all duration-300 whitespace-normal break-words"
-              >
-                {t("nav.bookConsultation")}
-              </Button>
-            </Link>
           </div>
-        )}
-      </div>
-    </nav>
+
+          {/* Mobile menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden absolute top-full left-0 right-0 bg-card/98 backdrop-blur-xl border-b border-border shadow-medium px-4 py-5 space-y-1 animate-fade-in">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                    isActive(link.path)
+                      ? "text-primary bg-primary/5"
+                      : "text-foreground hover:bg-muted"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="pt-2 border-t border-border mt-2 space-y-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={toggleLanguage}
+                  className="w-full justify-start text-muted-foreground font-semibold text-sm gap-1.5"
+                >
+                  <Globe size={15} />
+                  {language === "en" ? "English" : "Svenska"}
+                </Button>
+                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
+                    {t("nav.bookConsultation")}
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
+      </nav>
+    </header>
   );
 };
 
