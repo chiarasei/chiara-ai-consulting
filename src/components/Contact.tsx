@@ -24,8 +24,8 @@ const Contact = () => {
               <Mail size={20} strokeWidth={2} className="md:w-6 md:h-6" />
             </div>
             <h3 className="font-bold mb-2 md:mb-3 text-card-foreground text-sm md:text-base">{t("contact.email")}</h3>
-            <a href="mailto:info@chiaraaiconsulting.se" className="text-primary hover:text-primary/80 transition-colors duration-300 font-medium text-xs md:text-sm break-all">
-              info@chiaraaiconsulting.se
+            <a href="mailto:chiarasei.27@gmail.com" className="text-primary hover:text-primary/80 transition-colors duration-300 font-medium text-xs md:text-sm break-all">
+              chiarasei.27@gmail.com
             </a>
           </Card>
 
