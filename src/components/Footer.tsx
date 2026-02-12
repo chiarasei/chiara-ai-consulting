@@ -54,7 +54,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-1">
             <h4 className="font-bold mb-3 md:mb-5 text-foreground text-sm md:text-base">{t("footer.contact")}</h4>
             <ul className="space-y-2 md:space-y-3 text-xs md:text-sm text-muted-foreground font-medium">
-              <li>info@chiaraaiconsulting.se</li>
+              <li>chiarasei.27@gmail.com</li>
               <li>+46 73 531 69 50</li>
               <li>{t("contact.locationValue")}</li>
             </ul>

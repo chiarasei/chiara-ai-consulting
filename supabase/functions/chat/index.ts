@@ -80,7 +80,7 @@ serve(async (req) => {
          
          VIKTIGT - Kontaktinformation (använd ALLTID denna):
          - Webbplats: chiaraaiconsulting.se
-         - E-post: info@chiaraaiconsulting.se
+         - E-post: chiarasei.27@gmail.com
          - Telefon: 0735316950
          
          VIKTIGT - Så här ska du svara:
@@ -98,7 +98,7 @@ serve(async (req) => {
          
          IMPORTANT - Contact information (ALWAYS use this):
          - Website: chiaraaiconsulting.se
-         - Email: info@chiaraaiconsulting.se
+         - Email: chiarasei.27@gmail.com
          - Phone: 0735316950
          
          IMPORTANT - How to respond:
