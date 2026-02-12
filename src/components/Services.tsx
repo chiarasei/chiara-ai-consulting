@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, Calendar, MessageSquare, TrendingUp, Share2, Gift, Workflow } from "lucide-react";
+import { MessageCircle, Phone, Calendar, MessageSquare, Globe, Share2, Gift, Workflow, Megaphone } from "lucide-react";
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -10,7 +10,8 @@ const Services = () => {
     { icon: <Phone />, title: t("services.voice.title"), description: t("services.voice.desc") },
     { icon: <Calendar />, title: t("services.booking.title"), description: t("services.booking.desc") },
     { icon: <MessageSquare />, title: t("services.communication.title"), description: t("services.communication.desc") },
-    { icon: <TrendingUp />, title: t("services.marketing.title"), description: t("services.marketing.desc") },
+    { icon: <Globe />, title: t("services.website.title"), description: t("services.website.desc") },
+    { icon: <Megaphone />, title: t("services.ads.title"), description: t("services.ads.desc") },
     { icon: <Share2 />, title: t("services.social.title"), description: t("services.social.desc") },
     { icon: <Gift />, title: t("services.loyalty.title"), description: t("services.loyalty.desc") },
     { icon: <Workflow />, title: t("services.workflow.title"), description: t("services.workflow.desc") },
@@ -28,7 +29,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {services.map((service, index) => (
             <div
               key={index}
