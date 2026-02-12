@@ -1,51 +1,63 @@
-import { Card } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
   const { t } = useLanguage();
 
+  const contactInfo = [
+    {
+      icon: <Mail size={20} />,
+      label: t("contact.email"),
+      value: "chiarasei.27@gmail.com",
+      href: "mailto:chiarasei.27@gmail.com",
+    },
+    {
+      icon: <Phone size={20} />,
+      label: t("contact.phone"),
+      value: "+46 73 531 69 50",
+      href: "tel:+46735316950",
+    },
+    {
+      icon: <MapPin size={20} />,
+      label: t("contact.location"),
+      value: t("contact.locationValue"),
+    },
+  ];
+
   return (
-    <section id="contact" className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-b from-primary/5 via-accent/5 to-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-accent/10 -z-10" />
+    <section id="contact" className="py-20 md:py-32 px-4 md:px-6">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12 md:mb-20 space-y-3 md:space-y-5">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight">
-            {t("contact.title1")}<span className="bg-gradient-primary bg-clip-text text-transparent">{t("contact.title2")}</span>{t("contact.title3")}
+        <div className="text-center mb-12 md:mb-16 space-y-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance">
+            {t("contact.title1")}<span className="text-primary">{t("contact.title2")}</span>{t("contact.title3")}
           </h2>
-          <p className="text-base md:text-xl text-muted-foreground font-medium">
+          <p className="text-base md:text-lg text-muted-foreground">
             {t("contact.subtitle")}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4 md:gap-8 mb-10 md:mb-16">
-          <Card className="p-6 md:p-10 text-center border-2 border-primary/30 hover:border-primary bg-gradient-to-br from-card to-primary/5 hover:shadow-glow transition-all duration-500 hover:-translate-y-1">
-            <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-primary text-white mb-4 md:mb-6 shadow-medium">
-              <Mail size={20} strokeWidth={2} className="md:w-6 md:h-6" />
+        <div className="grid md:grid-cols-3 gap-4 md:gap-5 mb-12">
+          {contactInfo.map((item, index) => (
+            <div
+              key={index}
+              className="p-6 md:p-8 text-center rounded-xl border border-border bg-card hover:shadow-medium transition-all duration-300 group"
+            >
+              <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                {item.icon}
+              </div>
+              <h3 className="font-bold text-sm text-card-foreground mb-2">{item.label}</h3>
+              {item.href ? (
+                <a
+                  href={item.href}
+                  className="text-primary hover:text-primary/80 transition-colors text-sm font-medium break-all"
+                >
+                  {item.value}
+                </a>
+              ) : (
+                <p className="text-muted-foreground text-sm font-medium">{item.value}</p>
+              )}
             </div>
-            <h3 className="font-bold mb-2 md:mb-3 text-card-foreground text-sm md:text-base">{t("contact.email")}</h3>
-            <a href="mailto:chiarasei.27@gmail.com" className="text-primary hover:text-primary/80 transition-colors duration-300 font-medium text-xs md:text-sm break-all">
-              chiarasei.27@gmail.com
-            </a>
-          </Card>
-
-          <Card className="p-6 md:p-10 text-center border-2 border-accent/30 hover:border-accent bg-gradient-to-br from-card to-accent/5 hover:shadow-medium transition-all duration-500 hover:-translate-y-1">
-            <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-accent text-white mb-4 md:mb-6 shadow-medium">
-              <Phone size={20} strokeWidth={2} className="md:w-6 md:h-6" />
-            </div>
-            <h3 className="font-bold mb-2 md:mb-3 text-card-foreground text-sm md:text-base">{t("contact.phone")}</h3>
-            <a href="tel:+46735316950" className="text-primary hover:text-primary/80 transition-colors duration-300 font-medium text-xs md:text-sm">
-              +46 73 531 69 50
-            </a>
-          </Card>
-
-          <Card className="p-6 md:p-10 text-center border-2 border-primary/30 hover:border-primary bg-gradient-to-br from-card to-primary/5 hover:shadow-glow transition-all duration-500 hover:-translate-y-1">
-            <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-primary text-white mb-4 md:mb-6 shadow-medium">
-              <MapPin size={20} strokeWidth={2} className="md:w-6 md:h-6" />
-            </div>
-            <h3 className="font-bold mb-2 md:mb-3 text-card-foreground text-sm md:text-base">{t("contact.location")}</h3>
-            <p className="text-muted-foreground font-medium text-xs md:text-sm">{t("contact.locationValue")}</p>
-          </Card>
+          ))}
         </div>
 
         <div className="max-w-3xl mx-auto">
@@ -56,7 +68,7 @@ const Contact = () => {
             frameBorder={0}
             marginHeight={0}
             marginWidth={0}
-            className="rounded-xl border-2 border-primary/30 shadow-glow bg-card"
+            className="rounded-xl border border-border shadow-soft bg-card"
             title="Contact Form"
           >
             Loading…
