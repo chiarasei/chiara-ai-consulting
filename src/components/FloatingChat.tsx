@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Headset } from "lucide-react";
+import { Bot } from "lucide-react";
 import { DemoBotChat } from "./DemoBotChat";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -29,7 +29,7 @@ const FloatingChat = () => {
             className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             aria-label="Open chat"
           >
-            <Headset size={24} />
+            <Bot size={24} />
           </button>
           <span className="text-[10px] text-muted-foreground font-medium bg-card/80 backdrop-blur-sm px-2 py-0.5 rounded-full shadow-sm border border-border">
             {subtitle}

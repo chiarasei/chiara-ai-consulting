@@ -40,10 +40,10 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.bookConsultation": "Book Free Consultation",
 
     // Hero
-    "hero.badge": "AI Automation for Small Businesses",
+    "hero.badge": "AI Automation for Your Business",
     "hero.title1": "Automate Your Business",
     "hero.title2": "With AI Solutions",
-    "hero.description": "We help hotels, restaurants, clinics, physiotherapists, salons, and all small businesses that receive calls and answer customer questions regularly save time and serve customers better with intelligent AI chatbots and voice agents. From answering questions around the clock to handling bookings and sending reminders, our multilingual solutions work seamlessly in Swedish and English so you can focus on what you do best.",
+    "hero.description": "We help hotels, restaurants, clinics, physiotherapists, salons, and small, medium, and large businesses that receive calls and answer customer questions regularly save time and serve customers better with intelligent AI chatbots and voice agents. From answering questions around the clock to handling bookings and sending reminders, our multilingual solutions work seamlessly in Swedish and English so you can focus on what you do best.",
     "hero.chatButton": "Chat with our AI assistant",
 
     // About
@@ -189,10 +189,10 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.bookConsultation": "Boka Gratis Konsultation",
 
     // Hero
-    "hero.badge": "AI-Automatisering för Småföretag",
+    "hero.badge": "AI-Automatisering för Ditt Företag",
     "hero.title1": "Automatisera Ditt Företag",
     "hero.title2": "Med AI-Lösningar",
-    "hero.description": "Vi hjälper hotell, restauranger, kliniker, fysioterapeuter, salonger och alla småföretag som tar emot samtal och svarar på kundfrågor regelbundet spara tid och ge bättre kundservice med intelligenta AI-chatbottar och röstassistenter. Från att besvara frågor dygnet runt till att hantera bokningar och skicka påminnelser, våra flerspråkiga lösningar fungerar sömlöst på svenska och engelska så att du kan fokusera på det du gör bäst.",
+    "hero.description": "Vi hjälper hotell, restauranger, kliniker, fysioterapeuter, salonger och små, medelstora och stora företag som tar emot samtal och svarar på kundfrågor regelbundet spara tid och ge bättre kundservice med intelligenta AI-chatbottar och röstassistenter. Från att besvara frågor dygnet runt till att hantera bokningar och skicka påminnelser, våra flerspråkiga lösningar fungerar sömlöst på svenska och engelska så att du kan fokusera på det du gör bäst.",
     "hero.chatButton": "Chatta med vår AI-assistent",
 
     // About
