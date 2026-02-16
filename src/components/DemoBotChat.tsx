@@ -225,7 +225,21 @@ export const DemoBotChat = ({ defaultOpen = false, onClose }: { defaultOpen?: bo
                 >
                   {msg.role === "assistant" ? (
                     <div className="prose prose-xs md:prose-sm dark:prose-invert max-w-none [&>p]:my-1 [&>ul]:my-1 [&>ol]:my-1">
-                      <ReactMarkdown>{msg.content}</ReactMarkdown>
+                      {msg.content.split("[BOOKING_FORM]").map((part, i, arr) => (
+                        <div key={i}>
+                          <ReactMarkdown>{part}</ReactMarkdown>
+                          {i < arr.length - 1 && (
+                            <iframe
+                              src="https://docs.google.com/forms/d/e/1FAIpQLSfrecdm7q5R7w0vfZ70gxxBzJX2Px41jIWQzQi0ghufJgCfRA/viewform?embedded=true"
+                              width="100%"
+                              height="400"
+                              frameBorder={0}
+                              className="rounded-lg border border-border my-2"
+                              title="Booking Form"
+                            />
+                          )}
+                        </div>
+                      ))}
                     </div>
                   ) : (
                     msg.content

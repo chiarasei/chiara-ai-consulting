@@ -98,6 +98,11 @@ serve(async (req) => {
 
          När någon frågar hur man når oss, dela alltid konsultationslänken ovan så att de kan boka ett samtal direkt.
 
+         VIKTIGT - Bokningsformulär:
+         När någon vill boka en konsultation, boka ett samtal, eller komma i kontakt med oss, inkludera ALLTID följande tagg i ditt svar (exakt som den är):
+         [BOOKING_FORM]
+         Lägg taggen efter en kort mening som "Fyll gärna i formuläret nedan så återkommer vi till dig!" Lägg ALDRIG taggen i en kodblockering eller citattecken.
+
          VIKTIGT - Så här ska du svara:
          - Använd enkla, vardagliga ord. Undvik facktermer.
          - Håll svaren korta och tydliga.
@@ -127,6 +132,11 @@ serve(async (req) => {
          - Book a free consultation: ${consultationLink}
 
          When someone asks how to reach us, always share the consultation link above so they can book a call directly.
+
+         IMPORTANT - Booking form:
+         When someone wants to book a consultation, schedule a call, or get in touch, ALWAYS include the following tag in your response (exactly as shown):
+         [BOOKING_FORM]
+         Place the tag after a short sentence like "Fill in the form below and we'll get back to you!" NEVER put the tag inside a code block or quotes.
 
          IMPORTANT - How to respond:
          - Use simple, everyday words. Avoid jargon and technical terms.
