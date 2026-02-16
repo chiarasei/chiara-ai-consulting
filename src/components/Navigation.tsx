@@ -68,11 +68,6 @@ const Navigation = () => {
                 <Globe size={15} />
                 {language === "en" ? "EN" : "SV"}
               </Button>
-              <Link to="/contact">
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-10 px-5 shadow-soft transition-all duration-300 hover:shadow-medium">
-                  {t("nav.bookConsultation")}
-                </Button>
-              </Link>
             </div>
           </div>
 
@@ -113,7 +108,7 @@ const Navigation = () => {
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-2 border-t border-border mt-2 space-y-2">
+              <div className="pt-2 border-t border-border mt-2">
                 <Button
                   variant="ghost"
                   size="sm"
@@ -123,11 +118,6 @@ const Navigation = () => {
                   <Globe size={15} />
                   {language === "en" ? "English" : "Svenska"}
                 </Button>
-                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
-                    {t("nav.bookConsultation")}
-                  </Button>
-                </Link>
               </div>
             </div>
           )}
