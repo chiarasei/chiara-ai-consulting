@@ -15,7 +15,7 @@ const translations = {
   en: {
     title: "Chat with us",
     placeholder: "Write a message...",
-    welcome: "Hi! I'm Chiara, your AI Assistant 👋\n\nI help organizations improve communication and efficiency with multilingual AI assistants for websites, WhatsApp, Instagram, and voice.\n\nI can provide instant answers, automate follow-ups, assist with scheduling, and support your team 24/7.\n\nWhat would you like to explore?",
+    welcome: "Hi! I'm Chiara, your AI Assistant 👋\n\nI help organizations improve communication and efficiency with multilingual AI assistants for websites, WhatsApp, Instagram, and voice.\n\nThese assistants come in two forms:\n\n• **AI Chatbots** – Smart assistants that answer customer questions on your website, WhatsApp, or Instagram, 24/7\n• **AI Voice Agents** – Assistants that answer phone calls, handle bookings, and speak to your customers directly\n\nWhat would you like to know more about – the chatbots, the voice agents, or something else?",
     currentLang: "EN",
     openButton: "Chat with our multilingual AI assistant",
     subtitle: "We speak English and Swedish",
@@ -23,7 +23,7 @@ const translations = {
   sv: {
     title: "Chatta med oss",
     placeholder: "Skriv ett meddelande...",
-    welcome: "Hej! Jag är Chiara, din AI-assistent 👋\n\nJag hjälper organisationer att förbättra kommunikation och effektivitet med flerspråkiga AI-assistenter för webbplatser, WhatsApp, Instagram och röst.\n\nJag kan ge snabba svar, automatisera uppföljningar, hjälpa till med schemaläggning och stödja ditt team dygnet runt.\n\nVad vill du utforska?",
+    welcome: "Hej! Jag är Chiara, din AI-assistent 👋\n\nJag hjälper organisationer att förbättra kommunikation och effektivitet med flerspråkiga AI-assistenter för webbplatser, WhatsApp, Instagram och röst.\n\nDessa assistenter finns i två former:\n\n• **AI-chatbottar** – Smarta assistenter som svarar på kundfrågor på din webbplats, WhatsApp eller Instagram, dygnet runt\n• **AI-röstagenter** – Assistenter som svarar på telefonsamtal, hanterar bokningar och pratar direkt med dina kunder\n\nVad vill du veta mer om – chatbottarna, röstagenten, eller något annat?",
     currentLang: "SV",
     openButton: "Chatta med vår flerspråkiga AI-assistent",
     subtitle: "Vi pratar svenska och engelska",
