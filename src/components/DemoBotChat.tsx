@@ -30,8 +30,8 @@ const translations = {
   },
 };
 
-export const DemoBotChat = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export const DemoBotChat = ({ defaultOpen = false, onClose }: { defaultOpen?: boolean; onClose?: () => void }) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
   const { language: globalLanguage } = useLanguage();
   const [language, setLanguage] = useState<Language>(globalLanguage);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -48,10 +48,10 @@ export const DemoBotChat = () => {
   }, [globalLanguage]);
 
   useEffect(() => {
-    if (isOpen && messages.length === 0) {
+    if ((isOpen || defaultOpen) && messages.length === 0) {
       setMessages([{ role: "assistant", content: t.welcome }]);
     }
-  }, [isOpen]);
+  }, [isOpen, defaultOpen]);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -163,7 +163,7 @@ export const DemoBotChat = () => {
     }
   };
 
-  if (!isOpen) {
+  if (!isOpen && !defaultOpen) {
     return (
       <div className="w-full max-w-md mx-auto text-center px-4">
         <Button
@@ -200,7 +200,7 @@ export const DemoBotChat = () => {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => setIsOpen(false)}
+              onClick={() => { setIsOpen(false); onClose?.(); }}
               className="text-primary-foreground hover:bg-primary-foreground/20 h-8 w-8"
             >
               <X size={16} />
