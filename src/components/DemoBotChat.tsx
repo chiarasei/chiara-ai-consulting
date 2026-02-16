@@ -15,7 +15,7 @@ const translations = {
   en: {
     title: "Chat with us",
     placeholder: "Write a message...",
-    welcome: "Hi! I'm your ChiaraAI Assistant 👋\n\nWe help small businesses like **hotels, restaurants, cafés, and salons** work smarter with:\n\n• **AI Chatbots** – Answer customer questions 24/7\n• **Voice Assistants** – Never miss a call again\n• **Automated Bookings** – Let customers book anytime\n• **Smart Marketing** – Grow without extra effort\n\nHow can I help your business today?",
+    welcome: "Hi! I'm Chiara, your AI Assistant 👋\n\nI help organizations improve communication and efficiency with multilingual AI assistants for websites, WhatsApp, Instagram, and voice.\n\nI can provide instant answers, automate follow-ups, assist with scheduling, and support your team 24/7.\n\nWhat would you like to explore?",
     currentLang: "EN",
     openButton: "Chat with our multilingual AI assistant",
     subtitle: "We speak English and Swedish",
@@ -23,7 +23,7 @@ const translations = {
   sv: {
     title: "Chatta med oss",
     placeholder: "Skriv ett meddelande...",
-    welcome: "Hej! Jag är din ChiaraAI-assistent 👋\n\nVi hjälper småföretag som **hotell, restauranger, kaféer och salonger** att jobba smartare med:\n\n• **AI-chatbottar** – Svara på kundfrågor dygnet runt\n• **Röstassistenter** – Missa aldrig ett samtal igen\n• **Automatiska bokningar** – Låt kunder boka när som helst\n• **Smart marknadsföring** – Väx utan extra arbete\n\nHur kan jag hjälpa ditt företag idag?",
+    welcome: "Hej! Jag är Chiara, din AI-assistent 👋\n\nJag hjälper organisationer att förbättra kommunikation och effektivitet med flerspråkiga AI-assistenter för webbplatser, WhatsApp, Instagram och röst.\n\nJag kan ge snabba svar, automatisera uppföljningar, hjälpa till med schemaläggning och stödja ditt team dygnet runt.\n\nVad vill du utforska?",
     currentLang: "SV",
     openButton: "Chatta med vår flerspråkiga AI-assistent",
     subtitle: "Vi pratar svenska och engelska",
