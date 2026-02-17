@@ -4,7 +4,7 @@ export const localBusinessJsonLd = {
   "name": "ChiaraAI Consulting",
   "url": "https://chiaraaiconsulting.se",
   "logo": "https://chiaraaiconsulting.se/chiara-favicon.png",
-  "description": "Professional AI automation consulting for businesses in Sweden. Custom AI chatbots, voice assistants, booking systems and marketing automation.",
+  "description": "AI-chattassistenter och röstassistenter för bokningar och kundkommunikation. Skräddarsydda AI-automationslösningar för företag i Sverige.",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "SE"
