@@ -1,5 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import DemoVoiceCall from "./DemoVoiceCall";
+import VoiceCallErrorBoundary from "./VoiceCallErrorBoundary";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -34,7 +35,9 @@ const Hero = () => {
             </p>
           </div>
 
-          <DemoVoiceCall />
+          <VoiceCallErrorBoundary>
+            <DemoVoiceCall />
+          </VoiceCallErrorBoundary>
         </div>
       </div>
     </section>

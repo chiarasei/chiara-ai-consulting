@@ -12,10 +12,17 @@ const DemoVoiceCall = () => {
   const { language } = useLanguage();
 
   const conversation = useConversation({
-    onConnect: () => console.log("Voice agent connected"),
-    onDisconnect: () => console.log("Voice agent disconnected"),
+    onConnect: () => {
+      console.log("Voice agent connected");
+      setIsConnecting(false);
+    },
+    onDisconnect: () => {
+      console.log("Voice agent disconnected");
+      setIsConnecting(false);
+    },
     onError: (error) => {
       console.error("Voice agent error:", error);
+      setIsConnecting(false);
       toast({
         variant: "destructive",
         title: language === "sv" ? "Anslutningsfel" : "Connection Error",
