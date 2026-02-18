@@ -41,23 +41,12 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 text-sm md:text-base px-8 py-3 md:py-4 font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-soft hover:shadow-medium transition-all duration-300 rounded-md"
-            >
-              {t("nav.bookConsultation")}
-            </a>
-          </div>
-
           {/* Demo Voice Call Widget */}
           <div className="pt-4 flex flex-col items-center gap-2">
             <p className="text-sm font-semibold text-muted-foreground tracking-wide uppercase">
               {language === "sv" ? "Demo röstsamtal" : "Demo Voice Call"}
             </p>
-            <div className="relative">
-              <elevenlabs-convai agent-id="agent_8801khrvbwckex3b9f8fjw6370fd"></elevenlabs-convai>
-            </div>
+            <elevenlabs-convai agent-id="agent_8801khrvbwckex3b9f8fjw6370fd" />
           </div>
         </div>
       </div>
