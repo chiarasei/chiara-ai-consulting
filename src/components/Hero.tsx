@@ -1,15 +1,8 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'elevenlabs-convai': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { 'agent-id': string }, HTMLElement>;
-    }
-  }
-}
+import DemoVoiceCall from "./DemoVoiceCall";
 
 const Hero = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <section
@@ -41,15 +34,7 @@ const Hero = () => {
             </p>
           </div>
 
-          {/* Demo Voice Call Widget */}
-          <div className="pt-4 flex flex-col items-center gap-2">
-            <p className="text-sm font-semibold text-muted-foreground tracking-wide uppercase">
-              {language === "sv" ? "Demo röstsamtal" : "Demo Voice Call"}
-            </p>
-            <div className="elevenlabs-widget-container relative w-[300px] h-[60px]">
-              <elevenlabs-convai agent-id="agent_8801khrvbwckex3b9f8fjw6370fd" />
-            </div>
-          </div>
+          <DemoVoiceCall />
         </div>
       </div>
     </section>
