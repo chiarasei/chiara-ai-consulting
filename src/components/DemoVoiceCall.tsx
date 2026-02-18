@@ -3,6 +3,7 @@ import { useState, useCallback } from "react";
 import { Phone, PhoneOff, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { toast } from "@/hooks/use-toast";
 
 const AGENT_ID = "agent_8801khrvbwckex3b9f8fjw6370fd";
 
@@ -13,26 +14,67 @@ const DemoVoiceCall = () => {
   const conversation = useConversation({
     onConnect: () => console.log("Voice agent connected"),
     onDisconnect: () => console.log("Voice agent disconnected"),
-    onError: (error) => console.error("Voice agent error:", error),
+    onError: (error) => {
+      console.error("Voice agent error:", error);
+      toast({
+        variant: "destructive",
+        title: language === "sv" ? "Anslutningsfel" : "Connection Error",
+        description: language === "sv"
+          ? "Kunde inte ansluta till röstagenten. Försök igen."
+          : "Failed to connect to voice agent. Please try again.",
+      });
+    },
   });
 
-  const startCall = useCallback(async () => {
+  const startCall = useCallback(async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (isConnecting) return;
     setIsConnecting(true);
+
     try {
       await navigator.mediaDevices.getUserMedia({ audio: true });
+    } catch (error) {
+      console.error("Microphone access denied:", error);
+      toast({
+        variant: "destructive",
+        title: language === "sv" ? "Mikrofon krävs" : "Microphone Required",
+        description: language === "sv"
+          ? "Aktivera mikrofonen för att använda röstsamtal."
+          : "Please enable microphone access to use voice calls.",
+      });
+      setIsConnecting(false);
+      return;
+    }
+
+    try {
       await conversation.startSession({
         agentId: AGENT_ID,
         connectionType: "webrtc",
       });
     } catch (error) {
       console.error("Failed to start voice call:", error);
+      toast({
+        variant: "destructive",
+        title: language === "sv" ? "Fel" : "Error",
+        description: language === "sv"
+          ? "Kunde inte starta samtalet. Försök igen."
+          : "Failed to start the call. Please try again.",
+      });
     } finally {
       setIsConnecting(false);
     }
-  }, [conversation]);
+  }, [conversation, isConnecting, language]);
 
-  const endCall = useCallback(async () => {
-    await conversation.endSession();
+  const endCall = useCallback(async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      await conversation.endSession();
+    } catch (error) {
+      console.error("Failed to end call:", error);
+    }
   }, [conversation]);
 
   const isActive = conversation.status === "connected";
