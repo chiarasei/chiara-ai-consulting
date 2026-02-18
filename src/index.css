@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Force ElevenLabs widget into normal flow inside container */
+.elevenlabs-widget-container elevenlabs-convai,
+.elevenlabs-widget-container elevenlabs-convai * {
+  position: relative !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  z-index: 1 !important;
+}
+
 /* ChiaraAI Design System — Scandinavian Professional */
 
 @layer base {
