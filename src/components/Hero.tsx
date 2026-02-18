@@ -46,7 +46,9 @@ const Hero = () => {
             <p className="text-sm font-semibold text-muted-foreground tracking-wide uppercase">
               {language === "sv" ? "Demo röstsamtal" : "Demo Voice Call"}
             </p>
-            <elevenlabs-convai agent-id="agent_8801khrvbwckex3b9f8fjw6370fd" />
+            <div className="elevenlabs-widget-container relative w-[300px] h-[60px]">
+              <elevenlabs-convai agent-id="agent_8801khrvbwckex3b9f8fjw6370fd" />
+            </div>
           </div>
         </div>
       </div>
