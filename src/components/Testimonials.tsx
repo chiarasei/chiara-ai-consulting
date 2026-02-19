@@ -18,7 +18,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-accent/10 via-secondary/30 to-primary/10 relative overflow-hidden">
+    <section id="testimonials" className="py-12 md:py-20 px-4 md:px-6 bg-gradient-to-br from-accent/10 via-secondary/30 to-primary/10 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-tl from-primary/5 via-transparent to-accent/5 -z-10" />
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 md:mb-20 space-y-3 md:space-y-5">
