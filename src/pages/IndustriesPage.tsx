@@ -16,7 +16,7 @@ const IndustriesPage = () => {
       />
       <Navigation />
       <main>
-        <div className="pt-32" />
+        <div className="pt-40 md:pt-44" />
         <Industries />
       </main>
       <Footer />
