@@ -10,7 +10,7 @@ export const localBusinessJsonLd = {
     "addressCountry": "SE"
   },
   "telephone": "+46735316950",
-  "email": "chiarasei.27@gmail.com",
+  "email": "info@chiaraaiconsulting.se",
   "areaServed": {
     "@type": "Country",
     "name": "Sweden"
