@@ -13,7 +13,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-32 px-4 md:px-6">
+    <section id="about" className="py-12 md:py-20 px-4 md:px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left: Story */}

@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] flex items-center pt-32 md:pt-40 pb-16 md:pb-24 px-4 md:px-6 overflow-hidden"
+      className="relative min-h-[80vh] flex items-center pt-28 md:pt-36 pb-12 md:pb-16 px-4 md:px-6 overflow-hidden"
     >
       {/* Subtle background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] via-background to-accent/[0.04] -z-10" />

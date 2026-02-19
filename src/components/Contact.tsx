@@ -25,7 +25,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 md:py-32 px-4 md:px-6">
+    <section id="contact" className="py-12 md:py-20 px-4 md:px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 md:mb-16 space-y-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance">
