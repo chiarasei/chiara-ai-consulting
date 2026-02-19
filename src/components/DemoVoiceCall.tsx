@@ -59,6 +59,14 @@ const DemoVoiceCall = () => {
       await conversation.startSession({
         agentId: AGENT_ID,
         connectionType: "webrtc",
+        overrides: {
+          agent: {
+            firstMessage: language === "sv"
+              ? "Hej! Jag är Chiara, din AI-assistent. Hur kan jag hjälpa dig idag?"
+              : "Hi! I'm Chiara, your AI assistant. How can I help you today?",
+            language: language === "sv" ? "sv" : "en",
+          },
+        },
       });
     } catch (error) {
       console.error("Failed to start voice call:", error);
