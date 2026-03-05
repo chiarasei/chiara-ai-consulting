@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { Bot } from "lucide-react";
 import { DemoBotChat } from "./DemoBotChat";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -6,7 +7,10 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const FloatingChat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { language } = useLanguage();
+  const location = useLocation();
   const chatContainerRef = useRef<HTMLDivElement>(null);
+
+  const isPsychologyDemo = location.pathname.startsWith("/demo/psychology");
 
   useEffect(() => {
     const handler = () => setIsOpen(true);
@@ -25,6 +29,9 @@ const FloatingChat = () => {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
+
+  // Hide on psychology demo pages (they have their own chat)
+  if (isPsychologyDemo) return null;
 
   const subtitle = language === "sv" ? "Vi pratar svenska & engelska" : "We speak English & Swedish";
 
