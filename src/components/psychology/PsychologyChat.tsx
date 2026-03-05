@@ -14,10 +14,12 @@ const PsychologyChat = () => {
   const [chatInput, setChatInput] = useState("");
   const [chatLoading, setChatLoading] = useState(false);
   const [chatLang, setChatLang] = useState<"en" | "sv">("en");
-  const chatEndRef = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
   }, [chatMessages]);
 
   const handleChatLangSwitch = () => {
@@ -124,7 +126,7 @@ const PsychologyChat = () => {
         ))}
       </div>
 
-      <div className="h-72 overflow-y-auto p-4 space-y-3" style={{ background: "hsl(165, 40%, 97%)" }}>
+      <div ref={chatContainerRef} className="h-72 overflow-y-auto p-4 space-y-3" style={{ background: "hsl(165, 40%, 97%)" }}>
         {chatMessages.map((msg, i) => (
           <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
             <div className="max-w-[80%] px-3 py-2 rounded-xl text-sm" style={{
@@ -145,7 +147,7 @@ const PsychologyChat = () => {
             </div>
           </div>
         )}
-        <div ref={chatEndRef} />
+        
       </div>
 
       <form onSubmit={handleChat} className="flex border-t" style={{ borderColor: borderClr }}>
