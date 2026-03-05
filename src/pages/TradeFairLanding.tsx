@@ -64,11 +64,11 @@ const TradeFairLanding = () => {
                 </div>
               </div>
 
-              <div className="hidden lg:block">
+              <div>
                 <img
                   src={heroImage}
                   alt="Modern website on laptop"
-                  className="rounded-2xl shadow-medium w-full object-cover"
+                  className="rounded-2xl shadow-medium w-full object-cover max-h-[300px] md:max-h-[400px] lg:max-h-none"
                   loading="eager"
                 />
               </div>
@@ -162,11 +162,11 @@ const TradeFairLanding = () => {
                 ))}
               </div>
 
-              <div className="hidden lg:flex justify-center">
+              <div className="flex justify-center">
                 <img
                   src={chatbotImage}
                   alt="Chatbot automation illustration"
-                  className="rounded-2xl w-full max-w-sm object-cover"
+                  className="rounded-2xl w-full max-w-[200px] md:max-w-[280px] lg:max-w-sm object-cover"
                   loading="lazy"
                 />
               </div>
@@ -178,11 +178,11 @@ const TradeFairLanding = () => {
         <section className="py-16 md:py-24 px-4 md:px-6 bg-muted/50">
           <div className="container mx-auto max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-10 items-center">
-              <div className="hidden lg:flex justify-center order-1">
+              <div className="flex justify-center order-1">
                 <img
                   src={industriesImage}
                   alt="Modern booking system for service businesses"
-                  className="rounded-2xl w-full max-w-sm object-cover"
+                  className="rounded-2xl w-full max-w-[200px] md:max-w-[280px] lg:max-w-sm object-cover"
                   loading="lazy"
                 />
               </div>
