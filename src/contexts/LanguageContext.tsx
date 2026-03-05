@@ -41,9 +41,16 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.title1": "Modern Websites & Smart Automation for",
     "hero.title2": "Service Businesses",
-    "hero.description": "We upgrade your website and add chat assistants that answer customer questions and capture inquiries automatically.",
+    "hero.description": "We upgrade outdated websites and add chat assistants that answer customer questions automatically, with optional voice assistants to help handle customer inquiries.",
+    "hero.trust": "Free Website Review for Local Businesses",
     "hero.cta": "Get a Free Website Review",
     "hero.cta2": "View Our Services",
+
+    // Home - Recent Work
+    "home.recent.title": "Recent Work",
+    "home.recent.project.title": "Custom Shopify E-commerce Store",
+    "home.recent.project.desc": "A modern online store designed with a clean layout, optimized for mobile devices and a smooth customer shopping experience.",
+    "home.recent.project.button": "View Project",
 
     // Home - Problem
     "home.problem.title": "Is Your Website Losing Potential Customers?",
@@ -69,7 +76,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Home - Voice
     "home.voice.badge": "Live Demo",
     "home.voice.title": "AI Voice Assistant Demo",
-    "home.voice.subtitle": "We also build AI voice assistants that can answer customer calls, provide information, and help route inquiries automatically.",
+    "home.voice.subtitle": "We also build voice assistants that can answer customer calls, provide information, and help businesses respond to inquiries automatically.",
 
     // Home - CTA
     "home.cta.title": "Ready to Improve Your Website?",
@@ -171,9 +178,16 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.title1": "Moderna Hemsidor & Smart Automation för",
     "hero.title2": "Tjänsteföretag",
-    "hero.description": "Vi uppgraderar din hemsida och lägger till chattassistenter som svarar på kundfrågor och fångar upp förfrågningar automatiskt.",
+    "hero.description": "Vi uppgraderar föråldrade hemsidor och lägger till chattassistenter som svarar på kundfrågor automatiskt, med valfria röstassistenter för att hantera kundförfrågningar.",
+    "hero.trust": "Gratis Hemsideanalys för Lokala Företag",
     "hero.cta": "Få en Gratis Hemsideanalys",
     "hero.cta2": "Se Våra Tjänster",
+
+    // Home - Recent Work
+    "home.recent.title": "Senaste Projekt",
+    "home.recent.project.title": "Skräddarsydd Shopify E-handelsbutik",
+    "home.recent.project.desc": "En modern webbutik designad med en ren layout, optimerad för mobila enheter och en smidig shoppingupplevelse.",
+    "home.recent.project.button": "Visa Projekt",
 
     // Home - Problem
     "home.problem.title": "Förlorar Din Hemsida Potentiella Kunder?",
@@ -199,7 +213,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Home - Voice
     "home.voice.badge": "Live Demo",
     "home.voice.title": "AI Röstassistent Demo",
-    "home.voice.subtitle": "Vi bygger även AI-röstassistenter som kan svara på kundsamtal, ge information och hjälpa till att dirigera förfrågningar automatiskt.",
+    "home.voice.subtitle": "Vi bygger även röstassistenter som kan svara på kundsamtal, ge information och hjälpa företag att svara på förfrågningar automatiskt.",
 
     // Home - CTA
     "home.cta.title": "Redo att Förbättra Din Hemsida?",

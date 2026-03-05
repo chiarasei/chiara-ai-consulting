@@ -11,6 +11,7 @@ import {
   MessageCircleOff,
   Mic,
   CheckCircle2,
+  ExternalLink,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -51,6 +52,11 @@ const TradeFairLanding = () => {
                   {t("hero.description")}
                 </p>
 
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+                  <CheckCircle2 className="w-4 h-4" />
+                  {t("hero.trust")}
+                </div>
+
                 <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                   <Link to="/contact">
                     <Button size="lg" className="text-base px-8 py-6 rounded-xl shadow-medium hover:shadow-glow transition-all duration-300 gap-2 w-full sm:w-auto">
@@ -78,8 +84,40 @@ const TradeFairLanding = () => {
           </div>
         </section>
 
-        {/* PROBLEM */}
+        {/* RECENT WORK */}
         <section className="py-14 md:py-24 px-4 md:px-6 bg-muted/50">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-center mb-10 md:mb-12">
+              {t("home.recent.title")}
+            </h2>
+
+            <div className="max-w-2xl mx-auto">
+              <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
+                <div className="p-6 md:p-8 space-y-4">
+                  <h3 className="text-lg md:text-xl font-bold text-card-foreground">
+                    {t("home.recent.project.title")}
+                  </h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                    {t("home.recent.project.desc")}
+                  </p>
+                  <a
+                    href="https://zoeandco.se"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="outline" className="gap-2 mt-2">
+                      {t("home.recent.project.button")}
+                      <ExternalLink className="w-4 h-4" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* PROBLEM */}
+        <section className="py-14 md:py-24 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
             <div className="text-center mb-10 md:mb-12 space-y-4">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
@@ -119,7 +157,7 @@ const TradeFairLanding = () => {
         </section>
 
         {/* VOICE ASSISTANT DEMO */}
-        <section className="py-14 md:py-24 px-4 md:px-6">
+        <section className="py-14 md:py-24 px-4 md:px-6 bg-muted/50">
           <div className="container mx-auto max-w-3xl text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
               <Mic className="w-3.5 h-3.5" />
