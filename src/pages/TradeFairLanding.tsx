@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-consulting.jpg";
 import DemoVoiceCall from "@/components/DemoVoiceCall";
-import VoiceCallErrorBoundary from "@/components/VoiceCallErrorBoundary";
+
 
 const TradeFairLanding = () => {
   const { t } = useLanguage();
@@ -150,9 +150,7 @@ const TradeFairLanding = () => {
             </p>
 
             <div className="pt-4">
-              <VoiceCallErrorBoundary>
-                <DemoVoiceCall />
-              </VoiceCallErrorBoundary>
+              <DemoVoiceCall />
             </div>
           </div>
         </section>
