@@ -140,6 +140,40 @@ const TradeFairLanding = () => {
           </div>
         </section>
 
+        {/* ABOUT */}
+        <section className="py-14 md:py-24 px-4 md:px-6">
+          <div className="container mx-auto max-w-4xl">
+            <div className="text-center mb-10 space-y-4">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
+                {t("home.about.title")}
+              </h2>
+            </div>
+
+            <div className="space-y-6 max-w-3xl mx-auto">
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
+                {t("home.about.p1")}
+              </p>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
+                {t("home.about.p2")}
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-3 md:gap-4 pt-4">
+                {[
+                  { title: t("home.about.v1.title"), desc: t("home.about.v1.desc") },
+                  { title: t("home.about.v2.title"), desc: t("home.about.v2.desc") },
+                  { title: t("home.about.v3.title"), desc: t("home.about.v3.desc") },
+                  { title: t("home.about.v4.title"), desc: t("home.about.v4.desc") },
+                ].map((item, i) => (
+                  <div key={i} className="p-4 rounded-xl border border-border bg-card">
+                    <h3 className="text-sm font-bold text-card-foreground mb-1">{item.title}</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="py-14 md:py-24 px-4 md:px-6 bg-muted/50">
           <div className="container mx-auto max-w-3xl">

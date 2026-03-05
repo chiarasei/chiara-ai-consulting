@@ -76,6 +76,19 @@ const translations: Record<Language, Record<string, string>> = {
     "home.cta.subtitle": "We offer a free website review where we analyze your current website and suggest improvements to help attract and convert more clients.",
     "home.cta.button": "Request Your Free Website Review",
 
+    // Home - About
+    "home.about.title": "About Chiara AI Consulting",
+    "home.about.p1": "Chiara AI Consulting was founded with a deep background in DevOps, cloud engineering, and automation of complex systems. We combine this technical expertise with a passion for helping small service businesses grow through smart digital solutions.",
+    "home.about.p2": "We offer website upgrades, AI chat assistants, customer inquiry automation, booking integrations, and AI voice assistants. Our goal is to make advanced technology accessible, practical, and results driven for businesses of all sizes.",
+    "home.about.v1.title": "Technical Expertise",
+    "home.about.v1.desc": "Deep experience in DevOps, cloud architecture, and AI automation.",
+    "home.about.v2.title": "Results Focused",
+    "home.about.v2.desc": "We deliver measurable improvements that make a real difference.",
+    "home.about.v3.title": "Scalable Solutions",
+    "home.about.v3.desc": "Solutions that grow with your business, from startup to established company.",
+    "home.about.v4.title": "Ongoing Support",
+    "home.about.v4.desc": "Reliable support and continuous optimization of your digital systems.",
+
     // Services
     "services.title": "Our Services",
     "services.subtitle": "We help service businesses get more clients with a better website and smarter automation.",
@@ -192,6 +205,19 @@ const translations: Record<Language, Record<string, string>> = {
     "home.cta.title": "Redo att Förbättra Din Hemsida?",
     "home.cta.subtitle": "Vi erbjuder en gratis hemsideanalys där vi analyserar din nuvarande hemsida och föreslår förbättringar för att hjälpa dig attrahera och konvertera fler kunder.",
     "home.cta.button": "Begär Din Gratis Hemsideanalys",
+
+    // Home - About
+    "home.about.title": "Om Chiara AI Consulting",
+    "home.about.p1": "Chiara AI Consulting grundades med en djup bakgrund inom DevOps, molnteknik och automatisering av komplexa system. Vi kombinerar denna tekniska expertis med en passion för att hjälpa små tjänsteföretag växa genom smarta digitala lösningar.",
+    "home.about.p2": "Vi erbjuder hemsideuppgraderingar, AI chattassistenter, automatisering av kundförfrågningar, bokningsintegrationer och AI röstassistenter. Vårt mål är att göra avancerad teknik tillgänglig, praktisk och resultatdriven för företag i alla storlekar.",
+    "home.about.v1.title": "Teknisk Expertis",
+    "home.about.v1.desc": "Djup erfarenhet inom DevOps, molnarkitektur och AI-automation.",
+    "home.about.v2.title": "Resultatfokuserade",
+    "home.about.v2.desc": "Vi levererar mätbara förbättringar som gör verklig skillnad.",
+    "home.about.v3.title": "Skalbara Lösningar",
+    "home.about.v3.desc": "Lösningar som växer med ditt företag, från nystartad till etablerat.",
+    "home.about.v4.title": "Löpande Support",
+    "home.about.v4.desc": "Pålitlig support och kontinuerlig optimering av dina digitala system.",
 
     // Services
     "services.title": "Våra Tjänster",
