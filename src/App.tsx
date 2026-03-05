@@ -11,6 +11,7 @@ import IndustriesPage from "./pages/IndustriesPage";
 import PricingPage from "./pages/PricingPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
+import ShopifyShowcasePage from "./pages/ShopifyShowcasePage";
 import FloatingChat from "./components/FloatingChat";
 import DemoPsychologyHome from "./pages/psychology/PsychologyHomePage";
 import PsychologyServicesPage from "./pages/psychology/PsychologyServicesPage";
@@ -47,6 +48,7 @@ const App = () => (
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/demo/psychology/*" element={<PsychologyRoutes />} />
+            <Route path="/demo/shopify" element={<ShopifyShowcasePage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <FloatingChat />
