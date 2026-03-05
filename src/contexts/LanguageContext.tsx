@@ -138,6 +138,9 @@ const translations: Record<Language, Record<string, string>> = {
     "pricing.premium.name": "Advanced Automation",
     "pricing.premium.desc": "Website upgrade with AI chatbot and optional AI voice assistant automation.",
     "pricing.premium.price": "Starting from 10,000 SEK",
+    "pricing.maintenance.title": "Optional Maintenance",
+    "pricing.maintenance.price": "400 SEK/month",
+    "pricing.maintenance.desc": "Ongoing support, updates, and optimization for your website and automation tools.",
 
     // Contact
     "contact.title1": "Ready to ",
@@ -276,6 +279,9 @@ const translations: Record<Language, Record<string, string>> = {
     "pricing.premium.name": "Avancerad Automation",
     "pricing.premium.desc": "Hemsideuppgradering med AI-chatbot och valfri AI-röstassistent.",
     "pricing.premium.price": "Från 10 000 SEK",
+    "pricing.maintenance.title": "Valfritt Underhåll",
+    "pricing.maintenance.price": "400 SEK/månad",
+    "pricing.maintenance.desc": "Löpande support, uppdateringar och optimering av din hemsida och automationsverktyg.",
 
     // Contact
     "contact.title1": "Redo att ",

@@ -77,6 +77,12 @@ const Pricing = () => {
           ))}
         </div>
 
+        <div className="mt-8 text-center p-5 rounded-xl border border-border bg-card">
+          <p className="text-sm font-semibold text-foreground mb-1">{t("pricing.maintenance.title")}</p>
+          <p className="text-lg font-bold text-primary">{t("pricing.maintenance.price")}</p>
+          <p className="text-xs text-muted-foreground mt-1">{t("pricing.maintenance.desc")}</p>
+        </div>
+
         <p className="text-xs text-muted-foreground text-center mt-6">
           {t("pricing.note")}
         </p>
