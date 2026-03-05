@@ -37,9 +37,9 @@ const DemoPsychologyHome = () => {
               <Link to="/demo/psychology/contact" className="px-7 py-3 rounded-full text-sm font-semibold shadow-md transition-all hover:shadow-lg" style={{ background: green, color: "#fff" }}>
                 {t("Book Your First Session", "Boka ditt första samtal")}
               </Link>
-              <Link to="/demo/psychology/contact" className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold border transition-all hover:shadow-sm" style={{ borderColor: borderClr, color: "#1a1a2e" }}>
-                <Bot className="w-4 h-4" style={{ color: green }} />
-                {t("Ask Our Assistant", "Fråga vår assistent")}
+              <Link to="/demo/psychology/contact" className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold shadow-md transition-all hover:shadow-lg animate-pulse" style={{ background: "hsl(200, 70%, 50%)", color: "#fff" }}>
+                <Bot className="w-5 h-5" />
+                {t("Ask Our AI Assistant", "Fråga vår AI-assistent")}
               </Link>
             </div>
           </div>
