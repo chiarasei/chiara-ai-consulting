@@ -119,16 +119,12 @@ const TradeFairLanding = () => {
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                     {t("home.recent.project.desc")}
                   </p>
-                  <a
-                    href="https://zoeandco.se"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <Link to="/demo/shopify">
                     <Button variant="outline" className="gap-2 mt-2">
                       {t("home.recent.project.button")}
                       <ExternalLink className="w-4 h-4" />
                     </Button>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
