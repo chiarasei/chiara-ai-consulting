@@ -41,7 +41,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.title1": "Modern Websites & Smart Automation for",
     "hero.title2": "Service Businesses",
-    "hero.description": "We help small businesses upgrade their websites and automate customer inquiries so they never miss a potential client.",
+    "hero.description": "We upgrade your website and add chat assistants that answer customer questions and capture inquiries automatically.",
     "hero.cta": "Get a Free Website Review",
     "hero.cta2": "View Our Services",
 
@@ -171,7 +171,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.title1": "Moderna Hemsidor & Smart Automation för",
     "hero.title2": "Tjänsteföretag",
-    "hero.description": "Vi hjälper småföretag att uppgradera sina hemsidor och automatisera kundförfrågningar så att de aldrig missar en potentiell kund.",
+    "hero.description": "Vi uppgraderar din hemsida och lägger till chattassistenter som svarar på kundfrågor och fångar upp förfrågningar automatiskt.",
     "hero.cta": "Få en Gratis Hemsideanalys",
     "hero.cta2": "Se Våra Tjänster",
 
