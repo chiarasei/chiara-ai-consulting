@@ -17,8 +17,21 @@ import PsychologyServicesPage from "./pages/psychology/PsychologyServicesPage";
 import PsychologyHowItWorksPage from "./pages/psychology/PsychologyHowItWorksPage";
 import PsychologyPricingPage from "./pages/psychology/PsychologyPricingPage";
 import PsychologyContactPage from "./pages/psychology/PsychologyContactPage";
+import { PsychLangProvider } from "./components/psychology/PsychLangContext";
 
 const queryClient = new QueryClient();
+
+const PsychologyRoutes = () => (
+  <PsychLangProvider>
+    <Routes>
+      <Route path="/" element={<DemoPsychologyHome />} />
+      <Route path="/services" element={<PsychologyServicesPage />} />
+      <Route path="/how-it-works" element={<PsychologyHowItWorksPage />} />
+      <Route path="/pricing" element={<PsychologyPricingPage />} />
+      <Route path="/contact" element={<PsychologyContactPage />} />
+    </Routes>
+  </PsychLangProvider>
+);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -33,11 +46,7 @@ const App = () => (
             <Route path="/industries" element={<IndustriesPage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/demo/psychology" element={<DemoPsychologyHome />} />
-            <Route path="/demo/psychology/services" element={<PsychologyServicesPage />} />
-            <Route path="/demo/psychology/how-it-works" element={<PsychologyHowItWorksPage />} />
-            <Route path="/demo/psychology/pricing" element={<PsychologyPricingPage />} />
-            <Route path="/demo/psychology/contact" element={<PsychologyContactPage />} />
+            <Route path="/demo/psychology/*" element={<PsychologyRoutes />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <FloatingChat />
