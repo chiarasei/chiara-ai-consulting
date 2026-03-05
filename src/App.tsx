@@ -12,6 +12,7 @@ import PricingPage from "./pages/PricingPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 import FloatingChat from "./components/FloatingChat";
+import DemoPsychologyPractice from "./pages/DemoPsychologyPractice";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/industries" element={<IndustriesPage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/demo/psychology" element={<DemoPsychologyPractice />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <FloatingChat />
