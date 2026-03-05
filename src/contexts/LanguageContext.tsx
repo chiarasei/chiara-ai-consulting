@@ -98,7 +98,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Services
     "services.title": "Our Services",
-    "services.subtitle": "We help service businesses get more clients with a better website and smarter automation.",
+    "services.subtitle": "We help service businesses modernize their websites and automate customer inquiries using chat assistants and smart automation tools.",
     "services.website.title": "Website Upgrade",
     "services.website.desc": "We modernize outdated websites with clean design, mobile optimization, and better performance.",
     "services.chatbot.title": "AI Chat Assistant",
@@ -236,7 +236,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Services
     "services.title": "Våra Tjänster",
-    "services.subtitle": "Vi hjälper tjänsteföretag att få fler kunder med en bättre hemsida och smartare automation.",
+    "services.subtitle": "Vi hjälper tjänsteföretag att modernisera sina hemsidor och automatisera kundförfrågningar med chattassistenter och smarta automationsverktyg.",
     "services.website.title": "Hemsideuppgradering",
     "services.website.desc": "Vi moderniserar föråldrade hemsidor med ren design, mobiloptimering och bättre prestanda.",
     "services.chatbot.title": "AI Chattassistent",
