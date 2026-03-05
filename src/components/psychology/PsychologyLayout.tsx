@@ -63,7 +63,7 @@ const PsychologyLayout = ({ children }: { children: React.ReactNode }) => {
               style={{ borderColor: borderClr, color: textMuted }}
             >
               <Globe className="w-4 h-4" style={{ color: green }} />
-              {lang === "en" ? "SV" : "EN"}
+              {lang === "en" ? "EN" : "SV"}
             </button>
           </div>
 
