@@ -116,8 +116,30 @@ const TradeFairLanding = () => {
           </div>
         </section>
 
-        {/* PROBLEM */}
+        {/* VOICE ASSISTANT DEMO */}
         <section className="py-14 md:py-24 px-4 md:px-6">
+          <div className="container mx-auto max-w-3xl text-center space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+              <Mic className="w-3.5 h-3.5" />
+              {t("home.voice.badge")}
+            </div>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
+              {t("home.voice.title")}
+            </h2>
+            <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
+              {t("home.voice.subtitle")}
+            </p>
+
+            <div className="pt-4">
+              <VoiceCallErrorBoundary>
+                <DemoVoiceCall />
+              </VoiceCallErrorBoundary>
+            </div>
+          </div>
+        </section>
+
+        {/* PROBLEM */}
+        <section className="py-14 md:py-24 px-4 md:px-6 bg-muted/50">
           <div className="container mx-auto max-w-4xl">
             <div className="text-center mb-10 md:mb-12 space-y-4">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
@@ -153,28 +175,6 @@ const TradeFairLanding = () => {
             <p className="text-sm text-muted-foreground text-center mt-8 max-w-xl mx-auto">
               {t("home.problem.closing")}
             </p>
-          </div>
-        </section>
-
-        {/* VOICE ASSISTANT DEMO */}
-        <section className="py-14 md:py-24 px-4 md:px-6 bg-muted/50">
-          <div className="container mx-auto max-w-3xl text-center space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-              <Mic className="w-3.5 h-3.5" />
-              {t("home.voice.badge")}
-            </div>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
-              {t("home.voice.title")}
-            </h2>
-            <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              {t("home.voice.subtitle")}
-            </p>
-
-            <div className="pt-4">
-              <VoiceCallErrorBoundary>
-                <DemoVoiceCall />
-              </VoiceCallErrorBoundary>
-            </div>
           </div>
         </section>
 
