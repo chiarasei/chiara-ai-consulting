@@ -12,7 +12,11 @@ import PricingPage from "./pages/PricingPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 import FloatingChat from "./components/FloatingChat";
-import DemoPsychologyPractice from "./pages/DemoPsychologyPractice";
+import DemoPsychologyHome from "./pages/psychology/PsychologyHomePage";
+import PsychologyServicesPage from "./pages/psychology/PsychologyServicesPage";
+import PsychologyHowItWorksPage from "./pages/psychology/PsychologyHowItWorksPage";
+import PsychologyPricingPage from "./pages/psychology/PsychologyPricingPage";
+import PsychologyContactPage from "./pages/psychology/PsychologyContactPage";
 
 const queryClient = new QueryClient();
 
@@ -29,7 +33,11 @@ const App = () => (
             <Route path="/industries" element={<IndustriesPage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/demo/psychology" element={<DemoPsychologyPractice />} />
+            <Route path="/demo/psychology" element={<DemoPsychologyHome />} />
+            <Route path="/demo/psychology/services" element={<PsychologyServicesPage />} />
+            <Route path="/demo/psychology/how-it-works" element={<PsychologyHowItWorksPage />} />
+            <Route path="/demo/psychology/pricing" element={<PsychologyPricingPage />} />
+            <Route path="/demo/psychology/contact" element={<PsychologyContactPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <FloatingChat />
