@@ -13,11 +13,11 @@ const DemoPsychologyHome = () => {
     <PsychologyLayout>
       <section className="relative overflow-hidden min-h-[70vh] md:min-h-[80vh] flex items-center">
         <div className="absolute inset-0">
-          <img src={therapyHero} alt="Therapy session in a calm, professional office" className="w-full h-full object-cover object-right" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(250,250,248,0.97) 0%, rgba(250,250,248,0.85) 40%, rgba(250,250,248,0.2) 70%, transparent 100%)" }} />
+          <img src={therapyHero} alt="Therapy session — therapist listening to client in a calm office" className="w-full h-full object-cover object-center" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(250,250,248,0.85) 0%, rgba(250,250,248,0.6) 30%, rgba(250,250,248,0.3) 60%, rgba(250,250,248,0.7) 100%)" }} />
         </div>
-        <div className="relative max-w-6xl mx-auto px-5 py-20 md:py-32 w-full">
-          <div className="max-w-md space-y-6">
+        <div className="relative max-w-6xl mx-auto px-5 py-20 md:py-32 w-full text-center flex flex-col items-center">
+          <div className="max-w-lg space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide" style={{ background: "rgba(255,255,255,0.85)", color: greenText }}>
               <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: green }} />
               {t("Licensed Psychologist in Gothenburg", "Legitimerad psykolog i Göteborg")}
@@ -33,7 +33,7 @@ const DemoPsychologyHome = () => {
                 "Ett tryggt och stödjande utrymme för att prata om ångest, stress, relationer och livets utmaningar."
               )}
             </p>
-            <div className="flex flex-col sm:flex-row items-start gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
               <Link to="/demo/psychology/contact" className="px-7 py-3 rounded-full text-sm font-semibold shadow-md transition-all hover:shadow-lg" style={{ background: green, color: "#fff" }}>
                 {t("Book Your First Session", "Boka ditt första samtal")}
               </Link>
