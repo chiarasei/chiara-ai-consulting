@@ -1,4 +1,4 @@
-import { Stethoscope, Activity, Utensils, Scissors, Sparkles, Hotel, ShoppingBag, Palette, Dumbbell, Heart, Store } from "lucide-react";
+import { Stethoscope, Heart, Sparkles, Wrench } from "lucide-react";
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -6,17 +6,10 @@ const Industries = () => {
   const { t } = useLanguage();
 
   const industries = [
-    { icon: <Stethoscope />, title: t("industries.clinics.title"), useCase: t("industries.clinics.desc") },
-    { icon: <Activity />, title: t("industries.physio.title"), useCase: t("industries.physio.desc") },
-    { icon: <Utensils />, title: t("industries.restaurants.title"), useCase: t("industries.restaurants.desc") },
-    { icon: <Scissors />, title: t("industries.hair.title"), useCase: t("industries.hair.desc") },
-    { icon: <Sparkles />, title: t("industries.beauty.title"), useCase: t("industries.beauty.desc") },
-    { icon: <Palette />, title: t("industries.nail.title"), useCase: t("industries.nail.desc") },
-    { icon: <Heart />, title: t("industries.tattoo.title"), useCase: t("industries.tattoo.desc") },
-    { icon: <Dumbbell />, title: t("industries.spa.title"), useCase: t("industries.spa.desc") },
-    { icon: <Hotel />, title: t("industries.hotels.title"), useCase: t("industries.hotels.desc") },
-    { icon: <ShoppingBag />, title: t("industries.retail.title"), useCase: t("industries.retail.desc") },
-    { icon: <Store />, title: t("industries.all.title"), useCase: t("industries.all.desc") },
+    { icon: <Stethoscope />, title: t("industries.therapists.title"), useCase: t("industries.therapists.desc") },
+    { icon: <Heart />, title: t("industries.wellness.title"), useCase: t("industries.wellness.desc") },
+    { icon: <Sparkles />, title: t("industries.cleaning.title"), useCase: t("industries.cleaning.desc") },
+    { icon: <Wrench />, title: t("industries.local.title"), useCase: t("industries.local.desc") },
   ];
 
   return (
@@ -31,19 +24,19 @@ const Industries = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {industries.map((industry, index) => (
             <div
               key={index}
-              className="group p-5 md:p-6 rounded-xl border border-border bg-card hover:shadow-medium transition-all duration-300 hover:-translate-y-0.5"
+              className="group p-6 md:p-8 rounded-xl border border-border bg-card hover:shadow-medium transition-all duration-300 hover:-translate-y-0.5"
             >
-              <div className="w-10 h-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
-                {React.cloneElement(industry.icon, { size: 20 })}
+              <div className="w-12 h-12 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-5 group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
+                {React.cloneElement(industry.icon, { size: 22 })}
               </div>
-              <h3 className="text-sm md:text-base font-bold text-card-foreground mb-2">
+              <h3 className="text-base md:text-lg font-bold text-card-foreground mb-3">
                 {industry.title}
               </h3>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {industry.useCase}
               </p>
             </div>

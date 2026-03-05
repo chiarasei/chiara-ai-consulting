@@ -48,10 +48,9 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4 text-foreground text-sm">{t("footer.services")}</h4>
             <ul className="space-y-2.5 text-xs md:text-sm text-muted-foreground">
-              <li>{t("footer.aiChatbots")}</li>
-              <li>{t("footer.voiceAssistants")}</li>
-              <li>{t("footer.bookingSystems")}</li>
-              <li>{t("footer.marketingAutomation")}</li>
+              <li>{t("footer.websiteUpgrade")}</li>
+              <li>{t("footer.chatbotSetup")}</li>
+              <li>{t("footer.bookingAutomation")}</li>
             </ul>
           </div>
 
