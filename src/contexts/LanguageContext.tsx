@@ -51,6 +51,8 @@ const translations: Record<Language, Record<string, string>> = {
     "home.recent.project.title": "Custom Shopify E-commerce Store",
     "home.recent.project.desc": "A modern online store designed with a clean layout, optimized for mobile devices and a smooth customer shopping experience.",
     "home.recent.project.button": "View Project",
+    "home.recent.project2.title": "Psychology Practice Website",
+    "home.recent.project2.desc": "A calm, professional one-page website for a private psychology practice, featuring a welcoming design, service overview, and integrated chat assistant.",
 
     // Home - Problem
     "home.problem.title": "Is Your Website Losing Potential Customers?",
@@ -192,6 +194,8 @@ const translations: Record<Language, Record<string, string>> = {
     "home.recent.project.title": "Skräddarsydd Shopify E-handelsbutik",
     "home.recent.project.desc": "En modern webbutik designad med en ren layout, optimerad för mobila enheter och en smidig shoppingupplevelse.",
     "home.recent.project.button": "Visa Projekt",
+    "home.recent.project2.title": "Psykologmottagning Hemsida",
+    "home.recent.project2.desc": "En lugn, professionell one-page hemsida för en privat psykologmottagning, med välkomnande design, tjänsteöversikt och integrerad chattassistent.",
 
     // Home - Problem
     "home.problem.title": "Förlorar Din Hemsida Potentiella Kunder?",

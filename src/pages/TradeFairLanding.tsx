@@ -91,7 +91,26 @@ const TradeFairLanding = () => {
               {t("home.recent.title")}
             </h2>
 
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-2xl mx-auto space-y-5">
+              {/* Psychology Practice Demo */}
+              <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
+                <div className="p-6 md:p-8 space-y-4">
+                  <h3 className="text-lg md:text-xl font-bold text-card-foreground">
+                    {t("home.recent.project2.title")}
+                  </h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                    {t("home.recent.project2.desc")}
+                  </p>
+                  <Link to="/demo/psychology">
+                    <Button variant="outline" className="gap-2 mt-2">
+                      {t("home.recent.project.button")}
+                      <ExternalLink className="w-4 h-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Shopify Store */}
               <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
                 <div className="p-6 md:p-8 space-y-4">
                   <h3 className="text-lg md:text-xl font-bold text-card-foreground">
