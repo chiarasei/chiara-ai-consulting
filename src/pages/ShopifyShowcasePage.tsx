@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { ArrowLeft, ExternalLink, ShoppingBag, Palette, Globe, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEOHead from "@/components/SEOHead";
 
 const ShopifyShowcasePage = () => {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+
   return (
     <div className="min-h-screen flex flex-col" style={{ background: "#FAFAF8", color: "#1a1a2e", fontFamily: "'DM Sans', 'Outfit', sans-serif" }}>
       <SEOHead
