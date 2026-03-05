@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, Calendar, MessageSquare, Globe, Share2, Gift, Workflow, Megaphone } from "lucide-react";
+import { Globe, Bot, CalendarCheck } from "lucide-react";
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -6,15 +6,9 @@ const Services = () => {
   const { t } = useLanguage();
 
   const services = [
-    { icon: <MessageCircle />, title: t("services.chatbots.title"), description: t("services.chatbots.desc") },
-    { icon: <Phone />, title: t("services.voice.title"), description: t("services.voice.desc") },
-    { icon: <Calendar />, title: t("services.booking.title"), description: t("services.booking.desc") },
-    { icon: <MessageSquare />, title: t("services.communication.title"), description: t("services.communication.desc") },
     { icon: <Globe />, title: t("services.website.title"), description: t("services.website.desc") },
-    { icon: <Megaphone />, title: t("services.ads.title"), description: t("services.ads.desc") },
-    { icon: <Share2 />, title: t("services.social.title"), description: t("services.social.desc") },
-    { icon: <Gift />, title: t("services.loyalty.title"), description: t("services.loyalty.desc") },
-    { icon: <Workflow />, title: t("services.workflow.title"), description: t("services.workflow.desc") },
+    { icon: <Bot />, title: t("services.chatbot.title"), description: t("services.chatbot.desc") },
+    { icon: <CalendarCheck />, title: t("services.booking.title"), description: t("services.booking.desc") },
   ];
 
   return (
@@ -29,19 +23,19 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        <div className="grid sm:grid-cols-3 gap-4 md:gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group p-5 md:p-6 rounded-xl border border-border bg-card hover:shadow-medium transition-all duration-300 hover:-translate-y-0.5"
+              className="group p-6 md:p-8 rounded-xl border border-border bg-card hover:shadow-medium transition-all duration-300 hover:-translate-y-0.5"
             >
-              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                {React.cloneElement(service.icon, { size: 20 })}
+              <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                {React.cloneElement(service.icon, { size: 22 })}
               </div>
-              <h3 className="text-sm md:text-base font-bold text-card-foreground mb-2">
+              <h3 className="text-base md:text-lg font-bold text-card-foreground mb-3">
                 {service.title}
               </h3>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {service.description}
               </p>
             </div>
