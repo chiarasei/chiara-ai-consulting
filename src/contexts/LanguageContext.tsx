@@ -107,8 +107,9 @@ const translations: Record<Language, Record<string, string>> = {
     "services.inquiry.desc": "Automate responses to website messages and contact requests so you never miss potential customers.",
     "services.booking.title": "Booking Integration",
     "services.booking.desc": "Allow customers to easily request appointments or consultations online.",
+    "services.voice.title": "AI Voice Assistant",
+    "services.voice.desc": "An intelligent voice assistant that answers customer calls, provides information, and helps handle inquiries automatically.",
 
-    // Industries
     "industries.title": "Businesses We Help",
     "industries.subtitle": "Tailored solutions for service businesses that rely on customer inquiries.",
     "industries.therapists.title": "Therapists & Coaches",
@@ -244,8 +245,9 @@ const translations: Record<Language, Record<string, string>> = {
     "services.inquiry.desc": "Automatisera svar på hemsidemeddelanden och kontaktförfrågningar så att du aldrig missar potentiella kunder.",
     "services.booking.title": "Bokningsintegration",
     "services.booking.desc": "Låt kunder enkelt begära tider eller konsultationer online.",
+    "services.voice.title": "AI-röstassistent",
+    "services.voice.desc": "En intelligent röstassistent som svarar på kundsamtal, ger information och hjälper till att hantera förfrågningar automatiskt.",
 
-    // Industries
     "industries.title": "Företag Vi Hjälper",
     "industries.subtitle": "Skräddarsydda lösningar för tjänsteföretag som förlitar sig på kundförfrågningar.",
     "industries.therapists.title": "Terapeuter & Coacher",
