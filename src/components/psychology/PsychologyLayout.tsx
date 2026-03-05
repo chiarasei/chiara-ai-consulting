@@ -29,13 +29,12 @@ const PsychologyLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="font-sans min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', 'Outfit', sans-serif", background: "#FAFAF8", color: "#1a1a2e" }}>
       {/* Demo banner */}
-      <div className="text-center text-xs py-2 font-medium tracking-wide flex items-center justify-center gap-3" style={{ background: greenLight, color: greenText }}>
-        <Link to="/" className="inline-flex items-center gap-1 underline font-semibold hover:opacity-80">
+      <div className="text-center text-xs py-2.5 font-medium tracking-wide flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-4" style={{ background: "#1a1a2e", color: "rgba(255,255,255,0.85)" }}>
+        <span>💡 {t("This is a demo website showing how a modern therapy practice website could look.", "Detta är en demowebbplats som visar hur en modern terapimottagnings hemsida kan se ut.")}</span>
+        <Link to="/" className="inline-flex items-center gap-1 underline font-semibold hover:opacity-80 text-white">
           <ArrowLeft className="w-3 h-3" />
-          {t("Back to ChiaraAI Consulting", "Tillbaka till ChiaraAI Consulting")}
+          {t("Built by ChiaraAI Consulting", "Byggd av ChiaraAI Consulting")}
         </Link>
-        <span className="opacity-40">|</span>
-        <span>Portfolio Demo</span>
       </div>
 
       {/* Navigation */}
