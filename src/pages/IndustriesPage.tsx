@@ -7,14 +7,14 @@ const IndustriesPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Industries We Serve – Therapists, Clinics & More | ChiaraAI"
-        description="ChiaraAI provides website upgrades and automation for therapists, wellness clinics, cleaning companies, and local service businesses across Sweden."
-        keywords="therapist website Sweden, wellness clinic website, cleaning company website, service business automation"
+        title="Businesses We Help – Therapists, Clinics, Coaches & More | ChiaraAI"
+        description="Website upgrades and smart automation for therapists, coaches, wellness clinics, cleaning companies, and local service businesses across Sweden."
+        keywords="therapist website, wellness clinic website, cleaning company website, consultant website, service business automation Sweden"
         canonicalPath="/industries"
       />
       <Navigation />
       <main>
-        <div className="pt-40 md:pt-44" />
+        <div className="pt-32 md:pt-36" />
         <Industries />
       </main>
       <Footer />

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Pricing = () => {
@@ -9,66 +9,41 @@ const Pricing = () => {
   const packages = [
     {
       name: t("pricing.starter.name"),
-      subtitle: t("pricing.starter.subtitle"),
-      best: t("pricing.starter.best"),
-      features: [
-        t("pricing.starter.f1"),
-        t("pricing.starter.f2"),
-        t("pricing.starter.f3"),
-        t("pricing.starter.f4"),
-        t("pricing.starter.f5"),
-      ],
-      outcome: t("pricing.starter.outcome"),
+      desc: t("pricing.starter.desc"),
+      price: t("pricing.starter.price"),
       highlighted: false,
     },
     {
       name: t("pricing.growth.name"),
-      subtitle: t("pricing.growth.subtitle"),
-      best: t("pricing.growth.best"),
-      includes: t("pricing.growth.includes"),
-      features: [
-        t("pricing.growth.f1"),
-        t("pricing.growth.f2"),
-        t("pricing.growth.f3"),
-        t("pricing.growth.f4"),
-      ],
-      outcome: t("pricing.growth.outcome"),
+      desc: t("pricing.growth.desc"),
+      price: t("pricing.growth.price"),
       highlighted: true,
     },
     {
       name: t("pricing.premium.name"),
-      subtitle: t("pricing.premium.subtitle"),
-      best: t("pricing.premium.best"),
-      includes: t("pricing.premium.includes"),
-      features: [
-        t("pricing.premium.f1"),
-        t("pricing.premium.f2"),
-        t("pricing.premium.f3"),
-        t("pricing.premium.f4"),
-        t("pricing.premium.f5"),
-      ],
-      outcome: t("pricing.premium.outcome"),
+      desc: t("pricing.premium.desc"),
+      price: t("pricing.premium.price"),
       highlighted: false,
     },
   ];
 
   return (
     <section id="pricing" className="py-12 md:py-20 px-4 md:px-6 bg-muted/50">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight">
-            <span className="text-primary">{t("pricing.title1")}</span>{t("pricing.title2")}
+      <div className="container mx-auto max-w-5xl">
+        <div className="text-center space-y-4 mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight">
+            {t("pricing.title")}
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
             {t("pricing.subtitle")}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
           {packages.map((pkg, i) => (
             <div
               key={i}
-              className={`relative rounded-2xl p-8 flex flex-col transition-all duration-300 hover:-translate-y-1 ${
+              className={`relative rounded-2xl p-6 md:p-8 flex flex-col transition-all duration-300 hover:-translate-y-1 ${
                 pkg.highlighted
                   ? "bg-primary text-primary-foreground shadow-medium ring-2 ring-primary"
                   : "bg-card text-card-foreground shadow-soft border border-border"
@@ -79,43 +54,16 @@ const Pricing = () => {
                   {t("pricing.popular")}
                 </span>
               )}
-
-              <div className="mb-6">
-                <h3 className="text-xl font-bold">{pkg.name}</h3>
-                <p className={`text-sm mt-1 ${pkg.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
-                  {pkg.subtitle}
-                </p>
-              </div>
-
-              <p className={`text-sm font-medium mb-4 ${pkg.highlighted ? "text-primary-foreground/90" : "text-foreground/80"}`}>
-                {pkg.best}
+              <h3 className="text-lg font-bold mb-2">{pkg.name}</h3>
+              <p className={`text-sm mb-6 leading-relaxed flex-1 ${pkg.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                {pkg.desc}
               </p>
-
-              {pkg.includes && (
-                <p className={`text-xs italic mb-3 ${pkg.highlighted ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
-                  {pkg.includes}
-                </p>
-              )}
-
-              <ul className="space-y-3 flex-1 mb-8">
-                {pkg.features.map((f, j) => (
-                  <li key={j} className="flex items-start gap-2.5 text-sm">
-                    <Check size={16} className={`mt-0.5 shrink-0 ${pkg.highlighted ? "text-primary-foreground" : "text-primary"}`} />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className={`rounded-xl p-4 mb-6 text-sm ${
-                pkg.highlighted ? "bg-primary-foreground/10" : "bg-muted"
-              }`}>
-                <span className="font-semibold">{t("pricing.outcome")}: </span>
-                {pkg.outcome}
-              </div>
-
+              <p className={`text-lg font-bold mb-6 ${pkg.highlighted ? "text-primary-foreground" : "text-foreground"}`}>
+                {pkg.price}
+              </p>
               <Link to="/contact" className="mt-auto">
                 <Button
-                  className={`w-full font-semibold h-12 gap-2 ${
+                  className={`w-full font-semibold h-11 gap-2 ${
                     pkg.highlighted
                       ? "bg-background text-primary hover:bg-background/90"
                       : "bg-primary text-primary-foreground hover:bg-primary/90"
@@ -128,6 +76,10 @@ const Pricing = () => {
             </div>
           ))}
         </div>
+
+        <p className="text-xs text-muted-foreground text-center mt-6">
+          {t("pricing.note")}
+        </p>
       </div>
     </section>
   );
