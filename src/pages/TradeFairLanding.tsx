@@ -33,7 +33,7 @@ const TradeFairLanding = () => {
       <Navigation />
       <main>
         {/* HERO */}
-        <section className="relative min-h-[85vh] flex items-center pt-28 md:pt-36 pb-16 md:pb-24 px-4 md:px-6 overflow-hidden">
+        <section className="relative min-h-[70vh] flex items-center pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-6 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-background to-accent/[0.04] -z-10" />
           <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-3xl -z-10" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/[0.03] rounded-full blur-3xl -z-10" />
@@ -85,7 +85,7 @@ const TradeFairLanding = () => {
         </section>
 
         {/* RECENT WORK */}
-        <section className="py-14 md:py-24 px-4 md:px-6 bg-muted/50">
+        <section className="py-10 md:py-16 px-4 md:px-6 bg-muted/50">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-center mb-10 md:mb-12">
               {t("home.recent.title")}
@@ -117,8 +117,8 @@ const TradeFairLanding = () => {
         </section>
 
         {/* VOICE ASSISTANT DEMO */}
-        <section className="py-14 md:py-24 px-4 md:px-6">
-          <div className="container mx-auto max-w-3xl text-center space-y-6">
+        <section className="py-10 md:py-16 px-4 md:px-6">
+          <div className="container mx-auto max-w-3xl text-center space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
               <Mic className="w-3.5 h-3.5" />
               {t("home.voice.badge")}
@@ -139,7 +139,7 @@ const TradeFairLanding = () => {
         </section>
 
         {/* PROBLEM */}
-        <section className="py-14 md:py-24 px-4 md:px-6 bg-muted/50">
+        <section className="py-10 md:py-16 px-4 md:px-6 bg-muted/50">
           <div className="container mx-auto max-w-4xl">
             <div className="text-center mb-10 md:mb-12 space-y-4">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
@@ -179,15 +179,15 @@ const TradeFairLanding = () => {
         </section>
 
         {/* ABOUT */}
-        <section className="py-14 md:py-24 px-4 md:px-6">
+        <section className="py-10 md:py-16 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
-            <div className="text-center mb-10 space-y-4">
+            <div className="text-center mb-6 space-y-3">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
                 {t("home.about.title")}
               </h2>
             </div>
 
-            <div className="space-y-6 max-w-3xl mx-auto">
+            <div className="space-y-3 max-w-3xl mx-auto">
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
                 {t("home.about.p1")}
               </p>
@@ -213,7 +213,7 @@ const TradeFairLanding = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-14 md:py-24 px-4 md:px-6 bg-muted/50">
+        <section className="py-10 md:py-16 px-4 md:px-6 bg-muted/50">
           <div className="container mx-auto max-w-3xl">
             <div className="relative rounded-2xl border border-primary/20 bg-card p-8 md:p-12 overflow-hidden text-center space-y-6">
               <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/[0.05] rounded-full blur-3xl -z-0" />
