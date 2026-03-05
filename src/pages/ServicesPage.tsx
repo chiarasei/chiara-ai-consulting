@@ -14,7 +14,7 @@ const ServicesPage = () => {
       />
       <Navigation />
       <main>
-        <div className="pt-32" />
+        <div className="pt-20" />
         <Services />
       </main>
       <Footer />
