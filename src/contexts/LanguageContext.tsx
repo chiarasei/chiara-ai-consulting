@@ -78,8 +78,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Home - About
     "home.about.title": "About Chiara AI Consulting",
-    "home.about.p1": "Chiara AI Consulting was founded with a deep background in DevOps, cloud engineering, and automation of complex systems. We combine this technical expertise with a passion for helping small service businesses grow through smart digital solutions.",
-    "home.about.p2": "We offer website upgrades, AI chat assistants, customer inquiry automation, booking integrations, and AI voice assistants. Our goal is to make advanced technology accessible, practical, and results driven for businesses of all sizes.",
+    "home.about.p1": "At Chiara AI Consulting, we help small service businesses improve their online presence and respond to customer inquiries more efficiently. Many small businesses have websites that are outdated or do not make it easy for potential clients to ask questions or request services. We help solve this by modernizing websites and adding smart tools such as chat assistants and automated inquiry systems.",
+    "home.about.p2": "Our goal is simple: help businesses respond faster, capture more inquiries, and create a better experience for their customers. With a background in technology, automation, and modern web tools, we combine website design with practical automation solutions that help businesses operate more efficiently. Whether it's upgrading an existing website or adding automated customer support, we focus on building solutions that are simple, effective, and tailored to small businesses.",
     "home.about.v1.title": "Technical Expertise",
     "home.about.v1.desc": "Deep experience in DevOps, cloud architecture, and AI automation.",
     "home.about.v2.title": "Results Focused",
@@ -208,8 +208,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Home - About
     "home.about.title": "Om Chiara AI Consulting",
-    "home.about.p1": "Chiara AI Consulting grundades med en djup bakgrund inom DevOps, molnteknik och automatisering av komplexa system. Vi kombinerar denna tekniska expertis med en passion för att hjälpa små tjänsteföretag växa genom smarta digitala lösningar.",
-    "home.about.p2": "Vi erbjuder hemsideuppgraderingar, AI chattassistenter, automatisering av kundförfrågningar, bokningsintegrationer och AI röstassistenter. Vårt mål är att göra avancerad teknik tillgänglig, praktisk och resultatdriven för företag i alla storlekar.",
+    "home.about.p1": "På Chiara AI Consulting hjälper vi små tjänsteföretag att förbättra sin närvaro online och svara på kundförfrågningar mer effektivt. Många småföretag har hemsidor som är föråldrade eller som inte gör det enkelt för potentiella kunder att ställa frågor eller begära tjänster. Vi löser detta genom att modernisera hemsidor och lägga till smarta verktyg som chattassistenter och automatiserade förfrågningssystem.",
+    "home.about.p2": "Vårt mål är enkelt: hjälpa företag att svara snabbare, fånga fler förfrågningar och skapa en bättre upplevelse för sina kunder. Med bakgrund inom teknik, automation och moderna webbverktyg kombinerar vi webbdesign med praktiska automationslösningar som hjälper företag att arbeta mer effektivt. Oavsett om det handlar om att uppgradera en befintlig hemsida eller lägga till automatiserad kundsupport, fokuserar vi på att bygga lösningar som är enkla, effektiva och anpassade för småföretag.",
     "home.about.v1.title": "Teknisk Expertis",
     "home.about.v1.desc": "Djup erfarenhet inom DevOps, molnarkitektur och AI-automation.",
     "home.about.v2.title": "Resultatfokuserade",
