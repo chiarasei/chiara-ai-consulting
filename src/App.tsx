@@ -12,6 +12,7 @@ import PricingPage from "./pages/PricingPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 import ShopifyShowcasePage from "./pages/ShopifyShowcasePage";
+import RecentWorkPage from "./pages/RecentWorkPage";
 import FloatingChat from "./components/FloatingChat";
 import DemoPsychologyHome from "./pages/psychology/PsychologyHomePage";
 import PsychologyServicesPage from "./pages/psychology/PsychologyServicesPage";
@@ -43,6 +44,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<TradeFairLanding />} />
+            <Route path="/recent-work" element={<RecentWorkPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/industries" element={<IndustriesPage />} />
             <Route path="/pricing" element={<PricingPage />} />
