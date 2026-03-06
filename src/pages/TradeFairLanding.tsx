@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { useScrollFade } from "@/hooks/use-scroll-fade";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,6 +22,7 @@ import DemoVoiceCall from "@/components/DemoVoiceCall";
 
 const TradeFairLanding = () => {
   const { t, language } = useLanguage();
+  useScrollFade();
 
   return (
     <div className="min-h-screen">
@@ -82,7 +84,7 @@ const TradeFairLanding = () => {
 
 
         {/* VOICE ASSISTANT DEMO */}
-        <section className="py-10 md:py-16 px-4 md:px-6">
+        <section className="fade-in-section py-10 md:py-16 px-4 md:px-6">
           <div className="container mx-auto max-w-3xl text-center space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
               {t("home.voice.title")}
@@ -101,7 +103,7 @@ const TradeFairLanding = () => {
         </section>
 
         {/* PROBLEM */}
-        <section className="py-10 md:py-16 px-4 md:px-6" style={{ background: 'hsl(222 47% 11%)' }}>
+        <section className="fade-in-section py-10 md:py-16 px-4 md:px-6" style={{ background: 'hsl(222 47% 11%)' }}>
           <div className="container mx-auto max-w-4xl">
             <div className="text-center mb-10 md:mb-12 space-y-4">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
@@ -141,7 +143,7 @@ const TradeFairLanding = () => {
         </section>
 
         {/* ABOUT */}
-        <section className="py-10 md:py-16 px-4 md:px-6">
+        <section className="fade-in-section py-10 md:py-16 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
             <div className="text-center mb-6 space-y-3">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
@@ -175,7 +177,7 @@ const TradeFairLanding = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-10 md:py-16 px-4 md:px-6" style={{ background: 'hsl(222 47% 11%)' }}>
+        <section className="fade-in-section py-10 md:py-16 px-4 md:px-6" style={{ background: 'hsl(222 47% 11%)' }}>
           <div className="container mx-auto max-w-3xl">
             <div className="relative rounded-2xl border border-primary/20 bg-card p-8 md:p-12 overflow-hidden text-center space-y-6">
               <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/[0.05] rounded-full blur-3xl -z-0" />
