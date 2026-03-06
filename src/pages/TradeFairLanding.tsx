@@ -84,10 +84,6 @@ const TradeFairLanding = () => {
         {/* VOICE ASSISTANT DEMO */}
         <section className="py-10 md:py-16 px-4 md:px-6">
           <div className="container mx-auto max-w-3xl text-center space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-              <Mic className="w-3.5 h-3.5" />
-              {t("home.voice.badge")}
-            </div>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
               {t("home.voice.title")}
             </h2>
