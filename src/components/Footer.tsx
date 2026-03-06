@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-8">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-3">
-              <img src={logoImage} alt="ChiaraAI Logo" className="h-8 w-8 object-contain" style={{ filter: "brightness(0) saturate(100%) invert(78%) sepia(52%) saturate(1200%) hue-rotate(152deg) brightness(101%) contrast(92%)" }} />
+              <img src={logoImage} alt="ChiaraAI Logo" className="h-8 w-8 object-contain" />
               <span className="font-bold text-foreground text-sm">
                 chiaraAI<span className="text-primary">consulting</span>
               </span>
