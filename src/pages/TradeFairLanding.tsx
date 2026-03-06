@@ -52,10 +52,6 @@ const TradeFairLanding = () => {
                   {t("hero.description")}
                 </p>
 
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
-                  <CheckCircle2 className="w-4 h-4" />
-                  {t("hero.trust")}
-                </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                   <Link to="/contact">
