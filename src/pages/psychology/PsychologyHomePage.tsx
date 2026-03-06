@@ -3,6 +3,7 @@ import { Bot, ArrowRight } from "lucide-react";
 import PsychologyLayout from "@/components/psychology/PsychologyLayout";
 import { green, greenLight, greenText, textMuted, borderClr } from "@/components/psychology/PsychologyLayout";
 import { usePsychLang } from "@/components/psychology/PsychLangContext";
+import SEOHead from "@/components/SEOHead";
 import therapyHero from "@/assets/therapy-hero.jpg";
 import therapistPortrait from "@/assets/therapist-portrait.jpg";
 
@@ -11,6 +12,12 @@ const DemoPsychologyHome = () => {
 
   return (
     <PsychologyLayout>
+      <SEOHead
+        title="Psykolog Praktiken – Professional Psychotherapy in Gothenburg"
+        description="Licensed psychologist offering individual therapy, couples therapy, stress and trauma support in Gothenburg. Book your free consultation today."
+        keywords="psychologist Gothenburg, therapy, CBT, couples therapy, anxiety treatment, psykolog Göteborg"
+        canonicalPath="/demo/psychology"
+      />
       <section className="relative overflow-hidden min-h-[70vh] md:min-h-[80vh] flex items-center">
         <div className="absolute inset-0">
           <img src={therapyHero} alt="Therapy session — therapist listening to client in a calm office" className="w-full h-full object-cover object-center" />
@@ -22,7 +29,7 @@ const DemoPsychologyHome = () => {
               <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: green }} />
               {t("Licensed Psychologist in Gothenburg", "Legitimerad psykolog i Göteborg")}
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight" style={{ color: "#1a1a2e" }}>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight break-words" style={{ color: "#1a1a2e" }}>
               {t("Professional Psychotherapy", "Professionell psykoterapi")}
               <br />
               <span style={{ color: green }}>{t("in Gothenburg", "i Göteborg")}</span>
