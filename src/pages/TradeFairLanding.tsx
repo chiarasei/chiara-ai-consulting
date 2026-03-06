@@ -90,6 +90,9 @@ const TradeFairLanding = () => {
             <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
               {t("home.voice.subtitle")}
             </p>
+            <p className="text-xs text-muted-foreground italic">
+              {language === "sv" ? "Tillgänglig på svenska och engelska" : "Available in Swedish and English"}
+            </p>
 
             <div className="pt-4">
               <DemoVoiceCall />
