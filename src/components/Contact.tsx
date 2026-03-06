@@ -1,8 +1,10 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Calendar, MessageSquare } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useState } from "react";
 
 const Contact = () => {
   const { t } = useLanguage();
+  const [activeTab, setActiveTab] = useState<"book" | "message">("book");
 
   const contactInfo = [
     {
@@ -60,19 +62,57 @@ const Contact = () => {
           ))}
         </div>
 
+        {/* Tabs */}
         <div className="max-w-3xl mx-auto">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSfrecdm7q5R7w0vfZ70gxxBzJX2Px41jIWQzQi0ghufJgCfRA/viewform?usp=header&embedded=true"
-            width="100%"
-            height="800"
-            frameBorder={0}
-            marginHeight={0}
-            marginWidth={0}
-            className="rounded-xl border border-border shadow-soft bg-card"
-            title="Contact Form"
-          >
-            Loading…
-          </iframe>
+          <div className="flex rounded-xl border border-border overflow-hidden mb-6">
+            <button
+              onClick={() => setActiveTab("book")}
+              className={`flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold transition-colors ${
+                activeTab === "book"
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-card text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <Calendar size={18} />
+              {t("contact.bookCall")}
+            </button>
+            <button
+              onClick={() => setActiveTab("message")}
+              className={`flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold transition-colors ${
+                activeTab === "message"
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-card text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <MessageSquare size={18} />
+              {t("contact.sendMessage")}
+            </button>
+          </div>
+
+          {activeTab === "book" ? (
+            <div className="rounded-xl border border-border shadow-soft bg-card overflow-hidden">
+              <iframe
+                src="https://calendly.com/chiarasei-27/30min?hide_gdpr_banner=1"
+                width="100%"
+                frameBorder={0}
+                title="Book a Call"
+                className="w-full h-[550px] md:h-[700px]"
+              />
+            </div>
+          ) : (
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSfrecdm7q5R7w0vfZ70gxxBzJX2Px41jIWQzQi0ghufJgCfRA/viewform?usp=header&embedded=true"
+              width="100%"
+              height="800"
+              frameBorder={0}
+              marginHeight={0}
+              marginWidth={0}
+              className="rounded-xl border border-border shadow-soft bg-card"
+              title="Contact Form"
+            >
+              Loading…
+            </iframe>
+          )}
         </div>
       </div>
     </section>
