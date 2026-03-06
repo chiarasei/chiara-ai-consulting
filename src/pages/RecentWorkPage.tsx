@@ -26,8 +26,8 @@ const RecentWorkPage = () => {
       <Navigation />
       <main>
         {/* Hero */}
-        <section className="pt-28 md:pt-36 pb-10 md:pb-16 px-4 md:px-6">
-          <div className="container mx-auto max-w-4xl text-center space-y-4">
+        <section className="pt-24 md:pt-32 pb-4 md:pb-6 px-4 md:px-6">
+          <div className="container mx-auto max-w-4xl text-center space-y-3">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight text-balance">
               {t("recentwork.title")}
             </h1>
@@ -38,7 +38,7 @@ const RecentWorkPage = () => {
         </section>
 
         {/* Psychology Practice */}
-        <section className="py-10 md:py-16 px-4 md:px-6">
+        <section className="py-4 md:py-6 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
             <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
               <div className="p-6 md:p-10 space-y-5">
@@ -52,14 +52,6 @@ const RecentWorkPage = () => {
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
                   {t("recentwork.psych.desc")}
                 </p>
-                <ul className="grid sm:grid-cols-2 gap-2 text-sm text-muted-foreground">
-                  {["recentwork.psych.f1", "recentwork.psych.f2", "recentwork.psych.f3", "recentwork.psych.f4"].map((key) => (
-                    <li key={key} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                      {t(key)}
-                    </li>
-                  ))}
-                </ul>
                 <Link to="/demo/psychology">
                   <Button variant="outline" className="gap-2 mt-2">
                     {t("recentwork.viewproject")}
@@ -72,7 +64,7 @@ const RecentWorkPage = () => {
         </section>
 
         {/* Shopify Store */}
-        <section className="py-10 md:py-16 px-4 md:px-6 bg-muted/50">
+        <section className="py-4 md:py-6 px-4 md:px-6 bg-muted/50">
           <div className="container mx-auto max-w-4xl">
             <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
               <div className="p-6 md:p-10 space-y-5">
@@ -86,14 +78,6 @@ const RecentWorkPage = () => {
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
                   {t("recentwork.shopify.desc")}
                 </p>
-                <ul className="grid sm:grid-cols-2 gap-2 text-sm text-muted-foreground">
-                  {["recentwork.shopify.f1", "recentwork.shopify.f2", "recentwork.shopify.f3", "recentwork.shopify.f4"].map((key) => (
-                    <li key={key} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                      {t(key)}
-                    </li>
-                  ))}
-                </ul>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link to="/demo/shopify">
                     <Button variant="outline" className="gap-2 mt-2">
@@ -114,7 +98,7 @@ const RecentWorkPage = () => {
         </section>
 
         {/* Voice AI Demo */}
-        <section className="py-10 md:py-16 px-4 md:px-6">
+        <section className="py-4 md:py-6 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
             <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
               <div className="p-6 md:p-10 space-y-5">
