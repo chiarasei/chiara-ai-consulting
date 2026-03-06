@@ -100,33 +100,6 @@ const DemoPsychologyHome = () => {
         </div>
       </section>
 
-      {/* Booking Calendar Section */}
-      <section className="py-16 md:py-24 px-5" style={{ background: "#fff" }}>
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center space-y-3 mb-8">
-            <p className="text-xs font-semibold tracking-widest uppercase" style={{ color: green }}>
-              {t("Example booking calendar for therapy sessions", "Exempel på bokningskalender för terapisessioner")}
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight" style={{ color: "#1a1a2e" }}>
-              {t("Book a Consultation", "Boka en konsultation")}
-            </h2>
-            <p style={{ color: textMuted }}>
-              {t("Choose a time that works for you and book your first session directly.", "Välj en tid som passar dig och boka din första session direkt.")}
-            </p>
-          </div>
-          <div className="rounded-2xl overflow-hidden border" style={{ borderColor: borderClr }}>
-            <iframe
-              src="https://calendly.com/chiarasei-27/30min?hide_gdpr_banner=1"
-              width="100%"
-              height="700"
-              frameBorder="0"
-              title="Book a consultation"
-              className="w-full"
-            />
-          </div>
-        </div>
-      </section>
-
       <section className="py-16 md:py-24 px-5" style={{ background: "linear-gradient(145deg, hsl(165, 35%, 94%), hsl(200, 25%, 93%))" }}>
         <div className="max-w-2xl mx-auto text-center space-y-5">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight" style={{ color: "#1a1a2e" }}>{t("Take the first step today", "Ta det första steget idag")}</h2>

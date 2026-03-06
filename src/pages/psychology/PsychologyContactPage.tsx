@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Heart, Mail, Phone, MapPin } from "lucide-react";
+import { Bot, Mail, Phone, ChevronDown, ChevronUp } from "lucide-react";
 import PsychologyLayout from "@/components/psychology/PsychologyLayout";
 import PsychologyChat from "@/components/psychology/PsychologyChat";
 import { green, greenLight, textMuted, borderClr } from "@/components/psychology/PsychologyLayout";
@@ -7,79 +7,96 @@ import { usePsychLang } from "@/components/psychology/PsychLangContext";
 
 const PsychologyContactPage = () => {
   const { t } = usePsychLang();
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [formSubmitted, setFormSubmitted] = useState(false);
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) return;
-    setFormSubmitted(true);
-  };
+  const [chatOpen, setChatOpen] = useState(false);
 
   return (
     <PsychologyLayout>
+      {/* Calendly Booking Section */}
       <section className="py-16 md:py-20 px-5" style={{ background: "linear-gradient(145deg, hsl(165, 35%, 94%), hsl(200, 25%, 93%))" }}>
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center space-y-4 mb-10">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight" style={{ color: "#1a1a2e" }}>{t("Have a question? Ask our assistant", "Har du en fråga? Fråga vår assistent")}</h1>
-            <p style={{ color: textMuted }}>{t("Get instant answers about our services, booking, and therapy process — in English or Swedish.", "Få omedelbara svar om våra tjänster, bokning och terapiprocess — på engelska eller svenska.")}</p>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center space-y-4 mb-8">
+            <p className="text-xs font-semibold tracking-widest uppercase" style={{ color: green }}>
+              {t("Example booking calendar for therapy sessions", "Exempel på bokningskalender för terapisessioner")}
+            </p>
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight" style={{ color: "#1a1a2e" }}>
+              {t("Book a Free Consultation", "Boka en kostnadsfri konsultation")}
+            </h1>
+            <p style={{ color: textMuted }}>
+              {t("Choose a time that works for you and book your first session directly.", "Välj en tid som passar dig och boka din första session direkt.")}
+            </p>
           </div>
-          <PsychologyChat />
-          <p className="text-center text-xs mt-4" style={{ color: textMuted }}>{t("We speak English and Swedish · Powered by AI", "Vi pratar engelska och svenska · Drivs av AI")}</p>
+          <div className="rounded-2xl overflow-hidden border shadow-lg" style={{ borderColor: borderClr, background: "#fff" }}>
+            <iframe
+              src="https://calendly.com/chiarasei-27/30min?hide_gdpr_banner=1"
+              width="100%"
+              height="700"
+              frameBorder="0"
+              title="Book a consultation"
+              className="w-full"
+            />
+          </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24 px-5" style={{ background: "#fff" }}>
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            <div>
-              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: green }}>{t("Contact", "Kontakt")}</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3" style={{ color: "#1a1a2e" }}>{t("Book your first consultation", "Boka din första konsultation")}</h2>
-              <p style={{ color: textMuted }}>{t("Ready to take the first step? Send a message or call us directly to schedule your session.", "Redo att ta det första steget? Skicka ett meddelande eller ring oss direkt för att boka din session.")}</p>
-            </div>
-            <div className="space-y-4">
-              {[
-                { icon: Mail, label: "kontakt@psykologpraktiken.se" },
-                { icon: Phone, label: "+46 70 123 4567" },
-                { icon: MapPin, label: t("Gothenburg, Sweden", "Göteborg, Sverige") },
-              ].map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: greenLight }}>
-                    <Icon className="w-4 h-4" style={{ color: green }} />
-                  </div>
-                  <span className="text-sm" style={{ color: textMuted }}>{label}</span>
-                </div>
-              ))}
-            </div>
+      {/* AI Assistant Section - Collapsed by default */}
+      <section className="py-16 md:py-20 px-5" style={{ background: "#fff" }}>
+        <div className="max-w-lg mx-auto">
+          <div className="text-center space-y-3 mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight" style={{ color: "#1a1a2e" }}>
+              {t("Have a question? Ask our assistant", "Har du en fråga? Fråga vår assistent")}
+            </h2>
+            <p className="text-sm" style={{ color: textMuted }}>
+              {t("Get instant answers about our services, booking, and therapy process.", "Få omedelbara svar om våra tjänster, bokning och terapiprocess.")}
+            </p>
           </div>
 
-          <div>
-            {formSubmitted ? (
-              <div className="rounded-2xl p-8 text-center border" style={{ background: greenLight, borderColor: borderClr }}>
-                <Heart className="w-10 h-10 mx-auto mb-3" style={{ color: green }} />
-                <p className="font-semibold text-lg mb-1" style={{ color: "#1a1a2e" }}>{t("Thank you for reaching out", "Tack för att du hör av dig")}</p>
-                <p className="text-sm" style={{ color: textMuted }}>{t("We'll be in touch soon to schedule your session.", "Vi hör av oss snart för att boka din session.")}</p>
+          {!chatOpen ? (
+            <button
+              onClick={() => setChatOpen(true)}
+              className="w-full flex items-center justify-center gap-3 px-6 py-4 rounded-2xl shadow-md border transition-all hover:shadow-lg"
+              style={{ background: green, borderColor: green, color: "#fff" }}
+            >
+              <Bot className="w-5 h-5" />
+              <span className="text-sm font-semibold">{t("Open Chat Assistant", "Öppna chattassistenten")}</span>
+              <ChevronDown className="w-4 h-4" />
+            </button>
+          ) : (
+            <div className="space-y-3">
+              <button
+                onClick={() => setChatOpen(false)}
+                className="w-full flex items-center justify-center gap-2 text-sm font-medium py-2 transition-colors hover:opacity-70"
+                style={{ color: textMuted }}
+              >
+                {t("Close chat", "Stäng chatten")} <ChevronUp className="w-4 h-4" />
+              </button>
+              <PsychologyChat />
+              <p className="text-center text-xs" style={{ color: textMuted }}>
+                {t("We speak English and Swedish · Powered by AI", "Vi pratar engelska och svenska · Drivs av AI")}
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Fallback contact info */}
+      <section className="py-12 px-5" style={{ background: "#FAFAF8" }}>
+        <div className="max-w-md mx-auto text-center space-y-4">
+          <p className="text-sm" style={{ color: textMuted }}>
+            {t("Unable to book online? Reach us directly:", "Kan du inte boka online? Kontakta oss direkt:")}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="mailto:kontakt@psykologpraktiken.se" className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:opacity-70" style={{ color: green }}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: greenLight }}>
+                <Mail className="w-4 h-4" style={{ color: green }} />
               </div>
-            ) : (
-              <form onSubmit={handleFormSubmit} className="space-y-4">
-                {[
-                  { name: "name", label: t("Name", "Namn"), type: "text", placeholder: t("Your name", "Ditt namn") },
-                  { name: "email", label: t("Email", "E-post"), type: "email", placeholder: t("your@email.com", "din@epost.se") },
-                ].map(({ name, label, type, placeholder }) => (
-                  <div key={name}>
-                    <label className="block text-sm font-medium mb-1.5" style={{ color: "#1a1a2e" }}>{label}</label>
-                    <input type={type} placeholder={placeholder} required value={formData[name as keyof typeof formData]} onChange={(e) => setFormData((p) => ({ ...p, [name]: e.target.value }))} className="w-full px-4 py-2.5 rounded-xl border text-sm outline-none transition-all focus:ring-2" style={{ borderColor: borderClr, background: "#FAFAF8" }} />
-                  </div>
-                ))}
-                <div>
-                  <label className="block text-sm font-medium mb-1.5" style={{ color: "#1a1a2e" }}>{t("Message", "Meddelande")}</label>
-                  <textarea placeholder={t("Tell me a little about what you're looking for...", "Berätta lite om vad du söker...")} required rows={4} value={formData.message} onChange={(e) => setFormData((p) => ({ ...p, message: e.target.value }))} className="w-full px-4 py-2.5 rounded-xl border text-sm outline-none transition-all focus:ring-2 resize-none" style={{ borderColor: borderClr, background: "#FAFAF8" }} />
-                </div>
-                <button type="submit" className="w-full py-3 rounded-xl text-sm font-semibold transition-all hover:shadow-md" style={{ background: green, color: "#fff" }}>
-                  {t("Book Your Consultation", "Boka din konsultation")}
-                </button>
-              </form>
-            )}
+              kontakt@psykologpraktiken.se
+            </a>
+            <a href="tel:+46735316950" className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:opacity-70" style={{ color: green }}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: greenLight }}>
+                <Phone className="w-4 h-4" style={{ color: green }} />
+              </div>
+              +46 73 531 69 50
+            </a>
           </div>
         </div>
       </section>
