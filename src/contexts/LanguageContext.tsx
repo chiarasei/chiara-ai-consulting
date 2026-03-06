@@ -34,9 +34,33 @@ const translations: Record<Language, Record<string, string>> = {
   en: {
     // Nav
     "nav.home": "Home",
+    "nav.recentwork": "Recent Work",
     "nav.services": "Services",
     "nav.industries": "Industries",
     "nav.pricing": "Pricing",
+
+    // Recent Work Page
+    "recentwork.title": "Recent Work",
+    "recentwork.subtitle": "A selection of recent projects we've built for service businesses — from professional websites to AI-powered automation.",
+    "recentwork.viewproject": "View Project",
+    "recentwork.visitsite": "Visit Live Site",
+    "recentwork.psych.badge": "Website + AI Chat",
+    "recentwork.psych.title": "Psychology Practice Website",
+    "recentwork.psych.desc": "A calm, professional website for a private psychology practice in Gothenburg, featuring a welcoming design, service overview, online booking, and an integrated AI chat assistant that answers client questions instantly.",
+    "recentwork.psych.f1": "Bilingual support (EN/SV)",
+    "recentwork.psych.f2": "Integrated AI chat assistant",
+    "recentwork.psych.f3": "Online booking calendar",
+    "recentwork.psych.f4": "Mobile-optimized design",
+    "recentwork.shopify.badge": "E-Commerce",
+    "recentwork.shopify.title": "Zoe & Co – Custom Shopify Store",
+    "recentwork.shopify.desc": "A beautifully designed Shopify store with a custom theme, optimized product pages, and a seamless shopping experience that reflects the Zoe & Co brand identity.",
+    "recentwork.shopify.f1": "Custom Shopify theme",
+    "recentwork.shopify.f2": "Optimized product catalog",
+    "recentwork.shopify.f3": "SEO-optimized structure",
+    "recentwork.shopify.f4": "Fast, streamlined checkout",
+    "recentwork.voice.badge": "AI Voice Assistant",
+    "recentwork.voice.title": "AI Voice Assistant Demo",
+    "recentwork.voice.desc": "A live demo of our AI voice assistant that can answer customer calls, provide information, and help businesses respond to inquiries automatically. Try it yourself below.",
 
     // Hero
     "hero.title1": "Modern Websites & Smart Automation for",
@@ -177,9 +201,33 @@ const translations: Record<Language, Record<string, string>> = {
   sv: {
     // Nav
     "nav.home": "Hem",
+    "nav.recentwork": "Senaste Projekt",
     "nav.services": "Tjänster",
     "nav.industries": "Branscher",
     "nav.pricing": "Priser",
+
+    // Recent Work Page
+    "recentwork.title": "Senaste Projekt",
+    "recentwork.subtitle": "Ett urval av senaste projekt vi byggt för tjänsteföretag — från professionella hemsidor till AI-driven automation.",
+    "recentwork.viewproject": "Visa Projekt",
+    "recentwork.visitsite": "Besök Hemsidan",
+    "recentwork.psych.badge": "Hemsida + AI-chatt",
+    "recentwork.psych.title": "Psykologmottagning Hemsida",
+    "recentwork.psych.desc": "En lugn, professionell hemsida för en privat psykologmottagning i Göteborg, med välkomnande design, tjänsteöversikt, onlinebokning och en integrerad AI-chattassistent som svarar på klientfrågor direkt.",
+    "recentwork.psych.f1": "Tvåspråkigt stöd (EN/SV)",
+    "recentwork.psych.f2": "Integrerad AI-chattassistent",
+    "recentwork.psych.f3": "Online bokningskalender",
+    "recentwork.psych.f4": "Mobiloptimerad design",
+    "recentwork.shopify.badge": "E-handel",
+    "recentwork.shopify.title": "Zoe & Co – Skräddarsydd Shopify-butik",
+    "recentwork.shopify.desc": "En vackert designad Shopify-butik med skräddarsytt tema, optimerade produktsidor och en smidig shoppingupplevelse som speglar Zoe & Co:s varumärke.",
+    "recentwork.shopify.f1": "Skräddarsytt Shopify-tema",
+    "recentwork.shopify.f2": "Optimerad produktkatalog",
+    "recentwork.shopify.f3": "SEO-optimerad struktur",
+    "recentwork.shopify.f4": "Snabb, smidig utcheckning",
+    "recentwork.voice.badge": "AI-röstassistent",
+    "recentwork.voice.title": "AI Röstassistent Demo",
+    "recentwork.voice.desc": "En live-demo av vår AI-röstassistent som kan svara på kundsamtal, ge information och hjälpa företag att svara på förfrågningar automatiskt. Prova själv nedan.",
 
     // Hero
     "hero.title1": "Moderna Hemsidor & Smart Automation för",

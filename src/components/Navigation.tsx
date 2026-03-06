@@ -19,6 +19,7 @@ const Navigation = () => {
 
   const navLinks = [
     { label: t("nav.home"), path: "/" },
+    { label: t("nav.recentwork"), path: "/recent-work" },
     { label: t("nav.services"), path: "/services" },
     { label: t("nav.industries"), path: "/industries" },
     { label: t("nav.pricing"), path: "/pricing" },
