@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Bot, Mail, Phone, ChevronDown, ChevronUp } from "lucide-react";
 import PsychologyLayout from "@/components/psychology/PsychologyLayout";
 import PsychologyChat from "@/components/psychology/PsychologyChat";
@@ -8,6 +8,10 @@ import { usePsychLang } from "@/components/psychology/PsychLangContext";
 const PsychologyContactPage = () => {
   const { t } = usePsychLang();
   const [chatOpen, setChatOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <PsychologyLayout>
