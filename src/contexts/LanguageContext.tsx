@@ -170,6 +170,8 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.phone": "Phone",
     "contact.location": "Location",
     "contact.locationValue": "Gothenburg, Sweden",
+    "contact.bookCall": "Book a Call",
+    "contact.sendMessage": "Send a Message",
 
     // Footer
     "footer.description": "We help service businesses get more clients with modern websites and smart automation.",
@@ -330,6 +332,8 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.phone": "Telefon",
     "contact.location": "Plats",
     "contact.locationValue": "Göteborg, Sverige",
+    "contact.bookCall": "Boka ett samtal",
+    "contact.sendMessage": "Skicka ett meddelande",
 
     // Footer
     "footer.description": "Vi hjälper tjänsteföretag att få fler kunder med moderna hemsidor och smart automation.",
