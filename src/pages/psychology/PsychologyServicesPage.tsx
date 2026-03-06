@@ -3,6 +3,7 @@ import { Heart, Users, Brain, Shield, ArrowRight } from "lucide-react";
 import PsychologyLayout from "@/components/psychology/PsychologyLayout";
 import { green, greenLight, textMuted, borderClr } from "@/components/psychology/PsychologyLayout";
 import { usePsychLang } from "@/components/psychology/PsychLangContext";
+import SEOHead from "@/components/SEOHead";
 
 const PsychologyServicesPage = () => {
   const { t } = usePsychLang();
@@ -16,6 +17,7 @@ const PsychologyServicesPage = () => {
 
   return (
     <PsychologyLayout>
+      <SEOHead title="Services – Psykolog Praktiken" description="Individual therapy, couples therapy, stress and anxiety support, and trauma care in Gothenburg." keywords="therapy services, individual therapy, couples therapy, anxiety, trauma" canonicalPath="/demo/psychology/services" />
       <section className="py-16 md:py-24 px-5">
         <div className="max-w-5xl mx-auto">
           <div className="text-center space-y-3 mb-14">

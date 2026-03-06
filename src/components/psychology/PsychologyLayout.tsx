@@ -29,7 +29,7 @@ const PsychologyLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="font-sans min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', 'Outfit', sans-serif", background: "#FAFAF8", color: "#1a1a2e" }}>
       {/* Demo banner */}
-      <div className="text-center text-xs py-2.5 font-medium tracking-wide flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-4" style={{ background: "#1a1a2e", color: "rgba(255,255,255,0.85)" }}>
+      <div className="text-center text-xs py-2.5 font-medium tracking-wide flex flex-col items-center justify-center gap-1.5 sm:flex-row sm:gap-3 px-4" style={{ background: "#1a1a2e", color: "rgba(255,255,255,0.85)" }}>
         <span>💡 {t("Example of a modern therapy website with instant chat support for client questions.", "Exempel på en modern terapiwebbplats med direkt chattsupport för klientfrågor.")}</span>
         <Link to="/" className="inline-flex items-center gap-1 underline font-semibold hover:opacity-80 text-white">
           <ArrowLeft className="w-3 h-3" />

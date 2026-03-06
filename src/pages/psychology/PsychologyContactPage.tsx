@@ -4,6 +4,7 @@ import PsychologyLayout from "@/components/psychology/PsychologyLayout";
 import PsychologyChat from "@/components/psychology/PsychologyChat";
 import { green, greenLight, textMuted, borderClr } from "@/components/psychology/PsychologyLayout";
 import { usePsychLang } from "@/components/psychology/PsychLangContext";
+import SEOHead from "@/components/SEOHead";
 
 const PsychologyContactPage = () => {
   const { t } = usePsychLang();
@@ -15,6 +16,7 @@ const PsychologyContactPage = () => {
 
   return (
     <PsychologyLayout>
+      <SEOHead title="Contact – Psykolog Praktiken" description="Book a free consultation with our licensed psychologist in Gothenburg. Online booking calendar and AI assistant available." keywords="book therapy, contact psychologist, Gothenburg therapy booking" canonicalPath="/demo/psychology/contact" />
       {/* Calendly Booking Section */}
       <section className="py-16 md:py-20 px-5" style={{ background: "linear-gradient(145deg, hsl(165, 35%, 94%), hsl(200, 25%, 93%))" }}>
         <div className="max-w-3xl mx-auto">
@@ -33,10 +35,9 @@ const PsychologyContactPage = () => {
             <iframe
               src="https://calendly.com/chiarasei-27/30min?hide_gdpr_banner=1"
               width="100%"
-              height="700"
               frameBorder="0"
               title="Book a consultation"
-              className="w-full"
+              className="w-full h-[500px] md:h-[700px]"
             />
           </div>
         </div>

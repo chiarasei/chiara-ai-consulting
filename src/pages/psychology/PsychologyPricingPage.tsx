@@ -3,6 +3,7 @@ import { ArrowRight, Check } from "lucide-react";
 import PsychologyLayout from "@/components/psychology/PsychologyLayout";
 import { green, greenLight, textMuted, borderClr } from "@/components/psychology/PsychologyLayout";
 import { usePsychLang } from "@/components/psychology/PsychLangContext";
+import SEOHead from "@/components/SEOHead";
 
 const PsychologyPricingPage = () => {
   const { t } = usePsychLang();
@@ -14,6 +15,7 @@ const PsychologyPricingPage = () => {
 
   return (
     <PsychologyLayout>
+      <SEOHead title="Pricing – Psykolog Praktiken" description="Transparent therapy session pricing. Individual therapy 1000 SEK, couples therapy 1400 SEK. Free initial consultation." keywords="therapy pricing, session cost, psychologist fees" canonicalPath="/demo/psychology/pricing" />
       <section className="py-16 md:py-24 px-5">
         <div className="max-w-3xl mx-auto">
           <div className="text-center space-y-3 mb-14">

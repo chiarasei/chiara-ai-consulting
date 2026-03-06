@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import PsychologyLayout from "@/components/psychology/PsychologyLayout";
 import { green, greenLight, greenText, textMuted, borderClr } from "@/components/psychology/PsychologyLayout";
 import { usePsychLang } from "@/components/psychology/PsychLangContext";
+import SEOHead from "@/components/SEOHead";
 
 const PsychologyHowItWorksPage = () => {
   const { t } = usePsychLang();
@@ -15,6 +16,7 @@ const PsychologyHowItWorksPage = () => {
 
   return (
     <PsychologyLayout>
+      <SEOHead title="How It Works – Psykolog Praktiken" description="Three simple steps from consultation to ongoing therapy support. Learn what to expect from your first session." keywords="therapy process, how therapy works, first session, consultation" canonicalPath="/demo/psychology/how-it-works" />
       <section className="py-16 md:py-24 px-5">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-3 mb-14">
