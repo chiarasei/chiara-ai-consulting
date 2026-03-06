@@ -72,7 +72,7 @@ const TradeFairLanding = () => {
                 <img
                   src={heroImage}
                   alt="Professional consulting team collaborating"
-                  className="rounded-2xl shadow-medium w-full object-cover max-h-[250px] md:max-h-[350px] lg:max-h-none"
+                  className="rounded-2xl shadow-medium w-full object-cover max-h-[350px] md:max-h-[450px] lg:max-h-none"
                   loading="eager"
                 />
               </div>
