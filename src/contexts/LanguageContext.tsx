@@ -94,8 +94,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Home - Voice
     "home.voice.badge": "Live Demo",
-    "home.voice.title": "AI Voice Assistant Demo",
-    "home.voice.subtitle": "We also build voice assistants that can answer customer calls, provide information, and help businesses respond to inquiries automatically.",
+    "home.voice.title": "Speak with our AI Assistant",
+    "home.voice.subtitle": "You can ask questions about website design, booking systems, or automation for your business. Our AI assistant can also collect your contact details so we can follow up with a free website review.",
 
     // Home - CTA
     "home.cta.title": "Ready to Improve Your Website?",
@@ -256,8 +256,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Home - Voice
     "home.voice.badge": "Live Demo",
-    "home.voice.title": "AI Röstassistent Demo",
-    "home.voice.subtitle": "Vi bygger även röstassistenter som kan svara på kundsamtal, ge information och hjälpa företag att svara på förfrågningar automatiskt.",
+    "home.voice.title": "Prata med vår AI-assistent",
+    "home.voice.subtitle": "Du kan ställa frågor om webbdesign, bokningssystem eller automation för ditt företag. Vår AI-assistent kan också samla in dina kontaktuppgifter så att vi kan följa upp med en gratis hemsideanalys.",
 
     // Home - CTA
     "home.cta.title": "Redo att Förbättra Din Hemsida?",
