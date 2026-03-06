@@ -63,9 +63,9 @@ const translations: Record<Language, Record<string, string>> = {
     "recentwork.voice.desc": "A live demo of our AI voice assistant that can answer customer calls, provide information, and help businesses respond to inquiries automatically. Try it yourself below.",
 
     // Hero
-    "hero.title1": "Modern Websites & Smart Automation for",
+    "hero.title1": "Modern Websites, Booking Systems & Smart Automation for",
     "hero.title2": "Service Businesses",
-    "hero.description": "We upgrade outdated websites and add chat assistants that answer customer questions automatically, with optional voice assistants to help handle customer inquiries.",
+    "hero.description": "We design and upgrade professional websites for small businesses and service providers. From building a new website to redesigning an existing one, we help businesses make it easier for customers to book appointments, ask questions, and connect with them online. We can add booking calendars, chat assistants that answer common questions automatically, and optional voice assistants to help handle customer inquiries.",
     "hero.trust": "Free Website Review for Local Businesses",
     "hero.cta": "Get a Free Website Review",
     "hero.cta2": "View Our Services",
@@ -230,9 +230,9 @@ const translations: Record<Language, Record<string, string>> = {
     "recentwork.voice.desc": "En live-demo av vår AI-röstassistent som kan svara på kundsamtal, ge information och hjälpa företag att svara på förfrågningar automatiskt. Prova själv nedan.",
 
     // Hero
-    "hero.title1": "Moderna Hemsidor & Smart Automation för",
+    "hero.title1": "Moderna Hemsidor, Bokningssystem & Smart Automation för",
     "hero.title2": "Tjänsteföretag",
-    "hero.description": "Vi uppgraderar föråldrade hemsidor och lägger till chattassistenter som svarar på kundfrågor automatiskt, med valfria röstassistenter för att hantera kundförfrågningar.",
+    "hero.description": "Vi designar och uppgraderar professionella hemsidor för småföretag och tjänsteleverantörer. Från att bygga en ny hemsida till att designa om en befintlig, hjälper vi företag att göra det enklare för kunder att boka tider, ställa frågor och ta kontakt online. Vi kan lägga till bokningskalendrar, chattassistenter som svarar på vanliga frågor automatiskt och valfria röstassistenter för att hantera kundförfrågningar.",
     "hero.trust": "Gratis Hemsideanalys för Lokala Företag",
     "hero.cta": "Få en Gratis Hemsideanalys",
     "hero.cta2": "Se Våra Tjänster",
