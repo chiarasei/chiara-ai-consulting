@@ -89,7 +89,7 @@ const DemoVoiceCall = () => {
   return (
     <div className="flex flex-col items-center gap-3">
       <p className="text-sm font-semibold text-muted-foreground tracking-wide uppercase">
-        {language === "sv" ? "Demo röstsamtal" : "Demo Voice Call"}
+        Chiara AI Assistant
       </p>
 
       {isActive ? (
@@ -125,7 +125,7 @@ const DemoVoiceCall = () => {
           ) : (
             <>
               <Phone size={20} />
-              {language === "sv" ? "Starta samtal" : "Start a call"}
+              {language === "sv" ? "Prata med vår AI-assistent" : "Talk to our AI Assistant"}
             </>
           )}
         </Button>
