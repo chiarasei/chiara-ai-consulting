@@ -20,7 +20,7 @@ import DemoVoiceCall from "@/components/DemoVoiceCall";
 
 
 const TradeFairLanding = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <div className="min-h-screen">
