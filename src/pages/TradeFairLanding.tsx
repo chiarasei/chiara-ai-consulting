@@ -34,9 +34,9 @@ const TradeFairLanding = () => {
       <main>
         {/* HERO */}
         <section className="relative min-h-[70vh] flex items-center pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-6 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-background to-accent/[0.04] -z-10" />
-          <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-3xl -z-10" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/[0.03] rounded-full blur-3xl -z-10" />
+          <div className="absolute inset-0 bg-gradient-hero -z-10" />
+          <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-primary/[0.06] rounded-full blur-3xl -z-10" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/[0.04] rounded-full blur-3xl -z-10" />
 
           <div className="container mx-auto max-w-6xl">
             <div className="grid lg:grid-cols-[5fr_7fr] gap-10 lg:gap-16 items-center">
@@ -101,7 +101,7 @@ const TradeFairLanding = () => {
         </section>
 
         {/* PROBLEM */}
-        <section className="py-10 md:py-16 px-4 md:px-6 bg-muted/50">
+        <section className="py-10 md:py-16 px-4 md:px-6" style={{ background: 'hsl(222 47% 11%)' }}>
           <div className="container mx-auto max-w-4xl">
             <div className="text-center mb-10 md:mb-12 space-y-4">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
@@ -122,7 +122,7 @@ const TradeFairLanding = () => {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className={`flex items-start gap-3 p-4 rounded-xl border border-border bg-card hover:shadow-soft transition-all duration-300 ${
+                  className={`flex items-start gap-3 p-4 rounded-xl border border-border bg-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 ${
                     i === 4 ? "sm:col-span-2 lg:col-span-1" : ""
                   }`}
                 >
@@ -164,7 +164,7 @@ const TradeFairLanding = () => {
                   { title: t("home.about.v3.title"), desc: t("home.about.v3.desc") },
                   { title: t("home.about.v4.title"), desc: t("home.about.v4.desc") },
                 ].map((item, i) => (
-                  <div key={i} className="p-4 rounded-xl border border-border bg-card">
+                  <div key={i} className="p-4 rounded-xl border border-border bg-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
                     <h3 className="text-sm font-bold text-card-foreground mb-1">{item.title}</h3>
                     <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
                   </div>
@@ -175,7 +175,7 @@ const TradeFairLanding = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-10 md:py-16 px-4 md:px-6 bg-muted/50">
+        <section className="py-10 md:py-16 px-4 md:px-6" style={{ background: 'hsl(222 47% 11%)' }}>
           <div className="container mx-auto max-w-3xl">
             <div className="relative rounded-2xl border border-primary/20 bg-card p-8 md:p-12 overflow-hidden text-center space-y-6">
               <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/[0.05] rounded-full blur-3xl -z-0" />
