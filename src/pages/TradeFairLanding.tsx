@@ -39,7 +39,7 @@ const TradeFairLanding = () => {
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/[0.03] rounded-full blur-3xl -z-10" />
 
           <div className="container mx-auto max-w-6xl">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-[5fr_7fr] gap-10 lg:gap-16 items-center">
               <div className="space-y-8 animate-fade-in-up text-center lg:text-left">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] tracking-tight text-balance">
                   {t("hero.title1")}{" "}
