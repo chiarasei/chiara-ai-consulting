@@ -36,7 +36,7 @@ const FloatingChat = () => {
   const subtitle = language === "sv" ? "Vi pratar svenska & engelska" : "We speak English & Swedish";
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-3 right-3 md:bottom-6 md:right-6 z-50 flex flex-col items-end gap-3">
       {isOpen && (
         <div
           ref={chatContainerRef}
