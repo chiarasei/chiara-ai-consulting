@@ -38,6 +38,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.services": "Services",
     "nav.industries": "Industries",
     "nav.pricing": "Pricing",
+    "nav.contact": "Contact",
 
     // Recent Work Page
     "recentwork.title": "Our Work & Demos",
@@ -197,6 +198,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.services": "Tjänster",
     "nav.industries": "Branscher",
     "nav.pricing": "Priser",
+    "nav.contact": "Kontakt",
 
     // Recent Work Page
     "recentwork.title": "Vårt Arbete & Demos",
