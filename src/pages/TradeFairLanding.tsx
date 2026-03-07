@@ -41,42 +41,37 @@ const TradeFairLanding = () => {
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/[0.04] rounded-full blur-3xl -z-10" />
 
           <div className="container mx-auto max-w-6xl">
-            <div className="grid lg:grid-cols-[5fr_7fr] gap-10 lg:gap-16 items-center">
-              <div className="space-y-8 animate-fade-in-up text-center lg:text-left">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] tracking-tight text-balance">
-                  {t("hero.title1")}{" "}
-                  <span className="bg-gradient-primary bg-clip-text text-transparent">
-                    {t("hero.title2")}
-                  </span>
-                </h1>
+            <div className="animate-fade-in-up text-center space-y-8">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] tracking-tight text-balance max-w-4xl mx-auto">
+                {t("hero.title1")}{" "}
+                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                  {t("hero.title2")}
+                </span>
+              </h1>
 
-                <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                  {t("hero.description")}
-                </p>
+              <img
+                src={heroImage}
+                alt="Professional consulting team collaborating"
+                className="rounded-2xl shadow-medium w-full object-cover max-h-[350px] md:max-h-[450px] max-w-4xl mx-auto"
+                loading="eager"
+              />
 
+              <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                {t("hero.description")}
+              </p>
 
-                <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                  <Link to="/contact">
-                    <Button size="lg" className="text-base px-8 py-6 rounded-xl shadow-medium hover:shadow-glow transition-all duration-300 gap-2 w-full sm:w-auto">
-                      {t("hero.cta")}
-                      <ArrowRight className="w-4 h-4" />
-                    </Button>
-                  </Link>
-                  <Link to="/services">
-                    <Button size="lg" variant="outline" className="text-base px-8 py-6 rounded-xl transition-all duration-300 gap-2 w-full sm:w-auto">
-                      {t("hero.cta2")}
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-
-              <div>
-                <img
-                  src={heroImage}
-                  alt="Professional consulting team collaborating"
-                  className="rounded-2xl shadow-medium w-full object-cover max-h-[350px] md:max-h-[450px] lg:max-h-none"
-                  loading="eager"
-                />
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Link to="/contact">
+                  <Button size="lg" className="text-base px-8 py-6 rounded-xl shadow-medium hover:shadow-glow transition-all duration-300 gap-2 w-full sm:w-auto">
+                    {t("hero.cta")}
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
+                <Link to="/services">
+                  <Button size="lg" variant="outline" className="text-base px-8 py-6 rounded-xl transition-all duration-300 gap-2 w-full sm:w-auto">
+                    {t("hero.cta2")}
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
