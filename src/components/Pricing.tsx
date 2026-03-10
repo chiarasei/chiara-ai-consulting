@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check, Clock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Pricing = () => {
@@ -9,22 +9,52 @@ const Pricing = () => {
   const packages = [
     {
       name: t("pricing.starter.name"),
-      desc: t("pricing.starter.desc"),
       price: t("pricing.starter.price"),
+      includes: null,
+      features: [
+        t("pricing.starter.f1"),
+        t("pricing.starter.f2"),
+        t("pricing.starter.f3"),
+        t("pricing.starter.f4"),
+        t("pricing.starter.f5"),
+        t("pricing.starter.f6"),
+        t("pricing.starter.f7"),
+      ],
       highlighted: false,
     },
     {
       name: t("pricing.growth.name"),
-      desc: t("pricing.growth.desc"),
       price: t("pricing.growth.price"),
+      includes: t("pricing.growth.includes"),
+      features: [
+        t("pricing.growth.f1"),
+        t("pricing.growth.f2"),
+        t("pricing.growth.f3"),
+        t("pricing.growth.f4"),
+        t("pricing.growth.f5"),
+      ],
       highlighted: true,
     },
     {
       name: t("pricing.premium.name"),
-      desc: t("pricing.premium.desc"),
       price: t("pricing.premium.price"),
+      includes: t("pricing.premium.includes"),
+      features: [
+        t("pricing.premium.f1"),
+        t("pricing.premium.f2"),
+        t("pricing.premium.f3"),
+        t("pricing.premium.f4"),
+        t("pricing.premium.f5"),
+      ],
       highlighted: false,
     },
+  ];
+
+  const maintenanceFeatures = [
+    t("pricing.maintenance.f1"),
+    t("pricing.maintenance.f2"),
+    t("pricing.maintenance.f3"),
+    t("pricing.maintenance.f4"),
   ];
 
   return (
@@ -54,13 +84,36 @@ const Pricing = () => {
                   {t("pricing.popular")}
                 </span>
               )}
-              <h3 className="text-lg font-bold mb-2">{pkg.name}</h3>
-              <p className={`text-sm mb-6 leading-relaxed flex-1 ${pkg.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
-                {pkg.desc}
-              </p>
-              <p className={`text-lg font-bold mb-6 ${pkg.highlighted ? "text-primary-foreground" : "text-foreground"}`}>
+              <h3 className="text-lg font-bold mb-1">{pkg.name}</h3>
+              <p className={`text-2xl font-bold mb-4 ${pkg.highlighted ? "text-primary-foreground" : "text-foreground"}`}>
                 {pkg.price}
               </p>
+
+              {pkg.includes && (
+                <p className={`text-xs font-semibold mb-3 ${pkg.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                  {pkg.includes}
+                </p>
+              )}
+
+              <ul className="space-y-2.5 mb-6 flex-1">
+                {pkg.features.map((feature, j) => (
+                  <li key={j} className="flex items-start gap-2 text-sm leading-snug">
+                    <Check
+                      size={15}
+                      className={`mt-0.5 flex-shrink-0 ${pkg.highlighted ? "text-primary-foreground/90" : "text-primary"}`}
+                    />
+                    <span className={pkg.highlighted ? "text-primary-foreground/90" : "text-muted-foreground"}>
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className={`flex items-center gap-1.5 text-xs mb-4 ${pkg.highlighted ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+                <Clock size={13} />
+                {t("pricing.delivery")}
+              </div>
+
               <Link to="/contact" className="mt-auto">
                 <Button
                   className={`w-full font-semibold h-11 gap-2 ${
@@ -77,10 +130,21 @@ const Pricing = () => {
           ))}
         </div>
 
-        <div className="mt-8 text-center p-5 rounded-xl border border-border bg-card">
-          <p className="text-sm font-semibold text-foreground mb-1">{t("pricing.maintenance.title")}</p>
-          <p className="text-lg font-bold text-primary">{t("pricing.maintenance.price")}</p>
-          <p className="text-xs text-muted-foreground mt-1">{t("pricing.maintenance.desc")}</p>
+        <div className="mt-8 p-6 rounded-xl border border-border bg-card">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+            <div>
+              <p className="text-sm font-semibold text-foreground">{t("pricing.maintenance.title")}</p>
+              <p className="text-lg font-bold text-primary">{t("pricing.maintenance.price")}</p>
+            </div>
+          </div>
+          <ul className="grid sm:grid-cols-2 gap-2">
+            {maintenanceFeatures.map((f, i) => (
+              <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Check size={14} className="text-primary flex-shrink-0" />
+                {f}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <p className="text-xs text-muted-foreground text-center mt-6">
