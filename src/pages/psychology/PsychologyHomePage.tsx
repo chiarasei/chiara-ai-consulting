@@ -1,14 +1,17 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Bot, ArrowRight } from "lucide-react";
+import { Bot, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import PsychologyLayout from "@/components/psychology/PsychologyLayout";
 import { green, greenLight, greenText, textMuted, borderClr } from "@/components/psychology/PsychologyLayout";
 import { usePsychLang } from "@/components/psychology/PsychLangContext";
 import SEOHead from "@/components/SEOHead";
+import PsychologyChat from "@/components/psychology/PsychologyChat";
 import therapyHero from "@/assets/therapy-hero.jpg";
 import therapistPortrait from "@/assets/therapist-portrait.jpg";
 
 const DemoPsychologyHome = () => {
   const { t } = usePsychLang();
+  const [chatOpen, setChatOpen] = useState(false);
 
   return (
     <PsychologyLayout>
@@ -44,14 +47,34 @@ const DemoPsychologyHome = () => {
               <Link to="/demo/psychology/contact" className="px-7 py-3 rounded-full text-sm font-semibold shadow-md transition-all hover:shadow-lg" style={{ background: green, color: "#fff" }}>
                 {t("Book Your First Session", "Boka ditt första samtal")}
               </Link>
-              <Link to="/demo/psychology/contact" className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-bold shadow-lg transition-all hover:shadow-xl" style={{ background: green, color: "#fff" }}>
+              <button onClick={() => setChatOpen(true)} className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-bold shadow-lg transition-all hover:shadow-xl" style={{ background: green, color: "#fff" }}>
                 <Bot className="w-5 h-5" />
                 {t("Ask Our AI Assistant", "Fråga vår AI-assistent")}
-              </Link>
+              </button>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Inline Chat Assistant */}
+      {chatOpen && (
+        <section className="py-12 md:py-16 px-5" style={{ background: "#fff" }}>
+          <div className="max-w-lg mx-auto space-y-3">
+            <button
+              onClick={() => setChatOpen(false)}
+              className="w-full flex items-center justify-center gap-2 text-sm font-medium py-2 transition-colors hover:opacity-70"
+              style={{ color: textMuted }}
+            >
+              {t("Close chat", "Stäng chatten")} <ChevronUp className="w-4 h-4" />
+            </button>
+            <PsychologyChat />
+            <p className="text-center text-xs" style={{ color: textMuted }}>
+              {t("We speak English and Swedish · Powered by AI", "Vi pratar engelska och svenska · Drivs av AI")}
+            </p>
+          </div>
+        </section>
+      )}
+
 
       <section className="py-16 md:py-24 px-5" style={{ background: "#fff" }}>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
