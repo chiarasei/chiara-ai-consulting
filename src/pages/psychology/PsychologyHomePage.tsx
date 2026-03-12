@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Bot, ArrowRight } from "lucide-react";
+import { Bot, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import PsychologyLayout from "@/components/psychology/PsychologyLayout";
 import { green, greenLight, greenText, textMuted, borderClr } from "@/components/psychology/PsychologyLayout";
 import { usePsychLang } from "@/components/psychology/PsychLangContext";
 import SEOHead from "@/components/SEOHead";
+import PsychologyChat from "@/components/psychology/PsychologyChat";
 import therapyHero from "@/assets/therapy-hero.jpg";
 import therapistPortrait from "@/assets/therapist-portrait.jpg";
 
