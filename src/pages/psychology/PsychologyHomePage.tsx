@@ -11,6 +11,7 @@ import therapistPortrait from "@/assets/therapist-portrait.jpg";
 
 const DemoPsychologyHome = () => {
   const { t } = usePsychLang();
+  const [chatOpen, setChatOpen] = useState(false);
 
   return (
     <PsychologyLayout>
