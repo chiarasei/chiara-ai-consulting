@@ -56,23 +56,22 @@ const DemoPsychologyHome = () => {
         </div>
       </section>
 
-      {/* Inline Chat Assistant */}
+      {/* Chat Modal Overlay */}
       {chatOpen && (
-        <section className="py-12 md:py-16 px-5" style={{ background: "#fff" }}>
-          <div className="max-w-lg mx-auto space-y-3">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4" onClick={() => setChatOpen(false)}>
+          <div className="w-full max-w-lg animate-fade-in" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setChatOpen(false)}
-              className="w-full flex items-center justify-center gap-2 text-sm font-medium py-2 transition-colors hover:opacity-70"
-              style={{ color: textMuted }}
+              className="w-full flex items-center justify-center gap-2 text-sm font-medium py-2 mb-2 text-white/80 hover:text-white transition-colors"
             >
               {t("Close chat", "Stäng chatten")} <ChevronUp className="w-4 h-4" />
             </button>
             <PsychologyChat />
-            <p className="text-center text-xs" style={{ color: textMuted }}>
+            <p className="text-center text-xs mt-2 text-white/70">
               {t("We speak English and Swedish · Powered by AI", "Vi pratar engelska och svenska · Drivs av AI")}
             </p>
           </div>
-        </section>
+        </div>
       )}
 
 
