@@ -56,6 +56,26 @@ const DemoPsychologyHome = () => {
         </div>
       </section>
 
+      {/* Inline Chat Assistant */}
+      {chatOpen && (
+        <section className="py-12 md:py-16 px-5" style={{ background: "#fff" }}>
+          <div className="max-w-lg mx-auto space-y-3">
+            <button
+              onClick={() => setChatOpen(false)}
+              className="w-full flex items-center justify-center gap-2 text-sm font-medium py-2 transition-colors hover:opacity-70"
+              style={{ color: textMuted }}
+            >
+              {t("Close chat", "Stäng chatten")} <ChevronUp className="w-4 h-4" />
+            </button>
+            <PsychologyChat />
+            <p className="text-center text-xs" style={{ color: textMuted }}>
+              {t("We speak English and Swedish · Powered by AI", "Vi pratar engelska och svenska · Drivs av AI")}
+            </p>
+          </div>
+        </section>
+      )}
+
+
       <section className="py-16 md:py-24 px-5" style={{ background: "#fff" }}>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-5">
