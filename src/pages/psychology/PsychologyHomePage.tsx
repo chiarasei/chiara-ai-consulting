@@ -59,7 +59,7 @@ const DemoPsychologyHome = () => {
       {/* Chat Modal Overlay */}
       {chatOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4" onClick={() => setChatOpen(false)}>
-          <div className="w-full max-w-lg animate-fade-in" onClick={(e) => e.stopPropagation()}>
+          <div className="w-full max-w-sm animate-fade-in" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setChatOpen(false)}
               className="w-full flex items-center justify-center gap-2 text-sm font-medium py-2 mb-2 text-white/80 hover:text-white transition-colors"
