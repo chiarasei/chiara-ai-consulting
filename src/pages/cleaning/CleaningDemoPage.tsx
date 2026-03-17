@@ -132,8 +132,11 @@ const CleaningDemoPage = () => {
             <h1 className="text-2xl md:text-4xl font-bold leading-tight">
               Professionell städning i Göteborg
             </h1>
-            <p className="text-sm md:text-base text-gray-300 leading-relaxed max-w-lg mx-auto">
-              Boka online på under en minut. Hemstädning, kontor och flytt med RUT-avdrag.
+            <p className="text-base md:text-lg text-gray-200 leading-relaxed max-w-lg mx-auto">
+              Vi erbjuder hemstädning, kontorsstädning, storstädning och flyttstädning i hela Göteborgsområdet.
+            </p>
+            <p className="text-sm text-gray-400 max-w-md mx-auto">
+              Boka online på under en minut — alla tjänster med RUT-avdrag.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
               <a href="#booking">
