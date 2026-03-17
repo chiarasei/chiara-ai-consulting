@@ -149,6 +149,22 @@ const TradeFairLanding = () => {
           </div>
         </section>
 
+        {/* ASK US ANYTHING */}
+        <section className="fade-in-section py-10 md:py-16 px-4 md:px-6">
+          <div className="container mx-auto max-w-3xl text-center space-y-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
+              {t("home.ask.title")}
+            </h2>
+            <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
+              {t("home.ask.subtitle")}
+            </p>
+            <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium animate-pulse">
+              <MessageCircle className="w-4 h-4" />
+              {t("home.ask.hint")}
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="fade-in-section py-10 md:py-16 px-4 md:px-6" style={{ background: 'hsl(222 47% 11%)' }}>
           <div className="container mx-auto max-w-3xl">
