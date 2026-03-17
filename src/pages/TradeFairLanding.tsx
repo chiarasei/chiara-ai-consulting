@@ -10,9 +10,7 @@ import {
   UserX,
   SmartphoneNfc,
   MessageCircleOff,
-  Mic,
-  CheckCircle2,
-  ExternalLink,
+  MessageCircle,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
