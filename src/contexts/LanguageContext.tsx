@@ -92,10 +92,19 @@ const translations: Record<Language, Record<string, string>> = {
     // Home - Industries
     "home.industries.title": "Businesses We Help",
 
+    // Home - Try AI
+    "home.tryai.title": "See the AI Assistant in Action",
+    "home.tryai.subtitle": "Watch how our AI assistant answers customer questions, helps with bookings, and works around the clock for your business.",
+    "home.tryai.button": "Try the AI Assistant",
+
     // Home - Voice
     "home.voice.badge": "Live Demo",
     "home.voice.title": "Try Our AI Assistant Right Now",
     "home.voice.subtitle": "Ask it anything about websites, booking systems, or automation for your business. It can also collect your contact details so we can follow up with a free review.",
+
+    // Recent Work - Voice Demo
+    "recentwork.voicedemo.title": "See the AI Assistant in Action",
+    "recentwork.voicedemo.desc": "This is a demo of how the AI assistant can answer customer questions and help guide them to book services. Try it yourself — speak to the assistant and see how it handles real inquiries.",
 
     // Home - CTA
     "home.cta.title": "See How It Works for Your Business",
