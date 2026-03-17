@@ -17,7 +17,6 @@ import {
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-consulting.jpg";
-import DemoVoiceCall from "@/components/DemoVoiceCall";
 
 
 const TradeFairLanding = () => {
