@@ -58,7 +58,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.title1": "Get More Bookings and Never Miss a Customer With",
     "hero.title2": "Smart Automation",
-    "hero.description": "We help small service businesses in Sweden respond to every customer inquiry, even outside business hours. With a modern website, AI chat assistant, and booking integration, your customers can always reach you, ask questions, and book appointments.",
+    "hero.description": "We help small service businesses respond to every customer inquiry, even outside business hours. With a modern website, AI chat assistant, and booking integration, your customers can always reach you, ask questions, and book appointments.",
     "hero.trust": "Free Website Review for Local Businesses",
     "hero.cta": "Book a Free Demo",
     "hero.cta2": "See How It Works",
