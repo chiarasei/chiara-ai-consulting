@@ -294,6 +294,11 @@ const translations: Record<Language, Record<string, string>> = {
     "recentwork.advanceddemo.title": "Avancerad AI-demo",
     "recentwork.advanceddemo.desc": "Utforska hur röst-AI kan hantera kundförfrågningar och guida bokningar automatiskt. Testa själv — prata med assistenten och se hur den hanterar riktiga frågor.",
 
+    // Recent Work - Cleaning Demo
+    "recentwork.cleaning.badge": "Demo-webbplats",
+    "recentwork.cleaning.title": "Göteborg Clean Services – Städfirma Demo",
+    "recentwork.cleaning.desc": "En demo som visar hur ett städföretag kan få fler bokningar med ett online-bokningssystem, synlig tillgänglighetskalender och AI-chattbot som hjälper kunder att välja tjänster och boka direkt.",
+
     // Home - CTA
     "home.cta.title": "Se Hur Det Fungerar för Ditt Företag",
     "home.cta.subtitle": "Boka en gratis 15-minuters demo. Vi visar hur ditt företag kan svara på varje kund, få fler bokningar och spara timmar varje vecka.",
