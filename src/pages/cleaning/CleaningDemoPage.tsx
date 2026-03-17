@@ -421,11 +421,19 @@ const CleaningDemoPage = () => {
         <p>© 2025 Göteborg Clean Services — Demo av <Link to="/recent-work" className="text-sky-400 hover:underline">ChiaraAI Consulting</Link></p>
       </footer>
 
-      {/* Chat */}
-      {showChat && (
-        <div className="fixed bottom-4 right-4 z-50 w-[90vw] max-w-md">
+      {/* Chat toggle bubble + panel */}
+      {showChat ? (
+        <div className="fixed bottom-4 right-4 z-50 w-[340px] max-w-[calc(100vw-2rem)]">
           <DemoBotChat defaultOpen onClose={() => setShowChat(false)} />
         </div>
+      ) : (
+        <button
+          onClick={() => setShowChat(true)}
+          className="fixed bottom-4 right-4 z-50 bg-sky-600 hover:bg-sky-700 text-white rounded-full p-3.5 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          aria-label="Öppna chatt"
+        >
+          <Bot className="w-5 h-5" />
+        </button>
       )}
     </div>
   );

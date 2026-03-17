@@ -32,7 +32,7 @@ const FloatingChat = () => {
   }, [isOpen]);
 
   // Hide on psychology demo pages (they have their own chat)
-  if (isPsychologyDemo) return null;
+  if (isPsychologyDemo || isCleaningDemo) return null;
 
   const subtitle = language === "sv" ? "Vi pratar svenska & engelska" : "We speak English & Swedish";
 
