@@ -12,6 +12,7 @@ import PricingPage from "./pages/PricingPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 import ShopifyShowcasePage from "./pages/ShopifyShowcasePage";
+import CleaningDemoPage from "./pages/cleaning/CleaningDemoPage";
 import RecentWorkPage from "./pages/RecentWorkPage";
 import FloatingChat from "./components/FloatingChat";
 import DemoPsychologyHome from "./pages/psychology/PsychologyHomePage";
