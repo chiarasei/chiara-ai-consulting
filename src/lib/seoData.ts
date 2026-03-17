@@ -57,7 +57,7 @@ export const faqJsonLd = {
       "name": "Which industries does ChiaraAI serve?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ChiaraAI specializes in AI automation for cafés, restaurants, salons, retail shops, and other small businesses across Sweden."
+        "text": "ChiaraAI specializes in AI automation for cafés, restaurants, salons, retail shops, and other small businesses."
       }
     }
   ]

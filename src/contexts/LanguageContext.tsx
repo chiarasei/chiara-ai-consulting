@@ -58,7 +58,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.title1": "Get More Bookings and Never Miss a Customer With",
     "hero.title2": "Smart Automation",
-    "hero.description": "We help small service businesses in Sweden respond to every customer inquiry, even outside business hours. With a modern website, AI chat assistant, and booking integration, your customers can always reach you, ask questions, and book appointments.",
+    "hero.description": "We help small service businesses respond to every customer inquiry, even outside business hours. With a modern website, AI chat assistant, and booking integration, your customers can always reach you, ask questions, and book appointments.",
     "hero.trust": "Free Website Review for Local Businesses",
     "hero.cta": "Book a Free Demo",
     "hero.cta2": "See How It Works",
@@ -114,7 +114,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Home - About
     "home.about.title": "About Chiara AI Consulting",
-    "home.about.p1": "We help small service businesses in Sweden stop losing customers to slow replies and missed calls. Many businesses have outdated websites that make it hard for customers to get answers or book appointments. We fix that with modern websites and simple automation tools that work around the clock.",
+    "home.about.p1": "We help small service businesses stop losing customers to slow replies and missed calls. Many businesses have outdated websites that make it hard for customers to get answers or book appointments. We fix that with modern websites and simple automation tools that work around the clock.",
     "home.about.p2": "Our approach is straightforward: we give your business a professional website with a chat assistant that answers customer questions instantly, a booking system that lets customers schedule appointments online, and automation that handles inquiries even when you're busy. The result is more bookings, faster replies, and less time spent on repetitive tasks.",
     "home.about.v1.title": "More Bookings",
     "home.about.v1.desc": "Customers can book appointments 24/7 without calling or waiting for a reply.",
@@ -140,7 +140,7 @@ const translations: Record<Language, Record<string, string>> = {
     "services.voice.desc": "An AI assistant that answers customer calls, provides information, and takes messages when you can't pick up the phone.",
 
     "industries.title": "Businesses We Help",
-    "industries.subtitle": "We work with service businesses across Sweden that rely on customer bookings and inquiries.",
+    "industries.subtitle": "We work with service businesses that rely on customer bookings and inquiries.",
     "industries.therapists.title": "Therapists & Coaches",
     "industries.therapists.desc": "Let clients book sessions online and get instant answers to common questions, so you can focus on your practice.",
     "industries.wellness.title": "Wellness & Beauty Clinics",
@@ -249,7 +249,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.title1": "Få Fler Bokningar och Missa Aldrig en Kund Med",
     "hero.title2": "Smart Automation",
-    "hero.description": "Vi hjälper små tjänsteföretag i Sverige att svara på varje kundförfrågan, även utanför kontorstid. Med en modern hemsida, AI-chattassistent och bokningsintegration kan dina kunder alltid nå dig, ställa frågor och boka tid.",
+    "hero.description": "Vi hjälper små tjänsteföretag att svara på varje kundförfrågan, även utanför kontorstid. Med en modern hemsida, AI-chattassistent och bokningsintegration kan dina kunder alltid nå dig, ställa frågor och boka tid.",
     "hero.trust": "Gratis Hemsideanalys för Lokala Företag",
     "hero.cta": "Boka en Gratis Demo",
     "hero.cta2": "Se Hur Det Fungerar",
@@ -305,7 +305,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Home - About
     "home.about.title": "Om Chiara AI Consulting",
-    "home.about.p1": "Vi hjälper små tjänsteföretag i Sverige att sluta tappa kunder på grund av sena svar och missade samtal. Många företag har föråldrade hemsidor som gör det svårt för kunder att få svar eller boka tid. Vi löser det med moderna hemsidor och enkla automationsverktyg som fungerar dygnet runt.",
+    "home.about.p1": "Vi hjälper små tjänsteföretag att sluta tappa kunder på grund av sena svar och missade samtal. Många företag har föråldrade hemsidor som gör det svårt för kunder att få svar eller boka tid. Vi löser det med moderna hemsidor och enkla automationsverktyg som fungerar dygnet runt.",
     "home.about.p2": "Vårt arbetssätt är enkelt: vi ger ditt företag en professionell hemsida med en chattassistent som svarar på kundfrågor direkt, ett bokningssystem där kunder kan boka online, och automation som hanterar förfrågningar även när du är upptagen. Resultatet är fler bokningar, snabbare svar och mindre tid på repetitiva uppgifter.",
     "home.about.v1.title": "Fler Bokningar",
     "home.about.v1.desc": "Kunder kan boka tid dygnet runt utan att ringa eller vänta på svar.",
@@ -331,7 +331,7 @@ const translations: Record<Language, Record<string, string>> = {
     "services.voice.desc": "En AI-assistent som svarar på kundsamtal, ger information och tar meddelanden när du inte kan svara i telefon.",
 
     "industries.title": "Företag Vi Hjälper",
-    "industries.subtitle": "Vi arbetar med tjänsteföretag i hela Sverige som förlitar sig på kundbokningar och förfrågningar.",
+    "industries.subtitle": "Vi arbetar med tjänsteföretag som förlitar sig på kundbokningar och förfrågningar.",
     "industries.therapists.title": "Terapeuter & Coacher",
     "industries.therapists.desc": "Låt klienter boka sessioner online och få direkta svar på vanliga frågor, så du kan fokusera på din praktik.",
     "industries.wellness.title": "Hälso- och Skönhetskliniker",
