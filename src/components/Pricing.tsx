@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, Clock } from "lucide-react";
+import { ArrowRight, Check, Clock, Zap } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Pricing = () => {
@@ -10,42 +10,43 @@ const Pricing = () => {
     {
       name: t("pricing.starter.name"),
       price: t("pricing.starter.price"),
+      tagline: t("pricing.starter.tagline"),
+      choose: t("pricing.starter.choose"),
       includes: null,
       features: [
         t("pricing.starter.f1"),
         t("pricing.starter.f2"),
-        t("pricing.starter.f3"),
-        t("pricing.starter.f4"),
-        t("pricing.starter.f5"),
-        t("pricing.starter.f6"),
-        t("pricing.starter.f7"),
       ],
+      result: t("pricing.starter.result"),
       highlighted: false,
     },
     {
       name: t("pricing.growth.name"),
       price: t("pricing.growth.price"),
-      includes: t("pricing.growth.includes"),
+      tagline: t("pricing.growth.tagline"),
+      choose: null,
+      includes: null,
       features: [
         t("pricing.growth.f1"),
         t("pricing.growth.f2"),
         t("pricing.growth.f3"),
         t("pricing.growth.f4"),
-        t("pricing.growth.f5"),
       ],
+      result: t("pricing.growth.result"),
       highlighted: true,
     },
     {
       name: t("pricing.premium.name"),
       price: t("pricing.premium.price"),
+      tagline: t("pricing.premium.tagline"),
+      choose: null,
       includes: t("pricing.premium.includes"),
       features: [
         t("pricing.premium.f1"),
         t("pricing.premium.f2"),
         t("pricing.premium.f3"),
-        t("pricing.premium.f4"),
-        t("pricing.premium.f5"),
       ],
+      result: t("pricing.premium.result"),
       highlighted: false,
     },
   ];
@@ -85,17 +86,26 @@ const Pricing = () => {
                 </span>
               )}
               <h3 className="text-lg font-bold mb-1">{pkg.name}</h3>
-              <p className={`text-2xl font-bold mb-4 ${pkg.highlighted ? "text-primary-foreground" : "text-foreground"}`}>
+              <p className={`text-2xl font-bold mb-2 ${pkg.highlighted ? "text-primary-foreground" : "text-foreground"}`}>
                 {pkg.price}
               </p>
+              <p className={`text-sm mb-4 ${pkg.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                👉 {pkg.tagline}
+              </p>
+
+              {pkg.choose && (
+                <p className={`text-xs font-semibold mb-2 ${pkg.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                  {pkg.choose}
+                </p>
+              )}
 
               {pkg.includes && (
-                <p className={`text-xs font-semibold mb-3 ${pkg.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                <p className={`text-xs font-semibold mb-2 ${pkg.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
                   {pkg.includes}
                 </p>
               )}
 
-              <ul className="space-y-2.5 mb-6 flex-1">
+              <ul className="space-y-2.5 mb-5 flex-1">
                 {pkg.features.map((feature, j) => (
                   <li key={j} className="flex items-start gap-2 text-sm leading-snug">
                     <Check
@@ -108,6 +118,16 @@ const Pricing = () => {
                   </li>
                 ))}
               </ul>
+
+              {/* Result line */}
+              <div className={`flex items-start gap-2 text-sm font-medium mb-5 p-3 rounded-lg ${
+                pkg.highlighted
+                  ? "bg-primary-foreground/10 text-primary-foreground"
+                  : "bg-muted text-foreground"
+              }`}>
+                <Zap size={15} className="mt-0.5 flex-shrink-0" />
+                <span>{pkg.result}</span>
+              </div>
 
               <div className={`flex items-center gap-1.5 text-xs mb-4 ${pkg.highlighted ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
                 <Clock size={13} />
