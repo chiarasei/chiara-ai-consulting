@@ -125,4 +125,4 @@ const RecentWorkPage = () => {
     </div>
   );
 };
-
+export default RecentWorkPage;
