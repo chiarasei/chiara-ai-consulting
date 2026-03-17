@@ -12,6 +12,7 @@ import PricingPage from "./pages/PricingPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 import ShopifyShowcasePage from "./pages/ShopifyShowcasePage";
+import CleaningDemoPage from "./pages/cleaning/CleaningDemoPage";
 import RecentWorkPage from "./pages/RecentWorkPage";
 import FloatingChat from "./components/FloatingChat";
 import DemoPsychologyHome from "./pages/psychology/PsychologyHomePage";
@@ -51,6 +52,7 @@ const App = () => (
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/demo/psychology/*" element={<PsychologyRoutes />} />
             <Route path="/demo/shopify" element={<ShopifyShowcasePage />} />
+            <Route path="/demo/cleaning" element={<CleaningDemoPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <FloatingChat />
