@@ -126,11 +126,3 @@ const RecentWorkPage = () => {
   );
 };
 
-export default RecentWorkPage;
-      </main>
-      <Footer />
-    </div>
-  );
-};
-
-export default RecentWorkPage;
