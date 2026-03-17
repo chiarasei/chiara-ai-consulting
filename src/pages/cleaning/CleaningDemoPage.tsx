@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Phone, Mail, MapPin, Star, CheckCircle2, Sparkles, Home, Building2, CalendarDays, Clock, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, Phone, Mail, MapPin, Star, CheckCircle2, Sparkles, Home, Building2, CalendarDays, Clock, ChevronLeft, ChevronRight, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
