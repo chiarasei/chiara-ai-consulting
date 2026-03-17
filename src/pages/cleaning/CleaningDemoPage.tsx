@@ -201,12 +201,12 @@ const CleaningDemoPage = () => {
                 <h3 className="font-semibold text-gray-900">Välj tjänst</h3>
               </div>
               <Select value={selectedService} onValueChange={setSelectedService}>
-                <SelectTrigger className="w-full max-w-sm border-gray-300 text-gray-900">
+                <SelectTrigger className="w-full max-w-sm bg-white border-gray-300 text-gray-900">
                   <SelectValue placeholder="Välj en tjänst..." />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-white border-gray-200 text-gray-900">
                   {SERVICES.map((s) => (
-                    <SelectItem key={s.id} value={s.id}>{s.label}</SelectItem>
+                    <SelectItem key={s.id} value={s.id} className="text-gray-900 focus:bg-sky-50 focus:text-gray-900">{s.label}</SelectItem>
                   ))}
                 </SelectContent>
               </Select>
