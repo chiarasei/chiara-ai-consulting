@@ -140,7 +140,7 @@ const translations: Record<Language, Record<string, string>> = {
     "services.voice.desc": "An AI assistant that answers customer calls, provides information, and takes messages when you can't pick up the phone.",
 
     "industries.title": "Businesses We Help",
-    "industries.subtitle": "We work with service businesses across Sweden that rely on customer bookings and inquiries.",
+    "industries.subtitle": "We work with service businesses that rely on customer bookings and inquiries.",
     "industries.therapists.title": "Therapists & Coaches",
     "industries.therapists.desc": "Let clients book sessions online and get instant answers to common questions, so you can focus on your practice.",
     "industries.wellness.title": "Wellness & Beauty Clinics",
