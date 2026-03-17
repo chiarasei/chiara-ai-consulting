@@ -331,7 +331,7 @@ const translations: Record<Language, Record<string, string>> = {
     "services.voice.desc": "En AI-assistent som svarar på kundsamtal, ger information och tar meddelanden när du inte kan svara i telefon.",
 
     "industries.title": "Företag Vi Hjälper",
-    "industries.subtitle": "Vi arbetar med tjänsteföretag i hela Sverige som förlitar sig på kundbokningar och förfrågningar.",
+    "industries.subtitle": "Vi arbetar med tjänsteföretag som förlitar sig på kundbokningar och förfrågningar.",
     "industries.therapists.title": "Terapeuter & Coacher",
     "industries.therapists.desc": "Låt klienter boka sessioner online och få direkta svar på vanliga frågor, så du kan fokusera på din praktik.",
     "industries.wellness.title": "Hälso- och Skönhetskliniker",
