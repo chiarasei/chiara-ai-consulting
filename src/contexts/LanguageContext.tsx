@@ -114,7 +114,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Home - About
     "home.about.title": "About Chiara AI Consulting",
-    "home.about.p1": "We help small service businesses in Sweden stop losing customers to slow replies and missed calls. Many businesses have outdated websites that make it hard for customers to get answers or book appointments. We fix that with modern websites and simple automation tools that work around the clock.",
+    "home.about.p1": "We help small service businesses stop losing customers to slow replies and missed calls. Many businesses have outdated websites that make it hard for customers to get answers or book appointments. We fix that with modern websites and simple automation tools that work around the clock.",
     "home.about.p2": "Our approach is straightforward: we give your business a professional website with a chat assistant that answers customer questions instantly, a booking system that lets customers schedule appointments online, and automation that handles inquiries even when you're busy. The result is more bookings, faster replies, and less time spent on repetitive tasks.",
     "home.about.v1.title": "More Bookings",
     "home.about.v1.desc": "Customers can book appointments 24/7 without calling or waiting for a reply.",
