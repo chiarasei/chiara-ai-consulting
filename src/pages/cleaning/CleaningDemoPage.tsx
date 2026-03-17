@@ -121,24 +121,21 @@ const CleaningDemoPage = () => {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={cleaningHero} alt="Professionell städning" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 via-gray-900/40 to-transparent" />
+      <section className="overflow-hidden">
+        {/* Image - fully visible, no overlay */}
+        <div className="w-full h-[260px] md:h-[400px]">
+          <img src={cleaningHero} alt="Professionell städning i Göteborg" className="w-full h-full object-cover object-top" />
         </div>
-        <div className="relative container mx-auto max-w-6xl px-4 py-16 md:py-24">
-          <div className="max-w-md space-y-4">
-            <div className="inline-flex items-center gap-2 bg-sky-600/90 text-white text-xs font-semibold px-3 py-1.5 rounded-full">
-              <Star className="w-3.5 h-3.5 fill-current" />
-              Göteborgs mest pålitliga städfirma
-            </div>
-            <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight">
+        {/* Text below image, centered */}
+        <div className="bg-gray-900 text-white py-10 md:py-14 px-4">
+          <div className="container mx-auto max-w-2xl text-center space-y-4">
+            <h1 className="text-2xl md:text-4xl font-bold leading-tight">
               Professionell städning i Göteborg
             </h1>
-            <p className="text-sm md:text-base text-gray-200 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-300 leading-relaxed max-w-lg mx-auto">
               Boka online på under en minut. Hemstädning, kontor och flytt med RUT-avdrag.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
               <a href="#booking">
                 <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white text-sm w-full sm:w-auto">
                   <CalendarDays className="w-4 h-4 mr-2" />
@@ -147,8 +144,7 @@ const CleaningDemoPage = () => {
               </a>
               <Button
                 size="lg"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 text-sm"
+                className="bg-sky-600 hover:bg-sky-700 text-white text-sm"
                 onClick={() => setShowChat(true)}
               >
                 Fråga oss i chatten
