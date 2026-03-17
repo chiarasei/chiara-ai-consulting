@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, Leaf, ShoppingBag, Mic } from "lucide-react";
+import { ExternalLink, Leaf, ShoppingBag, Mic, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
