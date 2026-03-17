@@ -305,7 +305,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Home - About
     "home.about.title": "Om Chiara AI Consulting",
-    "home.about.p1": "Vi hjälper små tjänsteföretag i Sverige att sluta tappa kunder på grund av sena svar och missade samtal. Många företag har föråldrade hemsidor som gör det svårt för kunder att få svar eller boka tid. Vi löser det med moderna hemsidor och enkla automationsverktyg som fungerar dygnet runt.",
+    "home.about.p1": "Vi hjälper små tjänsteföretag att sluta tappa kunder på grund av sena svar och missade samtal. Många företag har föråldrade hemsidor som gör det svårt för kunder att få svar eller boka tid. Vi löser det med moderna hemsidor och enkla automationsverktyg som fungerar dygnet runt.",
     "home.about.p2": "Vårt arbetssätt är enkelt: vi ger ditt företag en professionell hemsida med en chattassistent som svarar på kundfrågor direkt, ett bokningssystem där kunder kan boka online, och automation som hanterar förfrågningar även när du är upptagen. Resultatet är fler bokningar, snabbare svar och mindre tid på repetitiva uppgifter.",
     "home.about.v1.title": "Fler Bokningar",
     "home.about.v1.desc": "Kunder kan boka tid dygnet runt utan att ringa eller vänta på svar.",

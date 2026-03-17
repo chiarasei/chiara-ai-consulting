@@ -9,9 +9,9 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="ChiaraAI Consulting – AI-automation för företag i Sverige"
-        description="ChiaraAI Consulting erbjuder AI-chattassistenter och röstassistenter för bokningar och kundkommunikation. Skräddarsydda AI-lösningar för företag i Sverige."
-        keywords="AI-automation Sverige, AI-chattbot, röstassistent, automatiserad bokning, AI-konsult Sverige, chiaraaiconsulting.se"
+        title="ChiaraAI Consulting – AI-automation för företag"
+        description="ChiaraAI Consulting erbjuder AI-chattassistenter och röstassistenter för bokningar och kundkommunikation. Skräddarsydda AI-lösningar för företag."
+        keywords="AI-automation, AI-chattbot, röstassistent, automatiserad bokning, AI-konsult, chiaraaiconsulting.se"
         canonicalPath="/"
         jsonLd={localBusinessJsonLd}
       />
