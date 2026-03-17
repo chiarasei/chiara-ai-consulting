@@ -124,23 +124,23 @@ const CleaningDemoPage = () => {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img src={cleaningHero} alt="Professionell städning" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 via-gray-900/40 to-transparent" />
         </div>
-        <div className="relative container mx-auto max-w-6xl px-4 py-20 md:py-32">
-          <div className="max-w-xl space-y-5">
+        <div className="relative container mx-auto max-w-6xl px-4 py-16 md:py-24">
+          <div className="max-w-md space-y-4">
             <div className="inline-flex items-center gap-2 bg-sky-600/90 text-white text-xs font-semibold px-3 py-1.5 rounded-full">
               <Star className="w-3.5 h-3.5 fill-current" />
-              Göteborg's mest pålitliga städfirma
+              Göteborgs mest pålitliga städfirma
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+            <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight">
               Professionell städning i Göteborg
             </h1>
-            <p className="text-base md:text-lg text-gray-200 leading-relaxed">
-              Boka din städning online på under en minut. Vi sköter resten. Hemstädning, kontorsstädning och flyttstädning med RUT-avdrag.
+            <p className="text-sm md:text-base text-gray-200 leading-relaxed">
+              Boka online på under en minut. Hemstädning, kontor och flytt med RUT-avdrag.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a href="#booking">
-                <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white text-base w-full sm:w-auto">
+                <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white text-sm w-full sm:w-auto">
                   <CalendarDays className="w-4 h-4 mr-2" />
                   Boka Online
                 </Button>
@@ -148,7 +148,7 @@ const CleaningDemoPage = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 text-base"
+                className="border-white/30 text-white hover:bg-white/10 text-sm"
                 onClick={() => setShowChat(true)}
               >
                 Fråga oss i chatten
