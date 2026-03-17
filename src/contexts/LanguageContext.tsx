@@ -249,7 +249,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.title1": "Få Fler Bokningar och Missa Aldrig en Kund Med",
     "hero.title2": "Smart Automation",
-    "hero.description": "Vi hjälper små tjänsteföretag i Sverige att svara på varje kundförfrågan, även utanför kontorstid. Med en modern hemsida, AI-chattassistent och bokningsintegration kan dina kunder alltid nå dig, ställa frågor och boka tid.",
+    "hero.description": "Vi hjälper små tjänsteföretag att svara på varje kundförfrågan, även utanför kontorstid. Med en modern hemsida, AI-chattassistent och bokningsintegration kan dina kunder alltid nå dig, ställa frågor och boka tid.",
     "hero.trust": "Gratis Hemsideanalys för Lokala Företag",
     "hero.cta": "Boka en Gratis Demo",
     "hero.cta2": "Se Hur Det Fungerar",
