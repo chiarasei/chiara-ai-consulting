@@ -424,7 +424,7 @@ const CleaningDemoPage = () => {
       {/* Chat toggle bubble + panel */}
       {showChat ? (
         <div className="fixed bottom-4 right-4 z-50 w-[340px] max-w-[calc(100vw-2rem)]">
-          <DemoBotChat defaultOpen onClose={() => setShowChat(false)} />
+          <CleaningChat onClose={() => setShowChat(false)} />
         </div>
       ) : (
         <button
