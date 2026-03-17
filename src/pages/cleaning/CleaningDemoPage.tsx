@@ -352,7 +352,12 @@ const CleaningDemoPage = () => {
                   </Button>
                 </div>
               ) : (
-                <p className="text-sm text-gray-400 text-center">Välj tjänst, datum och tid för att boka</p>
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <p className="text-sm text-gray-400">Välj tjänst, datum och tid för att boka</p>
+                  <Button disabled size="lg" className="bg-sky-300 text-white w-full sm:w-auto cursor-not-allowed">
+                    Bekräfta Bokning
+                  </Button>
+                </div>
               )}
             </div>
           </div>
