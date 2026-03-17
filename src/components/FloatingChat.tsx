@@ -11,6 +11,7 @@ const FloatingChat = () => {
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
   const isPsychologyDemo = location.pathname.startsWith("/demo/psychology");
+  const isCleaningDemo = location.pathname.startsWith("/demo/cleaning");
 
   useEffect(() => {
     const handler = () => setIsOpen(true);
@@ -31,7 +32,7 @@ const FloatingChat = () => {
   }, [isOpen]);
 
   // Hide on psychology demo pages (they have their own chat)
-  if (isPsychologyDemo) return null;
+  if (isPsychologyDemo || isCleaningDemo) return null;
 
   const subtitle = language === "sv" ? "Vi pratar svenska & engelska" : "We speak English & Swedish";
 
