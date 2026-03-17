@@ -37,6 +37,29 @@ const RecentWorkPage = () => {
           </div>
         </section>
 
+        {/* Advanced AI Demo — Prominent Position */}
+        <section className="py-10 md:py-16 px-4 md:px-6">
+          <div className="container mx-auto max-w-4xl">
+            <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
+              <div className="p-6 md:p-10 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+                  <Mic className="w-3.5 h-3.5" />
+                  {t("recentwork.advanceddemo.badge")}
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-card-foreground tracking-tight">
+                  {t("recentwork.advanceddemo.title")}
+                </h2>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
+                  {t("recentwork.advanceddemo.desc")}
+                </p>
+                <div className="pt-4">
+                  <DemoVoiceCall />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Psychology Practice */}
         <section className="py-4 md:py-6 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
@@ -97,32 +120,9 @@ const RecentWorkPage = () => {
           </div>
         </section>
 
-        {/* Voice AI Demo — Featured Section */}
-        <section className="py-10 md:py-16 px-4 md:px-6">
-          <div className="container mx-auto max-w-4xl">
-            <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
-              <div className="p-6 md:p-10 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-                  <Mic className="w-3.5 h-3.5" />
-                  {t("recentwork.voice.badge")}
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-card-foreground tracking-tight">
-                  {t("recentwork.voicedemo.title")}
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
-                  {t("recentwork.voicedemo.desc")}
-                </p>
-                <div className="pt-4">
-                  <DemoVoiceCall />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>
   );
 };
-
 export default RecentWorkPage;
