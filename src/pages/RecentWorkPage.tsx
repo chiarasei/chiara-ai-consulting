@@ -97,8 +97,8 @@ const RecentWorkPage = () => {
           </div>
         </section>
 
-        {/* Voice AI Demo */}
-        <section className="py-4 md:py-6 px-4 md:px-6">
+        {/* Voice AI Demo — Featured Section */}
+        <section className="py-10 md:py-16 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
             <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
               <div className="p-6 md:p-10 space-y-5">
@@ -107,10 +107,10 @@ const RecentWorkPage = () => {
                   {t("recentwork.voice.badge")}
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-card-foreground tracking-tight">
-                  {t("recentwork.voice.title")}
+                  {t("recentwork.voicedemo.title")}
                 </h2>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
-                  {t("recentwork.voice.desc")}
+                  {t("recentwork.voicedemo.desc")}
                 </p>
                 <div className="pt-4">
                   <DemoVoiceCall />

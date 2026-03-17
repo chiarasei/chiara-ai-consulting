@@ -92,10 +92,19 @@ const translations: Record<Language, Record<string, string>> = {
     // Home - Industries
     "home.industries.title": "Businesses We Help",
 
+    // Home - Try AI
+    "home.tryai.title": "See the AI Assistant in Action",
+    "home.tryai.subtitle": "Watch how our AI assistant answers customer questions, helps with bookings, and works around the clock for your business.",
+    "home.tryai.button": "Try the AI Assistant",
+
     // Home - Voice
     "home.voice.badge": "Live Demo",
     "home.voice.title": "Try Our AI Assistant Right Now",
     "home.voice.subtitle": "Ask it anything about websites, booking systems, or automation for your business. It can also collect your contact details so we can follow up with a free review.",
+
+    // Recent Work - Voice Demo
+    "recentwork.voicedemo.title": "See the AI Assistant in Action",
+    "recentwork.voicedemo.desc": "This is a demo of how the AI assistant can answer customer questions and help guide them to book services. Try it yourself — speak to the assistant and see how it handles real inquiries.",
 
     // Home - CTA
     "home.cta.title": "See How It Works for Your Business",
@@ -274,10 +283,19 @@ const translations: Record<Language, Record<string, string>> = {
     // Home - Industries
     "home.industries.title": "Företag Vi Hjälper",
 
+    // Home - Try AI
+    "home.tryai.title": "Se AI-assistenten i Aktion",
+    "home.tryai.subtitle": "Se hur vår AI-assistent svarar på kundfrågor, hjälper med bokningar och arbetar dygnet runt för ditt företag.",
+    "home.tryai.button": "Testa AI-assistenten",
+
     // Home - Voice
     "home.voice.badge": "Live Demo",
     "home.voice.title": "Testa Vår AI-assistent Nu",
     "home.voice.subtitle": "Ställ frågor om hemsidor, bokningssystem eller automation för ditt företag. Assistenten kan också samla in dina kontaktuppgifter så vi kan följa upp med en gratis genomgång.",
+
+    // Recent Work - Voice Demo
+    "recentwork.voicedemo.title": "Se AI-assistenten i Aktion",
+    "recentwork.voicedemo.desc": "Det här är en demo av hur AI-assistenten kan svara på kundfrågor och hjälpa dem att boka tjänster. Testa själv — prata med assistenten och se hur den hanterar riktiga förfrågningar.",
 
     // Home - CTA
     "home.cta.title": "Se Hur Det Fungerar för Ditt Företag",
