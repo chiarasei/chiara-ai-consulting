@@ -279,19 +279,15 @@ const translations: Record<Language, Record<string, string>> = {
     // Home - Industries
     "home.industries.title": "Företag Vi Hjälper",
 
-    // Home - Try AI
-    "home.tryai.title": "Se AI-assistenten i Aktion",
-    "home.tryai.subtitle": "Se hur vår AI-assistent svarar på kundfrågor, hjälper med bokningar och arbetar dygnet runt för ditt företag.",
-    "home.tryai.button": "Testa AI-assistenten",
+    // Home - Ask
+    "home.ask.title": "Fråga Oss Vad Som Helst Om Ditt Företag",
+    "home.ask.subtitle": "Använd chatten nedan för att ställa frågor om hur du kan få fler bokningar, förbättra din hemsida eller automatisera kundsvar.",
+    "home.ask.hint": "Klicka på chatten i hörnet för snabba svar",
 
-    // Home - Voice
-    "home.voice.badge": "Live Demo",
-    "home.voice.title": "Testa Vår AI-assistent Nu",
-    "home.voice.subtitle": "Ställ frågor om hemsidor, bokningssystem eller automation för ditt företag. Assistenten kan också samla in dina kontaktuppgifter så vi kan följa upp med en gratis genomgång.",
-
-    // Recent Work - Voice Demo
-    "recentwork.voicedemo.title": "Se AI-assistenten i Aktion",
-    "recentwork.voicedemo.desc": "Det här är en demo av hur AI-assistenten kan svara på kundfrågor och hjälpa dem att boka tjänster. Testa själv — prata med assistenten och se hur den hanterar riktiga förfrågningar.",
+    // Recent Work - Advanced Demo
+    "recentwork.advanceddemo.badge": "Avancerad Demo",
+    "recentwork.advanceddemo.title": "Avancerad AI-demo",
+    "recentwork.advanceddemo.desc": "Utforska hur röst-AI kan hantera kundförfrågningar och guida bokningar automatiskt. Testa själv — prata med assistenten och se hur den hanterar riktiga frågor.",
 
     // Home - CTA
     "home.cta.title": "Se Hur Det Fungerar för Ditt Företag",
