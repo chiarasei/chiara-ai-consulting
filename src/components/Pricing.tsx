@@ -150,13 +150,14 @@ const Pricing = () => {
           ))}
         </div>
 
-        <div className="mt-8 p-6 rounded-xl border border-border bg-card">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+        <div className="mt-8 p-6 rounded-xl border-2 border-primary/20 bg-primary/5">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-1">
             <div>
               <p className="text-sm font-semibold text-foreground">{t("pricing.maintenance.title")}</p>
               <p className="text-lg font-bold text-primary">{t("pricing.maintenance.price")}</p>
             </div>
           </div>
+          <p className="text-sm text-muted-foreground mb-4">{t("pricing.maintenance.subtitle")}</p>
           <ul className="grid sm:grid-cols-2 gap-2">
             {maintenanceFeatures.map((f, i) => (
               <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
