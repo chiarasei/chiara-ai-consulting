@@ -1,0 +1,44 @@
+# Chiara AI Consulting Website
+
+## Live Website
+https://chiaraaiconsulting.se
+
+## Overview
+This project is the official website for Chiara AI Consulting. It is designed to present AI-driven consulting services, solutions, and client engagement capabilities.
+
+The application is a production-ready web solution deployed with a custom domain.
+
+## Features
+- Responsive modern user interface
+- AI consulting service pages
+- Contact and lead generation functionality
+- Chatbot integration
+- Clean and user-friendly design
+
+## Tech Stack
+- React (Vite)
+- TypeScript
+- Tailwind CSS
+- shadcn-ui
+- Supabase
+- Lovable (builder and hosting)
+
+## DevOps and Engineering Practices
+- Version control using GitHub
+- Continuous updates through Lovable synchronization
+- Structured frontend architecture
+- Deployment with a custom production domain
+
+## Project Structuresrc/      
+# Application source code
+components/ # UI components
+supabase/   # Backend integration
+## Purpose
+This project demonstrates:
+- Real-world website deployment
+- Integration of frontend and backend services
+- Application of DevOps workflows using GitHub
+- Management of a live production system
+
+## Author
+Chiara – DevOps Engineer | Cloud and AI Enthusiast
