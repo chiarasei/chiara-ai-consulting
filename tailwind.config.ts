@@ -13,7 +13,7 @@ export default {
       },
     },
     fontFamily: {
-      sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+      sans: ['Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
     },
     extend: {
       colors: {
