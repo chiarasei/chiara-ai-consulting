@@ -45,7 +45,7 @@ const Navigation = () => {
               <img
                 src={logoImage}
                 alt="ChiaraAI Consulting Logo"
-                className="h-10 w-10 md:h-12 md:w-12 object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_6px_hsl(187_92%_53%/0.4)]"
+                className="h-10 w-10 md:h-12 md:w-12 object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_6px_hsl(217_91%_50%/0.4)]"
                 
               />
               <span className="hidden sm:block text-base md:text-lg font-bold text-foreground tracking-tight">
