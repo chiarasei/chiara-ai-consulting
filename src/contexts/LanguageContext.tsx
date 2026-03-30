@@ -102,10 +102,10 @@ const translations: Record<Language, Record<string, string>> = {
     "recentwork.advanceddemo.title": "Advanced AI Demo",
     "recentwork.advanceddemo.desc": "Explore how voice AI can handle customer inquiries and guide bookings automatically. Try it yourself — speak to the assistant and see how it handles real questions.",
 
-    // Recent Work - Cleaning Demo
+    // Recent Work - Electrician Demo
     "recentwork.cleaning.badge": "Demo Website",
-    "recentwork.cleaning.title": "Göteborg Clean Services – Cleaning Company Demo",
-    "recentwork.cleaning.desc": "A demo showing how a cleaning company can get more bookings with an online booking system, visible availability calendar, and AI chatbot that helps customers choose services and book instantly.",
+    "recentwork.cleaning.title": "Göteborg El & Service – Electrician Demo",
+    "recentwork.cleaning.desc": "A demo showing how an electrician company can streamline job requests with an online booking system, service selection, and AI chatbot that helps customers describe their needs and request a visit.",
 
     // Home - CTA
     "home.cta.title": "See How It Works for Your Business",
