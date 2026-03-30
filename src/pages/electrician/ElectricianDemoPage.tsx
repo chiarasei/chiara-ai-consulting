@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Phone, Mail, MapPin, Star, CheckCircle2, Zap, Home, Building2, CalendarDays, Clock, ChevronLeft, ChevronRight, Bot, Sun, Plug, Wrench } from "lucide-react";
+import { ArrowLeft, Phone, Mail, MapPin, Star, CheckCircle2, Zap, Home, Building2, CalendarDays, Clock, ChevronLeft, ChevronRight, Sun, Plug, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -408,7 +408,7 @@ const ElectricianDemoPage = () => {
           className="fixed bottom-4 right-4 z-50 bg-blue-700 hover:bg-blue-800 text-white rounded-full p-3.5 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           aria-label="Öppna chatt"
         >
-          <Bot className="w-5 h-5" />
+          <Zap className="w-5 h-5" />
         </button>
       )}
     </div>
