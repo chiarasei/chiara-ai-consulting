@@ -37,13 +37,13 @@ const RecentWorkPage = () => {
           </div>
         </section>
 
-        {/* Cleaning Company Demo — First */}
+        {/* Electrician Company Demo — First */}
         <section className="py-10 md:py-16 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
             <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
               <div className="p-6 md:p-10 space-y-5">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-                  <Sparkles className="w-3.5 h-3.5" />
+                  <Zap className="w-3.5 h-3.5" />
                   {t("recentwork.cleaning.badge")}
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-card-foreground tracking-tight">
