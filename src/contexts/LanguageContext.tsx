@@ -102,10 +102,10 @@ const translations: Record<Language, Record<string, string>> = {
     "recentwork.advanceddemo.title": "Advanced AI Demo",
     "recentwork.advanceddemo.desc": "Explore how voice AI can handle customer inquiries and guide bookings automatically. Try it yourself — speak to the assistant and see how it handles real questions.",
 
-    // Recent Work - Cleaning Demo
+    // Recent Work - Electrician Demo
     "recentwork.cleaning.badge": "Demo Website",
-    "recentwork.cleaning.title": "Göteborg Clean Services – Cleaning Company Demo",
-    "recentwork.cleaning.desc": "A demo showing how a cleaning company can get more bookings with an online booking system, visible availability calendar, and AI chatbot that helps customers choose services and book instantly.",
+    "recentwork.cleaning.title": "Göteborg El & Service – Electrician Demo",
+    "recentwork.cleaning.desc": "A demo showing how an electrician company can streamline job requests with an online booking system, service selection, and AI chatbot that helps customers describe their needs and request a visit.",
 
     // Home - CTA
     "home.cta.title": "See How It Works for Your Business",
@@ -294,10 +294,10 @@ const translations: Record<Language, Record<string, string>> = {
     "recentwork.advanceddemo.title": "Avancerad AI-demo",
     "recentwork.advanceddemo.desc": "Utforska hur röst-AI kan hantera kundförfrågningar och guida bokningar automatiskt. Testa själv — prata med assistenten och se hur den hanterar riktiga frågor.",
 
-    // Recent Work - Cleaning Demo
+    // Recent Work - Electrician Demo
     "recentwork.cleaning.badge": "Demo-webbplats",
-    "recentwork.cleaning.title": "Göteborg Clean Services – Städfirma Demo",
-    "recentwork.cleaning.desc": "En demo som visar hur ett städföretag kan få fler bokningar med ett online-bokningssystem, synlig tillgänglighetskalender och AI-chattbot som hjälper kunder att välja tjänster och boka direkt.",
+    "recentwork.cleaning.title": "Göteborg El & Service – Elektriker Demo",
+    "recentwork.cleaning.desc": "En demo som visar hur en elfirma kan effektivisera jobbförfrågningar med ett online-bokningssystem, tjänstval och AI-chattbot som hjälper kunder beskriva sina behov och boka besök.",
 
     // Home - CTA
     "home.cta.title": "Se Hur Det Fungerar för Ditt Företag",
