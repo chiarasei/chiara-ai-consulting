@@ -10,8 +10,7 @@ const FloatingChat = () => {
   const location = useLocation();
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  const isPsychologyDemo = location.pathname.startsWith("/demo/psychology");
-  const isCleaningDemo = location.pathname.startsWith("/demo/cleaning");
+  const isDemoPage = location.pathname.startsWith("/demo/");
 
   useEffect(() => {
     const handler = () => setIsOpen(true);
