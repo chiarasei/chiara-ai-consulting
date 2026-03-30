@@ -408,7 +408,7 @@ const ElectricianDemoPage = () => {
           className="fixed bottom-4 right-4 z-50 bg-blue-700 hover:bg-blue-800 text-white rounded-full p-3.5 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           aria-label="Öppna chatt"
         >
-          <Zap className="w-5 h-5" />
+          <MessageCircle className="w-5 h-5" />
         </button>
       )}
     </div>
