@@ -52,7 +52,7 @@ const RecentWorkPage = () => {
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
                   {t("recentwork.cleaning.desc")}
                 </p>
-                <Link to="/demo/cleaning">
+                <Link to="/demo/electrician">
                   <Button variant="outline" className="gap-2 mt-2">
                     {t("recentwork.viewproject")}
                     <ExternalLink className="w-4 h-4" />
