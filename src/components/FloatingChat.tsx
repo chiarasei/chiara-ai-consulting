@@ -5,7 +5,7 @@ import { DemoBotChat } from "./DemoBotChat";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const FloatingChat = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const { language } = useLanguage();
   const location = useLocation();
   const chatContainerRef = useRef<HTMLDivElement>(null);
