@@ -58,7 +58,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.title1": "Stop Losing Customers.",
     "hero.title2": "Start Getting Bookings.",
-    "hero.description": "Most small businesses miss calls, lose leads, and waste hours on repetitive questions. We fix that with a modern website, AI chat assistant, and automated booking, so every customer gets a fast response, even at 2 AM.",
+    "hero.description": "Most businesses miss calls, lose leads, and waste hours on repetitive questions. We fix that with a modern website, AI chat assistant, and automated booking, so every customer gets a fast response, even at 2 AM.",
     "hero.badge": "Built for Service Businesses",
     "hero.trust": "Free Website Review for Local Businesses",
     "hero.cta": "Book a Free Demo",
