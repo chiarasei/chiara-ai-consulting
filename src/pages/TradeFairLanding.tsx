@@ -234,29 +234,6 @@ const TradeFairLanding = () => {
           </div>
         </section>
 
-        {/* 6. CTA */}
-        <section className="fade-in-section py-10 md:py-16 px-4 md:px-6" style={{ background: 'hsl(222 47% 11%)' }}>
-          <div className="container mx-auto max-w-3xl">
-            <div className="relative rounded-2xl border border-primary/20 bg-card p-8 md:p-12 overflow-hidden text-center space-y-6">
-              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/[0.05] rounded-full blur-3xl -z-0" />
-              <div className="relative z-10 space-y-6">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
-                  {t("home.cta.title")}
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
-                  {t("home.cta.subtitle")}
-                </p>
-
-                <Link to="/contact">
-                  <Button size="lg" className="text-base px-8 py-6 rounded-xl shadow-medium hover:shadow-glow transition-all duration-300 gap-2 mt-2">
-                    {t("home.cta.button")}
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>
