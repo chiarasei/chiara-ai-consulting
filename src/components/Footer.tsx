@@ -16,19 +16,7 @@ const Footer = () => {
   return (
     <footer className="bg-card border-t border-border py-10 md:py-14 px-4 md:px-6">
       <div className="container mx-auto max-w-5xl">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-8">
-          <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2 mb-3">
-              <img src={logoImage} alt="ChiaraAI Logo" className="h-8 w-8 object-contain" />
-              <span className="font-bold text-foreground text-sm">
-                chiaraAI<span className="text-primary">consulting</span>
-              </span>
-            </div>
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              {t("footer.description")}
-            </p>
-          </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-8">
           <div>
             <h4 className="font-bold mb-3 text-foreground text-xs uppercase tracking-wider">{t("footer.navigation")}</h4>
             <ul className="space-y-2 text-xs">
@@ -52,7 +40,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="col-span-2 md:col-span-1">
+          <div>
             <h4 className="font-bold mb-3 text-foreground text-xs uppercase tracking-wider">{t("footer.contact")}</h4>
             <ul className="space-y-2 text-xs text-muted-foreground">
               <li>info@chiaraaiconsulting.se</li>
