@@ -51,7 +51,7 @@ const FloatingChat = () => {
         <div className="flex flex-col items-center gap-1.5">
           <button
             onClick={() => setIsOpen(true)}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-pulse"
             aria-label="Open chat"
           >
             <MessageCircle size={24} fill="currentColor" />
