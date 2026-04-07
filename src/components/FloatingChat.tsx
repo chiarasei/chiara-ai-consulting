@@ -51,7 +51,8 @@ const FloatingChat = () => {
         <div className="flex flex-col items-center gap-1.5">
           <button
             onClick={() => setIsOpen(true)}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
             aria-label="Open chat"
           >
             <Bot size={24} />
