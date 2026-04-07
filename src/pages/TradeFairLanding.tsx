@@ -86,13 +86,18 @@ const TradeFairLanding = () => {
         </section>
 
         {/* 2. PROBLEM */}
-        <section className="fade-in-section py-10 md:py-16 px-4 md:px-6" style={{ background: 'hsl(222 47% 11%)' }}>
-          <div className="container mx-auto max-w-4xl">
+        <section className="fade-in-section py-12 md:py-20 px-4 md:px-6 relative overflow-hidden" style={{ background: 'hsl(222 47% 11%)' }}>
+          <div className="absolute inset-0 bg-gradient-to-b from-destructive/[0.03] to-transparent -z-0" />
+          <div className="container mx-auto max-w-4xl relative z-10">
             <div className="text-center mb-10 md:mb-12 space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-destructive/10 text-destructive text-xs md:text-sm font-semibold tracking-wide mb-2">
+                <AlertTriangle className="w-3.5 h-3.5" />
+                {t("home.problem.title")}
+              </div>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
                 {t("home.problem.title")}
               </h2>
-              <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 {t("home.problem.subtitle")}
               </p>
             </div>
