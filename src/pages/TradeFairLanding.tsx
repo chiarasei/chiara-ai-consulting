@@ -45,8 +45,8 @@ const TradeFairLanding = () => {
 
           <div className="container mx-auto max-w-6xl">
             <div className="animate-fade-in-up text-center space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold tracking-wide">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold tracking-wide animate-pulse">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                 {t("hero.badge")}
               </div>
 
