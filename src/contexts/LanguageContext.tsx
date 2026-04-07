@@ -56,74 +56,64 @@ const translations: Record<Language, Record<string, string>> = {
     "recentwork.voice.desc": "Try our AI voice assistant live. This is the same technology we add to client websites to answer customer calls automatically.",
 
     // Hero
-    "hero.title1": "Get More Bookings and Never Miss a Customer With",
-    "hero.title2": "Smart Automation",
-    "hero.description": "We help small service businesses respond to every customer inquiry, even outside business hours. With a modern website, AI chat assistant, and booking integration, your customers can always reach you, ask questions, and book appointments.",
+    "hero.title1": "Stop Losing Customers.",
+    "hero.title2": "Start Getting Bookings.",
+    "hero.description": "Most small businesses miss calls, lose leads, and waste hours on repetitive questions. We fix that with a modern website, AI chat assistant, and automated booking, so every customer gets a fast response, even at 2 AM.",
+    "hero.badge": "Built for Service Businesses",
     "hero.trust": "Free Website Review for Local Businesses",
     "hero.cta": "Book a Free Demo",
     "hero.cta2": "See How It Works",
 
-    // Home - Recent Work
-    "home.recent.title": "Recent Work",
-    "home.recent.project.title": "Custom Shopify E-commerce Store",
-    "home.recent.project.desc": "A modern online store with clean design, optimized for mobile and built for a smooth customer experience.",
-    "home.recent.project.button": "View Project",
-    "home.recent.project2.title": "Psychology Practice Website",
-    "home.recent.project2.desc": "A professional website for a private psychology practice with online booking and an AI chat assistant that answers patient questions automatically.",
-
     // Home - Problem
-    "home.problem.title": "How Many Customers Are You Losing Right Now?",
-    "home.problem.subtitle": "Most small businesses lose potential customers every week because they can't respond fast enough.",
-    "home.problem.p1": "Missed calls when you're busy with a client",
-    "home.problem.p2": "Customers leave your website without booking",
-    "home.problem.p3": "Questions go unanswered for hours or days",
-    "home.problem.p4": "No one replies to inquiries on evenings and weekends",
-    "home.problem.p5": "You spend too much time answering the same questions",
-    "home.problem.closing": "Every unanswered inquiry is a lost booking. We help you fix that.",
+    "home.problem.title": "Right Now, You're Losing Customers",
+    "home.problem.subtitle": "While you're busy working, potential customers are reaching out, and leaving when no one answers.",
+    "home.problem.p1": "A customer calls while you're with a client. They hang up and call your competitor.",
+    "home.problem.p2": "Someone visits your website at 9 PM. No chat, no booking option. They leave.",
+    "home.problem.p3": "An inquiry sits in your inbox for 2 days. By then, they've already booked elsewhere.",
+    "home.problem.p4": "You spend your evenings replying to the same questions over and over.",
+    "home.problem.p5": "Your website looks outdated. Customers don't trust it enough to reach out.",
+    "home.problem.closing": "Every missed message is money left on the table. Let's fix that.",
 
-    // Home - Services
-    "home.services.title": "What We Do",
+    // Home - Solution
+    "home.solution.title": "We Make Sure You Never Miss Another Customer",
+    "home.solution.subtitle": "We set up your business with a modern website, an AI assistant that answers questions instantly, and a booking system that works 24/7. You focus on your work. We handle the rest.",
+    "home.solution.s1.title": "Modern Website",
+    "home.solution.s1.desc": "A clean, professional site that builds trust and makes it easy for customers to take action.",
+    "home.solution.s2.title": "AI Chat Assistant",
+    "home.solution.s2.desc": "Answers customer questions instantly, captures leads, and guides visitors to book, day or night.",
+    "home.solution.s3.title": "Automated Booking",
+    "home.solution.s3.desc": "Customers book directly on your site. No phone tag, no back-and-forth emails.",
 
-    // Home - Pricing
-    "home.pricing.title": "Simple Packages for Small Businesses",
-    "home.pricing.note": "Final pricing depends on website size and automation requirements.",
-    "home.pricing.cta": "Book a Free Demo",
+    // Home - Benefits
+    "home.benefits.title": "What Changes When You Work With Us",
+    "home.benefits.b1.title": "More Bookings",
+    "home.benefits.b1.desc": "Customers can schedule appointments 24/7 without waiting for a callback.",
+    "home.benefits.b2.title": "Faster Response Time",
+    "home.benefits.b2.desc": "AI responds in seconds, not hours. No customer left waiting.",
+    "home.benefits.b3.title": "Less Repetitive Work",
+    "home.benefits.b3.desc": "Stop answering the same questions manually. Let automation handle it.",
+    "home.benefits.b4.title": "A Website That Actually Converts",
+    "home.benefits.b4.desc": "Not just a pretty page, but a tool that turns visitors into paying customers.",
 
-    // Home - Industries
-    "home.industries.title": "Businesses We Help",
+    // Home - How It Works
+    "home.howitworks.title": "How It Works",
+    "home.howitworks.subtitle": "Three simple steps to start getting more bookings.",
+    "home.howitworks.step1.title": "Book a Free Demo",
+    "home.howitworks.step1.desc": "We'll review your current setup and show you exactly what we can improve.",
+    "home.howitworks.step2.title": "We Build Everything",
+    "home.howitworks.step2.desc": "Website, chatbot, booking system, all set up and customized for your business in days.",
+    "home.howitworks.step3.title": "You Get More Customers",
+    "home.howitworks.step3.desc": "Your business responds to every inquiry automatically. You focus on doing great work.",
+
+    // Home - CTA
+    "home.cta.title": "Ready to Stop Losing Customers?",
+    "home.cta.subtitle": "Book a free 15-minute demo. We'll show you exactly how your business can respond faster, book more clients, and save hours every week.",
+    "home.cta.button": "Book a Free Demo",
 
     // Home - Ask
     "home.ask.title": "Ask Us Anything About Your Business",
     "home.ask.subtitle": "Use the chat below to ask questions about how you can get more bookings, improve your website, or automate customer responses.",
     "home.ask.hint": "Click the chat in the corner to get instant answers",
-
-    // Recent Work - Advanced Demo
-    "recentwork.advanceddemo.badge": "Advanced Demo",
-    "recentwork.advanceddemo.title": "Advanced AI Demo",
-    "recentwork.advanceddemo.desc": "Explore how voice AI can handle customer inquiries and guide bookings automatically. Try it yourself — speak to the assistant and see how it handles real questions.",
-
-    // Recent Work - Electrician Demo
-    "recentwork.cleaning.badge": "Demo Website",
-    "recentwork.cleaning.title": "Göteborg El & Service – Electrician Demo",
-    "recentwork.cleaning.desc": "A demo showing how an electrician company can streamline job requests with an online booking system, service selection, and AI chatbot that helps customers describe their needs and request a visit.",
-
-    // Home - CTA
-    "home.cta.title": "See How It Works for Your Business",
-    "home.cta.subtitle": "Book a free 15-minute demo. We'll show you how your business can respond to every customer, get more bookings, and save hours every week.",
-    "home.cta.button": "Book a Free Demo",
-
-    // Home - About
-    "home.about.title": "About Chiara AI Consulting",
-    "home.about.p1": "We help small service businesses stop losing customers to slow replies and missed calls. Many businesses have outdated websites that make it hard for customers to get answers or book appointments. We fix that with modern websites and simple automation tools that work around the clock.",
-    "home.about.p2": "Our approach is straightforward: we give your business a professional website with a chat assistant that answers customer questions instantly, a booking system that lets customers schedule appointments online, and automation that handles inquiries even when you're busy. The result is more bookings, faster replies, and less time spent on repetitive tasks.",
-    "home.about.v1.title": "More Bookings",
-    "home.about.v1.desc": "Customers can book appointments 24/7 without calling or waiting for a reply.",
-    "home.about.v2.title": "Faster Responses",
-    "home.about.v2.desc": "AI chat answers common questions instantly so you never keep a customer waiting.",
-    "home.about.v3.title": "Less Manual Work",
-    "home.about.v3.desc": "Automation handles routine inquiries so you can focus on your actual work.",
-    "home.about.v4.title": "Ongoing Support",
-    "home.about.v4.desc": "We keep everything running smoothly with updates, monitoring, and support.",
 
     // Services
     "services.title": "What We Do",
@@ -248,74 +238,64 @@ const translations: Record<Language, Record<string, string>> = {
     "recentwork.voice.desc": "Testa vår AI-röstassistent live. Samma teknik vi lägger till på kunders hemsidor för att svara på kundsamtal automatiskt.",
 
     // Hero
-    "hero.title1": "Få Fler Bokningar och Missa Aldrig en Kund Med",
-    "hero.title2": "Smart Automation",
-    "hero.description": "Vi hjälper små tjänsteföretag att svara på varje kundförfrågan, även utanför kontorstid. Med en modern hemsida, AI-chattassistent och bokningsintegration kan dina kunder alltid nå dig, ställa frågor och boka tid.",
+    "hero.title1": "Sluta Tappa Kunder.",
+    "hero.title2": "Börja Få Bokningar.",
+    "hero.description": "De flesta småföretag missar samtal, tappar leads och lägger timmar på repetitiva frågor. Vi löser det med en modern hemsida, AI-chattassistent och automatisk bokning, så varje kund får snabbt svar, även klockan 2 på natten.",
+    "hero.badge": "Byggt för Tjänsteföretag",
     "hero.trust": "Gratis Hemsideanalys för Lokala Företag",
     "hero.cta": "Boka en Gratis Demo",
     "hero.cta2": "Se Hur Det Fungerar",
 
-    // Home - Recent Work
-    "home.recent.title": "Senaste Projekt",
-    "home.recent.project.title": "Skräddarsydd Shopify E-handelsbutik",
-    "home.recent.project.desc": "En modern webbutik med ren design, optimerad för mobil och byggd för en smidig kundupplevelse.",
-    "home.recent.project.button": "Visa Projekt",
-    "home.recent.project2.title": "Psykologmottagning Hemsida",
-    "home.recent.project2.desc": "En professionell hemsida för en privatpraktik med onlinebokning och en AI-chattassistent som svarar på patientfrågor automatiskt.",
-
     // Home - Problem
-    "home.problem.title": "Hur Många Kunder Förlorar Du Just Nu?",
-    "home.problem.subtitle": "De flesta småföretag tappar potentiella kunder varje vecka för att de inte hinner svara tillräckligt snabbt.",
-    "home.problem.p1": "Missade samtal när du är upptagen med en kund",
-    "home.problem.p2": "Kunder lämnar din hemsida utan att boka",
-    "home.problem.p3": "Frågor förblir obesvarade i timmar eller dagar",
-    "home.problem.p4": "Ingen svarar på förfrågningar kvällar och helger",
-    "home.problem.p5": "Du lägger för mycket tid på att svara på samma frågor",
-    "home.problem.closing": "Varje obesvarad förfrågan är en förlorad bokning. Vi hjälper dig att lösa det.",
+    "home.problem.title": "Just Nu Tappar Du Kunder",
+    "home.problem.subtitle": "Medan du jobbar når potentiella kunder ut, och lämnar när ingen svarar.",
+    "home.problem.p1": "En kund ringer medan du är hos en klient. De lägger på och ringer din konkurrent.",
+    "home.problem.p2": "Någon besöker din hemsida kl. 21. Ingen chatt, inget bokningsalternativ. De lämnar.",
+    "home.problem.p3": "En förfrågan ligger i din inkorg i 2 dagar. Då har de redan bokat någon annan.",
+    "home.problem.p4": "Du lägger kvällarna på att svara på samma frågor om och om igen.",
+    "home.problem.p5": "Din hemsida ser föråldrad ut. Kunder litar inte tillräckligt på den för att höra av sig.",
+    "home.problem.closing": "Varje missat meddelande är pengar som lämnas på bordet. Låt oss fixa det.",
 
-    // Home - Services
-    "home.services.title": "Vad Vi Gör",
+    // Home - Solution
+    "home.solution.title": "Vi Ser Till Att Du Aldrig Missar En Kund Igen",
+    "home.solution.subtitle": "Vi sätter upp ditt företag med en modern hemsida, en AI-assistent som svarar direkt, och ett bokningssystem som fungerar dygnet runt. Du fokuserar på jobbet. Vi sköter resten.",
+    "home.solution.s1.title": "Modern Hemsida",
+    "home.solution.s1.desc": "En ren, professionell sida som bygger förtroende och gör det enkelt för kunder att agera.",
+    "home.solution.s2.title": "AI-chattassistent",
+    "home.solution.s2.desc": "Svarar på kundfrågor direkt, fångar leads och guidar besökare att boka, dag som natt.",
+    "home.solution.s3.title": "Automatisk Bokning",
+    "home.solution.s3.desc": "Kunder bokar direkt på din hemsida. Inga missade samtal, inget mejlande fram och tillbaka.",
 
-    // Home - Pricing
-    "home.pricing.title": "Enkla Paket för Småföretag",
-    "home.pricing.note": "Slutpris beror på hemsidans storlek och automationskrav.",
-    "home.pricing.cta": "Boka en Gratis Demo",
+    // Home - Benefits
+    "home.benefits.title": "Vad Som Förändras När Du Jobbar Med Oss",
+    "home.benefits.b1.title": "Fler Bokningar",
+    "home.benefits.b1.desc": "Kunder kan boka tid dygnet runt utan att vänta på att bli uppringda.",
+    "home.benefits.b2.title": "Snabbare Svarstid",
+    "home.benefits.b2.desc": "AI svarar på sekunder, inte timmar. Ingen kund behöver vänta.",
+    "home.benefits.b3.title": "Mindre Repetitivt Arbete",
+    "home.benefits.b3.desc": "Sluta svara på samma frågor manuellt. Låt automationen sköta det.",
+    "home.benefits.b4.title": "En Hemsida Som Faktiskt Konverterar",
+    "home.benefits.b4.desc": "Inte bara en snygg sida, utan ett verktyg som gör besökare till betalande kunder.",
 
-    // Home - Industries
-    "home.industries.title": "Företag Vi Hjälper",
+    // Home - How It Works
+    "home.howitworks.title": "Så Fungerar Det",
+    "home.howitworks.subtitle": "Tre enkla steg för att börja få fler bokningar.",
+    "home.howitworks.step1.title": "Boka en Gratis Demo",
+    "home.howitworks.step1.desc": "Vi granskar din nuvarande setup och visar exakt vad vi kan förbättra.",
+    "home.howitworks.step2.title": "Vi Bygger Allt",
+    "home.howitworks.step2.desc": "Hemsida, chatbot, bokningssystem, allt uppsatt och anpassat för ditt företag på dagar.",
+    "home.howitworks.step3.title": "Du Får Fler Kunder",
+    "home.howitworks.step3.desc": "Ditt företag svarar på varje förfrågan automatiskt. Du fokuserar på att göra bra jobb.",
+
+    // Home - CTA
+    "home.cta.title": "Redo Att Sluta Tappa Kunder?",
+    "home.cta.subtitle": "Boka en gratis 15-minuters demo. Vi visar exakt hur ditt företag kan svara snabbare, boka fler kunder och spara timmar varje vecka.",
+    "home.cta.button": "Boka en Gratis Demo",
 
     // Home - Ask
     "home.ask.title": "Fråga Oss Vad Som Helst Om Ditt Företag",
     "home.ask.subtitle": "Använd chatten nedan för att ställa frågor om hur du kan få fler bokningar, förbättra din hemsida eller automatisera kundsvar.",
     "home.ask.hint": "Klicka på chatten i hörnet för snabba svar",
-
-    // Recent Work - Advanced Demo
-    "recentwork.advanceddemo.badge": "Avancerad Demo",
-    "recentwork.advanceddemo.title": "Avancerad AI-demo",
-    "recentwork.advanceddemo.desc": "Utforska hur röst-AI kan hantera kundförfrågningar och guida bokningar automatiskt. Testa själv — prata med assistenten och se hur den hanterar riktiga frågor.",
-
-    // Recent Work - Electrician Demo
-    "recentwork.cleaning.badge": "Demo-webbplats",
-    "recentwork.cleaning.title": "Göteborg El & Service – Elektriker Demo",
-    "recentwork.cleaning.desc": "En demo som visar hur en elfirma kan effektivisera jobbförfrågningar med ett online-bokningssystem, tjänstval och AI-chattbot som hjälper kunder beskriva sina behov och boka besök.",
-
-    // Home - CTA
-    "home.cta.title": "Se Hur Det Fungerar för Ditt Företag",
-    "home.cta.subtitle": "Boka en gratis 15-minuters demo. Vi visar hur ditt företag kan svara på varje kund, få fler bokningar och spara timmar varje vecka.",
-    "home.cta.button": "Boka en Gratis Demo",
-
-    // Home - About
-    "home.about.title": "Om Chiara AI Consulting",
-    "home.about.p1": "Vi hjälper små tjänsteföretag att sluta tappa kunder på grund av sena svar och missade samtal. Många företag har föråldrade hemsidor som gör det svårt för kunder att få svar eller boka tid. Vi löser det med moderna hemsidor och enkla automationsverktyg som fungerar dygnet runt.",
-    "home.about.p2": "Vårt arbetssätt är enkelt: vi ger ditt företag en professionell hemsida med en chattassistent som svarar på kundfrågor direkt, ett bokningssystem där kunder kan boka online, och automation som hanterar förfrågningar även när du är upptagen. Resultatet är fler bokningar, snabbare svar och mindre tid på repetitiva uppgifter.",
-    "home.about.v1.title": "Fler Bokningar",
-    "home.about.v1.desc": "Kunder kan boka tid dygnet runt utan att ringa eller vänta på svar.",
-    "home.about.v2.title": "Snabbare Svar",
-    "home.about.v2.desc": "AI-chatten svarar på vanliga frågor direkt, så ingen kund behöver vänta.",
-    "home.about.v3.title": "Mindre Manuellt Arbete",
-    "home.about.v3.desc": "Automation hanterar rutinförfrågningar så du kan fokusera på ditt riktiga arbete.",
-    "home.about.v4.title": "Löpande Support",
-    "home.about.v4.desc": "Vi ser till att allt fungerar smidigt med uppdateringar, övervakning och support.",
 
     // Services
     "services.title": "Vad Vi Gör",
