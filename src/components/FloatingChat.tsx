@@ -5,7 +5,7 @@ import { DemoBotChat } from "./DemoBotChat";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const FloatingChat = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const { language } = useLanguage();
   const location = useLocation();
   const chatContainerRef = useRef<HTMLDivElement>(null);
@@ -33,7 +33,7 @@ const FloatingChat = () => {
   // Hide on psychology demo pages (they have their own chat)
   if (isDemoPage) return null;
 
-  const subtitle = language === "sv" ? "Vi pratar svenska & engelska" : "We speak English & Swedish";
+  const subtitle = language === "sv" ? "Prata med vår assistent" : "Talk to our assistant";
 
   return (
     <div className="fixed bottom-3 right-3 md:bottom-6 md:right-6 z-50 flex flex-col items-end gap-3">
