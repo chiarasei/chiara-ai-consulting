@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import { Bot } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { DemoBotChat } from "./DemoBotChat";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -51,11 +51,10 @@ const FloatingChat = () => {
         <div className="flex flex-col items-center gap-1.5">
           <button
             onClick={() => setIsOpen(true)}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
+            className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             aria-label="Open chat"
           >
-            <Bot size={24} />
+            <MessageCircle size={24} fill="currentColor" />
           </button>
           <span className="text-[10px] text-muted-foreground font-medium bg-card/80 backdrop-blur-sm px-2 py-0.5 rounded-full shadow-sm border border-border">
             {subtitle}
