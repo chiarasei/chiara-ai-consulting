@@ -106,9 +106,9 @@ const translations: Record<Language, Record<string, string>> = {
     "home.howitworks.step3.desc": "Your business responds to every inquiry automatically. You focus on doing great work.",
 
     // Home - CTA
-    "home.cta.title": "Ready to Stop Losing Customers?",
-    "home.cta.subtitle": "Book a free 15-minute demo. We'll show you exactly how your business can respond faster, book more clients, and save hours every week.",
-    "home.cta.button": "Book a Free Demo",
+    "home.cta.title": "See How It Works for Your Business",
+    "home.cta.subtitle": "Book a free 15-minute demo. We'll walk you through exactly how to respond faster, book more clients, and save hours every week.",
+    "home.cta.button": "Book Your Free Demo",
 
     // Home - Ask
     "home.ask.title": "Ask Us Anything About Your Business",
