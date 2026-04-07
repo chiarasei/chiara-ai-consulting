@@ -50,7 +50,7 @@ const TradeFairLanding = () => {
                 {t("hero.badge")}
               </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] tracking-tight text-balance max-w-4xl mx-auto">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] tracking-tight text-balance max-w-4xl mx-auto animate-pulse">
                 {t("hero.title1")}{" "}
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
                   {t("hero.title2")}
