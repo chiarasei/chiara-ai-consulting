@@ -14,6 +14,7 @@ const PsychLangContext = createContext<PsychLangContextType>({
   t: (en) => en,
 });
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const usePsychLang = () => useContext(PsychLangContext);
 
 export const PsychLangProvider = ({ children }: { children: React.ReactNode }) => {

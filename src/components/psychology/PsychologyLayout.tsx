@@ -9,6 +9,7 @@ const greenText = "hsl(165, 50%, 35%)";
 const textMuted = "hsl(200, 10%, 45%)";
 const borderClr = "hsl(160, 15%, 88%)";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { green, greenLight, greenText, textMuted, borderClr };
 
 const PsychologyLayout = ({ children }: { children: React.ReactNode }) => {

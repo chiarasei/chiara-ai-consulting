@@ -45,13 +45,13 @@ export const DemoBotChat = ({ defaultOpen = false, onClose }: { defaultOpen?: bo
       setLanguage(globalLanguage);
       setMessages([{ role: "assistant", content: translations[globalLanguage].welcome }]);
     }
-  }, [globalLanguage]);
+  }, [globalLanguage, language]);
 
   useEffect(() => {
     if ((isOpen || defaultOpen) && messages.length === 0) {
       setMessages([{ role: "assistant", content: t.welcome }]);
     }
-  }, [isOpen, defaultOpen]);
+  }, [isOpen, defaultOpen, messages.length, t]);
 
   useEffect(() => {
     if (scrollRef.current) {
