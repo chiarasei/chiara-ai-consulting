@@ -113,7 +113,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.ghcr_token }}
 
       - name: Build image for security scan
         uses: docker/build-push-action@v6
