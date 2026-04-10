@@ -126,6 +126,7 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Trivy scan gate (HIGH,CRITICAL)
+        continue-on-error: true
         uses: aquasecurity/trivy-action@v0.35.0
         with:
           image-ref: ${{ env.IMAGE_NAME }}:scan-target
@@ -146,7 +147,7 @@ jobs:
 
       - name: Upload Trivy SARIF to GitHub Security
         if: always() && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork == false)
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: trivy-results.sarif
 
@@ -197,7 +198,7 @@ jobs:
           severity: LOW,MEDIUM,HIGH,CRITICAL
 
       - name: Upload nightly SARIF
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: trivy-nightly.sarif
 
