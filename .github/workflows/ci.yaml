@@ -126,7 +126,7 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Trivy scan gate (HIGH,CRITICAL)
-        uses: aquasecurity/trivy-action@2.0.0
+        uses: aquasecurity/trivy-action@v0.35.0
         with:
           image-ref: ${{ env.IMAGE_NAME }}:scan-target
           format: table
@@ -135,7 +135,7 @@ jobs:
           severity: HIGH,CRITICAL
 
       - name: Trivy SARIF report
-        uses: aquasecurity/trivy-action@2.0.0
+        uses: aquasecurity/trivy-action@v0.35.0
         with:
           image-ref: ${{ env.IMAGE_NAME }}:scan-target
           format: sarif
@@ -187,7 +187,7 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Trivy full-severity report (non-blocking)
-        uses: aquasecurity/trivy-action@2.0.0
+        uses: aquasecurity/trivy-action@v0.35.0
         with:
           image-ref: ${{ env.IMAGE_NAME }}:nightly-scan
           format: sarif
