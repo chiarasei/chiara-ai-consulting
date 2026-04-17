@@ -1,0 +1,123 @@
+This document describes how the application is deployed using Kubernetes and ArgoCD following GitOps principles.
+
+The system is designed so that:
+
+All infrastructure and application configuration live in Git
+ArgoCD continuously reconciles the cluster state with Git
+Deployments are automated, repeatable, and auditable
+🏗️ Deployment Architecture
+GitHub (source of truth)
+        ↓
+ArgoCD (GitOps controller)
+        ↓
+Kubernetes (k3s cluster)
+        ↓
+Application Pods (React app)
+⚙️ Kubernetes Setup
+
+The application is deployed into a dedicated namespace to ensure isolation and manageability.
+
+Core components deployed:
+
+Deployment → manages application pods and scaling
+Service → exposes the application internally
+Ingress (Traefik) → handles external routing and HTTPS
+TLS configuration → enables secure access
+🔐 Private Container Registry Integration
+
+The application image is stored in a private container registry (GHCR).
+
+Key requirement:
+
+Kubernetes must authenticate before pulling the image.
+
+Solution:
+A Kubernetes imagePullSecret is created using a GitHub token
+The deployment references this secret to securely pull images
+🚀 ArgoCD (GitOps Workflow)
+
+ArgoCD is responsible for:
+
+Monitoring the Git repository
+Detecting changes in Kubernetes manifests
+Applying those changes automatically to the cluster
+🔁 Deployment Flow
+Developer pushes code to GitHub
+CI pipeline builds and pushes a Docker image to GHCR
+Kubernetes manifests in the repo reference the new image
+ArgoCD detects the change
+ArgoCD syncs the cluster to match Git
+Kubernetes pulls the image and updates the running application
+🔄 Sync Strategy
+
+The application uses automated sync with:
+
+Auto Sync → deploy changes automatically
+Prune → remove resources deleted from Git
+Self-Heal → correct drift between cluster and desired state
+
+This ensures the cluster always reflects the Git repository.
+
+⚠️ Issues Encountered & Resolutions
+1. ImagePullBackOff (401 Unauthorized)
+
+Cause:
+
+Image stored in private registry
+Kubernetes lacked authentication
+
+Resolution:
+
+Created imagePullSecret
+Linked it to the deployment
+Restarted pods to re-trigger image pull
+2. ArgoCD OutOfSync
+
+Cause:
+
+Resources existed in cluster but were removed from Git
+
+Resolution:
+
+Enabled pruning during sync
+Ensured Git is the single source of truth
+3. Incorrect Repository Path
+
+Cause:
+
+ArgoCD scanning entire repo including non-Kubernetes files
+
+Resolution:
+
+Scoped ArgoCD to the k8s/ directory only
+4. Duplicate Application Creation
+
+Cause:
+
+Application defined both in UI and Git
+
+Resolution:
+
+Switched fully to Git-managed ArgoCD configuration
+📂 Repository Structure (Relevant to Deployment)
+k8s/        → Kubernetes manifests
+docs/       → Documentation
+
+ArgoCD is configured to track only the k8s/ directory.
+
+🧠 Key Concepts Applied
+GitOps (declarative deployments)
+Continuous reconciliation
+Secure image handling
+Infrastructure as code
+Separation of concerns (app vs infrastructure)
+🎯 Outcome
+Fully automated Kubernetes deployment via GitOps
+Secure integration with private container registry
+Continuous deployment with ArgoCD
+Reproducible and production-aligned setup
+🚀 Next Steps
+Add monitoring (Prometheus & Grafana)
+Introduce Helm for templating
+Implement centralized secret management
+Add alerting and observability

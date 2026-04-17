@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: chiara-app
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/chiarasei/chiara-ai-consulting.git
+    targetRevision: main
+    path: k8s
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: chiara-app
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      
