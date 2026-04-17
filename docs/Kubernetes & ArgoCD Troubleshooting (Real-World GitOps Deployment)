@@ -1,0 +1,295 @@
+# 🚀 Kubernetes & ArgoCD Troubleshooting (Real-World GitOps Deployment)
+
+## 📌 Overview
+
+During the deployment of a React application using Kubernetes (k3s), ArgoCD, and GitOps principles, several real-world production issues were encountered and resolved.
+
+This document summarizes the **problems, root causes, and solutions**, demonstrating practical DevOps troubleshooting skills.
+
+---
+
+# 🔐 1. ImagePullBackOff (Private Registry Authentication Failure)
+
+### ❌ Problem
+
+Pods failed with:
+
+```text
+ImagePullBackOff
+401 Unauthorized
+FailedToRetrieveImagePullSecret
+```
+
+---
+
+### 🧠 Root Cause
+
+* Application image stored in **private GitHub Container Registry (GHCR)**
+* Kubernetes had no valid credentials to pull the image
+* Referenced `imagePullSecrets` did not exist in the cluster
+
+---
+
+### ✅ Solution
+
+* Created a Kubernetes Docker registry secret using a GitHub Personal Access Token (`read:packages`)
+* Linked the secret to the deployment using `imagePullSecrets`
+* Restarted the deployment to trigger a new image pull
+
+---
+
+### 🎯 Key Learning
+
+* CI success does not guarantee deployability
+* Private registries require explicit authentication
+* Kubernetes secrets must exist in the cluster (not just in code)
+
+---
+
+# 🔐 2. Secret Exposure & GitHub Push Protection
+
+### ❌ Problem
+
+GitHub blocked push due to:
+
+```text
+Push cannot contain secrets
+GitHub Personal Access Token detected
+```
+
+---
+
+### 🧠 Root Cause
+
+* Token accidentally committed into:
+
+  * Kubernetes YAML file
+  * Documentation file
+* Secret remained in Git history even after file deletion
+
+---
+
+### ✅ Solution
+
+* Removed sensitive data from files
+* Rewrote Git history using `git reset`
+* Force-pushed clean history
+* Revoked compromised token and generated a new one
+
+---
+
+### 🎯 Key Learning
+
+* Deleting a file does NOT remove secrets from Git history
+* GitHub Push Protection prevents credential leaks
+* Secret rotation is required after exposure
+
+---
+
+# 🔐 3. Token Misconfiguration (CI vs Runtime)
+
+### ❌ Problem
+
+CI pipeline failed to push images after token replacement
+
+---
+
+### 🧠 Root Cause
+
+* Same token used for:
+
+  * GitHub Actions (requires `write:packages`)
+  * Kubernetes (requires `read:packages`)
+* Permissions mismatch caused pipeline failure
+
+---
+
+### ✅ Solution
+
+* Created separate tokens:
+
+  * CI → `read + write:packages`
+  * Kubernetes → `read:packages`
+* Updated GitHub Actions secrets accordingly
+
+---
+
+### 🎯 Key Learning
+
+* Follow **principle of least privilege**
+* Separate credentials for CI and runtime systems
+
+---
+
+# 🌐 4. HTTPS Not Working (Cert-Manager / Ingress Issue)
+
+### ❌ Problem
+
+Browser showed:
+
+```text
+ERR_CERT_AUTHORITY_INVALID
+```
+
+---
+
+### 🧠 Root Cause
+
+* No Ingress resource created for Grafana / ArgoCD
+* cert-manager only issues certificates when Ingress exists with proper annotations
+
+---
+
+### ✅ Solution
+
+* Created Ingress resources for services
+* Added required annotation:
+
+  * `cert-manager.io/cluster-issuer: letsencrypt-prod`
+* Verified certificate creation and readiness
+
+---
+
+### 🎯 Key Learning
+
+* TLS in Kubernetes is **Ingress-driven**
+* cert-manager depends on correct annotations and DNS
+
+---
+
+# 🔁 5. ArgoCD Redirect Loop (ERR_TOO_MANY_REDIRECTS)
+
+### ❌ Problem
+
+```text
+ERR_TOO_MANY_REDIRECTS
+```
+
+---
+
+### 🧠 Root Cause
+
+* ArgoCD serves HTTPS internally
+* Ingress (Traefik) also terminates HTTPS
+* Double TLS caused infinite redirect loop
+
+---
+
+### ✅ Solution
+
+* Updated ArgoCD ConfigMap:
+
+  * `server.insecure: "true"`
+* Restarted ArgoCD server deployment
+
+---
+
+### 🎯 Key Learning
+
+* Avoid double TLS termination
+* Let Ingress handle HTTPS in production setups
+
+---
+
+# 🚧 6. Bad Gateway (502) – Backend Protocol Mismatch
+
+### ❌ Problem
+
+```text
+502 Bad Gateway
+```
+
+---
+
+### 🧠 Root Cause
+
+* Ingress forwarded traffic via HTTP
+* ArgoCD service expects HTTPS (port 443)
+* Protocol mismatch between Traefik and backend
+
+---
+
+### ✅ Solution
+
+* Updated Ingress:
+
+  * Changed service port to `443`
+  * Added annotation:
+
+    ```text
+    traefik.ingress.kubernetes.io/service.serversscheme: https
+    ```
+
+---
+
+### 🎯 Key Learning
+
+* Ensure protocol alignment between ingress controller and backend service
+* Understand service ports and TLS handling
+
+---
+
+# 📂 7. GitOps Path Misconfiguration
+
+### ❌ Problem
+
+ArgoCD failed to sync application due to invalid path
+
+---
+
+### 🧠 Root Cause
+
+* ArgoCD pointed to incorrect directory
+* Non-Kubernetes files interfered with manifest generation
+
+---
+
+### ✅ Solution
+
+* Set correct application path:
+
+```text
+k8s/
+```
+
+---
+
+### 🎯 Key Learning
+
+* Scope ArgoCD to directories containing only Kubernetes manifests
+
+---
+
+# 🧠 Final Outcome
+
+Successfully built a **production-style GitOps platform**:
+
+```text
+CI (GitHub Actions)
+→ Private Registry (GHCR)
+→ ArgoCD (GitOps)
+→ Kubernetes (k3s)
+→ Monitoring (Prometheus + Grafana)
+→ HTTPS (Traefik + cert-manager)
+```
+
+---
+
+# 💡 Interview Talking Points
+
+* Diagnosed and resolved **registry authentication issues**
+* Implemented **secure secret management and rotation**
+* Debugged **TLS and ingress-related issues**
+* Resolved **protocol mismatches in Kubernetes networking**
+* Applied **GitOps principles with ArgoCD**
+* Built **end-to-end CI/CD + observability pipeline**
+
+---
+
+# 🏁 Conclusion
+
+This experience demonstrates hands-on ability to:
+
+* Troubleshoot real Kubernetes production issues
+* Understand networking, security, and deployment flows
+* Implement scalable, secure, and automated DevOps systems
