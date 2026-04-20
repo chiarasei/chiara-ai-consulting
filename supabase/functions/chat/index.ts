@@ -174,10 +174,16 @@ serve(async (req) => {
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
-      if (response.status === 402) {
-        return new Response(JSON.stringify({ error: "Payment required. Please add credits to continue." }), {
-          status: 402,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
+      if (response.status === 402 || response.status === 429) {
+        const fallbackMessage = language === "sv"
+          ? "Hej! Jag är tillfälligt otillgänglig just nu 🌸\n\nMen vi vill gärna höra från dig! Kontakta oss direkt:\n\n📧 **info@chiaraaiconsulting.se**\n📞 **0735316950**\n\nVi återkommer så snart som möjligt!"
+          : "Hi there! I'm temporarily unavailable right now 🌸\n\nBut we'd love to hear from you! Please reach out directly:\n\n📧 **info@chiaraaiconsulting.se**\n📞 **0735316950**\n\nWe'll get back to you as soon as possible!";
+
+        // Return as a streaming SSE response so the chat UI displays it naturally
+        const sseBody = `data: ${JSON.stringify({ choices: [{ delta: { content: fallbackMessage } }] })}\n\ndata: [DONE]\n\n`;
+        return new Response(sseBody, {
+          status: 200,
+          headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
         });
       }
       
