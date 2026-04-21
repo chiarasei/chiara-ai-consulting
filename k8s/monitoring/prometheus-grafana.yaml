@@ -15,6 +15,10 @@ spec:
         grafana:
           adminPassword: admin123
 
+        alertmanager:
+          alertmanagerSpec:
+            configSecret: alertmanager-gmail-config
+
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
