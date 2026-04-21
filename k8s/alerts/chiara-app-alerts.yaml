@@ -1,0 +1,38 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: chiara-app-alerts
+  namespace: monitoring
+  labels:
+    release: monitoring
+spec:
+  groups:
+    - name: chiara-app.rules
+      rules:
+        - alert: ChiaraAppPodRestarting
+          expr: increase(kube_pod_container_status_restarts_total{namespace="chiara-app"}[5m]) > 0
+          for: 2m
+          labels:
+            severity: warning
+          annotations:
+            summary: Pod restarting in chiara-app
+            description: A pod in the chiara-app namespace has restarted in the last 5 minutes.
+
+        - alert: ChiaraAppHighCPU
+          expr: sum(rate(container_cpu_usage_seconds_total{namespace="chiara-app", container!=""}[5m])) > 0.5
+          for: 5m
+          labels:
+            severity: warning
+          annotations:
+            summary: High CPU usage in chiara-app
+            description: CPU usage in the chiara-app namespace has been above threshold for 5 minutes.
+
+        - alert: ChiaraAppHighMemory
+          expr: sum(container_memory_usage_bytes{namespace="chiara-app", container!=""}) > 500000000
+          for: 5m
+          labels:
+            severity: warning
+          annotations:
+            summary: High memory usage in chiara-app
+            description: Memory usage in the chiara-app namespace has been above threshold for 5 minutes.
+            
