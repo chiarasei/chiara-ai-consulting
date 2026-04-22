@@ -1,0 +1,160 @@
+📌 Overview
+
+This section documents the implementation of:
+
+Alerting using Prometheus Alertmanager
+Logging using Loki + Promtail
+
+The goal is to move from:
+
+Monitoring → knowing what is happening
+
+to:
+
+Alerting → knowing when something is wrong  
+Logging → knowing why it went wrong
+🏗️ Architecture
+Kubernetes Cluster
+        ↓
+Prometheus (metrics)
+        ↓
+Alertmanager (alerts)
+        ↓
+Notifications (Email / Slack)
+
+Kubernetes Cluster
+        ↓
+Promtail (log collector)
+        ↓
+Loki (log storage)
+        ↓
+Grafana (log + metric visualization)
+🚨 Alerting (Prometheus + Alertmanager)
+⚙️ Implementation
+
+Alerting is handled by Alertmanager, which is part of the kube-prometheus-stack.
+
+Key Components
+Prometheus → evaluates alert rules
+Alertmanager → sends notifications
+Grafana → optional visualization of alerts
+🔔 Alert Rules
+
+Custom alert rules were defined for the application:
+
+🔹 High CPU Usage
+expr: sum(rate(container_cpu_usage_seconds_total{namespace="chiara-app"}[5m])) > 0.8
+for: 2m
+
+Purpose:
+
+Detect high CPU consumption
+Prevent performance degradation
+🔹 Pod Restarts
+expr: increase(kube_pod_container_status_restarts_total{namespace="chiara-app"}[5m]) > 0
+
+Purpose:
+
+Detect crashes or unstable deployments
+🔹 Pod Down
+expr: count(kube_pod_status_phase{namespace="chiara-app", phase="Running"}) < 1
+
+Purpose:
+
+Detect service downtime
+📣 Notification Channels
+
+Alertmanager can be configured to send alerts to:
+
+Email
+Slack
+Webhooks
+🎯 Outcome
+✔ Automatic detection of failures  
+✔ Immediate notification when issues occur  
+✔ Reduced reliance on manual monitoring  
+📜 Logging (Loki + Promtail)
+⚙️ Implementation
+
+Logging is implemented using:
+
+Loki – log storage
+Promtail – log collector
+Grafana – log visualization
+🔄 Log Flow
+Pods → stdout/stderr
+        ↓
+Promtail
+        ↓
+Loki
+        ↓
+Grafana (Explore / Dashboards)
+📥 Promtail
+
+Promtail runs as a DaemonSet and:
+
+Collects logs from all nodes
+Attaches Kubernetes metadata (namespace, pod, container)
+Sends logs to Loki
+🗄️ Loki
+
+Loki stores logs in a structured way using labels:
+
+namespace
+pod
+container
+
+Unlike traditional logging systems, Loki does not index full log content, making it lightweight and efficient.
+
+🔍 Grafana Integration
+
+Loki is added as a data source in Grafana.
+
+Log queries example:
+{namespace="chiara-app"}
+
+Filter by pod:
+
+{namespace="chiara-app", pod=~"chiara-app-.*"}
+🎯 Outcome
+✔ Centralized log collection  
+✔ Real-time log visibility  
+✔ Ability to debug issues quickly  
+✔ Correlation between metrics and logs  
+🧠 Combined Observability
+
+With monitoring, alerting, and logging:
+
+Metrics → What is happening  
+Alerts → When something is wrong  
+Logs → Why it went wrong
+⚠️ Challenges & Fixes
+Issue	Cause	Resolution
+Alerts not firing	Incorrect PromQL	Fixed expressions and thresholds
+No notifications	Alertmanager not configured	Added receivers (email/slack)
+Logs not visible	Promtail misconfiguration	Verified log paths and labels
+Missing labels	Kubernetes metadata not attached	Fixed Promtail config
+🚀 Current State
+✔ Alerts configured for CPU, restarts, and downtime  
+✔ Alertmanager ready for notifications  
+✔ Loki collecting logs from cluster  
+✔ Grafana visualizing logs and metrics  
+✔ Full observability stack implemented  
+🔜 Future Improvements
+Fine-tune alert thresholds
+Add alert routing (severity levels)
+Create log-based alerts
+Implement long-term log storage
+💬 Summary
+
+The platform now includes:
+
+Monitoring (Prometheus)
+Alerting (Alertmanager)
+Logging (Loki)
+
+This enables:
+
+Detect → Respond → Diagnose
+
+A complete production-grade observability stack.

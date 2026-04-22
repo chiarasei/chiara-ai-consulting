@@ -1,0 +1,244 @@
+# 📊 Monitoring & Observability (Prometheus + Grafana)
+
+## 📌 Overview
+
+This section documents the implementation of **monitoring and observability** for the Kubernetes cluster using:
+
+* **Prometheus** – metrics collection
+* **Grafana** – visualization and dashboards
+
+The goal is to move from:
+
+```
+"Application is running"
+```
+
+to:
+
+```
+"Application is observable and measurable in real time"
+```
+
+---
+
+## 🏗️ Architecture
+
+```
+Kubernetes Cluster
+        ↓
+Prometheus (metrics collection)
+        ↓
+Grafana (visualization)
+        ↓
+Custom Service Dashboard (application-level insights)
+```
+
+---
+
+## ⚙️ Implementation
+
+### 1. Prometheus Stack Deployment
+
+Monitoring was deployed using:
+
+```
+kube-prometheus-stack (Helm via ArgoCD)
+```
+
+This includes:
+
+* Prometheus server
+* Alertmanager (for future alerting)
+* Node Exporter
+* kube-state-metrics
+* Grafana
+
+---
+
+### 2. ArgoCD Integration
+
+* Monitoring stack managed as an ArgoCD application
+* Automatic sync enabled
+* Namespace: `monitoring`
+
+#### Issue Encountered
+
+```
+CRD errors: metadata.annotations too long
+```
+
+#### Resolution
+
+Enabled ArgoCD sync strategy:
+
+```
+Replace=true
+```
+
+This allowed CRDs to be recreated instead of patched.
+
+---
+
+### 3. Grafana Access
+
+Grafana is exposed via Ingress:
+
+* URL: `https://grafana.chiaraaiconsulting.se`
+* Secured using TLS (cert-manager + Let's Encrypt)
+
+---
+
+## 📊 Dashboards
+
+### Default Dashboards
+
+Provided by kube-prometheus-stack:
+
+* Kubernetes Cluster Overview
+* Node Metrics
+* Namespace / Pod metrics
+
+---
+
+### Custom Service Dashboard
+
+A custom dashboard was created to monitor the application at **service level**.
+
+#### Metrics Included
+
+##### 🔹 CPU Usage
+
+* Query:
+
+```
+sum(rate(container_cpu_usage_seconds_total{namespace="chiara-app", container!=""}[5m]))
+```
+
+* Purpose:
+
+  * Monitor CPU load
+  * Detect spikes and performance issues
+
+---
+
+##### 🔹 Memory Usage
+
+* Query:
+
+```
+sum(container_memory_usage_bytes{namespace="chiara-app", container!=""})
+```
+
+* Unit:
+
+```
+MiB (IEC)
+```
+
+* Purpose:
+
+  * Track memory consumption
+  * Identify memory leaks or abnormal growth
+
+---
+
+##### 🔹 Running Pods
+
+* Query:
+
+```
+count(kube_pod_status_phase{namespace="chiara-app", phase="Running"})
+```
+
+* Purpose:
+
+  * Measure application availability
+
+---
+
+##### 🔹 Pod Restarts
+
+* Query:
+
+```
+sum(kube_pod_container_status_restarts_total{namespace="chiara-app"})
+```
+
+* Purpose:
+
+  * Detect crashes and instability
+
+---
+
+## 🎯 Dashboard Structure
+
+```
+[ CPU Usage ]     [ Memory Usage ]
+[ Running Pods ]  [ Pod Restarts ]
+```
+
+This layout separates:
+
+* **Performance metrics** (CPU, Memory)
+* **Health metrics** (Pods, Restarts)
+
+---
+
+## 🧠 Key Outcomes
+
+* Real-time visibility into application behavior
+* Ability to monitor resource usage trends
+* Immediate detection of failures or instability
+* Transition from reactive to **data-driven operations**
+
+---
+
+## ⚠️ Challenges & Fixes
+
+| Issue                   | Cause                    | Resolution                               |
+| ----------------------- | ------------------------ | ---------------------------------------- |
+| No data in Grafana      | Query not configured     | Added PromQL queries                     |
+| Confusing UI            | Grafana UX complexity    | Used Prometheus query editor (Code mode) |
+| Unit formatting missing | Incorrect unit selection | Set to `bytes (IEC)`                     |
+| CRD sync failures       | ArgoCD patch limitation  | Enabled `Replace=true`                   |
+
+---
+
+## 🚀 Current State
+
+```
+✔ Prometheus collecting cluster + app metrics
+✔ Grafana dashboards operational
+✔ Custom service-level dashboard created
+✔ Real-time monitoring enabled
+```
+
+---
+
+## 🔜 Next Steps
+
+### 🚨 Alerting
+
+* CPU threshold alerts
+* Pod restart alerts
+
+### 📜 Logging
+
+* Loki integration
+* Centralized log collection
+
+---
+
+## 💬 Summary
+
+Monitoring has been successfully implemented, providing:
+
+* Visibility into system performance
+* Insight into application health
+* Foundation for alerting and logging
+
+The system is now:
+
+```
+Observable → Measurable → Ready for alerting
+```
