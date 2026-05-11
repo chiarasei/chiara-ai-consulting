@@ -13,7 +13,6 @@ import {
   Bot,
   Mic,
   CalendarCheck,
-  Workflow,
   QrCode,
   Languages,
   Utensils,
