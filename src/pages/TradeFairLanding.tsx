@@ -113,10 +113,6 @@ const TradeFairLanding = () => {
                     <p className="text-[10px] text-muted-foreground">{tr("Confirmed automatically", "Bekräftad automatiskt")}</p>
                   </div>
                 </div>
-                <div className="hidden lg:flex absolute right-6 -top-3 items-center gap-2 px-3 py-2 rounded-xl bg-card/95 backdrop-blur border border-border shadow-soft">
-                  <QrCode className="w-4 h-4 text-primary" />
-                  <p className="text-[11px] font-semibold text-foreground">QR-Meny</p>
-                </div>
               </div>
             </div>
           </div>
