@@ -243,6 +243,12 @@ const translations: Record<Language, Record<string, string>> = {
     "recentwork.voice.badge": "Live Demo",
     "recentwork.voice.title": "AI-röstassistent – Live Demo",
     "recentwork.voice.desc": "Testa vår AI-röstassistent live. Samma teknik vi lägger till på kunders hemsidor för att svara på kundsamtal automatiskt.",
+    "recentwork.electrician.badge": "Demohemsida",
+    "recentwork.electrician.title": "Elföretag – Demohemsida",
+    "recentwork.electrician.desc": "En demo som visar vilken typ av hemsida vi bygger för elektriker och hantverksföretag. Med tydlig tjänsteöversikt, offertförfrågan online och en AI-chattassistent som svarar på kundfrågor och bokar jobb direkt.",
+    "recentwork.advanceddemo.badge": "Live Demo",
+    "recentwork.advanceddemo.title": "Avancerad AI-röstassistent",
+    "recentwork.advanceddemo.desc": "Testa vår mest avancerade AI-röstagent live. Samma teknik vi använder hos kunder för att hantera samtal, svara på frågor och boka tider dygnet runt.",
 
     // Hero
     "hero.title1": "Sluta Tappa Kunder.",
