@@ -17,5 +17,12 @@ ingress:
   className: traefik
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
+    traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
   host: chiaraaiconsulting.se
+  hostWWW: www.chiaraaiconsulting.se
   tlsSecret: chiara-tls-secret
+  certIssuer: letsencrypt-prod
+  host: chiaraaiconsulting.se
+  hostWWW: www.chiaraaiconsulting.se
+  tlsSecret: chiara-tls-secret
+  certIssuer: letsencrypt-prod
