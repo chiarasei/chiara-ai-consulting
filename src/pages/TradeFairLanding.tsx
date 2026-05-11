@@ -73,9 +73,6 @@ const TradeFairLanding = () => {
                     "Vi hjälper serviceföretag att svara snabbare, få fler bokningar och aldrig missa en kundförfrågan."
                   )}
                 </p>
-                <p className="text-xs md:text-sm font-semibold text-primary uppercase tracking-wider">
-                  {tr("Built in Gothenburg for modern service businesses.", "Byggt i Göteborg för moderna serviceföretag.")}
-                </p>
 
                 <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                   <Link to="/contact">
