@@ -388,8 +388,8 @@ const TradeFairLanding = () => {
                 </h2>
                 <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                   {tr(
-                    "Automate customer communication, improve bookings, and give your business a modern digital experience.",
-                    "Automatisera kundkommunikation, förbättra bokningar och ge din verksamhet en modern digital upplevelse."
+                    "Reply faster, get more bookings, and never miss another customer inquiry.",
+                    "Svara snabbare, få fler bokningar och missa aldrig en kundförfrågan."
                   )}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
