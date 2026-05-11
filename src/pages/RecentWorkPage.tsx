@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, Leaf, ShoppingBag, Mic, Zap, QrCode } from "lucide-react";
+import { ExternalLink, Leaf, ShoppingBag, Mic, Zap, QrCode, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -55,6 +55,32 @@ const RecentWorkPage = () => {
                 <a href="https://qrmeny.online" target="_blank" rel="noopener noreferrer">
                   <Button className="gap-2 mt-2 bg-green-600 hover:bg-green-700 text-white">
                     Visit qrmeny.online
+                    <ExternalLink className="w-4 h-4" />
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* OPECON */}
+        <section className="py-4 md:py-6 px-4 md:px-6">
+          <div className="container mx-auto max-w-4xl">
+            <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
+              <div className="p-6 md:p-10 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+                  <Globe className="w-3.5 h-3.5" />
+                  Live Project
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-card-foreground tracking-tight">
+                  OPECON – Consulting & Development
+                </h2>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
+                  A live website built for OPECON, a consulting and development firm partnering with NGOs, institutions, and mission-driven organizations across Africa. The site presents their services in strategic planning, grant writing, monitoring and evaluation, and partnership development, with built-in consultation booking and WhatsApp contact.
+                </p>
+                <a href="https://opecon.org" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="gap-2 mt-2">
+                    {t("recentwork.visitsite")}
                     <ExternalLink className="w-4 h-4" />
                   </Button>
                 </a>
