@@ -18,8 +18,23 @@ spec:
                 name: chiara-app
                 port:
                   number: {{ .Values.service.port }}
+{{- if .Values.ingress.hostWWW }}
+    - host: {{ .Values.ingress.hostWWW }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: chiara-app
+                port:
+                  number: {{ .Values.service.port }}
+{{- end }}
   tls:
     - hosts:
         - {{ .Values.ingress.host }}
+{{- if .Values.ingress.hostWWW }}
+        - {{ .Values.ingress.hostWWW }}
+{{- end }}
       secretName: {{ .Values.ingress.tlsSecret }}
 {{- end }}
