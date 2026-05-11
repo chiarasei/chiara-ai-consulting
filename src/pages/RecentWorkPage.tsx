@@ -79,8 +79,8 @@ const RecentWorkPage = () => {
                   A live website built for OPECON, a consulting and development firm partnering with NGOs, institutions, and mission-driven organizations across Africa. The site presents their services in strategic planning, grant writing, monitoring and evaluation, and partnership development, with built-in consultation booking and WhatsApp contact.
                 </p>
                 <a href="https://opecon.org" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="gap-2 mt-2">
-                    {t("recentwork.visitsite")}
+                  <Button className="gap-2 mt-2 bg-green-600 hover:bg-green-700 text-white">
+                    Visit opecon.org
                     <ExternalLink className="w-4 h-4" />
                   </Button>
                 </a>
