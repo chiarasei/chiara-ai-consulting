@@ -138,7 +138,7 @@ const TradeFairLanding = () => {
                 <MessageSquareWarning className="w-3.5 h-3.5" />
                 {tr("The Problem", "Problemet")}
               </div>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight text-balance leading-[1.05]">
                 {tr("Right Now, You're Losing Customers", "Just nu förlorar du kunder")}
               </h2>
             </div>
