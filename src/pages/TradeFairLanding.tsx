@@ -204,6 +204,12 @@ const TradeFairLanding = () => {
                 "Vi bygger praktiska digitala system baserat på verkliga driftproblem som vi sett hos småföretag och restauranger i Göteborg från missade kundförfrågningar till överbelastad restaurangpersonal under rusningstid."
               )}
             </p>
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              {tr(
+                "We also build standalone products like QR-Meny, a restaurant QR menu platform created after validating real challenges with local restaurants in Gothenburg.",
+                "Vi bygger även fristående produkter som QR-Meny, en QR-menyplattform för restauranger skapad efter att vi validerat verkliga utmaningar med lokala restauranger i Göteborg."
+              )}
+            </p>
           </div>
         </section>
 
