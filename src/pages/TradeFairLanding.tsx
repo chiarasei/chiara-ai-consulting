@@ -69,9 +69,12 @@ const TradeFairLanding = () => {
 
                 <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
                   {tr(
-                    "Most small businesses miss calls, lose leads, and waste hours answering repetitive questions. We help automate customer communication with modern websites, AI chat assistants, voice agents, and booking systems so no customer inquiry goes unanswered.",
-                    "De flesta småföretag missar samtal, tappar leads och slösar timmar på att svara på samma frågor. Vi automatiserar kundkommunikation med moderna webbplatser, AI-chattassistenter, röstagenter och bokningssystem så att ingen kundförfrågan missas."
+                    "We help service businesses reply faster, get more bookings, and never miss customer inquiries.",
+                    "Vi hjälper serviceföretag att svara snabbare, få fler bokningar och aldrig missa en kundförfrågan."
                   )}
+                </p>
+                <p className="text-xs md:text-sm font-semibold text-primary uppercase tracking-wider">
+                  {tr("Built in Gothenburg for modern service businesses.", "Byggt i Göteborg för moderna serviceföretag.")}
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
@@ -224,6 +227,10 @@ const TradeFairLanding = () => {
                     "Byggd efter att ha validerat verkliga utmaningar hos restauranger i Göteborg. QR-Meny hjälper restauranger att minska avbrott för personalen under rusningstid genom att ge gäster direkt åtkomst till menyn vid bordet."
                   )}
                 </p>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  {tr("Already solving real restaurant challenges in Gothenburg.", "Löser redan verkliga restaurangutmaningar i Göteborg.")}
+                </div>
 
                 <div className="grid sm:grid-cols-2 gap-3 pt-2">
                   {[
