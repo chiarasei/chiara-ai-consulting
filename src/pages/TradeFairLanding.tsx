@@ -100,7 +100,7 @@ const TradeFairLanding = () => {
                 <div className="relative rounded-2xl overflow-hidden shadow-medium border border-border">
                   <img
                     src={heroImage}
-                    alt="Modern AI automation for service businesses"
+                    alt="ChiaraAI Consulting solutions for service businesses"
                     className="w-full object-cover aspect-[4/3]"
                     loading="eager"
                   />
