@@ -18,7 +18,6 @@ import {
   Languages,
   Utensils,
   Smartphone,
-  Users,
   UtensilsCrossed,
   Coffee,
   Scissors,
