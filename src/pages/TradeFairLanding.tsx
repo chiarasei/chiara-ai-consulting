@@ -213,27 +213,20 @@ const TradeFairLanding = () => {
                   {tr("Featured Product", "Utvalt produkt")}
                 </div>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
-                  {tr("Featured Restaurant Solution: ", "Restauranglösning: ")}
                   <span className="bg-gradient-primary bg-clip-text text-transparent">QR-Meny</span>
                 </h2>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {tr(
-                    "Built after validating real restaurant challenges in Gothenburg, QR-Meny helps restaurants reduce staff interruptions during busy hours by giving guests instant access to menus directly from their table.",
-                    "Byggd efter att ha validerat verkliga utmaningar hos restauranger i Göteborg. QR-Meny hjälper restauranger att minska avbrott för personalen under rusningstid genom att ge gäster direkt åtkomst till menyn vid bordet."
+                    "A standalone QR menu platform built for restaurants that want guests to access menus instantly from their tables.",
+                    "En fristående QR-menyplattform byggd för restauranger som vill att gäster ska kunna se menyn direkt från bordet."
                   )}
                 </p>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  {tr("Already solving real restaurant challenges in Gothenburg.", "Löser redan verkliga restaurangutmaningar i Göteborg.")}
-                </div>
 
                 <div className="grid sm:grid-cols-2 gap-3 pt-2">
                   {[
                     { icon: <QrCode className="w-4 h-4" />, text: tr("QR menus directly on tables", "QR-menyer direkt på bordet") },
-                    { icon: <Languages className="w-4 h-4" />, text: tr("Swedish & English support", "Svenska & engelska") },
+                    { icon: <Languages className="w-4 h-4" />, text: tr("Swedish & English support", "Stöd för svenska & engelska") },
                     { icon: <Utensils className="w-4 h-4" />, text: tr("Static & daily lunch menus", "Statiska & dagliga lunchmenyer") },
-                    { icon: <Clock className="w-4 h-4" />, text: tr("Faster customer flow", "Snabbare kundflöde") },
-                    { icon: <Users className="w-4 h-4" />, text: tr("Fewer staff interruptions", "Färre avbrott för personalen") },
                     { icon: <Smartphone className="w-4 h-4" />, text: tr("Mobile-friendly experience", "Mobilanpassad upplevelse") },
                   ].map((f, i) => (
                     <div key={i} className="flex items-center gap-2.5 p-3 rounded-xl border border-border bg-card">
@@ -244,12 +237,12 @@ const TradeFairLanding = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 pt-3">
-                  <Link to="/recent-work">
+                  <a href="https://qr-meny.se" target="_blank" rel="noopener noreferrer">
                     <Button size="lg" className="text-base px-7 py-5 rounded-xl shadow-medium hover:shadow-glow transition-all duration-300 gap-2 w-full sm:w-auto">
-                      {tr("Explore QR-Meny", "Utforska QR-Meny")}
+                      {tr("Visit QR-Meny", "Besök QR-Meny")}
                       <ArrowRight className="w-4 h-4" />
                     </Button>
-                  </Link>
+                  </a>
                   <Link to="/recent-work">
                     <Button size="lg" variant="outline" className="text-base px-7 py-5 rounded-xl w-full sm:w-auto">
                       {tr("View Demo", "Se demo")}
