@@ -67,6 +67,12 @@ const TradeFairLanding = () => {
                     "Vi hjälper serviceföretag att svara snabbare, få fler bokningar och aldrig missa en kundförfrågan."
                   )}
                 </p>
+                <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                  {tr(
+                    "We build modern websites with integrated chat assistants, AI voice receptionists, and online booking calendars so your business can respond faster, capture more leads, and book customers automatically, even outside working hours.",
+                    "Vi bygger moderna webbplatser med integrerade chattassistenter, AI-röstreceptionister och onlinebokningskalendrar så att ditt företag kan svara snabbare, fånga fler leads och boka kunder automatiskt, även utanför arbetstid."
+                  )}
+                </p>
 
                 <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                   <Link to="/contact">
