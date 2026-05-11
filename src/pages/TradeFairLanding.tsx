@@ -90,7 +90,7 @@ const TradeFairLanding = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.03] to-transparent -z-0" />
           <div className="container mx-auto max-w-4xl relative z-10">
             <div className="text-center mb-10 md:mb-12 space-y-4">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold tracking-wide mb-2 animate-pulse">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold tracking-wide mb-2">
                 <AlertTriangle className="w-3.5 h-3.5" />
                 {t("home.problem.title")}
               </div>
