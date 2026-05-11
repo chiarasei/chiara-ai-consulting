@@ -45,12 +45,12 @@ const TradeFairLanding = () => {
 
           <div className="container mx-auto max-w-6xl">
             <div className="animate-fade-in-up text-center space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold tracking-wide animate-pulse">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold tracking-wide">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                 {t("hero.badge")}
               </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] tracking-tight text-balance max-w-4xl mx-auto animate-pulse">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] tracking-tight text-balance max-w-4xl mx-auto">
                 {t("hero.title1")}{" "}
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
                   {t("hero.title2")}
