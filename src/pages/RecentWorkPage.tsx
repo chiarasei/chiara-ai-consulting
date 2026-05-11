@@ -37,34 +37,8 @@ const RecentWorkPage = () => {
           </div>
         </section>
 
-        {/* Electrician Company Demo — First */}
+        {/* QR-Meny — First */}
         <section className="py-10 md:py-16 px-4 md:px-6">
-          <div className="container mx-auto max-w-4xl">
-            <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
-              <div className="p-6 md:p-10 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-                  <Zap className="w-3.5 h-3.5" />
-                  {t("recentwork.electrician.badge")}
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-card-foreground tracking-tight">
-                  {t("recentwork.electrician.title")}
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
-                  {t("recentwork.electrician.desc")}
-                </p>
-                <Link to="/demo/electrician">
-                  <Button variant="outline" className="gap-2 mt-2">
-                    {t("recentwork.viewproject")}
-                    <ExternalLink className="w-4 h-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* QR-Meny */}
-        <section className="py-4 md:py-6 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
             <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
               <div className="p-6 md:p-10 space-y-5">
@@ -84,6 +58,32 @@ const RecentWorkPage = () => {
                     <ExternalLink className="w-4 h-4" />
                   </Button>
                 </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Electrician Company Demo */}
+        <section className="py-4 md:py-6 px-4 md:px-6">
+          <div className="container mx-auto max-w-4xl">
+            <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
+              <div className="p-6 md:p-10 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+                  <Zap className="w-3.5 h-3.5" />
+                  {t("recentwork.electrician.badge")}
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-card-foreground tracking-tight">
+                  {t("recentwork.electrician.title")}
+                </h2>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
+                  {t("recentwork.electrician.desc")}
+                </p>
+                <Link to="/demo/electrician">
+                  <Button variant="outline" className="gap-2 mt-2">
+                    {t("recentwork.viewproject")}
+                    <ExternalLink className="w-4 h-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
