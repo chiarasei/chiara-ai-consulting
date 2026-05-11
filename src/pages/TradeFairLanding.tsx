@@ -79,18 +79,12 @@ const TradeFairLanding = () => {
                       <ArrowRight className="w-4 h-4" />
                     </Button>
                   </Link>
-                  <Link to="/recent-work">
-                    <Button size="lg" variant="outline" className="text-base px-7 py-6 rounded-xl transition-all duration-300 w-full sm:w-auto">
-                      {tr("Explore QR-Meny", "Utforska QR-Meny")}
-                    </Button>
-                  </Link>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 justify-center lg:justify-start pt-2 text-xs text-muted-foreground">
                   <div className="flex items-center gap-1.5"><Bot className="w-3.5 h-3.5 text-primary" /> AI Chat</div>
                   <div className="flex items-center gap-1.5"><Mic className="w-3.5 h-3.5 text-primary" /> Voice Agents</div>
                   <div className="flex items-center gap-1.5"><CalendarCheck className="w-3.5 h-3.5 text-primary" /> Booking</div>
-                  <div className="flex items-center gap-1.5"><QrCode className="w-3.5 h-3.5 text-primary" /> QR-Meny</div>
                 </div>
               </div>
 
