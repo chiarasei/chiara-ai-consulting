@@ -175,20 +175,18 @@ const TradeFairLanding = () => {
               </h2>
               <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 {tr(
-                  "We help businesses automate customer communication, booking, and online interactions so you can focus on your work while your systems handle the rest.",
-                  "Vi hjälper företag att automatisera kundkommunikation, bokning och digitala interaktioner så att du kan fokusera på ditt arbete medan systemen sköter resten."
+                  "We help businesses reply faster, get more bookings, and make customer communication easier so you can focus on your work.",
+                  "Vi hjälper företag att svara snabbare, få fler bokningar och göra kundkommunikationen enklare så att du kan fokusera på ditt arbete."
                 )}
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-5 max-w-4xl mx-auto">
               {[
-                { icon: <Globe className="w-5 h-5" />, title: tr("Modern Website", "Modern webbplats"), desc: tr("A fast, professional site that builds trust and converts visitors into customers.", "En snabb, professionell webbplats som bygger förtroende och omvandlar besökare till kunder.") },
-                { icon: <Bot className="w-5 h-5" />, title: tr("AI Chat Assistant", "AI-chattassistent"), desc: tr("Answers customer questions instantly, 24/7, in multiple languages.", "Svarar på kundfrågor direkt, dygnet runt, på flera språk.") },
-                { icon: <Mic className="w-5 h-5" />, title: tr("AI Voice Agents", "AI-röstagenter"), desc: tr("Handles incoming calls, takes bookings, and never lets a phone ring out.", "Hanterar inkommande samtal, tar emot bokningar och låter aldrig en telefon ringa obesvarad.") },
-                { icon: <CalendarCheck className="w-5 h-5" />, title: tr("Automated Booking", "Automatiserad bokning"), desc: tr("Customers book themselves around the clock with confirmations and reminders.", "Kunder bokar själva dygnet runt med bekräftelser och påminnelser.") },
-                { icon: <Workflow className="w-5 h-5" />, title: tr("Workflow Automation", "Automatiserade arbetsflöden"), desc: tr("Connect tools and remove manual work from your daily operations.", "Koppla samman verktyg och ta bort manuellt arbete från din dagliga drift.") },
-                { icon: <QrCode className="w-5 h-5" />, title: tr("QR Solutions", "QR-lösningar"), desc: tr("Instant access to menus, info, and bookings straight from a customer's phone.", "Direkt åtkomst till menyer, info och bokningar direkt från kundens mobil.") },
+                { icon: <Globe className="w-5 h-5" />, title: tr("Modern Website", "Modern webbplats"), desc: tr("A fast, professional site that builds trust and turns visitors into customers.", "En snabb, professionell webbplats som bygger förtroende och omvandlar besökare till kunder.") },
+                { icon: <Bot className="w-5 h-5" />, title: tr("AI Chat Assistant", "AI-chattassistent"), desc: tr("Replies to customer questions instantly, 24/7, in multiple languages.", "Svarar på kundfrågor direkt, dygnet runt, på flera språk.") },
+                { icon: <Mic className="w-5 h-5" />, title: tr("Voice Assistants", "Röstassistenter"), desc: tr("Answers calls, takes bookings, and never lets a phone ring out.", "Svarar i telefon, tar emot bokningar och låter aldrig en telefon ringa obesvarad.") },
+                { icon: <CalendarCheck className="w-5 h-5" />, title: tr("Booking Systems", "Bokningssystem"), desc: tr("Customers book themselves around the clock with confirmations and reminders.", "Kunder bokar själva dygnet runt med bekräftelser och påminnelser.") },
               ].map((item, i) => (
                 <div key={i} className="p-5 md:p-6 rounded-2xl border border-border bg-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 group">
                   <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
