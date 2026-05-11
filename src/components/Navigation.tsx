@@ -41,13 +41,15 @@ const Navigation = () => {
         <div className="container mx-auto px-4 md:px-6">
           {/* Top row */}
           <div className="flex items-center justify-between h-16 md:h-18">
-            <Link to="/" className="flex items-center gap-2.5 group">
+            <Link to="/" className="flex items-center gap-2.5 group" aria-label="ChiaraAI Consulting - Home">
               <img
                 src={logoImage}
                 alt="ChiaraAI Consulting Logo"
-                className="h-10 w-10 md:h-12 md:w-12 object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_6px_hsl(217_91%_50%/0.4)]"
-                style={{ filter: 'brightness(0) saturate(100%) invert(30%) sepia(93%) saturate(1752%) hue-rotate(213deg) brightness(97%) contrast(93%)' }}
-                
+                width={200}
+                height={200}
+                loading="eager"
+                decoding="async"
+                className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
               <span className="hidden sm:block text-base md:text-lg font-bold text-foreground tracking-tight">
                 chiaraAI<span className="text-primary">consulting</span>.se
