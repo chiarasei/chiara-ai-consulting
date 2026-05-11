@@ -69,9 +69,12 @@ const TradeFairLanding = () => {
 
                 <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
                   {tr(
-                    "Most small businesses miss calls, lose leads, and waste hours answering repetitive questions. We help automate customer communication with modern websites, AI chat assistants, voice agents, and booking systems so no customer inquiry goes unanswered.",
-                    "De flesta småföretag missar samtal, tappar leads och slösar timmar på att svara på samma frågor. Vi automatiserar kundkommunikation med moderna webbplatser, AI-chattassistenter, röstagenter och bokningssystem så att ingen kundförfrågan missas."
+                    "We help service businesses reply faster, get more bookings, and never miss customer inquiries.",
+                    "Vi hjälper serviceföretag att svara snabbare, få fler bokningar och aldrig missa en kundförfrågan."
                   )}
+                </p>
+                <p className="text-xs md:text-sm font-semibold text-primary uppercase tracking-wider">
+                  {tr("Built in Gothenburg for modern service businesses.", "Byggt i Göteborg för moderna serviceföretag.")}
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
