@@ -50,7 +50,7 @@ const RecentWorkPage = () => {
                   QR-Meny
                 </h2>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
-                  A digital menu system for Swedish restaurants. Customers scan a QR code on the table and see the full menu instantly on their phone, no waiting for menu books, no interrupting staff. Built and launched in one week.
+                  A digital menu system for Swedish restaurants. Customers scan a QR code on the table and see the full menu instantly on their phone, no waiting for menu books, no interrupting staff. Built and launched in 2 days using AI-powered development.
                 </p>
                 <a href="https://qrmeny.online" target="_blank" rel="noopener noreferrer">
                   <Button className="gap-2 mt-2 bg-green-600 hover:bg-green-700 text-white">
