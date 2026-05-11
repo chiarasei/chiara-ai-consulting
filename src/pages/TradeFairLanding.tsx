@@ -13,10 +13,6 @@ import {
   Bot,
   Mic,
   CalendarCheck,
-  QrCode,
-  Languages,
-  Utensils,
-  Smartphone,
   UtensilsCrossed,
   Coffee,
   Scissors,
@@ -79,18 +75,12 @@ const TradeFairLanding = () => {
                       <ArrowRight className="w-4 h-4" />
                     </Button>
                   </Link>
-                  <Link to="/recent-work">
-                    <Button size="lg" variant="outline" className="text-base px-7 py-6 rounded-xl transition-all duration-300 w-full sm:w-auto">
-                      {tr("Explore QR-Meny", "Utforska QR-Meny")}
-                    </Button>
-                  </Link>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 justify-center lg:justify-start pt-2 text-xs text-muted-foreground">
                   <div className="flex items-center gap-1.5"><Bot className="w-3.5 h-3.5 text-primary" /> AI Chat</div>
                   <div className="flex items-center gap-1.5"><Mic className="w-3.5 h-3.5 text-primary" /> Voice Agents</div>
                   <div className="flex items-center gap-1.5"><CalendarCheck className="w-3.5 h-3.5 text-primary" /> Booking</div>
-                  <div className="flex items-center gap-1.5"><QrCode className="w-3.5 h-3.5 text-primary" /> QR-Meny</div>
                 </div>
               </div>
 
@@ -118,10 +108,6 @@ const TradeFairLanding = () => {
                     <p className="text-[11px] font-semibold text-foreground leading-tight">{tr("New Booking", "Ny bokning")}</p>
                     <p className="text-[10px] text-muted-foreground">{tr("Confirmed automatically", "Bekräftad automatiskt")}</p>
                   </div>
-                </div>
-                <div className="hidden lg:flex absolute right-6 -top-3 items-center gap-2 px-3 py-2 rounded-xl bg-card/95 backdrop-blur border border-border shadow-soft">
-                  <QrCode className="w-4 h-4 text-primary" />
-                  <p className="text-[11px] font-semibold text-foreground">QR-Meny</p>
                 </div>
               </div>
             </div>
@@ -198,106 +184,6 @@ const TradeFairLanding = () => {
           </div>
         </section>
 
-        {/* 4. FEATURED PRODUCT — QR-MENY */}
-        <section className="fade-in-section py-14 md:py-20 px-4 md:px-6 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.06] via-background to-primary/[0.04] -z-10" />
-          <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-primary/[0.08] rounded-full blur-3xl -z-10" />
-
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-              <div className="space-y-5">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary text-primary-foreground text-xs md:text-sm font-semibold tracking-wide">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  {tr("Featured Product", "Utvalt produkt")}
-                </div>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight text-balance">
-                  <span className="bg-gradient-primary bg-clip-text text-transparent">QR-Meny</span>
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  {tr(
-                    "A standalone QR menu platform built for restaurants that want guests to access menus instantly from their tables.",
-                    "En fristående QR-menyplattform byggd för restauranger som vill att gäster ska kunna se menyn direkt från bordet."
-                  )}
-                </p>
-
-                <div className="grid sm:grid-cols-2 gap-3 pt-2">
-                  {[
-                    { icon: <QrCode className="w-4 h-4" />, text: tr("QR menus directly on tables", "QR-menyer direkt på bordet") },
-                    { icon: <Languages className="w-4 h-4" />, text: tr("Swedish & English support", "Stöd för svenska & engelska") },
-                    { icon: <Utensils className="w-4 h-4" />, text: tr("Static & daily lunch menus", "Statiska & dagliga lunchmenyer") },
-                    { icon: <Smartphone className="w-4 h-4" />, text: tr("Mobile-friendly experience", "Mobilanpassad upplevelse") },
-                  ].map((f, i) => (
-                    <div key={i} className="flex items-center gap-2.5 p-3 rounded-xl border border-border bg-card">
-                      <div className="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">{f.icon}</div>
-                      <p className="text-xs md:text-sm font-medium text-card-foreground">{f.text}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-3 pt-3">
-                  <a href="https://qr-meny.se" target="_blank" rel="noopener noreferrer">
-                    <Button size="lg" className="text-base px-7 py-5 rounded-xl shadow-medium hover:shadow-glow transition-all duration-300 gap-2 w-full sm:w-auto">
-                      {tr("Visit QR-Meny", "Besök QR-Meny")}
-                      <ArrowRight className="w-4 h-4" />
-                    </Button>
-                  </a>
-                  <Link to="/recent-work">
-                    <Button size="lg" variant="outline" className="text-base px-7 py-5 rounded-xl w-full sm:w-auto">
-                      {tr("View Demo", "Se demo")}
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Visual mockup */}
-              <div className="relative">
-                <div className="relative rounded-3xl border border-border bg-card p-6 md:p-8 shadow-medium">
-                  <div className="grid grid-cols-5 gap-4 items-center">
-                    {/* Phone mockup */}
-                    <div className="col-span-3 mx-auto w-full max-w-[220px]">
-                      <div className="rounded-[2rem] border-4 border-foreground/80 bg-background overflow-hidden shadow-medium aspect-[9/19] flex flex-col">
-                        <div className="bg-primary text-primary-foreground px-3 py-2 text-[10px] font-bold flex items-center justify-between">
-                          <span>QR-Meny</span>
-                          <Utensils className="w-3 h-3" />
-                        </div>
-                        <div className="p-3 space-y-2 flex-1 overflow-hidden">
-                          <p className="text-[10px] font-bold text-foreground">{tr("Today's Lunch", "Dagens lunch")}</p>
-                          {[
-                            { n: tr("Pasta Pesto", "Pasta Pesto"), p: "129 kr" },
-                            { n: tr("Salmon Bowl", "Laxbowl"), p: "149 kr" },
-                            { n: tr("Veggie Burger", "Veg Burgare"), p: "139 kr" },
-                            { n: tr("Caesar Salad", "Caesarsallad"), p: "119 kr" },
-                          ].map((item, i) => (
-                            <div key={i} className="flex justify-between items-center pb-1.5 border-b border-border">
-                              <span className="text-[9px] text-foreground">{item.n}</span>
-                              <span className="text-[9px] font-semibold text-primary">{item.p}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* QR code visual */}
-                    <div className="col-span-2 space-y-3">
-                      <div className="aspect-square rounded-xl bg-background border-2 border-border p-2 grid grid-cols-8 grid-rows-8 gap-px">
-                        {Array.from({ length: 64 }).map((_, i) => {
-                          const corners = [0,1,2,5,6,7,8,9,10,13,14,15,16,17,18,21,22,23,40,41,42,45,46,47,48,49,50,53,54,55,56,57,58];
-                          const on = corners.includes(i) || (i * 7) % 3 === 0;
-                          return <div key={i} className={on ? "bg-foreground rounded-[1px]" : ""} />;
-                        })}
-                      </div>
-                      <p className="text-[10px] text-center text-muted-foreground font-medium">{tr("Scan to view menu", "Skanna för meny")}</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="hidden md:flex absolute -bottom-4 -left-4 items-center gap-2 px-3 py-2 rounded-xl bg-card border border-border shadow-soft">
-                  <Sparkles className="w-4 h-4 text-primary" />
-                  <p className="text-xs font-semibold text-foreground">{tr("Live in restaurants", "Lever i restauranger")}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* 5. BUILT FROM REAL BUSINESS PROBLEMS */}
         <section className="fade-in-section py-14 md:py-20 px-4 md:px-6">
@@ -312,6 +198,12 @@ const TradeFairLanding = () => {
               {tr(
                 "We build practical digital systems based on real operational problems observed directly with small businesses and restaurants in Gothenburg from missed customer inquiries to overloaded restaurant staff during busy hours.",
                 "Vi bygger praktiska digitala system baserat på verkliga driftproblem som vi sett hos småföretag och restauranger i Göteborg från missade kundförfrågningar till överbelastad restaurangpersonal under rusningstid."
+              )}
+            </p>
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              {tr(
+                "We also build standalone products like QR-Meny, a restaurant QR menu platform created after validating real challenges with local restaurants in Gothenburg.",
+                "Vi bygger även fristående produkter som QR-Meny, en QR-menyplattform för restauranger skapad efter att vi validerat verkliga utmaningar med lokala restauranger i Göteborg."
               )}
             </p>
           </div>
