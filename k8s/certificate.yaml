@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: chiara-tls-cert
+  namespace: chiara-app
+spec:
+  secretName: chiara-tls-secret
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+    - chiaraaiconsulting.se
+    - www.chiaraaiconsulting.se
+  duration: 2160h # 90 days
+  renewBefore: 720h # 30 days

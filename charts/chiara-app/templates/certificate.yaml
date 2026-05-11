@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ include "chiara-app.fullname" . }}-cert
+  namespace: {{ .Release.Namespace }}
+spec:
+  secretName: {{ .Values.ingress.tlsSecret }}
+  issuerRef:
+    name: {{ .Values.ingress.certIssuer }}
+    kind: ClusterIssuer
+  dnsNames:
+    - {{ .Values.ingress.host }}
+{{- if .Values.ingress.hostWWW }}
+    - {{ .Values.ingress.hostWWW }}
+{{- end }}
+  duration: 2160h # 90 days
+  renewBefore: 720h # 30 days
