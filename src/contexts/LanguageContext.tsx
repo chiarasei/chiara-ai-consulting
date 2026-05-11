@@ -55,6 +55,12 @@ const translations: Record<Language, Record<string, string>> = {
     "recentwork.voice.badge": "Live Demo",
     "recentwork.voice.title": "AI Voice Assistant – Live Demo",
     "recentwork.voice.desc": "Try our AI voice assistant live. This is the same technology we add to client websites to answer customer calls automatically.",
+    "recentwork.electrician.badge": "Demo Website",
+    "recentwork.electrician.title": "Electrician Company – Demo Website",
+    "recentwork.electrician.desc": "A demo showing the kind of website we build for electricians and trade businesses. Includes a clear services layout, online quote requests, and an AI chat assistant that answers customer questions and books jobs instantly.",
+    "recentwork.advanceddemo.badge": "Live Demo",
+    "recentwork.advanceddemo.title": "Advanced AI Voice Assistant",
+    "recentwork.advanceddemo.desc": "Try our most advanced AI voice agent live. The same technology we deploy for clients to handle calls, answer questions, and book appointments around the clock.",
 
     // Hero
     "hero.title1": "Stop Losing Customers.",
@@ -237,6 +243,12 @@ const translations: Record<Language, Record<string, string>> = {
     "recentwork.voice.badge": "Live Demo",
     "recentwork.voice.title": "AI-röstassistent – Live Demo",
     "recentwork.voice.desc": "Testa vår AI-röstassistent live. Samma teknik vi lägger till på kunders hemsidor för att svara på kundsamtal automatiskt.",
+    "recentwork.electrician.badge": "Demohemsida",
+    "recentwork.electrician.title": "Elföretag – Demohemsida",
+    "recentwork.electrician.desc": "En demo som visar vilken typ av hemsida vi bygger för elektriker och hantverksföretag. Med tydlig tjänsteöversikt, offertförfrågan online och en AI-chattassistent som svarar på kundfrågor och bokar jobb direkt.",
+    "recentwork.advanceddemo.badge": "Live Demo",
+    "recentwork.advanceddemo.title": "Avancerad AI-röstassistent",
+    "recentwork.advanceddemo.desc": "Testa vår mest avancerade AI-röstagent live. Samma teknik vi använder hos kunder för att hantera samtal, svara på frågor och boka tider dygnet runt.",
 
     // Hero
     "hero.title1": "Sluta Tappa Kunder.",

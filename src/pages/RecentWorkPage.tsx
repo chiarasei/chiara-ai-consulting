@@ -44,13 +44,13 @@ const RecentWorkPage = () => {
               <div className="p-6 md:p-10 space-y-5">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
                   <Zap className="w-3.5 h-3.5" />
-                  {t("recentwork.cleaning.badge")}
+                  {t("recentwork.electrician.badge")}
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-card-foreground tracking-tight">
-                  {t("recentwork.cleaning.title")}
+                  {t("recentwork.electrician.title")}
                 </h2>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
-                  {t("recentwork.cleaning.desc")}
+                  {t("recentwork.electrician.desc")}
                 </p>
                 <Link to="/demo/electrician">
                   <Button variant="outline" className="gap-2 mt-2">
