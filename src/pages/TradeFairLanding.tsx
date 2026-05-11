@@ -227,6 +227,10 @@ const TradeFairLanding = () => {
                     "Byggd efter att ha validerat verkliga utmaningar hos restauranger i Göteborg. QR-Meny hjälper restauranger att minska avbrott för personalen under rusningstid genom att ge gäster direkt åtkomst till menyn vid bordet."
                   )}
                 </p>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  {tr("Already solving real restaurant challenges in Gothenburg.", "Löser redan verkliga restaurangutmaningar i Göteborg.")}
+                </div>
 
                 <div className="grid sm:grid-cols-2 gap-3 pt-2">
                   {[
