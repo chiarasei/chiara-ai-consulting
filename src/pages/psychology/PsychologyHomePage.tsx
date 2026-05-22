@@ -99,13 +99,25 @@ const PsychologyHomePage = () => {
   const [duration, setDuration] = useState(0);
 
   const active = TRACKS.find((t) => t.id === activeId) || null;
+  const activeRef = useRef<Track | null>(null);
+  activeRef.current = active;
 
   // Init audio element once
   useEffect(() => {
     const a = new Audio();
     a.preload = "metadata";
     audioRef.current = a;
-    const onTime = () => setCurrent(a.currentTime);
+    const onTime = () => {
+      const cap = activeRef.current?.maxSeconds;
+      if (cap && a.currentTime >= cap) {
+        a.pause();
+        a.currentTime = cap;
+        setCurrent(cap);
+        setIsPlaying(false);
+        return;
+      }
+      setCurrent(a.currentTime);
+    };
     const onMeta = () => setDuration(a.duration || 0);
     const onEnd = () => setIsPlaying(false);
     a.addEventListener("timeupdate", onTime);
