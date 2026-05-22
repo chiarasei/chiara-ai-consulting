@@ -142,6 +142,7 @@ const PsychologyAudioDemo = () => {
       <SEOHead
         title="Guided Sessions — Psychology & Wellbeing Audio Demo"
         description="A calm audio meditation demo with guided sessions for grounding, anxiety relief, and sleep."
+        keywords="meditation, guided audio, wellbeing, psychology, mindfulness"
         canonicalPath="/demo/psychology"
       />
 
