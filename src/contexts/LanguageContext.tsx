@@ -48,7 +48,7 @@ const translations: Record<Language, Record<string, string>> = {
     "recentwork.visitsite": "Visit Live Site",
     "recentwork.psych.badge": "Demo Website",
     "recentwork.psych.title": "Psychology Practice – Demo Website",
-    "recentwork.psych.desc": "A demo showing the kind of website we build for therapists and healthcare providers. Includes a calm, professional design, online booking, and an AI chat assistant that answers patient questions instantly.",
+    "recentwork.psych.desc": "A calm, premium wellbeing audio app with guided sessions for the mind. Features a built-in player with lock screen controls, soft earth-tone design, and sessions from morning grounding to sleep meditation.",
     "recentwork.shopify.badge": "Live Project",
     "recentwork.shopify.title": "Zoe & Co – Custom Shopify Store",
     "recentwork.shopify.desc": "A live e-commerce store we built for Zoe & Co with a custom Shopify theme, optimized product pages, and a smooth checkout experience.",
