@@ -18,18 +18,22 @@ type Track = {
   title: string;
   description: string;
   duration: string;
+  maxSeconds: number;
   src: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Icon: any;
-  
 };
+
+const FIVE = 5 * 60;
+const FIFTEEN = 15 * 60;
 
 const TRACKS: Track[] = [
   {
     id: "morning",
     title: "Morning Grounding",
     description: "Start your day with a calm, centered breath.",
-    duration: "8 min",
+    duration: "5 min",
+    maxSeconds: FIVE,
     src: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Scott_Buckley_-_Aurora.mp3",
     Icon: Sunrise,
   },
@@ -37,7 +41,8 @@ const TRACKS: Track[] = [
     id: "anxiety",
     title: "Anxiety Reset",
     description: "Soft guidance to settle a busy, worried mind.",
-    duration: "10 min",
+    duration: "5 min",
+    maxSeconds: FIVE,
     src: "https://upload.wikimedia.org/wikipedia/commons/2/29/Moby_-_LA1.mp3",
     Icon: HeartPulse,
   },
@@ -45,7 +50,8 @@ const TRACKS: Track[] = [
     id: "breath",
     title: "Breathwork for Calm",
     description: "A simple breathing rhythm to ease tension.",
-    duration: "6 min",
+    duration: "5 min",
+    maxSeconds: FIVE,
     src: "https://upload.wikimedia.org/wikipedia/commons/7/73/Moby_-_LA4.mp3",
     Icon: Wind,
   },
@@ -53,7 +59,8 @@ const TRACKS: Track[] = [
     id: "evening",
     title: "Evening Wind Down",
     description: "Release the day with slow, gentle awareness.",
-    duration: "12 min",
+    duration: "5 min",
+    maxSeconds: FIVE,
     src: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Moby_-_LA9.mp3",
     Icon: Moon,
   },
@@ -61,7 +68,8 @@ const TRACKS: Track[] = [
     id: "sleep",
     title: "Sleep Meditation",
     description: "Drift into deep, restful sleep.",
-    duration: "20 min",
+    duration: "15 min",
+    maxSeconds: FIFTEEN,
     src: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Moby_-_LA12.mp3",
     Icon: BedDouble,
   },
@@ -69,7 +77,8 @@ const TRACKS: Track[] = [
     id: "confidence",
     title: "Confidence Boost",
     description: "Reconnect with your quiet inner strength.",
-    duration: "9 min",
+    duration: "5 min",
+    maxSeconds: FIVE,
     src: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Dewdrop_Fantasy_%28ISRC_USUAN1700001%29.mp3",
     Icon: Sparkles,
   },
@@ -90,13 +99,25 @@ const PsychologyHomePage = () => {
   const [duration, setDuration] = useState(0);
 
   const active = TRACKS.find((t) => t.id === activeId) || null;
+  const activeRef = useRef<Track | null>(null);
+  activeRef.current = active;
 
   // Init audio element once
   useEffect(() => {
     const a = new Audio();
     a.preload = "metadata";
     audioRef.current = a;
-    const onTime = () => setCurrent(a.currentTime);
+    const onTime = () => {
+      const cap = activeRef.current?.maxSeconds;
+      if (cap && a.currentTime >= cap) {
+        a.pause();
+        a.currentTime = cap;
+        setCurrent(cap);
+        setIsPlaying(false);
+        return;
+      }
+      setCurrent(a.currentTime);
+    };
     const onMeta = () => setDuration(a.duration || 0);
     const onEnd = () => setIsPlaying(false);
     a.addEventListener("timeupdate", onTime);
@@ -393,26 +414,32 @@ const PsychologyHomePage = () => {
                 {active.title}
               </div>
               <div className="flex items-center gap-3">
-                <input
-                  type="range"
-                  min={0}
-                  max={duration || 0}
-                  step={0.1}
-                  value={current}
-                  onChange={handleSeek}
-                  className="flex-1 h-1 rounded-full appearance-none cursor-pointer accent-[#3D5A40]"
-                  style={{
-                    background: `linear-gradient(to right, #3D5A40 ${
-                      duration ? (current / duration) * 100 : 0
-                    }%, #E4DED2 0%)`,
-                  }}
-                />
-                <span
-                  className="text-xs tabular-nums flex-shrink-0"
-                  style={{ color: "#8A9A8A" }}
-                >
-                  -{formatTime(Math.max(0, (duration || 0) - current))}
-                </span>
+                {(() => {
+                  const cap = Math.min(active.maxSeconds, duration || active.maxSeconds);
+                  const pct = cap ? (current / cap) * 100 : 0;
+                  return (
+                    <>
+                      <input
+                        type="range"
+                        min={0}
+                        max={cap}
+                        step={0.1}
+                        value={Math.min(current, cap)}
+                        onChange={handleSeek}
+                        className="flex-1 h-1 rounded-full appearance-none cursor-pointer accent-[#3D5A40]"
+                        style={{
+                          background: `linear-gradient(to right, #3D5A40 ${pct}%, #E4DED2 0%)`,
+                        }}
+                      />
+                      <span
+                        className="text-xs tabular-nums flex-shrink-0"
+                        style={{ color: "#8A9A8A" }}
+                      >
+                        -{formatTime(Math.max(0, cap - current))}
+                      </span>
+                    </>
+                  );
+                })()}
               </div>
             </div>
           </div>
