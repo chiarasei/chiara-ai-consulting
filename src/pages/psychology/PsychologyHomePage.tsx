@@ -176,6 +176,7 @@ const PsychologyHomePage = () => {
         title="Calm Sessions — Guided Audio for a Calmer Mind"
         description="A warm, guided audio platform for anxiety, stress, sleep and emotional balance."
         keywords="meditation, guided audio, wellbeing, sleep, anxiety"
+        canonicalPath="/demo/psychology"
       />
 
       {/* Top bar */}
