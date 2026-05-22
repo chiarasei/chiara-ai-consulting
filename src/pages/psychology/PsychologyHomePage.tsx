@@ -414,26 +414,32 @@ const PsychologyHomePage = () => {
                 {active.title}
               </div>
               <div className="flex items-center gap-3">
-                <input
-                  type="range"
-                  min={0}
-                  max={duration || 0}
-                  step={0.1}
-                  value={current}
-                  onChange={handleSeek}
-                  className="flex-1 h-1 rounded-full appearance-none cursor-pointer accent-[#3D5A40]"
-                  style={{
-                    background: `linear-gradient(to right, #3D5A40 ${
-                      duration ? (current / duration) * 100 : 0
-                    }%, #E4DED2 0%)`,
-                  }}
-                />
-                <span
-                  className="text-xs tabular-nums flex-shrink-0"
-                  style={{ color: "#8A9A8A" }}
-                >
-                  -{formatTime(Math.max(0, (duration || 0) - current))}
-                </span>
+                {(() => {
+                  const cap = Math.min(active.maxSeconds, duration || active.maxSeconds);
+                  const pct = cap ? (current / cap) * 100 : 0;
+                  return (
+                    <>
+                      <input
+                        type="range"
+                        min={0}
+                        max={cap}
+                        step={0.1}
+                        value={Math.min(current, cap)}
+                        onChange={handleSeek}
+                        className="flex-1 h-1 rounded-full appearance-none cursor-pointer accent-[#3D5A40]"
+                        style={{
+                          background: `linear-gradient(to right, #3D5A40 ${pct}%, #E4DED2 0%)`,
+                        }}
+                      />
+                      <span
+                        className="text-xs tabular-nums flex-shrink-0"
+                        style={{ color: "#8A9A8A" }}
+                      >
+                        -{formatTime(Math.max(0, cap - current))}
+                      </span>
+                    </>
+                  );
+                })()}
               </div>
             </div>
           </div>
