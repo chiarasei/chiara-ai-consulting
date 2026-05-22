@@ -21,7 +21,7 @@ type Track = {
   src: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Icon: any;
-  Icon: React.ComponentType<{ className?: string }>;
+  
 };
 
 const TRACKS: Track[] = [
