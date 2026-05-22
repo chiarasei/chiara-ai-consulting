@@ -30,7 +30,7 @@ const TRACKS: Track[] = [
     title: "Morning Grounding",
     description: "Start your day with a calm, centered breath.",
     duration: "8 min",
-    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    src: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Scott_Buckley_-_Aurora.mp3",
     Icon: Sunrise,
   },
   {
@@ -38,7 +38,7 @@ const TRACKS: Track[] = [
     title: "Anxiety Reset",
     description: "Soft guidance to settle a busy, worried mind.",
     duration: "10 min",
-    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    src: "https://upload.wikimedia.org/wikipedia/commons/2/29/Moby_-_LA1.mp3",
     Icon: HeartPulse,
   },
   {
@@ -46,7 +46,7 @@ const TRACKS: Track[] = [
     title: "Breathwork for Calm",
     description: "A simple breathing rhythm to ease tension.",
     duration: "6 min",
-    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+    src: "https://upload.wikimedia.org/wikipedia/commons/7/73/Moby_-_LA4.mp3",
     Icon: Wind,
   },
   {
@@ -54,7 +54,7 @@ const TRACKS: Track[] = [
     title: "Evening Wind Down",
     description: "Release the day with slow, gentle awareness.",
     duration: "12 min",
-    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+    src: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Moby_-_LA9.mp3",
     Icon: Moon,
   },
   {
@@ -62,7 +62,7 @@ const TRACKS: Track[] = [
     title: "Sleep Meditation",
     description: "Drift into deep, restful sleep.",
     duration: "20 min",
-    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+    src: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Moby_-_LA12.mp3",
     Icon: BedDouble,
   },
   {
@@ -70,7 +70,7 @@ const TRACKS: Track[] = [
     title: "Confidence Boost",
     description: "Reconnect with your quiet inner strength.",
     duration: "9 min",
-    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+    src: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Dewdrop_Fantasy_%28ISRC_USUAN1700001%29.mp3",
     Icon: Sparkles,
   },
 ];
