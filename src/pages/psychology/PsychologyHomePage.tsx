@@ -18,18 +18,22 @@ type Track = {
   title: string;
   description: string;
   duration: string;
+  maxSeconds: number;
   src: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Icon: any;
-  
 };
+
+const FIVE = 5 * 60;
+const FIFTEEN = 15 * 60;
 
 const TRACKS: Track[] = [
   {
     id: "morning",
     title: "Morning Grounding",
     description: "Start your day with a calm, centered breath.",
-    duration: "8 min",
+    duration: "5 min",
+    maxSeconds: FIVE,
     src: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Scott_Buckley_-_Aurora.mp3",
     Icon: Sunrise,
   },
@@ -37,7 +41,8 @@ const TRACKS: Track[] = [
     id: "anxiety",
     title: "Anxiety Reset",
     description: "Soft guidance to settle a busy, worried mind.",
-    duration: "10 min",
+    duration: "5 min",
+    maxSeconds: FIVE,
     src: "https://upload.wikimedia.org/wikipedia/commons/2/29/Moby_-_LA1.mp3",
     Icon: HeartPulse,
   },
@@ -45,7 +50,8 @@ const TRACKS: Track[] = [
     id: "breath",
     title: "Breathwork for Calm",
     description: "A simple breathing rhythm to ease tension.",
-    duration: "6 min",
+    duration: "5 min",
+    maxSeconds: FIVE,
     src: "https://upload.wikimedia.org/wikipedia/commons/7/73/Moby_-_LA4.mp3",
     Icon: Wind,
   },
@@ -53,7 +59,8 @@ const TRACKS: Track[] = [
     id: "evening",
     title: "Evening Wind Down",
     description: "Release the day with slow, gentle awareness.",
-    duration: "12 min",
+    duration: "5 min",
+    maxSeconds: FIVE,
     src: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Moby_-_LA9.mp3",
     Icon: Moon,
   },
@@ -61,7 +68,8 @@ const TRACKS: Track[] = [
     id: "sleep",
     title: "Sleep Meditation",
     description: "Drift into deep, restful sleep.",
-    duration: "20 min",
+    duration: "15 min",
+    maxSeconds: FIFTEEN,
     src: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Moby_-_LA12.mp3",
     Icon: BedDouble,
   },
@@ -69,7 +77,8 @@ const TRACKS: Track[] = [
     id: "confidence",
     title: "Confidence Boost",
     description: "Reconnect with your quiet inner strength.",
-    duration: "9 min",
+    duration: "5 min",
+    maxSeconds: FIVE,
     src: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Dewdrop_Fantasy_%28ISRC_USUAN1700001%29.mp3",
     Icon: Sparkles,
   },
