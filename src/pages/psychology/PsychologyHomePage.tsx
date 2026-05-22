@@ -1,145 +1,305 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { Bot, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
-import PsychologyLayout from "@/components/psychology/PsychologyLayout";
-import { green, greenLight, greenText, textMuted, borderClr } from "@/components/psychology/PsychologyLayout";
-import { usePsychLang } from "@/components/psychology/PsychLangContext";
+import { Play, Pause, ArrowLeft, Headphones } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
-import PsychologyChat from "@/components/psychology/PsychologyChat";
-import therapyHero from "@/assets/therapy-hero.jpg";
-import therapistPortrait from "@/assets/therapist-portrait.jpg";
 
-const DemoPsychologyHome = () => {
-  const { t } = usePsychLang();
-  const [chatOpen, setChatOpen] = useState(false);
+type Track = {
+  id: string;
+  title: string;
+  description: string;
+  duration: string;
+  src: string;
+};
+
+const TRACKS: Track[] = [
+  {
+    id: "morning",
+    title: "Morning Grounding",
+    description: "Start your day with a calm, centered breath.",
+    duration: "8 min",
+    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+  },
+  {
+    id: "anxiety",
+    title: "Anxiety Reset",
+    description: "Soft guidance to settle a busy, worried mind.",
+    duration: "10 min",
+    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+  },
+  {
+    id: "evening",
+    title: "Evening Wind Down",
+    description: "Release the day and prepare for restful sleep.",
+    duration: "12 min",
+    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+  },
+];
+
+// Calm palette
+const bg = "#F5F1EA";
+const surface = "#FFFFFF";
+const ink = "#2B2A2A";
+const muted = "#7A7775";
+const accent = "#6B8E7F"; // sage
+const accentSoft = "#E4ECE6";
+
+const formatTime = (s: number) => {
+  if (!isFinite(s) || isNaN(s)) return "0:00";
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return `${m}:${sec.toString().padStart(2, "0")}`;
+};
+
+const PsychologyAudioDemo = () => {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [current, setCurrent] = useState(0);
+  const [duration, setDuration] = useState(0);
+
+  const activeTrack = TRACKS.find((t) => t.id === activeId) || null;
+
+  // Initialize the single audio element once
+  useEffect(() => {
+    const el = new Audio();
+    el.preload = "metadata";
+    audioRef.current = el;
+
+    const onTime = () => setCurrent(el.currentTime);
+    const onMeta = () => setDuration(el.duration);
+    const onEnd = () => setIsPlaying(false);
+    const onPlay = () => setIsPlaying(true);
+    const onPause = () => setIsPlaying(false);
+
+    el.addEventListener("timeupdate", onTime);
+    el.addEventListener("loadedmetadata", onMeta);
+    el.addEventListener("ended", onEnd);
+    el.addEventListener("play", onPlay);
+    el.addEventListener("pause", onPause);
+
+    return () => {
+      el.pause();
+      el.removeEventListener("timeupdate", onTime);
+      el.removeEventListener("loadedmetadata", onMeta);
+      el.removeEventListener("ended", onEnd);
+      el.removeEventListener("play", onPlay);
+      el.removeEventListener("pause", onPause);
+    };
+  }, []);
+
+  // Media Session API for lock screen / background controls
+  useEffect(() => {
+    if (!activeTrack || !("mediaSession" in navigator)) return;
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: activeTrack.title,
+      artist: "Guided Sessions",
+      album: "Psychology & Wellbeing",
+    });
+    navigator.mediaSession.setActionHandler("play", () => audioRef.current?.play());
+    navigator.mediaSession.setActionHandler("pause", () => audioRef.current?.pause());
+    navigator.mediaSession.setActionHandler("seekto", (details) => {
+      if (audioRef.current && details.seekTime != null) {
+        audioRef.current.currentTime = details.seekTime;
+      }
+    });
+  }, [activeTrack]);
+
+  const handleToggle = (track: Track) => {
+    const el = audioRef.current;
+    if (!el) return;
+    if (activeId === track.id) {
+      if (el.paused) el.play();
+      else el.pause();
+      return;
+    }
+    el.src = track.src;
+    el.currentTime = 0;
+    setActiveId(track.id);
+    setCurrent(0);
+    setDuration(0);
+    el.play().catch(() => {});
+  };
+
+  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const el = audioRef.current;
+    if (!el) return;
+    const v = Number(e.target.value);
+    el.currentTime = v;
+    setCurrent(v);
+  };
+
+  const pct = duration > 0 ? (current / duration) * 100 : 0;
 
   return (
-    <PsychologyLayout>
+    <div
+      className="min-h-screen flex flex-col"
+      style={{
+        background: bg,
+        color: ink,
+        fontFamily: "'DM Sans', 'Inter', system-ui, sans-serif",
+      }}
+    >
       <SEOHead
-        title="Psykolog Praktiken – Professional Psychotherapy in Gothenburg"
-        description="Licensed psychologist offering individual therapy, couples therapy, stress and trauma support in Gothenburg. Book your free consultation today."
-        keywords="psychologist Gothenburg, therapy, CBT, couples therapy, anxiety treatment, psykolog Göteborg"
+        title="Guided Sessions — Psychology & Wellbeing Audio Demo"
+        description="A calm audio meditation demo with guided sessions for grounding, anxiety relief, and sleep."
         canonicalPath="/demo/psychology"
       />
-      <section className="relative overflow-hidden min-h-[70vh] md:min-h-[80vh] flex items-center">
-        <div className="absolute inset-0">
-          <img src={therapyHero} alt="Therapy session — therapist listening to client in a calm office" className="w-full h-full object-cover object-center" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(250,250,248,0.85) 0%, rgba(250,250,248,0.6) 30%, rgba(250,250,248,0.3) 60%, rgba(250,250,248,0.7) 100%)" }} />
-        </div>
-        <div className="relative max-w-6xl mx-auto px-5 py-20 md:py-32 w-full text-center flex flex-col items-center">
-          <div className="max-w-lg space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide" style={{ background: "rgba(255,255,255,0.85)", color: greenText }}>
-              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: green }} />
-              {t("Licensed Psychologist in Gothenburg", "Legitimerad psykolog i Göteborg")}
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight break-words" style={{ color: "#1a1a2e" }}>
-              {t("Professional Psychotherapy", "Professionell psykoterapi")}
-              <br />
-              <span style={{ color: green }}>{t("in Gothenburg", "i Göteborg")}</span>
-            </h1>
-            <p className="text-base md:text-lg leading-relaxed" style={{ color: textMuted }}>
-              {t(
-                "A safe and supportive space to talk about anxiety, stress, relationships, and life challenges.",
-                "Ett tryggt och stödjande utrymme för att prata om ångest, stress, relationer och livets utmaningar."
-              )}
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-              <Link to="/demo/psychology/contact" className="px-7 py-3 rounded-full text-sm font-semibold shadow-md transition-all hover:shadow-lg" style={{ background: green, color: "#fff" }}>
-                {t("Book Your First Session", "Boka ditt första samtal")}
-              </Link>
-              <button onClick={() => setChatOpen(true)} className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-bold shadow-lg transition-all hover:shadow-xl" style={{ background: green, color: "#fff" }}>
-                <Bot className="w-5 h-5" />
-                {t("Ask Our AI Assistant", "Fråga vår AI-assistent")}
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Chat Modal Overlay */}
-      {chatOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4" onClick={() => setChatOpen(false)}>
-          <div className="w-full max-w-sm animate-fade-in" onClick={(e) => e.stopPropagation()}>
-            <button
-              onClick={() => setChatOpen(false)}
-              className="w-full flex items-center justify-center gap-2 text-sm font-medium py-2 mb-2 text-white/80 hover:text-white transition-colors"
-            >
-              {t("Close chat", "Stäng chatten")} <ChevronUp className="w-4 h-4" />
-            </button>
-            <PsychologyChat />
-            <p className="text-center text-xs mt-2 text-white/70">
-              {t("We speak English and Swedish · Powered by AI", "Vi pratar engelska och svenska · Drivs av AI")}
-            </p>
+      {/* Demo banner */}
+      <div
+        className="text-center text-xs py-2.5 px-4 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3"
+        style={{ background: ink, color: "rgba(255,255,255,0.85)" }}
+      >
+        <span>🎧 A calm wellbeing audio experience demo.</span>
+        <Link to="/" className="inline-flex items-center gap-1 underline font-semibold text-white">
+          <ArrowLeft className="w-3 h-3" />
+          Built by ChiaraAI Consulting
+        </Link>
+      </div>
+
+      {/* Hero */}
+      <header className="px-6 pt-16 pb-12 md:pt-24 md:pb-20 text-center">
+        <div
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6"
+          style={{ background: accentSoft, color: accent }}
+        >
+          <Headphones className="w-3.5 h-3.5" />
+          Guided audio
+        </div>
+        <h1
+          className="text-4xl md:text-6xl font-light tracking-tight leading-[1.1] max-w-2xl mx-auto"
+          style={{ fontFamily: "'Cormorant Garamond', 'Instrument Serif', Georgia, serif" }}
+        >
+          Guided Sessions for Your Mind
+        </h1>
+        <p className="mt-5 text-base md:text-lg max-w-md mx-auto leading-relaxed" style={{ color: muted }}>
+          Short, gentle audio sessions to help you slow down, breathe, and feel a little more like yourself.
+        </p>
+      </header>
+
+      {/* Listen */}
+      <main className="flex-1 px-4 md:px-6 pb-32">
+        <section className="max-w-2xl mx-auto">
+          <div className="flex items-baseline justify-between mb-6 px-2">
+            <h2 className="text-xl md:text-2xl font-medium">Listen</h2>
+            <span className="text-xs uppercase tracking-widest" style={{ color: muted }}>
+              {TRACKS.length} sessions
+            </span>
+          </div>
+
+          <ul className="space-y-4">
+            {TRACKS.map((track) => {
+              const isActive = activeId === track.id;
+              const isThisPlaying = isActive && isPlaying;
+              return (
+                <li
+                  key={track.id}
+                  className="rounded-3xl p-5 md:p-6 transition-all duration-300"
+                  style={{
+                    background: surface,
+                    boxShadow: isActive
+                      ? "0 10px 40px -10px rgba(107, 142, 127, 0.3)"
+                      : "0 2px 12px -4px rgba(43, 42, 42, 0.06)",
+                    border: `1px solid ${isActive ? accentSoft : "rgba(43,42,42,0.05)"}`,
+                  }}
+                >
+                  <div className="flex items-center gap-4">
+                    <button
+                      onClick={() => handleToggle(track)}
+                      aria-label={isThisPlaying ? `Pause ${track.title}` : `Play ${track.title}`}
+                      className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-transform active:scale-95"
+                      style={{
+                        background: isThisPlaying ? accent : accentSoft,
+                        color: isThisPlaying ? "#fff" : accent,
+                      }}
+                    >
+                      {isThisPlaying ? (
+                        <Pause className="w-5 h-5 md:w-6 md:h-6" />
+                      ) : (
+                        <Play className="w-5 h-5 md:w-6 md:h-6 ml-0.5" />
+                      )}
+                    </button>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className="text-base md:text-lg font-medium truncate">{track.title}</h3>
+                      </div>
+                      <p className="text-sm leading-snug truncate" style={{ color: muted }}>
+                        {track.description}
+                      </p>
+                      <span
+                        className="inline-block mt-2 text-xs px-2 py-0.5 rounded-full"
+                        style={{ background: accentSoft, color: accent }}
+                      >
+                        {track.duration}
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+
+          <p className="text-center text-xs mt-10" style={{ color: muted }}>
+            Find a quiet moment. Use headphones if you can.
+          </p>
+        </section>
+      </main>
+
+      {/* Mini player */}
+      {activeTrack && (
+        <div
+          className="fixed bottom-0 left-0 right-0 z-50 px-3 pb-3 md:px-4 md:pb-4"
+          style={{
+            paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))",
+          }}
+        >
+          <div
+            className="max-w-2xl mx-auto rounded-2xl p-3 md:p-4 backdrop-blur-xl"
+            style={{
+              background: "rgba(255,255,255,0.92)",
+              boxShadow: "0 -4px 30px rgba(43,42,42,0.12)",
+              border: `1px solid ${accentSoft}`,
+            }}
+          >
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => handleToggle(activeTrack)}
+                aria-label={isPlaying ? "Pause" : "Play"}
+                className="flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center transition-transform active:scale-95"
+                style={{ background: accent, color: "#fff" }}
+              >
+                {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
+              </button>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between gap-2 mb-1.5">
+                  <span className="text-sm font-medium truncate">{activeTrack.title}</span>
+                  <span className="text-xs tabular-nums flex-shrink-0" style={{ color: muted }}>
+                    {formatTime(current)} / {formatTime(duration)}
+                  </span>
+                </div>
+                <div className="relative h-1.5 rounded-full overflow-hidden" style={{ background: accentSoft }}>
+                  <div
+                    className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-100"
+                    style={{ width: `${pct}%`, background: accent }}
+                  />
+                  <input
+                    type="range"
+                    min={0}
+                    max={duration || 0}
+                    step={0.1}
+                    value={current}
+                    onChange={handleSeek}
+                    aria-label="Seek"
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
-
-
-      <section className="py-16 md:py-24 px-5" style={{ background: "#fff" }}>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-5">
-            <p className="text-xs font-semibold tracking-widest uppercase" style={{ color: green }}>{t("About", "Om oss")}</p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight" style={{ color: "#1a1a2e" }}>
-              {t("Warm, professional care for your mental well‑being", "Varm, professionell omsorg för ditt psykiska välbefinnande")}
-            </h2>
-            <p className="leading-relaxed" style={{ color: textMuted }}>
-              {t(
-                "With over 10 years of experience as a licensed psychologist, I help clients navigate anxiety, stress, depression, relationship difficulties, and major life transitions. My approach is grounded in empathy, evidence‑based methods, and a genuine commitment to your growth.",
-                "Med över 10 års erfarenhet som legitimerad psykolog hjälper jag klienter att navigera ångest, stress, depression, relationsproblem och stora livsförändringar. Mitt tillvägagångssätt grundas i empati, evidensbaserade metoder och ett genuint engagemang för din utveckling."
-              )}
-            </p>
-            <p className="leading-relaxed" style={{ color: textMuted }}>
-              {t(
-                "I believe therapy should feel safe and collaborative. Together, we work at your pace to build understanding and create meaningful change in your life.",
-                "Jag tror att terapi ska kännas trygg och samarbetsinriktad. Tillsammans arbetar vi i din takt för att skapa förståelse och meningsfull förändring i ditt liv."
-              )}
-            </p>
-            <div className="pt-2">
-              <p className="font-semibold text-lg" style={{ color: "#1a1a2e" }}>Dr. Anna Lindqvist</p>
-              <p className="text-sm" style={{ color: textMuted }}>{t("Licensed Psychologist", "Legitimerad psykolog")} · CBT · {t("Psychodynamic Therapy", "Psykodynamisk terapi")} · EMDR</p>
-            </div>
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img src={therapistPortrait} alt="Dr. Anna Lindqvist" className="w-full h-auto object-cover aspect-square" />
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24 px-5" style={{ background: "#FAFAF8" }}>
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center space-y-3 mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight" style={{ color: "#1a1a2e" }}>{t("Explore our practice", "Utforska vår mottagning")}</h2>
-            <p style={{ color: textMuted }}>{t("Learn more about how therapy can help you.", "Läs mer om hur terapi kan hjälpa dig.")}</p>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-5">
-            {[
-              { title: t("Our Services", "Våra tjänster"), desc: t("Individual therapy, couples therapy, stress support, and trauma care.", "Individualterapi, parterapi, stresshantering och traumavård."), path: "/demo/psychology/services" },
-              { title: t("How It Works", "Så fungerar det"), desc: t("Three simple steps from first consultation to ongoing support.", "Tre enkla steg från första konsultation till löpande stöd."), path: "/demo/psychology/how-it-works" },
-              { title: t("Pricing", "Priser"), desc: t("Transparent, straightforward session fees with no hidden costs.", "Transparenta, tydliga sessionsavgifter utan dolda kostnader."), path: "/demo/psychology/pricing" },
-            ].map(({ title, desc, path }) => (
-              <Link key={path} to={path} className="block p-6 rounded-2xl border transition-all hover:shadow-md group" style={{ background: "#fff", borderColor: borderClr }}>
-                <h3 className="text-lg font-semibold mb-2" style={{ color: "#1a1a2e" }}>{title}</h3>
-                <p className="text-sm leading-relaxed mb-4" style={{ color: textMuted }}>{desc}</p>
-                <span className="inline-flex items-center gap-1 text-sm font-medium" style={{ color: green }}>
-                  {t("Learn more", "Läs mer")} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24 px-5" style={{ background: "linear-gradient(145deg, hsl(165, 35%, 94%), hsl(200, 25%, 93%))" }}>
-        <div className="max-w-2xl mx-auto text-center space-y-5">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight" style={{ color: "#1a1a2e" }}>{t("Take the first step today", "Ta det första steget idag")}</h2>
-          <p style={{ color: textMuted }}>{t("Reaching out is the hardest part. I'm here to listen, support, and guide you towards a healthier, more fulfilling life.", "Att ta kontakt är det svåraste steget. Jag finns här för att lyssna, stödja och vägleda dig mot ett hälsosammare, mer meningsfullt liv.")}</p>
-          <Link to="/demo/psychology/contact" className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold shadow-md transition-all hover:shadow-lg" style={{ background: green, color: "#fff" }}>
-            {t("Book Your Free Consultation", "Boka din kostnadsfria konsultation")} <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </section>
-    </PsychologyLayout>
+    </div>
   );
 };
 
-export default DemoPsychologyHome;
+export default PsychologyAudioDemo;
