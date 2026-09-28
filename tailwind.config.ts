@@ -13,7 +13,8 @@ export default {
       },
     },
     fontFamily: {
-      sans: ['Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
+      sans: ['"Work Sans"', 'system-ui', 'sans-serif'],
+      serif: ['"Instrument Serif"', 'Georgia', 'serif'],
     },
     extend: {
       colors: {

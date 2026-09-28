@@ -4,7 +4,7 @@ export const localBusinessJsonLd = {
   "name": "ChiaraAI Consulting",
   "url": "https://chiaraaiconsulting.se",
   "logo": "https://chiaraaiconsulting.se/chiara-favicon.png",
-  "description": "We help small service businesses upgrade their websites and automate customer inquiries with AI chat assistants and voice assistants.",
+  "description": "A web and app development consultancy building custom websites, SaaS products and business tools.",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "SE"
@@ -17,7 +17,7 @@ export const localBusinessJsonLd = {
   },
   "serviceType": [
     "AI Chatbots",
-    "AI Voice Assistants",
+    "Web App Development",
     "Automated Booking Systems",
     "AI Marketing Automation",
     "Social Media Automation",
@@ -32,7 +32,7 @@ export const servicesJsonLd = {
   "name": "AI Automation Services",
   "itemListElement": [
     { "@type": "Service", "position": 1, "name": "AI Chatbots", "description": "Custom AI chatbots for customer service automation" },
-    { "@type": "Service", "position": 2, "name": "AI Voice Assistants", "description": "Intelligent voice assistants for business communication" },
+    { "@type": "Service", "position": 2, "name": "Web App Development", "description": "Custom web applications and SaaS products" },
     { "@type": "Service", "position": 3, "name": "Automated Booking Systems", "description": "AI-powered booking and scheduling automation" },
     { "@type": "Service", "position": 4, "name": "AI Marketing Automation", "description": "Data-driven marketing with AI optimization" },
     { "@type": "Service", "position": 5, "name": "Social Media Automation", "description": "Automated social media management and content" },
@@ -49,7 +49,7 @@ export const faqJsonLd = {
       "name": "What AI automation services does ChiaraAI offer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ChiaraAI offers AI chatbots, voice assistants, automated booking systems, marketing automation, social media automation, loyalty programs, and workflow automation for small businesses in Sweden."
+        "text": "ChiaraAI offers custom websites, web apps, SaaS products, AI chatbots, booking systems, marketing automation, social media automation, loyalty programs, and workflow automation for small businesses in Sweden."
       }
     },
     {

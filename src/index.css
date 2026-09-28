@@ -2,58 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ChiaraAI Design System — Black & White with Blue accents */
+/* ChiaraAI Design System: Navy, ivory and a restrained brass accent. Editorial. */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --background: 40 33% 96%;
+    --foreground: 215 50% 12%;
 
-    --card: 0 0% 97%;
-    --card-foreground: 0 0% 10%;
+    --card: 40 30% 98%;
+    --card-foreground: 215 50% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover: 40 30% 98%;
+    --popover-foreground: 215 50% 12%;
 
-    --primary: 217 91% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 215 50% 12%;
+    --primary-foreground: 40 33% 96%;
 
-    --secondary: 0 0% 93%;
-    --secondary-foreground: 0 0% 15%;
+    --secondary: 38 22% 90%;
+    --secondary-foreground: 215 50% 12%;
 
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 38 22% 92%;
+    --muted-foreground: 215 12% 38%;
 
-    --accent: 217 91% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 36 35% 52%;
+    --accent-foreground: 215 50% 12%;
 
-    --destructive: 0 72% 55%;
-    --destructive-foreground: 0 0% 100%;
+    --brass: 36 35% 52%;
 
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
-    --ring: 217 91% 50%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 40 33% 96%;
 
-    --radius: 0.75rem;
+    --border: 36 18% 84%;
+    --input: 36 18% 84%;
+    --ring: 36 35% 52%;
 
-    /* Gradients & Shadows */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 50%) 0%, hsl(230 80% 55%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(217 91% 50%) 0%, hsl(200 80% 50%) 100%);
-    --gradient-subtle: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 97%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 95% / 0.5) 0%, hsl(0 0% 98% / 0.3) 50%, transparent 100%);
-    --shadow-soft: 0 2px 12px -2px hsl(0 0% 0% / 0.06);
-    --shadow-medium: 0 8px 30px -6px hsl(0 0% 0% / 0.1);
-    --shadow-glow: 0 0 32px hsl(217 91% 50% / 0.12);
-    --shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.06);
+    --radius: 0.25rem;
 
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 217 91% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 95%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 0 0% 88%;
-    --sidebar-ring: 217 91% 50%;
+    --gradient-primary: linear-gradient(135deg, hsl(215 50% 12%) 0%, hsl(215 40% 22%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(36 35% 52%) 0%, hsl(36 40% 62%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(40 33% 96%) 0%, hsl(38 22% 92%) 100%);
+    --gradient-hero: none;
+    --shadow-soft: 0 1px 2px hsl(215 50% 12% / 0.04);
+    --shadow-medium: 0 12px 32px -16px hsl(215 50% 12% / 0.18);
+    --shadow-glow: 0 12px 32px -16px hsl(215 50% 12% / 0.25);
+    --shadow-card-hover: 0 20px 40px -24px hsl(215 50% 12% / 0.2);
+
+    --sidebar-background: 40 33% 96%;
+    --sidebar-foreground: 215 50% 12%;
+    --sidebar-primary: 215 50% 12%;
+    --sidebar-primary-foreground: 40 33% 96%;
+    --sidebar-accent: 38 22% 92%;
+    --sidebar-accent-foreground: 215 50% 12%;
+    --sidebar-border: 36 18% 84%;
+    --sidebar-ring: 36 35% 52%;
   }
 }
 
@@ -63,19 +64,22 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
-    letter-spacing: -0.01em;
+    @apply bg-background text-foreground antialiased font-sans;
+    font-weight: 400;
   }
 
   html {
     scroll-behavior: smooth;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    letter-spacing: -0.035em;
-    font-weight: 700;
-    line-height: 1.1;
+  h1, h2, h3 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400 !important;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+  h4, h5, h6 {
+    font-weight: 500;
   }
 }
 
@@ -83,13 +87,16 @@
   .text-balance {
     text-wrap: balance;
   }
+  .eyebrow {
+    @apply text-[11px] uppercase tracking-[0.22em] font-medium;
+    color: hsl(var(--brass));
+  }
 }
 
-/* Scroll-triggered fade-in animation */
 .fade-in-section {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transform: translateY(16px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
 }
 .fade-in-section.is-visible {
   opacity: 1;

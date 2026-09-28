@@ -1,4 +1,4 @@
-import { Globe, Bot, MessageSquare, CalendarCheck, Mic } from "lucide-react";
+import { Globe, Sparkles, Bot, MessageSquare, CalendarCheck } from "lucide-react";
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -10,7 +10,7 @@ const Services = () => {
     { icon: <Bot />, title: t("services.chatbot.title"), description: t("services.chatbot.desc") },
     { icon: <MessageSquare />, title: t("services.inquiry.title"), description: t("services.inquiry.desc") },
     { icon: <CalendarCheck />, title: t("services.booking.title"), description: t("services.booking.desc") },
-    { icon: <Mic />, title: t("services.voice.title"), description: t("services.voice.desc") },
+    { icon: <Sparkles />, title: t("services.voice.title"), description: t("services.voice.desc") },
   ];
 
   return (
