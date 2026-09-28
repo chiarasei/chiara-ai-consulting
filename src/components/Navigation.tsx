@@ -86,13 +86,13 @@ const Navigation = () => {
                 to={link.path}
                 className={`relative text-sm font-semibold transition-colors duration-200 pb-1 ${
                   isActive(link.path)
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-[hsl(var(--brass))]"
+                    : "text-primary/80 hover:text-[hsl(var(--brass))]"
                 }`}
               >
                 {link.label}
                 {isActive(link.path) && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[hsl(var(--brass))] rounded-full" />
                 )}
               </Link>
             ))}
