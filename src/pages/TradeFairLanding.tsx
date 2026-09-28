@@ -61,7 +61,7 @@ const TradeFairLanding = () => {
       />
       <Navigation />
       <main>
-        <section className="px-5 pb-28 pt-36 md:px-8 md:pb-40 md:pt-52">
+        <section className="px-5 pb-12 pt-28 md:px-8 md:pb-16 md:pt-40">
           <div className="container mx-auto max-w-6xl">
             <p className="eyebrow mb-8 animate-fade-in-up">{tr("Web & App Development Studio · Gothenburg", "Studio för webb- och apputveckling · Göteborg")}</p>
             <h1 className="max-w-5xl text-balance text-5xl text-foreground animate-fade-in-up md:text-7xl lg:text-8xl">
@@ -69,7 +69,7 @@ const TradeFairLanding = () => {
               <em className="italic text-muted-foreground">{tr("built with care.", "byggda med omsorg.")}</em>
             </h1>
             <div className="mt-14 grid items-end gap-9 md:grid-cols-12 md:mt-20">
-              <p className="text-base font-light leading-relaxed text-muted-foreground md:col-span-6 md:text-lg">
+              <p className="text-base font-light leading-relaxed text-foreground/75 md:col-span-6 md:text-lg">
                 {tr("We design and build custom websites, apps and business tools for founders, startups and established companies, from first idea to live product.", "Vi designar och bygger skräddarsydda webbplatser, appar och affärsverktyg för grundare, startups och etablerade företag, från första idé till färdig produkt.")}
               </p>
               <div className="flex flex-col gap-3 sm:flex-row md:col-span-6 md:justify-end">
@@ -85,12 +85,11 @@ const TradeFairLanding = () => {
         </section>
 
 
-        <section className="fade-in-section px-5 pb-28 pt-28 md:px-8 md:pb-40 md:pt-36">
+        <section className="fade-in-section px-5 pb-24 pt-8 md:px-8 md:pb-32 md:pt-10">
           <div className="container mx-auto max-w-6xl">
-            <div className="mb-14 flex items-end justify-between border-t border-border pt-14">
+            <div className="mb-12 flex items-end justify-between border-t border-border pt-10">
               <div>
-                <p className="eyebrow mb-4">{tr("Portfolio", "Portfolio")}</p>
-                <h2 className="text-4xl md:text-6xl">{tr("Selected work", "Utvalda projekt")}</h2>
+                <h2 className="text-4xl md:text-6xl">{tr("Portfolio", "Portfolio")}</h2>
               </div>
               <Link to="/recent-work" className="story-link hidden items-center gap-2 pb-1 text-sm sm:inline-flex">{tr("All projects", "Alla projekt")} <ArrowRight className="h-4 w-4" /></Link>
             </div>
@@ -110,7 +109,7 @@ const TradeFairLanding = () => {
                         <ProjectBrowser src={project.image} alt={`${project.name} homepage`} href={project.href} domain={project.domain} priority />
                       </div>
                       <div className="md:col-span-5">
-                        <p className="mb-2 text-xs uppercase tracking-[0.18em] text-accent">{project.kind}</p>
+                        <p className="eyebrow mb-2">{project.kind}</p>
                         <h3 className="text-5xl md:text-6xl">{project.name}</h3>
                         <p className="mt-5 max-w-lg font-light leading-relaxed text-muted-foreground">{project.description}</p>
                         <a href={project.href} target="_blank" rel="noopener noreferrer" className="story-link mt-7 inline-flex items-center gap-2 pb-1 text-sm font-medium">
@@ -123,7 +122,7 @@ const TradeFairLanding = () => {
                       <ProjectBrowser src={project.image} alt={`${project.name} homepage`} href={project.href} domain={project.domain} />
                       <div className="mt-6 flex items-start justify-between gap-6">
                         <div>
-                          <p className="mb-2 text-xs uppercase tracking-[0.18em] text-accent">{project.kind}</p>
+                          <p className="eyebrow mb-2">{project.kind}</p>
                           <h3 className="text-3xl md:text-4xl">{project.name}</h3>
                           <p className="mt-3 max-w-lg font-light leading-relaxed text-muted-foreground">{project.description}</p>
                         </div>
@@ -146,7 +145,7 @@ const TradeFairLanding = () => {
             <div className="grid border-t border-primary-foreground/15 sm:grid-cols-2">
               {capabilities.map((capability, index) => (
                 <div key={capability.n} className={`group py-9 pr-8 transition-colors duration-300 hover:bg-primary-foreground/[0.035] sm:px-8 ${index % 2 === 0 ? "sm:border-r sm:border-primary-foreground/15" : ""} border-b border-primary-foreground/15`}>
-                  <span className="text-xs tracking-[0.2em] text-accent">{capability.n}</span>
+                  <span className="text-[13px] font-semibold tracking-[0.12em] text-accent">{capability.n}</span>
                   <h3 className="mb-3 mt-3 text-3xl transition-transform duration-300 group-hover:translate-x-1">{capability.t}</h3>
                   <p className="max-w-md font-light leading-relaxed text-primary-foreground/70">{capability.d}</p>
                 </div>
@@ -164,7 +163,7 @@ const TradeFairLanding = () => {
             ].map((stat) => (
               <div key={stat.label} className="px-6 py-7 text-center sm:py-3">
                 <p className="font-serif text-4xl text-foreground md:text-5xl">{stat.value}</p>
-                <p className="mt-2 text-xs uppercase tracking-[0.16em] text-muted-foreground">{stat.label}</p>
+                <p className="mt-2 text-[13px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">{stat.label}</p>
               </div>
             ))}
           </div>
