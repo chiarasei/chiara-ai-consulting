@@ -142,7 +142,7 @@ const Pricing = () => {
         <div className="mt-8 rounded-lg border border-border bg-card p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <h3 className="text-2xl md:text-3xl mb-2">
-              {L("Care plan – from 690 kr/mån", "Serviceavtal – från 690 kr/mån")}
+              {L("Care plan – 500 kr/mån", "Serviceavtal – 500 kr/mån")}
             </h3>
             <p className="text-sm text-foreground/75 max-w-2xl">
               {L(
@@ -158,8 +158,8 @@ const Pricing = () => {
 
         <p className="text-xs text-muted-foreground text-center mt-6 max-w-3xl mx-auto leading-relaxed">
           {L(
-            "All prices exkl. moms · Fixed quote before we start · 50% at start, 50% at launch · Hosting and storage run on the client's own accounts or are included in a care plan",
-            "Alla priser exkl. moms · Fast offert innan vi börjar · 50% vid start, 50% vid lansering · Hosting och lagring körs på kundens egna konton eller ingår i ett serviceavtal"
+            "All prices exkl. moms · Fixed quote before we start · 50% at start, 50% at launch · Hosting and storage run on the client's own accounts or are included in a care plan · Support without a care plan: 700 kr/h",
+            "Alla priser exkl. moms · Fast offert innan vi börjar · 50% vid start, 50% vid lansering · Hosting och lagring körs på kundens egna konton eller ingår i ett serviceavtal · Support utan serviceavtal: 700 kr/tim"
           )}
         </p>
       </div>
