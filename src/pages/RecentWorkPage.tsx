@@ -21,7 +21,7 @@ const RecentWorkPage = () => {
     {
       name: "mother.fm",
       badge: tr("Featured · Membership platform", "Utvald · Medlemsplattform"),
-      description: tr("A postnatal wellness platform guiding new mothers through a monthly content journey, with payments, member access and audio streaming.", "En plattform för postnatalt välmående som guidar nyblivna mammor genom en månatlig innehållsresa, med betalningar, medlemsåtkomst och ljudströmning."),
+      description: tr("A motherhood audio companion offering pocket-sized pep talks, with a tracker and journal to support mothers day to day.", "En ljudledd följeslagare för mammor som erbjuder korta pep talks i fickformat, med en tracker och dagbok som stöttar mamman i vardagen."),
       href: "https://mother.fm",
       domain: "mother.fm",
       image: motherImage,
