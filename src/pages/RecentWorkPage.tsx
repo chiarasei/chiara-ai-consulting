@@ -83,10 +83,9 @@ const RecentWorkPage = () => {
               <p className="eyebrow md:col-span-4">{tr("Product demos", "Produktdemos")}</p>
               <h2 className="text-4xl md:col-span-8 md:text-5xl">{tr("Ideas you can experience.", "Idéer du kan uppleva.")}</h2>
             </div>
-            <div className="grid gap-px overflow-hidden rounded-md bg-primary-foreground/15 md:grid-cols-2">
+            <div className="grid gap-px overflow-hidden rounded-md bg-primary-foreground/15">
               {[
                 { icon: Leaf, title: t("recentwork.psych.title"), description: t("recentwork.psych.desc"), href: "/demo/psychology" },
-                { icon: Zap, title: t("recentwork.electrician.title"), description: t("recentwork.electrician.desc"), href: "/demo/electrician" },
               ].map((demo) => (
                 <article key={demo.href} className="group bg-primary p-8 transition-colors duration-300 hover:bg-primary/80 md:p-10">
                   <demo.icon className="h-5 w-5 text-accent" />
