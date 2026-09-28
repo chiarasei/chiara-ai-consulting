@@ -389,7 +389,7 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.sendMessage": "Skicka ett meddelande",
 
     // Footer
-    "footer.description": "Vi hjälper tjänsteföretag att få fler bokningar med moderna hemsidor och smart automation.",
+    "footer.description": "En konsultbyrå för webb- och apputveckling som bygger skräddarsydda digitala produkter.",
     "footer.navigation": "Navigation",
     "footer.services": "Tjänster",
     "footer.contact": "Kontakt",
