@@ -148,6 +148,8 @@ const translations: Record<Language, Record<string, string>> = {
     "industries.local.desc": "Whether you're a plumber, electrician, or gardener, we build a website that brings in customers while you're out on the job.",
     "industries.consultants.title": "Consultants",
     "industries.consultants.desc": "A professional online presence with automated scheduling so new clients can find you and book without friction.",
+    "industries.ecommerce.title": "E-commerce Stores",
+    "industries.ecommerce.desc": "An online store that is easy to shop and easy to run, with smooth checkout, clear product pages and payments that just work.",
 
     // Pricing
     "pricing.title": "Simple Packages for Small Businesses",
@@ -336,6 +338,8 @@ const translations: Record<Language, Record<string, string>> = {
     "industries.local.desc": "Oavsett om du är rörmokare, elektriker eller trädgårdsmästare, bygger vi en hemsida som tar in kunder medan du är ute på jobb.",
     "industries.consultants.title": "Konsulter",
     "industries.consultants.desc": "En professionell närvaro online med automatisk bokning, så nya kunder kan hitta dig och boka utan krångel.",
+    "industries.ecommerce.title": "E-handel",
+    "industries.ecommerce.desc": "En webbutik som är enkel att handla i och enkel att sköta, med smidig kassа, tydliga produktsidor och betalningar som fungerar.",
 
     // Pricing
     "pricing.title": "Enkla Paket för Småföretag",

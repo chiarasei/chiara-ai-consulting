@@ -8,8 +8,8 @@ const IndustriesPage = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Businesses We Help – Therapists, Clinics, Coaches & More | ChiaraAI"
-        description="Website upgrades and smart automation for therapists, coaches, wellness clinics, cleaning companies, and local service businesses."
-        keywords="therapist website, wellness clinic website, cleaning company website, consultant website, service business automation"
+        description="Website upgrades, online stores and smart booking for therapists, coaches, wellness clinics, e-commerce stores, cleaning companies, and local service businesses."
+        keywords="therapist website, wellness clinic website, cleaning company website, consultant website, ecommerce store, service business automation"
         canonicalPath="/industries"
       />
       <Navigation />
