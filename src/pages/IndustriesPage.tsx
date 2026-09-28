@@ -7,9 +7,9 @@ const IndustriesPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Businesses We Help – Therapists, Clinics, Coaches & More | ChiaraAI"
-        description="Website upgrades, online stores and smart booking for therapists, coaches, wellness clinics, e-commerce stores, cleaning companies, and local service businesses."
-        keywords="therapist website, wellness clinic website, cleaning company website, consultant website, ecommerce store, service business automation"
+        title="How We Work – Any Business, Any Stage | ChiaraAI Consulting"
+        description="We build for every business and every stage: launching, growing, building a product, or modernising an established company's website and systems."
+        keywords="website for startups, business website Sweden, web app development, custom software, website modernisation"
         canonicalPath="/industries"
       />
       <Navigation />
