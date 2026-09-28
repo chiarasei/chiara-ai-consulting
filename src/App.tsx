@@ -14,7 +14,6 @@ import NotFound from "./pages/NotFound";
 import ElectricianDemoPage from "./pages/electrician/ElectricianDemoPage";
 import RecentWorkPage from "./pages/RecentWorkPage";
 import BookingDemoPage from "./pages/BookingDemoPage";
-import FloatingChat from "./components/FloatingChat";
 import DemoPsychologyHome from "./pages/psychology/PsychologyHomePage";
 import PsychologyServicesPage from "./pages/psychology/PsychologyServicesPage";
 import PsychologyHowItWorksPage from "./pages/psychology/PsychologyHowItWorksPage";
@@ -55,7 +54,6 @@ const App = () => (
             <Route path="/demo/booking" element={<BookingDemoPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <FloatingChat />
         </BrowserRouter>
       </TooltipProvider>
     </LanguageProvider>
