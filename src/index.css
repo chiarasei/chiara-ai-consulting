@@ -38,7 +38,7 @@
 
     --radius: 0.25rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(215 50% 12%) 0%, hsl(215 40% 22%) 100%);
+    --gradient-primary: linear-gradient(180deg, hsl(215 39% 24%) 0%, hsl(215 50% 12%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(36 35% 52%) 0%, hsl(36 40% 62%) 100%);
     --gradient-subtle: linear-gradient(180deg, hsl(40 33% 96%) 0%, hsl(38 22% 92%) 100%);
     --gradient-hero: none;
@@ -101,4 +101,16 @@
 .fade-in-section.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .fade-in-section,
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
