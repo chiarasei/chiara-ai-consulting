@@ -11,7 +11,6 @@ import IndustriesPage from "./pages/IndustriesPage";
 import PricingPage from "./pages/PricingPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
-import ShopifyShowcasePage from "./pages/ShopifyShowcasePage";
 import ElectricianDemoPage from "./pages/electrician/ElectricianDemoPage";
 import RecentWorkPage from "./pages/RecentWorkPage";
 import BookingDemoPage from "./pages/BookingDemoPage";
@@ -52,7 +51,6 @@ const App = () => (
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/demo/psychology/*" element={<PsychologyRoutes />} />
-            <Route path="/demo/shopify" element={<ShopifyShowcasePage />} />
             <Route path="/demo/electrician" element={<ElectricianDemoPage />} />
             <Route path="/demo/booking" element={<BookingDemoPage />} />
             <Route path="*" element={<NotFound />} />
