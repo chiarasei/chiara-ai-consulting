@@ -27,7 +27,7 @@ const TradeFairLanding = () => {
     {
       name: "mother.fm",
       kind: tr("Flagship · Motherhood audio", "Flaggskepp · Ljud för mammor"),
-      description: tr("A motherhood audio companion offering pocket-sized pep talks, with a tracker and journal to support mothers day to day. Launching October 2026.", "En ljudledd följeslagare för mammor som erbjuder korta pep talks i fickformat, med en tracker och dagbok som stöttar mamman i vardagen. Lanseras oktober 2026."),
+      description: tr("A motherhood audio companion offering pocket-sized pep talks, with a tracker and journal to support mothers day to day.", "En ljudledd följeslagare för mammor som erbjuder korta pep talks i fickformat, med en tracker och dagbok som stöttar mamman i vardagen."),
       href: "https://mother.fm",
       domain: "mother.fm",
       image: motherImage,
