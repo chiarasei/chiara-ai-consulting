@@ -137,7 +137,7 @@ const translations: Record<Language, Record<string, string>> = {
     "services.voice.desc": "Practical AI where it adds value, such as chat assistants that answer questions on your website.",
 
     "industries.title": "Businesses We Help",
-    "industries.subtitle": "We build for founders, startups, clinics, restaurants, consultants and established companies alike.",
+    "industries.subtitle": "We build for founders, startups, clinics, restaurants, online stores, consultants and established companies alike.",
     "industries.therapists.title": "Therapists & Coaches",
     "industries.therapists.desc": "Let clients book sessions online and get instant answers to common questions, so you can focus on your practice.",
     "industries.wellness.title": "Wellness & Beauty Clinics",
@@ -148,6 +148,8 @@ const translations: Record<Language, Record<string, string>> = {
     "industries.local.desc": "Whether you're a plumber, electrician, or gardener, we build a website that brings in customers while you're out on the job.",
     "industries.consultants.title": "Consultants",
     "industries.consultants.desc": "A professional online presence with automated scheduling so new clients can find you and book without friction.",
+    "industries.ecommerce.title": "E-commerce Stores",
+    "industries.ecommerce.desc": "An online store that is easy to shop and easy to run, with smooth checkout, clear product pages and payments that just work.",
 
     // Pricing
     "pricing.title": "Simple Packages for Small Businesses",
@@ -325,7 +327,7 @@ const translations: Record<Language, Record<string, string>> = {
     "services.voice.desc": "Praktisk AI där den gör nytta, till exempel chattassistenter som svarar på frågor på din webbplats.",
 
     "industries.title": "Företag Vi Hjälper",
-    "industries.subtitle": "Vi bygger för grundare, startups, kliniker, restauranger, konsulter och etablerade företag.",
+    "industries.subtitle": "Vi bygger för grundare, startups, kliniker, restauranger, webbutiker, konsulter och etablerade företag.",
     "industries.therapists.title": "Terapeuter & Coacher",
     "industries.therapists.desc": "Låt klienter boka sessioner online och få direkta svar på vanliga frågor, så du kan fokusera på din praktik.",
     "industries.wellness.title": "Hälso- och Skönhetskliniker",
@@ -336,6 +338,8 @@ const translations: Record<Language, Record<string, string>> = {
     "industries.local.desc": "Oavsett om du är rörmokare, elektriker eller trädgårdsmästare, bygger vi en hemsida som tar in kunder medan du är ute på jobb.",
     "industries.consultants.title": "Konsulter",
     "industries.consultants.desc": "En professionell närvaro online med automatisk bokning, så nya kunder kan hitta dig och boka utan krångel.",
+    "industries.ecommerce.title": "E-handel",
+    "industries.ecommerce.desc": "En webbutik som är enkel att handla i och enkel att sköta, med smidig kassa, tydliga produktsidor och betalningar som fungerar.",
 
     // Pricing
     "pricing.title": "Enkla Paket för Småföretag",

@@ -1,4 +1,4 @@
-import { Stethoscope, Heart, Sparkles, Wrench, Users } from "lucide-react";
+import { Stethoscope, Heart, Sparkles, Wrench, Users, ShoppingBag } from "lucide-react";
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -11,6 +11,7 @@ const Industries = () => {
     { icon: <Sparkles />, title: t("industries.cleaning.title"), useCase: t("industries.cleaning.desc") },
     { icon: <Wrench />, title: t("industries.local.title"), useCase: t("industries.local.desc") },
     { icon: <Users />, title: t("industries.consultants.title"), useCase: t("industries.consultants.desc") },
+    { icon: <ShoppingBag />, title: t("industries.ecommerce.title"), useCase: t("industries.ecommerce.desc") },
   ];
 
   return (
@@ -29,9 +30,7 @@ const Industries = () => {
           {industries.map((industry, index) => (
             <div
               key={index}
-              className={`group p-5 md:p-7 rounded-xl border border-border bg-card hover:shadow-medium transition-all duration-300 hover:-translate-y-0.5 ${
-                index >= 3 ? "lg:col-span-1" : ""
-              } ${index === 4 ? "sm:col-span-2 lg:col-span-1" : ""}`}
+              className="group p-5 md:p-7 rounded-xl border border-border bg-card hover:shadow-medium transition-all duration-300 hover:-translate-y-0.5"
             >
               <div className="w-10 h-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
                 {React.cloneElement(industry.icon, { size: 20 })}
