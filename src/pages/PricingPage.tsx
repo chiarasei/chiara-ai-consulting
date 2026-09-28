@@ -7,8 +7,8 @@ const PricingPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Simple Packages for Small Businesses | ChiaraAI Consulting"
-        description="Affordable website upgrade and automation packages starting from 5,000 SEK. Website redesign, AI chat assistant, and advanced automation for service businesses."
+        title="Pricing: Websites, Web Apps and Custom Products | ChiaraAI Consulting"
+        description="Clear prices with a fixed quote before work begins. Websites from 14,900 kr, web apps from 49,900 kr, and custom products."
         keywords="website upgrade price, AI chatbot pricing, small business website Sweden, automation packages"
         canonicalPath="/pricing"
       />

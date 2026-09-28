@@ -1,175 +1,166 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, Clock, Zap } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Pricing = () => {
-  const { t } = useLanguage();
+  const { language } = useLanguage();
+  const sv = language === "sv";
+  const L = (en: string, s: string) => (sv ? s : en);
 
-  const packages = [
+  const plans = [
     {
-      name: t("pricing.starter.name"),
-      price: t("pricing.starter.price"),
-      tagline: t("pricing.starter.tagline"),
-      choose: t("pricing.starter.choose"),
-      includes: null,
+      key: "website",
+      name: L("Website", "Webbplats"),
+      desc: L("A professional website that makes your business look its best.", "En professionell webbplats som får ditt företag att synas från sin bästa sida."),
+      price: L("from 14,900 kr", "från 14 900 kr"),
+      timeline: L("2–3 weeks", "2–3 veckor"),
+      label: L("Includes", "Ingår"),
       features: [
-        t("pricing.starter.f1"),
-        t("pricing.starter.f2"),
+        L("Custom design (not a template)", "Egen design (ingen mall)"),
+        L("Up to 5 pages", "Upp till 5 sidor"),
+        L("Mobile-optimised and fast", "Mobilanpassad och snabb"),
+        L("Basic SEO so customers can find you", "Grundläggande SEO så att kunder hittar dig"),
+        L("Contact form", "Kontaktformulär"),
+        L("Online booking synced with Google Calendar", "Onlinebokning synkad med Google Kalender"),
+        L("Domain and hosting setup in your own accounts", "Domän och hosting i dina egna konton"),
+        L("Launch support", "Stöd vid lansering"),
       ],
-      result: t("pricing.starter.result"),
+      cta: L("Start a project", "Starta ett projekt"),
       highlighted: false,
+      order: "order-2 md:order-1",
     },
     {
-      name: t("pricing.growth.name"),
-      price: t("pricing.growth.price"),
-      tagline: t("pricing.growth.tagline"),
-      choose: null,
-      includes: null,
+      key: "webapp",
+      name: L("Web App", "Webbapp"),
+      desc: L("Turn your idea into a working product people can use.", "Gör din idé till en fungerande produkt som människor kan använda."),
+      price: L("from 49,900 kr", "från 49 900 kr"),
+      timeline: L("4–8 weeks", "4–8 veckor"),
+      label: L("Can include", "Kan inkludera"),
       features: [
-        t("pricing.growth.f1"),
-        t("pricing.growth.f2"),
-        t("pricing.growth.f3"),
-        t("pricing.growth.f4"),
+        L("User accounts and login", "Användarkonton och inloggning"),
+        L("Database and admin panel", "Databas och adminpanel"),
+        L("Stripe payments and subscriptions", "Stripe betalningar och prenumerationer"),
+        L("Gift codes and discount codes", "Presentkoder och rabattkoder"),
+        L("Audio and video library", "Ljud och videobibliotek"),
+        L("File and media storage (e.g. Cloudflare)", "Fil och medialagring (t.ex. Cloudflare)"),
+        L("Analytics dashboard", "Statistikpanel"),
+        L("Hosting and infrastructure setup in your own accounts", "Hosting och infrastruktur i dina egna konton"),
+        L("Built to launch and grow", "Byggd för att lanseras och växa"),
       ],
-      result: t("pricing.growth.result"),
+      cta: L("Book a free call", "Boka ett gratis samtal"),
       highlighted: true,
+      order: "order-1 md:order-2",
     },
     {
-      name: t("pricing.premium.name"),
-      price: t("pricing.premium.price"),
-      tagline: t("pricing.premium.tagline"),
-      choose: null,
-      includes: t("pricing.premium.includes"),
+      key: "custom",
+      name: L("Custom Product", "Skräddarsydd produkt"),
+      desc: L("For larger platforms, mobile apps and complex systems.", "För större plattformar, mobilappar och komplexa system."),
+      price: L("Custom quote", "Offert"),
+      timeline: L("Agreed after consultation", "Bestäms efter konsultation"),
+      label: L("Includes", "Ingår"),
       features: [
-        t("pricing.premium.f1"),
-        t("pricing.premium.f2"),
-        t("pricing.premium.f3"),
+        L("Mobile apps", "Mobilappar"),
+        L("Platforms and marketplaces", "Plattformar och marknadsplatser"),
+        L("Integrations with existing systems", "Integrationer med befintliga system"),
+        L("Ongoing development", "Löpande utveckling"),
       ],
-      result: t("pricing.premium.result"),
+      cta: L("Get a quote", "Få en offert"),
       highlighted: false,
+      order: "order-3",
     },
-  ];
-
-  const maintenanceFeatures = [
-    t("pricing.maintenance.f1"),
-    t("pricing.maintenance.f2"),
-    t("pricing.maintenance.f3"),
-    t("pricing.maintenance.f4"),
   ];
 
   return (
-    <section id="pricing" className="py-12 md:py-20 px-4 md:px-6 bg-muted/50">
-      <div className="container mx-auto max-w-5xl">
-        <div className="text-center space-y-4 mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground tracking-tight">
-            {t("pricing.title")}
+    <section id="pricing" className="py-12 md:py-20 px-4 md:px-6">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center space-y-4 mb-12 md:mb-14">
+          <p className="eyebrow">{L("Pricing", "Priser")}</p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl text-foreground text-balance">
+            {L("Clear prices, no surprises", "Tydliga priser, inga överraskningar")}
           </h2>
-          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-            {t("pricing.subtitle")}
+          <p className="text-base md:text-lg text-foreground/75 max-w-2xl mx-auto">
+            {L(
+              "Every project starts with a free consultation. You get a fixed quote before any work begins.",
+              "Varje projekt börjar med en kostnadsfri konsultation. Du får en fast offert innan arbetet börjar."
+            )}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
-          {packages.map((pkg, i) => (
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 md:items-stretch">
+          {plans.map((p) => (
             <div
-              key={i}
-              className={`relative rounded-2xl p-6 md:p-8 flex flex-col transition-all duration-300 hover:-translate-y-1 ${
-                pkg.highlighted
-                  ? "bg-primary text-primary-foreground shadow-medium ring-2 ring-primary"
-                  : "bg-card text-card-foreground shadow-soft border border-border"
+              key={p.key}
+              className={`${p.order} relative rounded-lg p-7 md:p-8 lg:p-10 flex flex-col transition-all duration-300 hover:-translate-y-1 ${
+                p.highlighted
+                  ? "bg-primary text-primary-foreground shadow-medium"
+                  : "bg-card text-card-foreground border border-border shadow-soft"
               }`}
             >
-              {pkg.highlighted && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground text-xs font-semibold px-4 py-1 rounded-full">
-                  {t("pricing.popular")}
+              {p.highlighted && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-accent text-accent-foreground text-[13px] font-semibold tracking-[0.08em] uppercase px-4 py-1 rounded-full">
+                  {L("Most popular", "Mest populär")}
                 </span>
               )}
-              <h3 className="text-lg font-bold mb-1">{pkg.name}</h3>
-              <p className={`text-2xl font-bold mb-2 ${pkg.highlighted ? "text-primary-foreground" : "text-foreground"}`}>
-                {pkg.price}
+              <h3 className="text-3xl mb-2">{p.name}</h3>
+              <p className={`text-sm leading-relaxed mb-6 ${p.highlighted ? "text-primary-foreground/80" : "text-foreground/70"}`}>
+                {p.desc}
               </p>
-              <p className={`text-sm mb-4 ${pkg.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
-                👉 {pkg.tagline}
+              <p className="text-3xl lg:text-4xl font-medium whitespace-nowrap tracking-tight">{p.price}</p>
+              <p className={`text-sm mt-1 mb-6 ${p.highlighted ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
+                {p.timeline}
               </p>
-
-              {pkg.choose && (
-                <p className={`text-xs font-semibold mb-2 ${pkg.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
-                  {pkg.choose}
-                </p>
-              )}
-
-              {pkg.includes && (
-                <p className={`text-xs font-semibold mb-2 ${pkg.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
-                  {pkg.includes}
-                </p>
-              )}
-
-              <ul className="space-y-2.5 mb-5 flex-1">
-                {pkg.features.map((feature, j) => (
-                  <li key={j} className="flex items-start gap-2 text-sm leading-snug">
-                    <Check
-                      size={15}
-                      className={`mt-0.5 flex-shrink-0 ${pkg.highlighted ? "text-primary-foreground/90" : "text-primary"}`}
-                    />
-                    <span className={pkg.highlighted ? "text-primary-foreground/90" : "text-muted-foreground"}>
-                      {feature}
-                    </span>
+              <div className={`h-px mb-6 ${p.highlighted ? "bg-primary-foreground/15" : "bg-border"}`} />
+              <p className={`text-[13px] font-semibold uppercase tracking-[0.12em] mb-4 ${p.highlighted ? "text-accent" : "text-[hsl(39_49%_36%)]"}`}>
+                {p.label}
+              </p>
+              <ul className="space-y-3 mb-8 flex-1">
+                {p.features.map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-sm leading-snug">
+                    <Check size={16} className={`mt-0.5 flex-shrink-0 ${p.highlighted ? "text-accent" : "text-[hsl(var(--brass))]"}`} />
+                    <span className={p.highlighted ? "text-primary-foreground/90" : "text-foreground/80"}>{f}</span>
                   </li>
                 ))}
               </ul>
-
-              {/* Result line */}
-              <div className={`flex items-start gap-2 text-sm font-medium mb-5 p-3 rounded-lg ${
-                pkg.highlighted
-                  ? "bg-primary-foreground/10 text-primary-foreground"
-                  : "bg-muted text-foreground"
-              }`}>
-                <Zap size={15} className="mt-0.5 flex-shrink-0" />
-                <span>{pkg.result}</span>
-              </div>
-
-              <div className={`flex items-center gap-1.5 text-xs mb-4 ${pkg.highlighted ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
-                <Clock size={13} />
-                {t("pricing.delivery")}
-              </div>
-
-              <Link to="/contact" className="mt-auto">
-                <Button
-                  className={`w-full font-semibold h-11 gap-2 ${
-                    pkg.highlighted
-                      ? "bg-background text-primary hover:bg-background/90"
-                      : "bg-primary text-primary-foreground hover:bg-primary/90"
-                  }`}
-                >
-                  {t("pricing.cta")}
+              <Button
+                asChild
+                className={`w-full h-12 gap-2 font-semibold ${
+                  p.highlighted
+                    ? "bg-background text-primary hover:bg-background/90"
+                    : "bg-primary text-primary-foreground hover:bg-primary/90"
+                }`}
+              >
+                <Link to="/contact">
+                  {p.cta}
                   <ArrowRight size={16} />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           ))}
         </div>
 
-        <div className="mt-8 p-6 rounded-xl border-2 border-primary/20 bg-primary/5">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-1">
-            <div>
-              <p className="text-sm font-semibold text-foreground">{t("pricing.maintenance.title")}</p>
-              <p className="text-lg font-bold text-primary">{t("pricing.maintenance.price")}</p>
-            </div>
+        <div className="mt-8 rounded-lg border border-border bg-card p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <h3 className="text-2xl md:text-3xl mb-2">
+              {L("Care plan – from 690 kr/mån", "Serviceavtal – från 690 kr/mån")}
+            </h3>
+            <p className="text-sm text-foreground/75 max-w-2xl">
+              {L(
+                "Hosting, security updates, backups and small changes every month, so your website or app keeps running smoothly.",
+                "Hosting, säkerhetsuppdateringar, backup och mindre ändringar varje månad, så att din webbplats eller app fortsätter fungera smidigt."
+              )}
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground mb-4">{t("pricing.maintenance.subtitle")}</p>
-          <ul className="grid sm:grid-cols-2 gap-2">
-            {maintenanceFeatures.map((f, i) => (
-              <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Check size={14} className="text-primary flex-shrink-0" />
-                {f}
-              </li>
-            ))}
-          </ul>
+          <Link to="/contact" className="text-sm font-semibold text-[hsl(39_49%_36%)] hover:underline whitespace-nowrap">
+            {L("Ask about care plans →", "Fråga om serviceavtal →")}
+          </Link>
         </div>
 
-        <p className="text-xs text-muted-foreground text-center mt-6">
-          {t("pricing.note")}
+        <p className="text-xs text-muted-foreground text-center mt-6 max-w-3xl mx-auto leading-relaxed">
+          {L(
+            "All prices exkl. moms · Fixed quote before we start · 50% at start, 50% at launch · Hosting and storage run on the client's own accounts or are included in a care plan",
+            "Alla priser exkl. moms · Fast offert innan vi börjar · 50% vid start, 50% vid lansering · Hosting och lagring körs på kundens egna konton eller ingår i ett serviceavtal"
+          )}
         </p>
       </div>
     </section>
