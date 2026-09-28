@@ -25,6 +25,15 @@ const TradeFairLanding = () => {
 
   const selectedWork = [
     {
+      name: "mother.fm",
+      kind: tr("Flagship · Postnatal wellness", "Flaggskepp · Postnatalt välmående"),
+      description: tr("A postnatal wellness platform guiding new mothers through a monthly content journey, with live payments, monthly and lifetime memberships, secure member access and fast audio streaming.", "En plattform för postnatalt välmående som guidar nyblivna mammor genom en månatlig innehållsresa, med livebetalningar, månads- och livstidsmedlemskap, säker medlemsåtkomst och snabb ljudströmning."),
+      href: "https://mother.fm",
+      domain: "mother.fm",
+      image: motherImage,
+      featured: true,
+    },
+    {
       name: "QR-Meny",
       kind: tr("Restaurant SaaS", "SaaS för restauranger"),
       description: tr("A bilingual QR menu and ordering platform built for restaurants, bars and cafés.", "En tvåspråkig QR-meny och beställningsplattform för restauranger, barer och kaféer."),
@@ -75,28 +84,6 @@ const TradeFairLanding = () => {
           </div>
         </section>
 
-        <section className="fade-in-section px-5 pb-28 md:px-8 md:pb-40">
-          <div className="container mx-auto max-w-6xl border-t border-border pt-14 md:pt-20">
-            <div className="grid items-center gap-12 md:grid-cols-12 md:gap-16">
-              <div className="md:col-span-5">
-                <p className="eyebrow mb-5">{tr("Featured work", "Utvalt arbete")}</p>
-                <h2 className="text-5xl text-foreground md:text-6xl">mother.fm</h2>
-                <p className="mt-7 font-serif text-2xl leading-snug text-foreground md:text-3xl">
-                  {tr("A postnatal wellness platform guiding new mothers through a monthly content journey.", "En plattform för postnatalt välmående som guidar nyblivna mammor genom en månatlig innehållsresa.")}
-                </p>
-                <p className="mt-5 font-light leading-relaxed text-muted-foreground">
-                  {tr("Live payments, monthly and lifetime memberships, secure member access and fast audio streaming.", "Livebetalningar, månads- och livstidsmedlemskap, säker medlemsåtkomst och snabb ljudströmning.")}
-                </p>
-                <a href="https://mother.fm" target="_blank" rel="noopener noreferrer" className="story-link mt-7 inline-flex items-center gap-2 pb-1 text-sm font-medium">
-                  {tr("Visit mother.fm", "Besök mother.fm")} <ArrowUpRight className="h-4 w-4" />
-                </a>
-              </div>
-              <div className="md:col-span-7">
-                <ProjectBrowser src={motherImage} alt="mother.fm postnatal wellness platform homepage" href="https://mother.fm" domain="mother.fm" priority />
-              </div>
-            </div>
-          </div>
-        </section>
 
         <section className="fade-in-section bg-[image:var(--gradient-primary)] px-5 py-20 text-primary-foreground md:px-8 md:py-24">
           <div className="container mx-auto max-w-6xl">
@@ -116,27 +103,52 @@ const TradeFairLanding = () => {
           </div>
         </section>
 
-        <section className="fade-in-section px-5 py-24 md:px-8 md:py-36">
+        <section className="fade-in-section px-5 pb-28 pt-28 md:px-8 md:pb-40 md:pt-36">
           <div className="container mx-auto max-w-6xl">
-            <div className="mb-14 flex items-end justify-between">
+            <div className="mb-14 flex items-end justify-between border-t border-border pt-14">
               <div>
                 <p className="eyebrow mb-4">{tr("Portfolio", "Portfolio")}</p>
                 <h2 className="text-4xl md:text-6xl">{tr("Selected work", "Utvalda projekt")}</h2>
               </div>
               <Link to="/recent-work" className="story-link hidden items-center gap-2 pb-1 text-sm sm:inline-flex">{tr("All projects", "Alla projekt")} <ArrowRight className="h-4 w-4" /></Link>
             </div>
-            <div className="grid gap-14 md:grid-cols-2 md:gap-8">
+            <div className="grid gap-14 md:gap-10">
               {selectedWork.map((project) => (
-                <article key={project.name} className="group">
-                  <ProjectBrowser src={project.image} alt={`${project.name} website homepage`} href={project.href} domain={project.domain} />
-                  <div className="mt-6 flex items-start justify-between gap-6">
-                    <div>
-                      <p className="mb-2 text-xs uppercase tracking-[0.18em] text-accent">{project.kind}</p>
-                      <h3 className="text-3xl md:text-4xl">{project.name}</h3>
-                      <p className="mt-3 max-w-lg font-light leading-relaxed text-muted-foreground">{project.description}</p>
-                    </div>
-                    <ArrowUpRight className="mt-8 h-5 w-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accent" />
-                  </div>
+                <article
+                  key={project.name}
+                  className={
+                    project.featured
+                      ? "group grid items-center gap-10 md:grid-cols-12 md:gap-16"
+                      : "group"
+                  }
+                >
+                  {project.featured ? (
+                    <>
+                      <div className="md:col-span-7">
+                        <ProjectBrowser src={project.image} alt={`${project.name} homepage`} href={project.href} domain={project.domain} priority />
+                      </div>
+                      <div className="md:col-span-5">
+                        <p className="mb-2 text-xs uppercase tracking-[0.18em] text-accent">{project.kind}</p>
+                        <h3 className="text-5xl md:text-6xl">{project.name}</h3>
+                        <p className="mt-5 max-w-lg font-light leading-relaxed text-muted-foreground">{project.description}</p>
+                        <a href={project.href} target="_blank" rel="noopener noreferrer" className="story-link mt-7 inline-flex items-center gap-2 pb-1 text-sm font-medium">
+                          {tr("Visit mother.fm", "Besök mother.fm")} <ArrowUpRight className="h-4 w-4" />
+                        </a>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <ProjectBrowser src={project.image} alt={`${project.name} homepage`} href={project.href} domain={project.domain} />
+                      <div className="mt-6 flex items-start justify-between gap-6">
+                        <div>
+                          <p className="mb-2 text-xs uppercase tracking-[0.18em] text-accent">{project.kind}</p>
+                          <h3 className="text-3xl md:text-4xl">{project.name}</h3>
+                          <p className="mt-3 max-w-lg font-light leading-relaxed text-muted-foreground">{project.description}</p>
+                        </div>
+                        <ArrowUpRight className="mt-8 h-5 w-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accent" />
+                      </div>
+                    </>
+                  )}
                 </article>
               ))}
             </div>
