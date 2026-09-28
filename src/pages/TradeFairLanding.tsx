@@ -85,24 +85,6 @@ const TradeFairLanding = () => {
         </section>
 
 
-        <section className="fade-in-section bg-[image:var(--gradient-primary)] px-5 py-20 text-primary-foreground md:px-8 md:py-24">
-          <div className="container mx-auto max-w-6xl">
-            <div className="mb-12 grid gap-8 md:grid-cols-12">
-              <p className="eyebrow md:col-span-4">{tr("What we do", "Vad vi gör")}</p>
-              <h2 className="text-balance text-4xl md:col-span-8 md:text-6xl">{tr("One studio for the whole build.", "En studio för hela bygget.")}</h2>
-            </div>
-            <div className="grid border-t border-primary-foreground/15 sm:grid-cols-2">
-              {capabilities.map((capability, index) => (
-                <div key={capability.n} className={`group py-9 pr-8 transition-colors duration-300 hover:bg-primary-foreground/[0.035] sm:px-8 ${index % 2 === 0 ? "sm:border-r sm:border-primary-foreground/15" : ""} border-b border-primary-foreground/15`}>
-                  <span className="text-xs tracking-[0.2em] text-accent">{capability.n}</span>
-                  <h3 className="mb-3 mt-3 text-3xl transition-transform duration-300 group-hover:translate-x-1">{capability.t}</h3>
-                  <p className="max-w-md font-light leading-relaxed text-primary-foreground/70">{capability.d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="fade-in-section px-5 pb-28 pt-28 md:px-8 md:pb-40 md:pt-36">
           <div className="container mx-auto max-w-6xl">
             <div className="mb-14 flex items-end justify-between border-t border-border pt-14">
@@ -150,6 +132,24 @@ const TradeFairLanding = () => {
                     </>
                   )}
                 </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="fade-in-section bg-[image:var(--gradient-primary)] px-5 py-20 text-primary-foreground md:px-8 md:py-24">
+          <div className="container mx-auto max-w-6xl">
+            <div className="mb-12 grid gap-8 md:grid-cols-12">
+              <p className="eyebrow md:col-span-4">{tr("What we do", "Vad vi gör")}</p>
+              <h2 className="text-balance text-4xl md:col-span-8 md:text-6xl">{tr("One studio for the whole build.", "En studio för hela bygget.")}</h2>
+            </div>
+            <div className="grid border-t border-primary-foreground/15 sm:grid-cols-2">
+              {capabilities.map((capability, index) => (
+                <div key={capability.n} className={`group py-9 pr-8 transition-colors duration-300 hover:bg-primary-foreground/[0.035] sm:px-8 ${index % 2 === 0 ? "sm:border-r sm:border-primary-foreground/15" : ""} border-b border-primary-foreground/15`}>
+                  <span className="text-xs tracking-[0.2em] text-accent">{capability.n}</span>
+                  <h3 className="mb-3 mt-3 text-3xl transition-transform duration-300 group-hover:translate-x-1">{capability.t}</h3>
+                  <p className="max-w-md font-light leading-relaxed text-primary-foreground/70">{capability.d}</p>
+                </div>
               ))}
             </div>
           </div>
