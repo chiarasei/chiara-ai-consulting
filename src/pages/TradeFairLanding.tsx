@@ -84,28 +84,6 @@ const TradeFairLanding = () => {
           </div>
         </section>
 
-        <section className="fade-in-section px-5 pb-28 md:px-8 md:pb-40">
-          <div className="container mx-auto max-w-6xl border-t border-border pt-14 md:pt-20">
-            <div className="grid items-center gap-12 md:grid-cols-12 md:gap-16">
-              <div className="md:col-span-5">
-                <p className="eyebrow mb-5">{tr("Featured work", "Utvalt arbete")}</p>
-                <h2 className="text-5xl text-foreground md:text-6xl">mother.fm</h2>
-                <p className="mt-7 font-serif text-2xl leading-snug text-foreground md:text-3xl">
-                  {tr("A postnatal wellness platform guiding new mothers through a monthly content journey.", "En plattform för postnatalt välmående som guidar nyblivna mammor genom en månatlig innehållsresa.")}
-                </p>
-                <p className="mt-5 font-light leading-relaxed text-muted-foreground">
-                  {tr("Live payments, monthly and lifetime memberships, secure member access and fast audio streaming.", "Livebetalningar, månads- och livstidsmedlemskap, säker medlemsåtkomst och snabb ljudströmning.")}
-                </p>
-                <a href="https://mother.fm" target="_blank" rel="noopener noreferrer" className="story-link mt-7 inline-flex items-center gap-2 pb-1 text-sm font-medium">
-                  {tr("Visit mother.fm", "Besök mother.fm")} <ArrowUpRight className="h-4 w-4" />
-                </a>
-              </div>
-              <div className="md:col-span-7">
-                <ProjectBrowser src={motherImage} alt="mother.fm postnatal wellness platform homepage" href="https://mother.fm" domain="mother.fm" priority />
-              </div>
-            </div>
-          </div>
-        </section>
 
         <section className="fade-in-section bg-[image:var(--gradient-primary)] px-5 py-20 text-primary-foreground md:px-8 md:py-24">
           <div className="container mx-auto max-w-6xl">
