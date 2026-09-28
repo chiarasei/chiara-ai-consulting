@@ -51,9 +51,10 @@ const Navigation = () => {
                 decoding="async"
                 className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
-              <span className="hidden sm:block text-base md:text-lg font-bold text-foreground tracking-tight">
-                chiaraAI<span className="text-primary">consulting</span>.se
-              </span>
+                <span className="hidden sm:block text-base md:text-lg font-bold tracking-tight">
+                  chiaraAI<span className="text-[hsl(var(--brass))]">consulting</span>
+                  <span className="text-foreground/60">.se</span>
+                </span>
             </Link>
 
             <button
