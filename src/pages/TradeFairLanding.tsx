@@ -61,7 +61,7 @@ const TradeFairLanding = () => {
       />
       <Navigation />
       <main>
-        <section className="px-5 pb-28 pt-36 md:px-8 md:pb-40 md:pt-52">
+        <section className="px-5 pb-12 pt-28 md:px-8 md:pb-16 md:pt-40">
           <div className="container mx-auto max-w-6xl">
             <p className="eyebrow mb-8 animate-fade-in-up">{tr("Web & App Development Studio · Gothenburg", "Studio för webb- och apputveckling · Göteborg")}</p>
             <h1 className="max-w-5xl text-balance text-5xl text-foreground animate-fade-in-up md:text-7xl lg:text-8xl">
