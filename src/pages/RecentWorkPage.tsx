@@ -18,7 +18,7 @@ const RecentWorkPage = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Recent Work – ChiaraAI Consulting"
-        description="See our latest projects: mother.fm, QR-Meny, OPECON and demo websites."
+        description="See our latest projects: mother.fm, QR-Meny, She Rises and demo websites."
         keywords="portfolio, recent work, website projects, AI chatbot demo, Shopify store, psychology website"
         canonicalPath="/recent-work"
       />
