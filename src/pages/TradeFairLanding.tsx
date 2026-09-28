@@ -103,27 +103,50 @@ const TradeFairLanding = () => {
           </div>
         </section>
 
-        <section className="fade-in-section px-5 py-24 md:px-8 md:py-36">
+        <section className="fade-in-section px-5 pb-28 pt-28 md:px-8 md:pb-40 md:pt-36">
           <div className="container mx-auto max-w-6xl">
-            <div className="mb-14 flex items-end justify-between">
+            <div className="mb-14 flex items-end justify-between border-t border-border pt-14">
               <div>
                 <p className="eyebrow mb-4">{tr("Portfolio", "Portfolio")}</p>
                 <h2 className="text-4xl md:text-6xl">{tr("Selected work", "Utvalda projekt")}</h2>
               </div>
               <Link to="/recent-work" className="story-link hidden items-center gap-2 pb-1 text-sm sm:inline-flex">{tr("All projects", "Alla projekt")} <ArrowRight className="h-4 w-4" /></Link>
             </div>
-            <div className="grid gap-14 md:grid-cols-2 md:gap-8">
+            <div className="grid gap-14 md:gap-10">
               {selectedWork.map((project) => (
-                <article key={project.name} className="group">
-                  <ProjectBrowser src={project.image} alt={`${project.name} website homepage`} href={project.href} domain={project.domain} />
-                  <div className="mt-6 flex items-start justify-between gap-6">
-                    <div>
-                      <p className="mb-2 text-xs uppercase tracking-[0.18em] text-accent">{project.kind}</p>
-                      <h3 className="text-3xl md:text-4xl">{project.name}</h3>
-                      <p className="mt-3 max-w-lg font-light leading-relaxed text-muted-foreground">{project.description}</p>
-                    </div>
-                    <ArrowUpRight className="mt-8 h-5 w-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accent" />
-                  </div>
+                <article
+                  key={project.name}
+                  className={
+                    project.featured
+                      ? "group grid items-center gap-10 md:grid-cols-12 md:gap-16"
+                      : "group"
+                  }
+                >
+                  {project.featured ? (
+                    <>
+                      <ProjectBrowser src={project.image} alt={`${project.name} homepage`} href={project.href} domain={project.domain} priority />
+                      <div className="md:col-span-5">
+                        <p className="mb-2 text-xs uppercase tracking-[0.18em] text-accent">{project.kind}</p>
+                        <h3 className="text-5xl md:text-6xl">{project.name}</h3>
+                        <p className="mt-5 max-w-lg font-light leading-relaxed text-muted-foreground">{project.description}</p>
+                        <a href={project.href} target="_blank" rel="noopener noreferrer" className="story-link mt-7 inline-flex items-center gap-2 pb-1 text-sm font-medium">
+                          {tr("Visit mother.fm", "Besök mother.fm")} <ArrowUpRight className="h-4 w-4" />
+                        </a>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <ProjectBrowser src={project.image} alt={`${project.name} homepage`} href={project.href} domain={project.domain} />
+                      <div className="mt-6 flex items-start justify-between gap-6">
+                        <div>
+                          <p className="mb-2 text-xs uppercase tracking-[0.18em] text-accent">{project.kind}</p>
+                          <h3 className="text-3xl md:text-4xl">{project.name}</h3>
+                          <p className="mt-3 max-w-lg font-light leading-relaxed text-muted-foreground">{project.description}</p>
+                        </div>
+                        <ArrowUpRight className="mt-8 h-5 w-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accent" />
+                      </div>
+                    </>
+                  )}
                 </article>
               ))}
             </div>
