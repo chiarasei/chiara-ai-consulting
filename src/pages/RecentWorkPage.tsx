@@ -46,7 +46,7 @@ const RecentWorkPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead title="Recent Work – ChiaraAI Consulting" description="Explore mother.fm, QR-Meny, She Rises and selected product demos by ChiaraAI Consulting." keywords="portfolio, recent work, websites, SaaS, web apps, Gothenburg" canonicalPath="/recent-work" />
+      <SEOHead title="Portfolio: Websites & Web Apps | ChiaraAI Consulting" description="Websites and web apps we built in Gothenburg, including mother.fm, QR-Meny and She Rises. See our web and app development work." canonicalPath="/recent-work" />
       <Navigation />
       <main>
         <section className="px-5 pb-20 pt-36 md:px-8 md:pb-28 md:pt-48">

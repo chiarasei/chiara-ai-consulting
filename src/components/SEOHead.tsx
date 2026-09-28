@@ -3,12 +3,13 @@ import { useEffect } from "react";
 interface SEOHeadProps {
   title: string;
   description: string;
-  keywords: string;
+  keywords?: string;
+  image?: string;
   canonicalPath: string;
   jsonLd?: object;
 }
 
-const SEOHead = ({ title, description, keywords, canonicalPath, jsonLd }: SEOHeadProps) => {
+const SEOHead = ({ title, description, keywords, canonicalPath, jsonLd, image = "https://chiaraaiconsulting.se/og-image.jpg" }: SEOHeadProps) => {
   useEffect(() => {
     document.title = title;
 
@@ -24,7 +25,12 @@ const SEOHead = ({ title, description, keywords, canonicalPath, jsonLd }: SEOHea
     };
 
     setMeta("description", description);
-    setMeta("keywords", keywords);
+    if (keywords) setMeta("keywords", keywords);
+    setMeta("og:type", "website", true);
+    setMeta("og:image", image, true);
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:image", image);
+    setMeta("twitter:url", `https://chiaraaiconsulting.se${canonicalPath}`);
     setMeta("og:title", title, true);
     setMeta("og:description", description, true);
     setMeta("og:url", `https://chiaraaiconsulting.se${canonicalPath}`, true);
@@ -55,7 +61,7 @@ const SEOHead = ({ title, description, keywords, canonicalPath, jsonLd }: SEOHea
       const s = document.querySelector('script[data-seo-jsonld]');
       if (s) s.remove();
     };
-  }, [title, description, keywords, canonicalPath, jsonLd]);
+  }, [title, description, keywords, canonicalPath, jsonLd, image]);
 
   return null;
 };

@@ -1,64 +1,32 @@
+export const SITE_URL = "https://chiaraaiconsulting.se";
+export const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+
 export const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "ChiaraAI Consulting",
-  "url": "https://chiaraaiconsulting.se",
-  "logo": "https://chiaraaiconsulting.se/chiara-favicon.png",
-  "description": "A web and app development consultancy building custom websites, SaaS products and business tools.",
-  "address": {
+  name: "ChiaraAI Consulting",
+  url: SITE_URL,
+  logo: `${SITE_URL}/chiara-favicon.png`,
+  image: OG_IMAGE,
+  description:
+    "A Gothenburg-based web and app development consultancy building custom websites, web apps and digital products.",
+  email: "info@chiaraaiconsulting.se",
+  telephone: "+46 73 531 69 50",
+  address: {
     "@type": "PostalAddress",
-    "addressCountry": "SE"
+    addressLocality: "Gothenburg",
+    addressCountry: "SE",
   },
-  "telephone": "+46735316950",
-  "email": "info@chiaraaiconsulting.se",
-  "areaServed": {
-    "@type": "Country",
-    "name": "Sweden"
-  },
-  "serviceType": [
-    "AI Chatbots",
-    "Web App Development",
-    "Automated Booking Systems",
-    "AI Marketing Automation",
-    "Social Media Automation",
-    "Workflow Automation"
+  areaServed: [
+    { "@type": "City", name: "Gothenburg" },
+    { "@type": "Country", name: "Sweden" },
   ],
-  "priceRange": "$$"
-};
-
-export const servicesJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "AI Automation Services",
-  "itemListElement": [
-    { "@type": "Service", "position": 1, "name": "AI Chatbots", "description": "Custom AI chatbots for customer service automation" },
-    { "@type": "Service", "position": 2, "name": "Web App Development", "description": "Custom web applications and SaaS products" },
-    { "@type": "Service", "position": 3, "name": "Automated Booking Systems", "description": "AI-powered booking and scheduling automation" },
-    { "@type": "Service", "position": 4, "name": "AI Marketing Automation", "description": "Data-driven marketing with AI optimization" },
-    { "@type": "Service", "position": 5, "name": "Social Media Automation", "description": "Automated social media management and content" },
-    { "@type": "Service", "position": 6, "name": "Workflow Automation", "description": "End-to-end business workflow automation" }
-  ]
-};
-
-export const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What AI automation services does ChiaraAI offer?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "ChiaraAI offers custom websites, web apps, SaaS products, AI chatbots, booking systems, marketing automation, social media automation, loyalty programs, and workflow automation for small businesses in Sweden."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which industries does ChiaraAI serve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "ChiaraAI specializes in AI automation for cafés, restaurants, salons, retail shops, and other small businesses."
-      }
-    }
-  ]
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Services",
+    itemListElement: ["Websites", "Web Apps", "Online Booking", "Payments & E-commerce"].map((name) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name },
+    })),
+  },
 };

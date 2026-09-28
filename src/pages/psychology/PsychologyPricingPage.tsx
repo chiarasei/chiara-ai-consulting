@@ -15,7 +15,7 @@ const PsychologyPricingPage = () => {
 
   return (
     <PsychologyLayout>
-      <SEOHead title="Pricing – Psykolog Praktiken" description="Transparent therapy session pricing. Individual therapy 1000 SEK, couples therapy 1400 SEK. Free initial consultation." keywords="therapy pricing, session cost, psychologist fees" canonicalPath="/demo/psychology/pricing" />
+      <SEOHead title="Therapy Practice Demo: Pricing | ChiaraAI Consulting" description="Pricing page from a therapy practice website demo built in Gothenburg by ChiaraAI Consulting." canonicalPath="/demo/psychology/pricing" />
       <section className="py-16 md:py-24 px-5">
         <div className="max-w-3xl mx-auto">
           <div className="text-center space-y-3 mb-14">

@@ -6,12 +6,7 @@ import SEOHead from "@/components/SEOHead";
 const IndustriesPage = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead
-        title="How We Work – Any Business, Any Stage | ChiaraAI Consulting"
-        description="We build for every business and every stage: launching, growing, building a product, or modernising an established company's website and systems."
-        keywords="website for startups, business website Sweden, web app development, custom software, website modernisation"
-        canonicalPath="/industries"
-      />
+      <SEOHead title="How We Work | Web Development in Gothenburg" description="From startups to established companies, we build websites and web apps in Gothenburg that fit where your business is going." canonicalPath="/industries" />
       <Navigation />
       <main>
         <div className="pt-20" />

@@ -16,7 +16,7 @@ const PsychologyHowItWorksPage = () => {
 
   return (
     <PsychologyLayout>
-      <SEOHead title="How It Works – Psykolog Praktiken" description="Three simple steps from consultation to ongoing therapy support. Learn what to expect from your first session." keywords="therapy process, how therapy works, first session, consultation" canonicalPath="/demo/psychology/how-it-works" />
+      <SEOHead title="Therapy Practice Demo: How It Works | ChiaraAI" description="How it works page from a therapy practice website demo built by ChiaraAI Consulting, web and app development in Gothenburg." canonicalPath="/demo/psychology/how-it-works" />
       <section className="py-16 md:py-24 px-5">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-3 mb-14">
