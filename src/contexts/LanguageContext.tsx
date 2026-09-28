@@ -137,7 +137,7 @@ const translations: Record<Language, Record<string, string>> = {
     "services.voice.desc": "Practical AI where it adds value, such as chat assistants that answer questions on your website.",
 
     "industries.title": "Businesses We Help",
-    "industries.subtitle": "We build for founders, startups, clinics, restaurants, consultants and established companies alike.",
+    "industries.subtitle": "we build for founders, startups, clinics, restaurants, online stores, consultants and established companies alike.",
     "industries.therapists.title": "Therapists & Coaches",
     "industries.therapists.desc": "Let clients book sessions online and get instant answers to common questions, so you can focus on your practice.",
     "industries.wellness.title": "Wellness & Beauty Clinics",
@@ -339,7 +339,7 @@ const translations: Record<Language, Record<string, string>> = {
     "industries.consultants.title": "Konsulter",
     "industries.consultants.desc": "En professionell närvaro online med automatisk bokning, så nya kunder kan hitta dig och boka utan krångel.",
     "industries.ecommerce.title": "E-handel",
-    "industries.ecommerce.desc": "En webbutik som är enkel att handla i och enkel att sköta, med smidig kassа, tydliga produktsidor och betalningar som fungerar.",
+    "industries.ecommerce.desc": "En webbutik som är enkel att handla i och enkel att sköta, med smidig kassa, tydliga produktsidor och betalningar som fungerar.",
 
     // Pricing
     "pricing.title": "Enkla Paket för Småföretag",
