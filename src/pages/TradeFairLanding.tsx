@@ -26,7 +26,7 @@ const TradeFairLanding = () => {
   const selectedWork = [
     {
       name: "mother.fm",
-      kind: tr("Flagship · Motherhood audio", "Flaggskepp · Ljud för mammor"),
+      kind: tr("Audio · Tracker · Journal", "Ljud · Tracker · Dagbok"),
       description: tr("A motherhood audio companion offering pocket-sized pep talks, with a tracker and journal to support mothers day to day.", "En ljudledd följeslagare för mammor som erbjuder korta pep talks i fickformat, med en tracker och dagbok som stöttar mamman i vardagen."),
       href: "https://mother.fm",
       domain: "mother.fm",
