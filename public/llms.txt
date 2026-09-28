@@ -1,0 +1,25 @@
+# ChiaraAI Consulting
+
+> ChiaraAI Consulting is a Gothenburg-based web and app development consultancy. We design and build custom websites, web apps and digital products for startups and established businesses in Gothenburg and across Sweden.
+
+Every project starts with a free consultation and a fixed quote before any work begins.
+
+## Services
+- Websites: custom design, mobile-optimised, basic SEO, contact forms and online booking. From 14,900 kr.
+- Web Apps: user accounts, databases and admin panels, Stripe payments and subscriptions, media libraries. From 49,900 kr.
+- Custom Products: mobile apps, platforms, marketplaces and integrations. Quote after consultation.
+- Care plans: hosting, security updates, backups and small changes from 500 kr/mån.
+All prices exclude VAT (moms).
+
+## Main pages
+- [Home](https://chiaraaiconsulting.se/): Overview of our web and app development work
+- [Portfolio](https://chiaraaiconsulting.se/recent-work): Selected projects including mother.fm, QR-Meny and She Rises
+- [Services](https://chiaraaiconsulting.se/services): What we build
+- [How we work](https://chiaraaiconsulting.se/industries): Who we build for, from startups to established companies
+- [Pricing](https://chiaraaiconsulting.se/pricing): Website, web app and care plan prices
+- [Contact](https://chiaraaiconsulting.se/contact): Book a free call
+
+## Contact
+- Email: info@chiaraaiconsulting.se
+- Phone: +46 73 531 69 50
+- Location: Gothenburg, Sweden
