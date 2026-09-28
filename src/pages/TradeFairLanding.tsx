@@ -97,39 +97,19 @@ const TradeFairLanding = () => {
               {selectedWork.map((project) => (
                 <article
                   key={project.name}
-                  className={
-                    project.featured
-                      ? "group grid items-center gap-10 md:grid-cols-12 md:gap-16"
-                      : "group"
-                  }
+                  className="group grid items-center gap-10 md:grid-cols-12 md:gap-16"
                 >
-                  {project.featured ? (
-                    <>
-                      <div className="md:col-span-7">
-                        <ProjectBrowser src={project.image} alt={`${project.name} homepage`} href={project.href} domain={project.domain} priority />
-                      </div>
-                      <div className="md:col-span-5">
-                        <p className="eyebrow mb-2">{project.kind}</p>
-                        <h3 className="text-5xl md:text-6xl">{project.name}</h3>
-                        <p className="mt-5 max-w-lg font-light leading-relaxed text-muted-foreground">{project.description}</p>
-                        <a href={project.href} target="_blank" rel="noopener noreferrer" className="story-link mt-7 inline-flex items-center gap-2 pb-1 text-sm font-medium">
-                          {tr("Visit mother.fm", "Besök mother.fm")} <ArrowUpRight className="h-4 w-4" />
-                        </a>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <ProjectBrowser src={project.image} alt={`${project.name} homepage`} href={project.href} domain={project.domain} />
-                      <div className="mt-6 flex items-start justify-between gap-6">
-                        <div>
-                          <p className="eyebrow mb-2">{project.kind}</p>
-                          <h3 className="text-3xl md:text-4xl">{project.name}</h3>
-                          <p className="mt-3 max-w-lg font-light leading-relaxed text-muted-foreground">{project.description}</p>
-                        </div>
-                        <ArrowUpRight className="mt-8 h-5 w-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accent" />
-                      </div>
-                    </>
-                  )}
+                  <div className="md:col-span-7">
+                    <ProjectBrowser src={project.image} alt={`${project.name} homepage`} href={project.href} domain={project.domain} priority={project.featured} />
+                  </div>
+                  <div className="md:col-span-5">
+                    <p className="eyebrow mb-2">{project.kind}</p>
+                    <h3 className={project.featured ? "text-5xl md:text-6xl" : "text-4xl md:text-5xl"}>{project.name}</h3>
+                    <p className="mt-5 max-w-lg font-light leading-relaxed text-foreground/75">{project.description}</p>
+                    <a href={project.href} target="_blank" rel="noopener noreferrer" className="story-link mt-7 inline-flex items-center gap-2 pb-1 text-sm font-medium">
+                      {tr("Visit " + project.domain, "Besök " + project.domain)} <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  </div>
                 </article>
               ))}
             </div>
