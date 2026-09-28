@@ -37,6 +37,7 @@ const Footer = () => {
               <li>{t("footer.chatbotSetup")}</li>
               <li>{t("footer.inquiryAutomation")}</li>
               <li>{t("footer.bookingIntegration")}</li>
+              <li>{t("footer.carePlans")}</li>
             </ul>
           </div>
 
