@@ -6,12 +6,7 @@ import SEOHead from "@/components/SEOHead";
 const ContactPage = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead
-        title="Contact ChiaraAI – Book a Free AI Consultation"
-        description="Get in touch with ChiaraAI Consulting to discuss your website, app or digital product."
-        keywords="contact AI consultant Sweden, free AI consultation, book AI consultation, ChiaraAI contact, AI automation help Sweden"
-        canonicalPath="/contact"
-      />
+      <SEOHead title="Contact Us | Web & App Development in Gothenburg" description="Book a free call with ChiaraAI Consulting in Gothenburg to discuss your website, web app or digital product and get a fixed quote." canonicalPath="/contact" />
       <Navigation />
       <main>
         <div className="pt-32" />

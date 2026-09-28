@@ -6,12 +6,7 @@ import SEOHead from "@/components/SEOHead";
 const PricingPage = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead
-        title="Pricing: Websites, Web Apps and Custom Products | ChiaraAI Consulting"
-        description="Clear prices with a fixed quote before work begins. Websites from 14,900 kr, web apps from 49,900 kr, and custom products."
-        keywords="website upgrade price, AI chatbot pricing, small business website Sweden, automation packages"
-        canonicalPath="/pricing"
-      />
+      <SEOHead title="Website & Web App Pricing in Gothenburg | ChiaraAI" description="Websites from 14,900 kr and web apps from 49,900 kr, built in Gothenburg. Fixed quote before we start and care plans from 500 kr/mån." canonicalPath="/pricing" />
       <Navigation />
       <main>
         <div className="pt-20" />

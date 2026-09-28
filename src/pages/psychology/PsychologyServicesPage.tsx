@@ -17,7 +17,7 @@ const PsychologyServicesPage = () => {
 
   return (
     <PsychologyLayout>
-      <SEOHead title="Services – Psykolog Praktiken" description="Individual therapy, couples therapy, stress and anxiety support, and trauma care in Gothenburg." keywords="therapy services, individual therapy, couples therapy, anxiety, trauma" canonicalPath="/demo/psychology/services" />
+      <SEOHead title="Therapy Practice Website Demo: Services | ChiaraAI" description="Services page from a therapy practice website demo, designed and built in Gothenburg by ChiaraAI Consulting." canonicalPath="/demo/psychology/services" />
       <section className="py-16 md:py-24 px-5">
         <div className="max-w-5xl mx-auto">
           <div className="text-center space-y-3 mb-14">

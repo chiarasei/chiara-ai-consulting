@@ -4,14 +4,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import AboutPage from "./pages/AboutPage";
 import TradeFairLanding from "./pages/TradeFairLanding";
 import ServicesPage from "./pages/ServicesPage";
 import IndustriesPage from "./pages/IndustriesPage";
 import PricingPage from "./pages/PricingPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
-import ElectricianDemoPage from "./pages/electrician/ElectricianDemoPage";
 import RecentWorkPage from "./pages/RecentWorkPage";
 import BookingDemoPage from "./pages/BookingDemoPage";
 import DemoPsychologyHome from "./pages/psychology/PsychologyHomePage";
@@ -50,7 +48,6 @@ const App = () => (
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/demo/psychology/*" element={<PsychologyRoutes />} />
-            <Route path="/demo/electrician" element={<ElectricianDemoPage />} />
             <Route path="/demo/booking" element={<BookingDemoPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

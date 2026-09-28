@@ -16,7 +16,7 @@ const PsychologyContactPage = () => {
 
   return (
     <PsychologyLayout>
-      <SEOHead title="Contact – Psykolog Praktiken" description="Book a free consultation with our licensed psychologist in Gothenburg. Online booking calendar and AI assistant available." keywords="book therapy, contact psychologist, Gothenburg therapy booking" canonicalPath="/demo/psychology/contact" />
+      <SEOHead title="Therapy Practice Demo: Contact & Booking | ChiaraAI" description="Contact and online booking page from a therapy practice website demo built in Gothenburg by ChiaraAI Consulting." canonicalPath="/demo/psychology/contact" />
       {/* Calendly Booking Section */}
       <section className="py-16 md:py-20 px-5" style={{ background: "linear-gradient(145deg, hsl(165, 35%, 94%), hsl(200, 25%, 93%))" }}>
         <div className="max-w-3xl mx-auto">

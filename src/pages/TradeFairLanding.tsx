@@ -1,3 +1,4 @@
+import { localBusinessJsonLd } from "@/lib/seoData";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ProjectBrowser from "@/components/ProjectBrowser";
@@ -53,12 +54,7 @@ const TradeFairLanding = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead
-        title="ChiaraAI Consulting – Web & App Development"
-        description="A web and app development consultancy in Gothenburg building custom websites, SaaS products and business tools for any kind of client."
-        keywords="web development, app development, SaaS, custom software, Gothenburg, consultancy"
-        canonicalPath="/"
-      />
+      <SEOHead title="Web & App Development in Gothenburg | ChiaraAI Consulting" description="Custom websites, web apps and digital products built in Gothenburg for startups and established businesses. Fixed quote, free first consultation." canonicalPath="/" jsonLd={localBusinessJsonLd} />
       <Navigation />
       <main>
         <section className="px-5 pb-12 pt-28 md:px-8 md:pb-16 md:pt-40">

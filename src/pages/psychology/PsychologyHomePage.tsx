@@ -193,12 +193,7 @@ const PsychologyHomePage = () => {
           '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
       }}
     >
-      <SEOHead
-        title="Calm Sessions — Guided Audio for a Calmer Mind"
-        description="A warm, guided audio platform for anxiety, stress, sleep and emotional balance."
-        keywords="meditation, guided audio, wellbeing, sleep, anxiety"
-        canonicalPath="/demo/psychology"
-      />
+      <SEOHead title="Calm Sessions Audio App Demo | ChiaraAI Consulting" description="A guided audio web app demo built in Gothenburg by ChiaraAI Consulting, with sessions for stress, sleep and emotional balance." canonicalPath="/demo/psychology" />
 
       {/* Top bar */}
       <header className="absolute top-0 left-0 right-0 z-20 px-6 py-5 flex items-center justify-between">

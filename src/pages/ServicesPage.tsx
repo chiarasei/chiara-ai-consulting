@@ -6,12 +6,7 @@ import SEOHead from "@/components/SEOHead";
 const ServicesPage = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead
-        title="Website & Automation Services | ChiaraAI Consulting"
-        description="Website upgrades, AI chat assistants, inquiry automation, and booking integration for therapists, wellness clinics, and service businesses."
-        keywords="website upgrade Sweden, AI chatbot, customer inquiry automation, booking integration, service business website"
-        canonicalPath="/services"
-      />
+      <SEOHead title="Web & App Development Services in Gothenburg" description="Websites, web apps, online booking and payments built in Gothenburg. Custom design and development for businesses at every stage." canonicalPath="/services" />
       <Navigation />
       <main>
         <div className="pt-20" />

@@ -46,7 +46,7 @@ const RecentWorkPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead title="Recent Work – ChiaraAI Consulting" description="Explore mother.fm, QR-Meny, She Rises and selected product demos by ChiaraAI Consulting." keywords="portfolio, recent work, websites, SaaS, web apps, Gothenburg" canonicalPath="/recent-work" />
+      <SEOHead title="Portfolio: Websites & Web Apps | ChiaraAI Consulting" description="Websites and web apps we built in Gothenburg, including mother.fm, QR-Meny and She Rises. See our web and app development work." canonicalPath="/recent-work" />
       <Navigation />
       <main>
         <section className="px-5 pb-20 pt-36 md:px-8 md:pb-28 md:pt-48">
@@ -83,10 +83,9 @@ const RecentWorkPage = () => {
               <p className="eyebrow md:col-span-4">{tr("Product demos", "Produktdemos")}</p>
               <h2 className="text-4xl md:col-span-8 md:text-5xl">{tr("Ideas you can experience.", "Idéer du kan uppleva.")}</h2>
             </div>
-            <div className="grid gap-px overflow-hidden rounded-md bg-primary-foreground/15 md:grid-cols-2">
+            <div className="grid gap-px overflow-hidden rounded-md bg-primary-foreground/15">
               {[
                 { icon: Leaf, title: t("recentwork.psych.title"), description: t("recentwork.psych.desc"), href: "/demo/psychology" },
-                { icon: Zap, title: t("recentwork.electrician.title"), description: t("recentwork.electrician.desc"), href: "/demo/electrician" },
               ].map((demo) => (
                 <article key={demo.href} className="group bg-primary p-8 transition-colors duration-300 hover:bg-primary/80 md:p-10">
                   <demo.icon className="h-5 w-5 text-accent" />
