@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, Leaf, ShoppingBag, Mic, Zap, QrCode, Globe } from "lucide-react";
+import { ExternalLink, Leaf, Zap, Headphones, QrCode, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
-import DemoVoiceCall from "@/components/DemoVoiceCall";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const RecentWorkPage = () => {
@@ -19,7 +18,7 @@ const RecentWorkPage = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Recent Work – ChiaraAI Consulting"
-        description="See our latest projects: psychology practice websites, Shopify e-commerce stores, and AI voice assistant demos for service businesses."
+        description="See our latest projects: mother.fm, QR-Meny, OPECON and demo websites."
         keywords="portfolio, recent work, website projects, AI chatbot demo, Shopify store, psychology website"
         canonicalPath="/recent-work"
       />
@@ -37,8 +36,32 @@ const RecentWorkPage = () => {
           </div>
         </section>
 
-        {/* QR-Meny — First */}
+        {/* mother.fm */}
         <section className="py-10 md:py-16 px-4 md:px-6">
+          <div className="container mx-auto max-w-4xl">
+            <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
+              <div className="p-6 md:p-10 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+                  <Headphones className="w-3.5 h-3.5" />
+                  Featured · Membership Platform
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-card-foreground tracking-tight">mother.fm</h2>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
+                  A postnatal wellness platform that guides new mothers through a monthly content journey. Built with live Stripe payments for monthly and lifetime memberships, secure member-only access powered by Supabase, and fast audio delivery from Cloudflare R2 storage.
+                </p>
+                <a href="https://mother.fm" target="_blank" rel="noopener noreferrer">
+                  <Button className="gap-2 mt-2">
+                    Visit mother.fm
+                    <ExternalLink className="w-4 h-4" />
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* QR-Meny */}
+        <section className="py-4 md:py-6 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
             <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
               <div className="p-6 md:p-10 space-y-5">
@@ -53,7 +76,7 @@ const RecentWorkPage = () => {
                   A digital menu system for Swedish restaurants. Customers scan a QR code on the table and see the full menu instantly on their phone, no waiting for menu books, no interrupting staff. Built and launched in 2 days using AI-powered development.
                 </p>
                 <a href="https://qrmeny.online" target="_blank" rel="noopener noreferrer">
-                  <Button className="gap-2 mt-2 bg-green-600 hover:bg-green-700 text-white">
+                  <Button className="gap-2 mt-2 ">
                     Visit qrmeny.online
                     <ExternalLink className="w-4 h-4" />
                   </Button>
@@ -105,7 +128,7 @@ const RecentWorkPage = () => {
                   A live website built for OPECON, a consulting and development firm partnering with NGOs, institutions, and mission-driven organizations across Africa. The site presents their services in strategic planning, grant writing, monitoring and evaluation, and partnership development, with built-in consultation booking and WhatsApp contact.
                 </p>
                 <a href="https://opecon.org" target="_blank" rel="noopener noreferrer">
-                  <Button className="gap-2 mt-2 bg-green-600 hover:bg-green-700 text-white">
+                  <Button className="gap-2 mt-2 ">
                     Visit opecon.org
                     <ExternalLink className="w-4 h-4" />
                   </Button>
@@ -140,65 +163,6 @@ const RecentWorkPage = () => {
             </div>
           </div>
         </section>
-
-        {/* Advanced AI Demo */}
-        <section className="py-4 md:py-6 px-4 md:px-6">
-          <div className="container mx-auto max-w-4xl">
-            <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
-              <div className="p-6 md:p-10 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-                  <Mic className="w-3.5 h-3.5" />
-                  {t("recentwork.advanceddemo.badge")}
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-card-foreground tracking-tight">
-                  {t("recentwork.advanceddemo.title")}
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
-                  {t("recentwork.advanceddemo.desc")}
-                </p>
-                <div className="pt-4">
-                  <DemoVoiceCall />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-        {/* Shopify Store */}
-        <section className="py-4 md:py-6 px-4 md:px-6 bg-muted/50">
-          <div className="container mx-auto max-w-4xl">
-            <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
-              <div className="p-6 md:p-10 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-                  <ShoppingBag className="w-3.5 h-3.5" />
-                  {t("recentwork.shopify.badge")}
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-card-foreground tracking-tight">
-                  {t("recentwork.shopify.title")}
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
-                  {t("recentwork.shopify.desc")}
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Link to="/demo/shopify">
-                    <Button variant="outline" className="gap-2 mt-2">
-                      {t("recentwork.viewproject")}
-                      <ExternalLink className="w-4 h-4" />
-                    </Button>
-                  </Link>
-                  <a href="https://zoeandco.se" target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" className="gap-2 mt-2">
-                      {t("recentwork.visitsite")}
-                      <ExternalLink className="w-4 h-4" />
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
 
       </main>
       <Footer />

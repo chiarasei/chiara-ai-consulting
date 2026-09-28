@@ -1,4 +1,4 @@
-import { Globe, Sparkles, Bot, MessageSquare, CalendarCheck, Mic } from "lucide-react";
+import { Globe, Sparkles, Bot, MessageSquare, CalendarCheck } from "lucide-react";
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
