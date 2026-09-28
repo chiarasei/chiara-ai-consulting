@@ -124,7 +124,9 @@ const TradeFairLanding = () => {
                 >
                   {project.featured ? (
                     <>
-                      <ProjectBrowser src={project.image} alt={`${project.name} homepage`} href={project.href} domain={project.domain} priority />
+                      <div className="md:col-span-7">
+                        <ProjectBrowser src={project.image} alt={`${project.name} homepage`} href={project.href} domain={project.domain} priority />
+                      </div>
                       <div className="md:col-span-5">
                         <p className="mb-2 text-xs uppercase tracking-[0.18em] text-accent">{project.kind}</p>
                         <h3 className="text-5xl md:text-6xl">{project.name}</h3>
