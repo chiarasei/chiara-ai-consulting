@@ -25,6 +25,15 @@ const TradeFairLanding = () => {
 
   const selectedWork = [
     {
+      name: "mother.fm",
+      kind: tr("Flagship · Postnatal wellness", "Flaggskepp · Postnatalt välmående"),
+      description: tr("A postnatal wellness platform guiding new mothers through a monthly content journey, with live payments, monthly and lifetime memberships, secure member access and fast audio streaming.", "En plattform för postnatalt välmående som guidar nyblivna mammor genom en månatlig innehållsresa, med livebetalningar, månads- och livstidsmedlemskap, säker medlemsåtkomst och snabb ljudströmning."),
+      href: "https://mother.fm",
+      domain: "mother.fm",
+      image: motherImage,
+      featured: true,
+    },
+    {
       name: "QR-Meny",
       kind: tr("Restaurant SaaS", "SaaS för restauranger"),
       description: tr("A bilingual QR menu and ordering platform built for restaurants, bars and cafés.", "En tvåspråkig QR-meny och beställningsplattform för restauranger, barer och kaféer."),
