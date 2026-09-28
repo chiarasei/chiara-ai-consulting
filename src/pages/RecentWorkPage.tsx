@@ -112,24 +112,24 @@ const RecentWorkPage = () => {
           </div>
         </section>
 
-        {/* OPECON */}
+        {/* She Rises */}
         <section className="py-4 md:py-6 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
             <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
               <div className="p-6 md:p-10 space-y-5">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
                   <Globe className="w-3.5 h-3.5" />
-                  Live Project
+                  Live Product
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-card-foreground tracking-tight">
-                  OPECON – Consulting & Development
+                  She Rises – Daily Devotional for Women
                 </h2>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
-                  A live website built for OPECON, a consulting and development firm partnering with NGOs, institutions, and mission-driven organizations across Africa. The site presents their services in strategic planning, grant writing, monitoring and evaluation, and partnership development, with built-in consultation booking and WhatsApp contact.
+                  A daily companion app for women rebuilding their lives, offering gentle devotionals, encouragement, and reflection. Built as a full member platform with sign-in, personal accounts, and a calm, warm reading experience designed for everyday use.
                 </p>
-                <a href="https://opecon.org" target="_blank" rel="noopener noreferrer">
+                <a href="https://sherises.online" target="_blank" rel="noopener noreferrer">
                   <Button className="gap-2 mt-2 ">
-                    Visit opecon.org
+                    Visit sherises.online
                     <ExternalLink className="w-4 h-4" />
                   </Button>
                 </a>
