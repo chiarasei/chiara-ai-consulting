@@ -5,4 +5,4 @@
 - [x] Add live-site visuals for mother.fm, QR-Meny, and She Rises
 - [x] Add depth, varied spacing, and subtle interactions
 - [x] Add factual credibility markers
-- [ ] Verify homepage and portfolio across desktop and mobile
+- [x] Verify homepage and portfolio across desktop and mobile
