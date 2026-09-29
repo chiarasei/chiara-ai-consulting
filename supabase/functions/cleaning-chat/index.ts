@@ -103,7 +103,7 @@ CRITICAL RULES:
       },
       body: JSON.stringify({
         model: "google/gemini-2.5-flash-lite",
-        messages: [{ role: "system", content: systemPrompt }, ...messages],
+        messages: [{ role: "system", content: systemPrompt }, ...messages.filter((m) => m.role === "user").map((m) => ({ role: "user" as const, content: m.content }))],
         stream: true,
       }),
     });
