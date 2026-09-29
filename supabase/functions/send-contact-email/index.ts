@@ -133,33 +133,6 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Notification email sent to business owner");
 
-    // 2. Send confirmation email to the visitor
-    const confirmationHtml = `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h1 style="color: #333;">Thank you for reaching out, ${safeName}!</h1>
-        <p>We've received your message and our team will get back to you within 24 hours.</p>
-        <p>Here's a copy of your submission:</p>
-        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
-          <p><strong>Name:</strong> ${safeName}</p>
-          <p><strong>Email:</strong> ${safeEmail}</p>
-          ${phone ? `<p><strong>Phone:</strong> ${safePhone}</p>` : ""}
-          ${business ? `<p><strong>Business/Industry:</strong> ${safeBusiness}</p>` : ""}
-          ${message ? `<p><strong>Your message:</strong><br/>${safeMessage}</p>` : ""}
-        </div>
-        <p>Best regards,<br/>ChiaraAI Consulting Team</p>
-        <p style="color: #666; font-size: 12px;">Gothenburg, Sweden | +46 73 531 69 50</p>
-      </div>
-    `;
-
-    await client.send({
-      from: fromEmail,
-      to: email,
-      subject: "We received your message - ChiaraAI Consulting",
-      html: confirmationHtml,
-    });
-
-    console.log("Confirmation email sent to visitor:", email);
-
     await client.close();
 
     return new Response(JSON.stringify({ success: true }), {

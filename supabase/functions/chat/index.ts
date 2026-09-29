@@ -158,7 +158,7 @@ serve(async (req) => {
         model: "google/gemini-3-flash-preview",
         messages: [
           { role: "system", content: systemPrompt },
-          ...messages,
+          ...messages.filter((m) => m.role === "user").map((m) => ({ role: "user" as const, content: m.content })),
         ],
         stream: true,
       }),
