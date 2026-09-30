@@ -1,6 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import logoImage from "@/assets/chiara-ai-logo-brain.png";
+import lovableBadge from "@/assets/lovable-certified-expert-badge.png.asset.json";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -48,6 +49,17 @@ const Footer = () => {
               <li>+46 73 531 69 50</li>
               <li>{t("contact.locationValue")}</li>
             </ul>
+            <div className="mt-5">
+              <img
+                src={lovableBadge.url}
+                alt="Lovable Certified Expert Website Builder 2026"
+                width={140}
+                height={64}
+                loading="lazy"
+                className="w-[140px] h-auto"
+              />
+              <p className="mt-2 text-xs text-muted-foreground">Certified Lovable Partner</p>
+            </div>
           </div>
         </div>
 
