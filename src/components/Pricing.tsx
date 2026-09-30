@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import lovableBadge from "@/assets/lovable-certified-expert-badge.png.asset.json";
 
 const Pricing = () => {
   const { language } = useLanguage();
@@ -162,6 +163,17 @@ const Pricing = () => {
             "Alla priser exkl. moms · Fast offert innan vi börjar · 50% vid start, 50% vid lansering · Hosting och lagring körs på kundens egna konton eller ingår i ett serviceavtal · Support utan serviceavtal: 700 kr/tim"
           )}
         </p>
+
+        <div className="mt-10 flex justify-center">
+          <img
+            src={lovableBadge.url}
+            alt="Lovable Certified Expert Website Builder 2026"
+            width={150}
+            height={68}
+            loading="lazy"
+            className="w-[150px] h-auto"
+          />
+        </div>
       </div>
     </section>
   );
