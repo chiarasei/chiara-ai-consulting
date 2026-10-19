@@ -99,7 +99,7 @@ const TradeFairLanding = () => {
                 <img src={qrMenyImage} alt="" className="aspect-[4/3] w-full object-cover object-top" />
               </div>
               <div className="absolute -bottom-10 -right-2 w-[24%] rotate-[4deg] overflow-hidden rounded-[1.25rem] border-4 border-primary bg-card shadow-2xl md:-right-6">
-                <img src={sheRisesImage} alt="" className="aspect-[9/19] w-full object-cover object-left-top" />
+                <img src={sheRisesImage} alt="" className="aspect-[9/19] w-full object-cover object-[30%_40%]" />
               </div>
             </div>
           </div>
