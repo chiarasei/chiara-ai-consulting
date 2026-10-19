@@ -11,6 +11,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import motherImage from "@/assets/projects/mother-fm.webp";
 import qrMenyImage from "@/assets/projects/qr-meny.webp";
 import sheRisesImage from "@/assets/projects/she-rises.webp";
+import lovableBadge from "@/assets/lovable-certified-expert-badge.png.asset.json";
 
 const TradeFairLanding = () => {
   const { language } = useLanguage();
@@ -57,31 +58,54 @@ const TradeFairLanding = () => {
       <SEOHead title="Web & App Development in Gothenburg | ChiaraAI Consulting" description="Custom websites, web apps and digital products built in Gothenburg for startups and established businesses. Fixed quote, free first consultation." canonicalPath="/" jsonLd={localBusinessJsonLd} />
       <Navigation />
       <main>
-        <section className="px-5 pb-12 pt-28 md:px-8 md:pb-16 md:pt-40">
-          <div className="container mx-auto max-w-6xl">
-            <p className="eyebrow mb-8 animate-fade-in-up">{tr("Web & App Development Studio · Gothenburg", "Studio för webb- och apputveckling · Göteborg")}</p>
-            <h1 className="max-w-5xl text-balance text-5xl text-foreground animate-fade-in-up md:text-7xl lg:text-8xl">
-              {tr("Digital products,", "Digitala produkter,")} {" "}
-              <em className="italic text-muted-foreground">{tr("built with care.", "byggda med omsorg.")}</em>
-            </h1>
-            <div className="mt-14 grid items-end gap-9 md:grid-cols-12 md:mt-20">
-              <p className="text-base font-light leading-relaxed text-foreground/75 md:col-span-6 md:text-lg">
+        <section className="overflow-hidden px-5 pb-14 pt-28 md:px-8 md:pb-20 md:pt-36">
+          <div className="container mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-12 lg:gap-10">
+            <div className="animate-fade-in-up lg:col-span-6">
+              <p className="eyebrow mb-7">{tr("Web & App Studio · Gothenburg · Working Worldwide", "Webbyrå · Göteborg · Kunder i hela världen")}</p>
+              <h1 className="text-balance text-5xl text-foreground md:text-7xl">
+                {tr("Digital products,", "Digitala produkter,")}{" "}
+                <em className="italic text-muted-foreground">{tr("built with care.", "byggda med omsorg.")}</em>
+              </h1>
+              <p className="mt-8 max-w-xl text-base font-light leading-relaxed text-foreground/75 md:text-lg">
                 {tr("We design and build custom websites, apps and business tools for founders, startups and established companies, from first idea to live product.", "Vi designar och bygger skräddarsydda webbplatser, appar och affärsverktyg för grundare, startups och etablerade företag, från första idé till färdig produkt.")}
               </p>
-              <div className="flex flex-col gap-3 sm:flex-row md:col-span-6 md:justify-end">
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg" className="h-12 rounded-none px-8">
                   <Link to="/contact">{tr("Start a project", "Starta ett projekt")} <ArrowRight /></Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="h-12 rounded-none bg-transparent px-8">
-                  <Link to="/recent-work">{tr("See our work", "Se vårt arbete")}</Link>
+                  <a href="#portfolio">{tr("See our work", "Se vårt arbete")}</a>
                 </Button>
+              </div>
+              <div className="mt-9 flex items-center gap-4">
+                <img src={lovableBadge.url} alt="Lovable Certified Expert badge" className="h-auto w-28 shrink-0 md:w-32" loading="eager" />
+                <div>
+                  <p className="text-sm font-medium text-primary">{tr("Certified Lovable Website & App Expert", "Certifierad Lovable-expert för webb och appar")}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{tr("Trusted by clients in Sweden and the UK", "Anlitad av kunder i Sverige och Storbritannien")}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative mx-auto w-full max-w-xl animate-fade-in-up [animation-delay:200ms] lg:col-span-6" aria-hidden="true">
+              <div className="rotate-[-2deg] overflow-hidden rounded-xl border border-border bg-card shadow-2xl">
+                <div className="flex items-center gap-1.5 border-b border-border bg-secondary px-3 py-2">
+                  <span className="h-2 w-2 rounded-full bg-muted-foreground/30" />
+                  <span className="h-2 w-2 rounded-full bg-muted-foreground/30" />
+                  <span className="h-2 w-2 rounded-full bg-muted-foreground/30" />
+                </div>
+                <img src={motherImage} alt="" className="aspect-[16/10] w-full object-cover object-top" />
+              </div>
+              <div className="absolute -bottom-8 -left-3 w-[38%] rotate-[-6deg] overflow-hidden rounded-xl border border-border bg-card shadow-xl md:-left-8">
+                <img src={qrMenyImage} alt="" className="aspect-[4/3] w-full object-cover object-top" />
+              </div>
+              <div className="absolute -bottom-10 -right-2 w-[24%] rotate-[4deg] overflow-hidden rounded-[1.25rem] border-4 border-primary bg-card shadow-2xl md:-right-6">
+                <img src={sheRisesImage} alt="" className="aspect-[9/19] w-full object-cover object-left-top" />
               </div>
             </div>
           </div>
         </section>
 
-
-        <section className="fade-in-section px-5 pb-24 pt-8 md:px-8 md:pb-32 md:pt-10">
+        <section id="portfolio" className="fade-in-section scroll-mt-24 px-5 pb-24 pt-12 md:px-8 md:pb-32 md:pt-14">
           <div className="container mx-auto max-w-6xl">
             <div className="mb-12 flex items-end justify-between border-t border-border pt-10">
               <div>
