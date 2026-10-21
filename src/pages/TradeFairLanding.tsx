@@ -127,27 +127,27 @@ const TradeFairLanding = () => {
               {[
                 {
                   t: tr("Websites", "Webbplatser"),
-                  d: tr("Fast sites built for mobile that bring in customers.", "Snabba, mobilanpassade webbplatser som tar in kunder."),
+                  d: tr("Fast, mobile friendly websites that make your business look professional and bring in customers. Includes booking calendars, Google Maps, contact forms and WhatsApp buttons.", "Snabba, mobilvänliga webbplatser som får ditt företag att se professionellt ut och tar in kunder. Här ingår bokningskalendrar, Google Maps, kontaktformulär och knappar till WhatsApp."),
                   cls: "lg:col-span-2",
                 },
                 {
                   t: tr("Web apps & booking systems", "Webbappar & bokningssystem"),
-                  d: tr("Client portals, bookings, dashboards.", "Kundportaler, bokningar, dashboards."),
+                  d: tr("Online systems your customers or team log into, like client portals, booking systems and dashboards. Bookings sync with Google Calendar and confirmations go out automatically.", "Onlinesystem som dina kunder eller din personal loggar in i, som kundportaler, bokningssystem och dashboards. Bokningar synkas med Google Kalender och bekräftelser skickas automatiskt."),
                   cls: "lg:col-span-2",
                 },
                 {
                   t: tr("SaaS products", "Produkter för SaaS"),
-                  d: tr("User accounts, subscriptions and payments with Stripe, support for several currencies, admin panels.", "Användarkonton, prenumerationer och betalningar med Stripe, stöd för flera valutor, adminpaneler."),
+                  d: tr("Complete subscription products, from idea to launch. User accounts, Stripe payments in several currencies, admin panels and automatic emails, all built to scale.", "Kompletta prenumerationsprodukter, från idé till lansering. Användarkonton, betalningar med Stripe i flera valutor, adminpaneler och automatiska mejl, allt byggt för att skala."),
                   cls: "lg:col-span-2",
                 },
                 {
                   t: tr("Business tools", "Affärsverktyg"),
-                  d: tr("Inventory, staff hours and time tracking that replace messy spreadsheets.", "Lager, arbetstider och tidsregistrering som ersätter röriga kalkylblad."),
+                  d: tr("Custom tools that replace messy spreadsheets and paperwork. For example, a staff hours and inventory system where employees log hours from their phone and managers export monthly reports.", "Skreddarsydda verktyg som ersätter röriga kalkylblad och papper. Till exempel ett system för arbetstider och lager där personalen registrerar timmar från sin telefon och chefer exporterar månadsrapporter."),
                   cls: "sm:col-span-2 lg:col-span-3",
                 },
                 {
                   t: tr("AI features", "Funktioner med AI"),
-                  d: tr("Practical AI where it genuinely helps: smart search, chat assistants and automation.", "Praktisk AI där den verkligen hjälper: smart sökning, chatassistenter och automatisering."),
+                  d: tr("Practical AI where it genuinely helps, such as smart search, chat assistants and automating repetitive tasks.", "Praktisk AI där den verkligen hjälper, som smart sökning, chatassistenter och automatisering av återkommande uppgifter."),
                   cls: "sm:col-span-2 lg:col-span-3",
                 },
               ].map((item) => (
