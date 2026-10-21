@@ -137,7 +137,7 @@ const TradeFairLanding = () => {
                 },
                 {
                   t: tr("SaaS products", "Produkter för SaaS"),
-                  d: tr("Complete subscription products, from idea to launch. User accounts, Stripe payments in several currencies, admin panels and automatic emails, all built to scale.", "Kompletta prenumerationsprodukter, från idé till lansering. Användarkonton, betalningar med Stripe i flera valutor, adminpaneler och automatiska e-postutskick, allt byggt för att skala."),
+                  d: tr("Complete subscription products, from idea to launch. User accounts, Stripe payments in several currencies, admin panels and automatic emails, all built to scale.", "Kompletta prenumerationsprodukter, från idé till lansering. Användarkonton, betalningar med Stripe i flera valutor, adminpaneler och automatiska mejl, allt byggt för att skala."),
                   cls: "lg:col-span-2",
                 },
                 {
