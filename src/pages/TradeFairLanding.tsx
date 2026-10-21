@@ -117,6 +117,46 @@ const TradeFairLanding = () => {
           </div>
         </section>
 
+        <section id="portfolio" className="fade-in-section scroll-mt-24 px-5 pb-16 pt-16 md:px-8 md:pb-20 md:pt-20">
+          <div className="container mx-auto px-0 sm:px-8 max-w-6xl">
+            <div className="mb-12 flex items-end justify-between border-t border-border pt-10">
+              <div>
+                <h2 className="text-4xl md:text-6xl">{tr("Portfolio", "Portfolio")}</h2>
+              </div>
+              <Link to="/recent-work" className="story-link hidden items-center gap-2 pb-1 text-sm sm:inline-flex">{tr("All projects", "Alla projekt")} <ArrowRight className="h-4 w-4" /></Link>
+            </div>
+            <div className="grid gap-16 md:gap-10">
+              {selectedWork.map((project) => (
+                <article
+                  key={project.name}
+                  className="group grid items-center gap-6 md:grid-cols-12 md:gap-16"
+                >
+                  <div className="min-w-0 md:col-span-7">
+                    <ProjectBrowser src={project.image} alt={`${project.name} homepage`} href={project.href} domain={project.domain} priority={project.featured} />
+                  </div>
+                  <div className="min-w-0 md:col-span-5">
+                    <p className="eyebrow mb-2">{project.kind}</p>
+                    <h3 className={project.featured ? "text-4xl sm:text-5xl md:text-6xl" : "text-4xl md:text-5xl"}>{project.name}</h3>
+                    <p className="mt-5 max-w-lg text-base font-light leading-relaxed text-foreground/75">{project.description}</p>
+                    {project.tags && (
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                          <span key={tag} className="rounded-full border border-border bg-secondary px-3 py-1 text-[12px] font-medium tracking-wide text-foreground/70">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <a href={project.href} target="_blank" rel="noopener noreferrer" className="story-link mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium">
+                      {tr("Visit " + project.domain, "Besök " + project.domain)} <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="fade-in-section border-t border-border px-5 py-16 md:px-8 md:py-20">
           <div className="container mx-auto px-0 sm:px-8 max-w-6xl">
             <div className="mb-10">
@@ -179,47 +219,6 @@ const TradeFairLanding = () => {
             </div>
           </div>
         </section>
-
-        <section id="portfolio" className="fade-in-section scroll-mt-24 px-5 pb-24 pt-12 md:px-8 md:pb-32 md:pt-14">
-          <div className="container mx-auto px-0 sm:px-8 max-w-6xl">
-            <div className="mb-12 flex items-end justify-between border-t border-border pt-10">
-              <div>
-                <h2 className="text-4xl md:text-6xl">{tr("Portfolio", "Portfolio")}</h2>
-              </div>
-              <Link to="/recent-work" className="story-link hidden items-center gap-2 pb-1 text-sm sm:inline-flex">{tr("All projects", "Alla projekt")} <ArrowRight className="h-4 w-4" /></Link>
-            </div>
-            <div className="grid gap-16 md:gap-10">
-              {selectedWork.map((project) => (
-                <article
-                  key={project.name}
-                  className="group grid items-center gap-6 md:grid-cols-12 md:gap-16"
-                >
-                  <div className="min-w-0 md:col-span-7">
-                    <ProjectBrowser src={project.image} alt={`${project.name} homepage`} href={project.href} domain={project.domain} priority={project.featured} />
-                  </div>
-                  <div className="min-w-0 md:col-span-5">
-                    <p className="eyebrow mb-2">{project.kind}</p>
-                    <h3 className={project.featured ? "text-4xl sm:text-5xl md:text-6xl" : "text-4xl md:text-5xl"}>{project.name}</h3>
-                    <p className="mt-5 max-w-lg text-base font-light leading-relaxed text-foreground/75">{project.description}</p>
-                    {project.tags && (
-                      <div className="mt-6 flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
-                          <span key={tag} className="rounded-full border border-border bg-secondary px-3 py-1 text-[12px] font-medium tracking-wide text-foreground/70">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                    <a href={project.href} target="_blank" rel="noopener noreferrer" className="story-link mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium">
-                      {tr("Visit " + project.domain, "Besök " + project.domain)} <ArrowUpRight className="h-4 w-4" />
-                    </a>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
 
         <section className="fade-in-section border-y border-border px-5 py-12 md:px-8 md:py-16">
           <div className="container mx-auto px-0 sm:px-8 grid max-w-6xl grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
