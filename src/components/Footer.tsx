@@ -1,7 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import logoImage from "@/assets/chiara-ai-logo-brain.png";
-import lovableBadge from "@/assets/lovable-certified-expert-badge.png.asset.json";
+import lovableBadge from "@/assets/lovable-certified-expert-badge.png";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -51,7 +51,7 @@ const Footer = () => {
             </ul>
             <div className="mt-5">
               <img
-                src={lovableBadge.url}
+                src={lovableBadge}
                 alt="Lovable Certified Expert Website Builder 2026"
                 width={140}
                 height={64}

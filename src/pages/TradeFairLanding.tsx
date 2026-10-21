@@ -81,7 +81,7 @@ const TradeFairLanding = () => {
                 </Button>
               </div>
               <div className="mt-9 flex items-center gap-4">
-                <img src={lovableBadge.url} alt="Lovable Certified Expert badge" className="h-auto w-28 shrink-0 md:w-32" loading="eager" />
+                <img src={lovableBadge} alt="Lovable Certified Expert badge" className="h-auto w-28 shrink-0 md:w-32" loading="eager" />
                 <div>
                   <p className="text-sm font-medium text-primary">{tr("Certified Lovable Website & App Expert · SaaS & Stripe payments · DevOps & cloud background", "Certifierad Lovable-expert för webb och appar · SaaS & Stripe-betalningar · DevOps och molnbakgrund")}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{tr("Trusted by clients in Sweden and the UK", "Anlitad av kunder i Sverige och Storbritannien")}</p>

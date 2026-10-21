@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import lovableBadge from "@/assets/lovable-certified-expert-badge.png.asset.json";
+import lovableBadge from "@/assets/lovable-certified-expert-badge.png";
 
 const Pricing = () => {
   const { language } = useLanguage();
@@ -166,7 +166,7 @@ const Pricing = () => {
 
         <div className="mt-10 flex justify-center">
           <img
-            src={lovableBadge.url}
+            src={lovableBadge}
             alt="Lovable Certified Expert Website Builder 2026"
             width={150}
             height={68}
