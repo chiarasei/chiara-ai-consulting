@@ -57,11 +57,12 @@ const Navigation = () => {
             </Link>
 
             <button
-              className="md:hidden text-foreground p-2"
+              className="md:hidden -mr-2 flex h-11 w-11 items-center justify-center text-foreground"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
             >
-              {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
 
             <div className="hidden md:flex items-center gap-2">
@@ -98,35 +99,43 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu */}
-          {isMobileMenuOpen && (
-            <div className="md:hidden absolute top-full left-0 right-0 bg-card/98 backdrop-blur-xl border-b border-border shadow-medium px-4 py-5 space-y-1 animate-fade-in">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                    isActive(link.path)
-                      ? "text-primary bg-primary/5"
-                      : "text-foreground hover:bg-muted"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="pt-2 border-t border-border mt-2">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={toggleLanguage}
-                  className="w-full justify-start text-muted-foreground font-semibold text-sm gap-1.5"
-                >
-                  <Globe size={15} />
-                  {language === "en" ? "English" : "Svenska"}
-                </Button>
+          <div
+            className={`md:hidden absolute top-full left-0 right-0 grid bg-card/98 backdrop-blur-xl shadow-medium transition-all duration-300 ease-out ${
+              isMobileMenuOpen ? "grid-rows-[1fr] opacity-100 border-b border-border" : "grid-rows-[0fr] opacity-0 pointer-events-none"
+            }`}
+            aria-hidden={!isMobileMenuOpen}
+          >
+            <div className="overflow-hidden">
+              <div className="px-4 py-4 space-y-1">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    tabIndex={isMobileMenuOpen ? 0 : -1}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`flex min-h-12 items-center px-3 rounded-lg text-base font-medium transition-colors ${
+                      isActive(link.path)
+                        ? "text-[hsl(var(--brass))] bg-primary/5"
+                        : "text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <div className="pt-2 border-t border-border mt-2">
+                  <Button
+                    variant="ghost"
+                    onClick={toggleLanguage}
+                    tabIndex={isMobileMenuOpen ? 0 : -1}
+                    className="h-12 w-full justify-start text-muted-foreground font-semibold text-base gap-2"
+                  >
+                    <Globe size={16} />
+                    {language === "en" ? "English" : "Svenska"}
+                  </Button>
+                </div>
               </div>
             </div>
-          )}
+          </div>
         </div>
       </nav>
     </header>
