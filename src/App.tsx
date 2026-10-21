@@ -3,14 +3,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ScrollToTop from "@/components/ScrollToTop";
 
 const TradeFairLanding = lazy(() => import("./pages/TradeFairLanding"));
 const ServicesPage = lazy(() => import("./pages/ServicesPage"));
-const IndustriesPage = lazy(() => import("./pages/IndustriesPage"));
 const PricingPage = lazy(() => import("./pages/PricingPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -40,7 +39,7 @@ const App = () => (
                 <Route path="/" element={<TradeFairLanding />} />
                 <Route path="/recent-work" element={<RecentWorkPage />} />
                 <Route path="/services" element={<ServicesPage />} />
-                <Route path="/industries" element={<IndustriesPage />} />
+                <Route path="/industries" element={<Navigate to="/services" replace />} />
                 <Route path="/pricing" element={<PricingPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/demo/psychology/*" element={<PsychologyRoutes />} />

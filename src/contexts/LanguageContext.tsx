@@ -37,7 +37,6 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.home": "Home",
     "nav.recentwork": "Solutions",
     "nav.services": "Services",
-    "nav.industries": "How we work",
     "nav.pricing": "Pricing",
     "nav.contact": "Contact",
 
@@ -136,21 +135,6 @@ const translations: Record<Language, Record<string, string>> = {
     "services.voice.title": "AI Features",
     "services.voice.desc": "Practical AI where it adds value, such as chat assistants that answer questions on your website.",
 
-    "industries.title": "Businesses We Help",
-    "industries.subtitle": "We build for founders, startups, clinics, restaurants, online stores, consultants and established companies alike.",
-    "industries.therapists.title": "Therapists & Coaches",
-    "industries.therapists.desc": "Let clients book sessions online and get instant answers to common questions, so you can focus on your practice.",
-    "industries.wellness.title": "Wellness & Beauty Clinics",
-    "industries.wellness.desc": "A professional website that showcases your treatments, with a chat assistant that handles booking requests around the clock.",
-    "industries.cleaning.title": "Cleaning Companies",
-    "industries.cleaning.desc": "Get more quote requests with a modern website and automatic follow-ups that turn inquiries into booked jobs.",
-    "industries.local.title": "Local Service Businesses",
-    "industries.local.desc": "Whether you're a plumber, electrician, or gardener, we build a website that brings in customers while you're out on the job.",
-    "industries.consultants.title": "Consultants",
-    "industries.consultants.desc": "A professional online presence with automated scheduling so new clients can find you and book without friction.",
-    "industries.ecommerce.title": "E-commerce Stores",
-    "industries.ecommerce.desc": "An online store that is easy to shop and easy to run, with smooth checkout, clear product pages and payments that just work.",
-
     // Pricing
     "pricing.title": "Simple Packages for Small Businesses",
     "pricing.subtitle": "Choose the package that fits your needs. No hidden fees.",
@@ -214,7 +198,6 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.carePlans": "Care Plans",
     "footer.copyright": "© 2026 ChiaraAI Consulting. All rights reserved.",
     "footer.home": "Home",
-    "footer.industries": "How we work",
     "footer.pricing": "Pricing",
     "footer.about": "About",
 
@@ -326,21 +309,6 @@ const translations: Record<Language, Record<string, string>> = {
     "services.booking.desc": "Låt kunder boka tid direkt på din hemsida, utan att behöva ringa eller mejla fram och tillbaka.",
     "services.voice.title": "AI-funktioner",
     "services.voice.desc": "Praktisk AI där den gör nytta, till exempel chattassistenter som svarar på frågor på din webbplats.",
-
-    "industries.title": "Företag Vi Hjälper",
-    "industries.subtitle": "Vi bygger för grundare, startups, kliniker, restauranger, webbutiker, konsulter och etablerade företag.",
-    "industries.therapists.title": "Terapeuter & Coacher",
-    "industries.therapists.desc": "Låt klienter boka sessioner online och få direkta svar på vanliga frågor, så du kan fokusera på din praktik.",
-    "industries.wellness.title": "Hälso- och Skönhetskliniker",
-    "industries.wellness.desc": "En professionell hemsida som visar era behandlingar, med en chattassistent som hanterar bokningsförfrågningar dygnet runt.",
-    "industries.cleaning.title": "Städföretag",
-    "industries.cleaning.desc": "Få fler offertförfrågningar med en modern hemsida och automatiska uppföljningar som omvandlar förfrågningar till bokade jobb.",
-    "industries.local.title": "Lokala Tjänsteföretag",
-    "industries.local.desc": "Oavsett om du är rörmokare, elektriker eller trädgårdsmästare, bygger vi en hemsida som tar in kunder medan du är ute på jobb.",
-    "industries.consultants.title": "Konsulter",
-    "industries.consultants.desc": "En professionell närvaro online med automatisk bokning, så nya kunder kan hitta dig och boka utan krångel.",
-    "industries.ecommerce.title": "E-handel",
-    "industries.ecommerce.desc": "En webbutik som är enkel att handla i och enkel att sköta, med smidig kassa, tydliga produktsidor och betalningar som fungerar.",
 
     // Pricing
     "pricing.title": "Enkla Paket för Småföretag",

@@ -15,7 +15,6 @@ All prices exclude VAT (moms).
 - [Home](https://chiaraaiconsulting.se/): Overview of our web and app development work
 - [Portfolio](https://chiaraaiconsulting.se/recent-work): Selected projects including mother.fm, QR-Meny and She Rises
 - [Services](https://chiaraaiconsulting.se/services): What we build
-- [How we work](https://chiaraaiconsulting.se/industries): Who we build for, from startups to established companies
 - [Pricing](https://chiaraaiconsulting.se/pricing): Website, web app and care plan prices
 - [Contact](https://chiaraaiconsulting.se/contact): Book a free call
 
