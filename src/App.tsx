@@ -1,36 +1,29 @@
+import { Suspense, lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import TradeFairLanding from "./pages/TradeFairLanding";
-import ServicesPage from "./pages/ServicesPage";
-import IndustriesPage from "./pages/IndustriesPage";
-import PricingPage from "./pages/PricingPage";
-import ContactPage from "./pages/ContactPage";
-import NotFound from "./pages/NotFound";
-import RecentWorkPage from "./pages/RecentWorkPage";
-import BookingDemoPage from "./pages/BookingDemoPage";
-import DemoPsychologyHome from "./pages/psychology/PsychologyHomePage";
-import PsychologyServicesPage from "./pages/psychology/PsychologyServicesPage";
-import PsychologyHowItWorksPage from "./pages/psychology/PsychologyHowItWorksPage";
-import PsychologyPricingPage from "./pages/psychology/PsychologyPricingPage";
-import PsychologyContactPage from "./pages/psychology/PsychologyContactPage";
-import { PsychLangProvider } from "./components/psychology/PsychLangContext";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import ScrollToTop from "@/components/ScrollToTop";
+
+const TradeFairLanding = lazy(() => import("./pages/TradeFairLanding"));
+const ServicesPage = lazy(() => import("./pages/ServicesPage"));
+const IndustriesPage = lazy(() => import("./pages/IndustriesPage"));
+const PricingPage = lazy(() => import("./pages/PricingPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const RecentWorkPage = lazy(() => import("./pages/RecentWorkPage"));
+const BookingDemoPage = lazy(() => import("./pages/BookingDemoPage"));
+const PsychologyRoutes = lazy(() => import("./pages/psychology/PsychologyRoutes"));
 
 const queryClient = new QueryClient();
 
-const PsychologyRoutes = () => (
-  <PsychLangProvider>
-    <Routes>
-      <Route path="/" element={<DemoPsychologyHome />} />
-      <Route path="/services" element={<PsychologyServicesPage />} />
-      <Route path="/how-it-works" element={<PsychologyHowItWorksPage />} />
-      <Route path="/pricing" element={<PsychologyPricingPage />} />
-      <Route path="/contact" element={<PsychologyContactPage />} />
-    </Routes>
-  </PsychLangProvider>
+const PageLoader = () => (
+  <div className="flex min-h-screen items-center justify-center bg-background" role="status" aria-label="Loading page">
+    <div className="h-8 w-8 animate-spin rounded-full border-2 border-border border-t-[hsl(var(--brass))]" />
+  </div>
 );
 
 const App = () => (
@@ -40,17 +33,22 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<TradeFairLanding />} />
-            <Route path="/recent-work" element={<RecentWorkPage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/industries" element={<IndustriesPage />} />
-            <Route path="/pricing" element={<PricingPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/demo/psychology/*" element={<PsychologyRoutes />} />
-            <Route path="/demo/booking" element={<BookingDemoPage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <ScrollToTop />
+          <ErrorBoundary>
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<TradeFairLanding />} />
+                <Route path="/recent-work" element={<RecentWorkPage />} />
+                <Route path="/services" element={<ServicesPage />} />
+                <Route path="/industries" element={<IndustriesPage />} />
+                <Route path="/pricing" element={<PricingPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/demo/psychology/*" element={<PsychologyRoutes />} />
+                <Route path="/demo/booking" element={<BookingDemoPage />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </ErrorBoundary>
         </BrowserRouter>
       </TooltipProvider>
     </LanguageProvider>
