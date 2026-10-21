@@ -77,7 +77,7 @@ const TradeFairLanding = () => {
           <div className="container mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-12 lg:gap-10">
             <div className="animate-fade-in-up lg:col-span-6">
               <p className="eyebrow mb-7">{tr("Web & App Studio · Gothenburg · Working Worldwide", "Webbyrå · Göteborg · Kunder i hela världen")}</p>
-              <h1 className="text-balance text-5xl text-foreground md:text-7xl">
+              <h1 className="text-balance text-[2.6rem] leading-[1.08] text-foreground sm:text-5xl md:text-7xl">
                 {tr("Digital products,", "Digitala produkter,")}{" "}
                 <em className="italic text-muted-foreground">{tr("built with care.", "byggda med omsorg.")}</em>
               </h1>
@@ -88,20 +88,21 @@ const TradeFairLanding = () => {
                 )}
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <Button asChild size="lg" className="h-12 rounded-none px-8">
+                <Button asChild size="lg" className="h-12 w-full rounded-none px-8 sm:w-auto">
                   <Link to="/contact">{tr("Start a project", "Starta ett projekt")} <ArrowRight /></Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="h-12 rounded-none bg-transparent px-8">
+                <Button asChild size="lg" variant="outline" className="h-12 w-full rounded-none bg-transparent px-8 sm:w-auto">
                   <a href="#portfolio">{tr("See our work", "Se vårt arbete")}</a>
                 </Button>
               </div>
-              <div className="mt-9 flex items-center gap-4">
-                <img src={lovableBadge} alt="Lovable Certified Expert badge" className="h-auto w-28 shrink-0 md:w-32" loading="eager" />
+              <div className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+                <img src={lovableBadge} alt="Lovable Certified Expert badge" width={615} height={176} className="h-auto w-32 shrink-0" loading="eager" decoding="async" />
                 <div>
-                  <p className="text-sm font-medium text-primary">{tr("Certified Lovable Website & App Expert · SaaS & Stripe payments · DevOps & cloud background", "Certifierad Lovable expert på webb och appar · SaaS & betalningar med Stripe · DevOps och molnbakgrund")}</p>
+                  <p className="text-sm font-medium leading-relaxed text-primary">{tr("Certified Lovable Website & App Expert · SaaS & Stripe payments · DevOps & cloud background", "Certifierad Lovable expert på webb och appar · SaaS & betalningar med Stripe · DevOps och molnbakgrund")}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{tr("Trusted by clients in Sweden and the UK", "Anlitad av kunder i Sverige och Storbritannien")}</p>
                 </div>
               </div>
+            </div>
             </div>
 
             <div className="relative mx-auto w-full max-w-xl animate-fade-in-up [animation-delay:200ms] lg:col-span-6" aria-hidden="true">
@@ -111,13 +112,13 @@ const TradeFairLanding = () => {
                   <span className="h-2 w-2 rounded-full bg-muted-foreground/30" />
                   <span className="h-2 w-2 rounded-full bg-muted-foreground/30" />
                 </div>
-                <img src={motherImage} alt="" className="aspect-[16/10] w-full object-cover object-top" />
+                <img src={motherImage} alt="" width={1280} height={800} decoding="async" className="aspect-[16/10] w-full object-cover object-top" />
               </div>
-              <div className="absolute -bottom-8 -left-3 w-[38%] rotate-[-6deg] overflow-hidden rounded-xl border border-border bg-card shadow-xl md:-left-8">
-                <img src={qrMenyImage} alt="" className="aspect-[4/3] w-full object-cover object-top" />
+              <div className="absolute -bottom-8 left-1 w-[38%] rotate-[-6deg] overflow-hidden rounded-xl border border-border bg-card shadow-xl md:-left-8">
+                <img src={qrMenyImage} alt="" loading="lazy" decoding="async" className="aspect-[4/3] w-full object-cover object-top" />
               </div>
-              <div className="absolute -bottom-10 -right-2 w-[24%] rotate-[4deg] overflow-hidden rounded-[1.25rem] border-4 border-primary bg-card shadow-2xl md:-right-6">
-                <img src={sheRisesImage} alt="" className="aspect-[9/19] w-full object-cover object-[30%_40%]" />
+              <div className="absolute -bottom-10 right-1 w-[24%] rotate-[4deg] overflow-hidden rounded-[1.25rem] border-4 border-primary bg-card shadow-2xl md:-right-6">
+                <img src={sheRisesImage} alt="" loading="lazy" decoding="async" className="aspect-[9/19] w-full object-cover object-[30%_40%]" />
               </div>
             </div>
           </div>
@@ -148,7 +149,7 @@ const TradeFairLanding = () => {
                   d: tr("Inventory, staff hours and time tracking that replace messy spreadsheets.", "Lager, arbetstider och tidsregistrering som ersätter röriga kalkylblad."),
                 },
               ].map((item) => (
-                <div key={item.t} className="bg-background p-8 transition-colors duration-300 hover:bg-secondary md:p-10">
+                <div key={item.t} className="bg-background p-6 transition-colors duration-300 hover:bg-secondary sm:p-8 md:p-10">
                   <h3 className="mb-3 text-2xl">{item.t}</h3>
                   <p className="font-light leading-relaxed text-foreground/75">{item.d}</p>
                 </div>
@@ -184,19 +185,19 @@ const TradeFairLanding = () => {
               </div>
               <Link to="/recent-work" className="story-link hidden items-center gap-2 pb-1 text-sm sm:inline-flex">{tr("All projects", "Alla projekt")} <ArrowRight className="h-4 w-4" /></Link>
             </div>
-            <div className="grid gap-14 md:gap-10">
+            <div className="grid gap-16 md:gap-10">
               {selectedWork.map((project) => (
                 <article
                   key={project.name}
-                  className="group grid items-center gap-10 md:grid-cols-12 md:gap-16"
+                  className="group grid items-center gap-6 md:grid-cols-12 md:gap-16"
                 >
-                  <div className="md:col-span-7">
+                  <div className="min-w-0 md:col-span-7">
                     <ProjectBrowser src={project.image} alt={`${project.name} homepage`} href={project.href} domain={project.domain} priority={project.featured} />
                   </div>
-                  <div className="md:col-span-5">
+                  <div className="min-w-0 md:col-span-5">
                     <p className="eyebrow mb-2">{project.kind}</p>
-                    <h3 className={project.featured ? "text-5xl md:text-6xl" : "text-4xl md:text-5xl"}>{project.name}</h3>
-                    <p className="mt-5 max-w-lg font-light leading-relaxed text-foreground/75">{project.description}</p>
+                    <h3 className={project.featured ? "text-4xl sm:text-5xl md:text-6xl" : "text-4xl md:text-5xl"}>{project.name}</h3>
+                    <p className="mt-5 max-w-lg text-base font-light leading-relaxed text-foreground/75">{project.description}</p>
                     {project.tags && (
                       <div className="mt-6 flex flex-wrap gap-2">
                         {project.tags.map((tag) => (
@@ -206,7 +207,7 @@ const TradeFairLanding = () => {
                         ))}
                       </div>
                     )}
-                    <a href={project.href} target="_blank" rel="noopener noreferrer" className="story-link mt-7 inline-flex items-center gap-2 pb-1 text-sm font-medium">
+                    <a href={project.href} target="_blank" rel="noopener noreferrer" className="story-link mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium">
                       {tr("Visit " + project.domain, "Besök " + project.domain)} <ArrowUpRight className="h-4 w-4" />
                     </a>
                   </div>
@@ -268,10 +269,10 @@ const TradeFairLanding = () => {
         </section>
 
         <section className="fade-in-section px-5 pb-24 md:px-8 md:pb-32">
-          <div className="container mx-auto grid max-w-6xl items-end gap-8 bg-secondary p-10 md:grid-cols-12 md:p-16">
+          <div className="container mx-auto grid max-w-6xl items-end gap-8 bg-secondary p-6 sm:p-10 md:grid-cols-12 md:p-16">
             <h2 className="text-balance text-4xl md:col-span-8 md:text-6xl">{tr("Have something in mind?", "Har du något i tankarna?")} {" "}<em className="italic text-muted-foreground">{tr("Let's talk.", "Låt oss prata.")}</em></h2>
             <div className="md:col-span-4 md:text-right">
-              <Button asChild size="lg" className="h-12 rounded-none px-8"><Link to="/contact">{tr("Get in touch", "Kontakta oss")} <ArrowRight /></Link></Button>
+              <Button asChild size="lg" className="h-12 w-full rounded-none px-8 sm:w-auto"><Link to="/contact">{tr("Get in touch", "Kontakta oss")} <ArrowRight /></Link></Button>
             </div>
           </div>
         </section>
