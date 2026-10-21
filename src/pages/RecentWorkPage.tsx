@@ -17,14 +17,28 @@ const RecentWorkPage = () => {
 
   useEffect(() => window.scrollTo(0, 0), []);
 
-  const liveProjects = [
+  type LiveProject = {
+    name: string;
+    badge: string;
+    description: string;
+    href: string;
+    domain: string;
+    image: string;
+    tags?: string[];
+  };
+
+  const liveProjects: LiveProject[] = [
     {
       name: "mother.fm",
       badge: tr("Audio · Tracker · Journal", "Ljud · Tracker · Dagbok"),
-      description: tr("A motherhood audio companion offering pocket-sized pep talks, with a tracker and journal to support mothers day to day.", "En ljudledd följeslagare för mammor som erbjuder korta pep talks i fickformat, med en tracker och dagbok som stöttar mamman i vardagen."),
+      description: tr(
+        "An audio companion for mothers, built for a UK founder and launched in October 2026. We built the full subscription platform: Stripe payments that unlock premium audio, a library streamed fast via Cloudflare R2, secure accounts with Supabase, gift codes, a personal tracker and journal, and an analytics dashboard for the founder.",
+        "En ljudkompanion för mammor, byggd åt en brittisk grundare och lanserad i oktober 2026. Vi byggde hela prenumerationsplattformen: betalningar med Stripe som låser upp premiumljud, ett bibliotek som strömmar snabbt via Cloudflare R2, säkra konton med Supabase, presentkoder, en personlig tracker och dagbok, samt en analyspanel för grundaren."
+      ),
       href: "https://mother.fm",
       domain: "mother.fm",
       image: motherImage,
+      tags: ["Stripe", "Supabase", "Cloudflare R2", "Lovable"],
     },
     {
       name: "QR-Meny",
@@ -68,6 +82,15 @@ const RecentWorkPage = () => {
                   <p className="eyebrow mb-4">{project.badge}</p>
                   <h2 className="text-4xl md:text-5xl">{project.name}</h2>
                   <p className="mt-5 font-light leading-relaxed text-muted-foreground">{project.description}</p>
+                  {project.tags && (
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="rounded-full border border-border bg-secondary px-3 py-1 text-[12px] font-medium tracking-wide text-foreground/70">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                   <Button asChild className="mt-7 rounded-none">
                     <a href={project.href} target="_blank" rel="noopener noreferrer">{tr("Visit project", "Besök projektet")} <ExternalLink /></a>
                   </Button>
