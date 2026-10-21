@@ -18,12 +18,6 @@ const TradeFairLanding = () => {
   const tr = (en: string, sv: string) => (language === "sv" ? sv : en);
   useScrollFade();
 
-  const capabilities = [
-    { n: "01", t: tr("Websites", "Webbplatser"), d: tr("Considered, fast and beautifully typeset sites for companies that care how they are seen.", "Genomtänkta, snabba och vackert typsatta webbplatser för företag som bryr sig om hur de uppfattas.") },
-    { n: "02", t: tr("Web Apps & SaaS", "Webbappar & SaaS"), d: tr("Full products with accounts, subscriptions and payments, built to launch and to scale.", "Kompletta produkter med konton, prenumerationer och betalningar, byggda för att lanseras och växa.") },
-    { n: "03", t: tr("Business Tools", "Affärsverktyg"), d: tr("Dashboards, booking, forms and integrations that quietly remove manual work.", "Dashboards, bokning, formulär och integrationer som tyst tar bort manuellt arbete.") },
-    { n: "04", t: tr("AI Where It Helps", "AI där det hjälper"), d: tr("Practical AI features, only where they genuinely improve the product.", "Praktiska funktioner med AI, bara där de verkligen förbättrar produkten.") },
-  ];
 
   type Project = {
     name: string;
@@ -129,31 +123,41 @@ const TradeFairLanding = () => {
               <p className="eyebrow mb-4">{tr("What we build", "Vad vi bygger")}</p>
               <h2 className="text-balance text-4xl md:text-5xl">{tr("From a first website to a full product.", "Från första webbplatsen till en hel produkt.")}</h2>
             </div>
-            <div className="grid gap-px border border-border bg-border sm:grid-cols-2">
+            <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-6">
               {[
                 {
                   t: tr("Websites", "Webbplatser"),
                   d: tr("Fast sites built for mobile that bring in customers.", "Snabba, mobilanpassade webbplatser som tar in kunder."),
+                  cls: "lg:col-span-2",
                 },
                 {
                   t: tr("Web apps & booking systems", "Webbappar & bokningssystem"),
                   d: tr("Client portals, bookings, dashboards.", "Kundportaler, bokningar, dashboards."),
+                  cls: "lg:col-span-2",
                 },
                 {
                   t: tr("SaaS products", "Produkter för SaaS"),
                   d: tr("User accounts, subscriptions and payments with Stripe, support for several currencies, admin panels.", "Användarkonton, prenumerationer och betalningar med Stripe, stöd för flera valutor, adminpaneler."),
+                  cls: "lg:col-span-2",
                 },
                 {
                   t: tr("Business tools", "Affärsverktyg"),
                   d: tr("Inventory, staff hours and time tracking that replace messy spreadsheets.", "Lager, arbetstider och tidsregistrering som ersätter röriga kalkylblad."),
+                  cls: "sm:col-span-2 lg:col-span-3",
+                },
+                {
+                  t: tr("AI features", "Funktioner med AI"),
+                  d: tr("Practical AI where it genuinely helps: smart search, chat assistants and automation.", "Praktisk AI där den verkligen hjälper: smart sökning, chatassistenter och automatisering."),
+                  cls: "sm:col-span-2 lg:col-span-3",
                 },
               ].map((item) => (
-                <div key={item.t} className="bg-background p-6 transition-colors duration-300 hover:bg-secondary sm:p-8 md:p-10">
+                <div key={item.t} className={`bg-background p-6 transition-colors duration-300 hover:bg-secondary sm:p-8 md:p-10 ${item.cls}`}>
                   <h3 className="mb-3 text-2xl">{item.t}</h3>
                   <p className="font-light leading-relaxed text-foreground/75">{item.d}</p>
                 </div>
               ))}
             </div>
+
           </div>
         </section>
 
@@ -216,23 +220,6 @@ const TradeFairLanding = () => {
           </div>
         </section>
 
-        <section className="fade-in-section bg-[image:var(--gradient-primary)] px-5 py-20 text-primary-foreground md:px-8 md:py-24">
-          <div className="container mx-auto px-0 sm:px-8 max-w-6xl">
-            <div className="mb-12 grid gap-8 md:grid-cols-12">
-              <p className="eyebrow md:col-span-4">{tr("What we do", "Vad vi gör")}</p>
-              <h2 className="text-balance text-4xl md:col-span-8 md:text-6xl">{tr("One studio for the whole build.", "En studio för hela bygget.")}</h2>
-            </div>
-            <div className="grid border-t border-primary-foreground/15 sm:grid-cols-2">
-              {capabilities.map((capability, index) => (
-                <div key={capability.n} className={`group py-9 pr-8 transition-colors duration-300 hover:bg-primary-foreground/[0.035] sm:px-8 ${index % 2 === 0 ? "sm:border-r sm:border-primary-foreground/15" : ""} border-b border-primary-foreground/15`}>
-                  <span className="text-[13px] font-semibold tracking-[0.12em] text-accent">{capability.n}</span>
-                  <h3 className="mb-3 mt-3 text-3xl transition-transform duration-300 group-hover:translate-x-1">{capability.t}</h3>
-                  <p className="max-w-md font-light leading-relaxed text-primary-foreground/70">{capability.d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         <section className="fade-in-section border-y border-border px-5 py-12 md:px-8 md:py-16">
           <div className="container mx-auto px-0 sm:px-8 grid max-w-6xl grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
