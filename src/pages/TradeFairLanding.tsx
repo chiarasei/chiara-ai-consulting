@@ -22,7 +22,7 @@ const TradeFairLanding = () => {
     { n: "01", t: tr("Websites", "Webbplatser"), d: tr("Considered, fast and beautifully typeset sites for companies that care how they are seen.", "Genomtänkta, snabba och vackert typsatta webbplatser för företag som bryr sig om hur de uppfattas.") },
     { n: "02", t: tr("Web Apps & SaaS", "Webbappar & SaaS"), d: tr("Full products with accounts, subscriptions and payments, built to launch and to scale.", "Kompletta produkter med konton, prenumerationer och betalningar, byggda för att lanseras och växa.") },
     { n: "03", t: tr("Business Tools", "Affärsverktyg"), d: tr("Dashboards, booking, forms and integrations that quietly remove manual work.", "Dashboards, bokning, formulär och integrationer som tyst tar bort manuellt arbete.") },
-    { n: "04", t: tr("AI Where It Helps", "AI där det hjälper"), d: tr("Practical AI features, only where they genuinely improve the product.", "Praktiska AI-funktioner, bara där de verkligen förbättrar produkten.") },
+    { n: "04", t: tr("AI Where It Helps", "AI där det hjälper"), d: tr("Practical AI features, only where they genuinely improve the product.", "Praktiska funktioner med AI, bara där de verkligen förbättrar produkten.") },
   ];
 
   const selectedWork = [
