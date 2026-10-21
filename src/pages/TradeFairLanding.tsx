@@ -221,8 +221,8 @@ const TradeFairLanding = () => {
                       "Image creation and editing, such as product visuals and marketing images",
                       "Bildskapande och bildredigering, som produktbilder och marknadsföringsbilder"
                     ),
-                  ].map((b) => (
-                    <li key={b} className="flex gap-2 text-sm leading-relaxed text-muted-foreground">
+                  ].map((b, i) => (
+                    <li key={b} className={`flex gap-2 text-sm leading-relaxed text-muted-foreground ${i === 4 ? "sm:col-span-2" : ""}`}>
                       <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" aria-hidden />
                       <span>{b}</span>
                     </li>
