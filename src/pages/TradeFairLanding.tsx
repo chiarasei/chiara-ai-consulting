@@ -54,7 +54,7 @@ const TradeFairLanding = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-hidden bg-background">
       <SEOHead title="Web & App Development in Gothenburg | ChiaraAI Consulting" description="Custom websites, web apps and digital products built in Gothenburg for startups and established businesses. Fixed quote, free first consultation." canonicalPath="/" jsonLd={localBusinessJsonLd} />
       <Navigation />
       <main>
@@ -67,7 +67,10 @@ const TradeFairLanding = () => {
                 <em className="italic text-muted-foreground">{tr("built with care.", "byggda med omsorg.")}</em>
               </h1>
               <p className="mt-8 max-w-xl text-base font-light leading-relaxed text-foreground/75 md:text-lg">
-                {tr("We design and build custom websites, apps and business tools for founders, startups and established companies, from first idea to live product.", "Vi designar och bygger skräddarsydda webbplatser, appar och affärsverktyg för grundare, startups och etablerade företag, från första idé till färdig produkt.")}
+                {tr(
+                  "We design and build custom websites, web apps and SaaS products with Stripe payments – for founders, startups and established companies. Backed by real DevOps experience, so what we build is fast, secure and ready to scale.",
+                  "Vi designar och bygger skräddarsydda webbplatser, webbappar och SaaS-produkter med Stripe-betalningar – för grundare, startups och etablerade företag. Med verklig DevOps-erfarenhet i ryggen blir det vi bygger snabbt, säkert och redo att skala."
+                )}
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg" className="h-12 rounded-none px-8">
@@ -80,7 +83,7 @@ const TradeFairLanding = () => {
               <div className="mt-9 flex items-center gap-4">
                 <img src={lovableBadge.url} alt="Lovable Certified Expert badge" className="h-auto w-28 shrink-0 md:w-32" loading="eager" />
                 <div>
-                  <p className="text-sm font-medium text-primary">{tr("Certified Lovable Website & App Expert", "Certifierad Lovable-expert för webb och appar")}</p>
+                  <p className="text-sm font-medium text-primary">{tr("Certified Lovable Website & App Expert · SaaS & Stripe payments · DevOps & cloud background", "Certifierad Lovable-expert för webb och appar · SaaS & Stripe-betalningar · DevOps och molnbakgrund")}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{tr("Trusted by clients in Sweden and the UK", "Anlitad av kunder i Sverige och Storbritannien")}</p>
                 </div>
               </div>
