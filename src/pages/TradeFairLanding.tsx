@@ -69,7 +69,7 @@ const TradeFairLanding = () => {
               <p className="mt-8 max-w-xl text-base font-light leading-relaxed text-foreground/75 md:text-lg">
                 {tr(
                   "We design and build custom websites, web apps and SaaS products with Stripe payments for founders, startups and established companies. Backed by real DevOps experience, so what we build is fast, secure and ready to scale.",
-                  "Vi designar och bygger skräddarsydda webbplatser, webbappar och produkter för SaaS med Stripe-betalningar för grundare, startups och etablerade företag. Med verklig DevOps-erfarenhet i ryggen blir det vi bygger snabbt, säkert och redo att skala."
+                  "Vi designar och bygger skräddarsydda webbplatser, webbappar och produkter för SaaS med betalningar via Stripe för grundare, startups och etablerade företag. Med verklig erfarenhet inom DevOps i ryggen blir det vi bygger snabbt, säkert och redo att skala."
                 )}
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -125,7 +125,7 @@ const TradeFairLanding = () => {
                   d: tr("Client portals, bookings, dashboards.", "Kundportaler, bokningar, dashboards."),
                 },
                 {
-                  t: tr("SaaS products", "SaaS-produkter"),
+                  t: tr("SaaS products", "Produkter för SaaS"),
                   d: tr("User accounts, subscriptions and payments with Stripe, support for several currencies, admin panels.", "Användarkonton, prenumerationer och betalningar med Stripe, stöd för flera valutor, adminpaneler."),
                 },
                 {
@@ -214,7 +214,7 @@ const TradeFairLanding = () => {
           <div className="container mx-auto grid max-w-6xl grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {[
               { value: "3", label: tr("Live products", "Liveprodukter") },
-              { value: "2", label: tr("Client-ready demos", "Kundklara demos") },
+              { value: "2", label: tr("Demos ready for clients", "Kundklara demos") },
               { value: "EN + SV", label: tr("Bilingual builds", "Tvåspråkiga byggen") },
             ].map((stat) => (
               <div key={stat.label} className="px-6 py-7 text-center sm:py-3">
