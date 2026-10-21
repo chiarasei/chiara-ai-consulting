@@ -74,7 +74,7 @@ const TradeFairLanding = () => {
       <Navigation />
       <main>
         <section className="overflow-hidden px-5 pb-14 pt-28 md:px-8 md:pb-20 md:pt-36">
-          <div className="container mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-12 lg:gap-10">
+          <div className="container mx-auto px-0 sm:px-8 grid max-w-6xl items-center gap-14 lg:grid-cols-12 lg:gap-10">
             <div className="animate-fade-in-up lg:col-span-6">
               <p className="eyebrow mb-7">{tr("Web & App Studio · Gothenburg · Working Worldwide", "Webbyrå · Göteborg · Kunder i hela världen")}</p>
               <h1 className="text-balance text-[2.6rem] leading-[1.08] text-foreground sm:text-5xl md:text-7xl">
@@ -124,7 +124,7 @@ const TradeFairLanding = () => {
         </section>
 
         <section className="fade-in-section border-t border-border px-5 py-16 md:px-8 md:py-20">
-          <div className="container mx-auto max-w-6xl">
+          <div className="container mx-auto px-0 sm:px-8 max-w-6xl">
             <div className="mb-10">
               <p className="eyebrow mb-4">{tr("What we build", "Vad vi bygger")}</p>
               <h2 className="text-balance text-4xl md:text-5xl">{tr("From a first website to a full product.", "Från första webbplatsen till en hel produkt.")}</h2>
@@ -158,7 +158,7 @@ const TradeFairLanding = () => {
         </section>
 
         <section className="fade-in-section bg-secondary px-5 py-16 md:px-8 md:py-20">
-          <div className="container mx-auto max-w-6xl">
+          <div className="container mx-auto px-0 sm:px-8 max-w-6xl">
             <p className="eyebrow mb-4">{tr("Built on solid foundations", "Byggt på stadig grund")}</p>
             <p className="max-w-3xl text-lg font-light leading-relaxed text-foreground/80">
               {tr(
@@ -177,7 +177,7 @@ const TradeFairLanding = () => {
         </section>
 
         <section id="portfolio" className="fade-in-section scroll-mt-24 px-5 pb-24 pt-12 md:px-8 md:pb-32 md:pt-14">
-          <div className="container mx-auto max-w-6xl">
+          <div className="container mx-auto px-0 sm:px-8 max-w-6xl">
             <div className="mb-12 flex items-end justify-between border-t border-border pt-10">
               <div>
                 <h2 className="text-4xl md:text-6xl">{tr("Portfolio", "Portfolio")}</h2>
@@ -217,7 +217,7 @@ const TradeFairLanding = () => {
         </section>
 
         <section className="fade-in-section bg-[image:var(--gradient-primary)] px-5 py-20 text-primary-foreground md:px-8 md:py-24">
-          <div className="container mx-auto max-w-6xl">
+          <div className="container mx-auto px-0 sm:px-8 max-w-6xl">
             <div className="mb-12 grid gap-8 md:grid-cols-12">
               <p className="eyebrow md:col-span-4">{tr("What we do", "Vad vi gör")}</p>
               <h2 className="text-balance text-4xl md:col-span-8 md:text-6xl">{tr("One studio for the whole build.", "En studio för hela bygget.")}</h2>
@@ -235,7 +235,7 @@ const TradeFairLanding = () => {
         </section>
 
         <section className="fade-in-section border-y border-border px-5 py-12 md:px-8 md:py-16">
-          <div className="container mx-auto grid max-w-6xl grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          <div className="container mx-auto px-0 sm:px-8 grid max-w-6xl grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {[
               { value: "3", label: tr("Live products", "Liveprodukter") },
               { value: "2", label: tr("Demos ready for clients", "Kundklara demos") },
@@ -250,7 +250,7 @@ const TradeFairLanding = () => {
         </section>
 
         <section className="fade-in-section px-5 py-20 md:px-8 md:py-24">
-          <div className="container mx-auto grid max-w-6xl gap-10 md:grid-cols-12">
+          <div className="container mx-auto px-0 sm:px-8 grid max-w-6xl gap-10 md:grid-cols-12">
             <p className="eyebrow md:col-span-4">{tr("How we work", "Så arbetar vi")}</p>
             <div className="grid gap-8 sm:grid-cols-3 md:col-span-8">
               {[
@@ -268,7 +268,7 @@ const TradeFairLanding = () => {
         </section>
 
         <section className="fade-in-section px-5 pb-24 md:px-8 md:pb-32">
-          <div className="container mx-auto grid max-w-6xl items-end gap-8 bg-secondary p-6 sm:p-10 md:grid-cols-12 md:p-16">
+          <div className="container mx-auto px-0 sm:px-8 grid max-w-6xl items-end gap-8 bg-secondary p-6 sm:p-10 md:grid-cols-12 md:p-16">
             <h2 className="text-balance text-4xl md:col-span-8 md:text-6xl">{tr("Have something in mind?", "Har du något i tankarna?")} {" "}<em className="italic text-muted-foreground">{tr("Let's talk.", "Låt oss prata.")}</em></h2>
             <div className="md:col-span-4 md:text-right">
               <Button asChild size="lg" className="h-12 w-full rounded-none px-8 sm:w-auto"><Link to="/contact">{tr("Get in touch", "Kontakta oss")} <ArrowRight /></Link></Button>
