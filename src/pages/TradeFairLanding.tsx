@@ -29,7 +29,7 @@ const TradeFairLanding = () => {
     {
       name: "mother.fm",
       kind: tr("Audio · Tracker · Journal", "Ljud · Tracker · Dagbok"),
-      description: tr("A motherhood audio companion offering pocket-sized pep talks, with a tracker and journal to support mothers day to day.", "En ljudledd följeslagare för mammor som erbjuder korta pep talks i fickformat, med en tracker och dagbok som stöttar mamman i vardagen."),
+      description: tr("A motherhood audio companion offering pep talks in your pocket, with a tracker and journal to support mothers day to day.", "En ljudledd följeslagare för mammor som erbjuder korta pep talks i fickformat, med en tracker och dagbok som stöttar mamman i vardagen."),
       href: "https://mother.fm",
       domain: "mother.fm",
       image: motherImage,
@@ -45,7 +45,7 @@ const TradeFairLanding = () => {
     },
     {
       name: "She Rises",
-      kind: tr("Faith-based wellness", "Tro och välmående"),
+      kind: tr("Faith and wellness", "Tro och välmående"),
       description: tr("A warm daily companion for women, with devotionals, reflection and personal accounts.", "En varm daglig följeslagare för kvinnor, med andakter, reflektion och personliga konton."),
       href: "https://sherises.online",
       domain: "sherises.online",
@@ -68,8 +68,8 @@ const TradeFairLanding = () => {
               </h1>
               <p className="mt-8 max-w-xl text-base font-light leading-relaxed text-foreground/75 md:text-lg">
                 {tr(
-                  "We design and build custom websites, web apps and SaaS products with Stripe payments – for founders, startups and established companies. Backed by real DevOps experience, so what we build is fast, secure and ready to scale.",
-                  "Vi designar och bygger skräddarsydda webbplatser, webbappar och SaaS-produkter med Stripe-betalningar – för grundare, startups och etablerade företag. Med verklig DevOps-erfarenhet i ryggen blir det vi bygger snabbt, säkert och redo att skala."
+                  "We design and build custom websites, web apps and SaaS products with Stripe payments for founders, startups and established companies. Backed by real DevOps experience, so what we build is fast, secure and ready to scale.",
+                  "Vi designar och bygger skräddarsydda webbplatser, webbappar och produkter för SaaS med Stripe-betalningar för grundare, startups och etablerade företag. Med verklig DevOps-erfarenhet i ryggen blir det vi bygger snabbt, säkert och redo att skala."
                 )}
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -83,7 +83,7 @@ const TradeFairLanding = () => {
               <div className="mt-9 flex items-center gap-4">
                 <img src={lovableBadge} alt="Lovable Certified Expert badge" className="h-auto w-28 shrink-0 md:w-32" loading="eager" />
                 <div>
-                  <p className="text-sm font-medium text-primary">{tr("Certified Lovable Website & App Expert · SaaS & Stripe payments · DevOps & cloud background", "Certifierad Lovable-expert för webb och appar · SaaS & Stripe-betalningar · DevOps och molnbakgrund")}</p>
+                  <p className="text-sm font-medium text-primary">{tr("Certified Lovable Website & App Expert · SaaS & Stripe payments · DevOps & cloud background", "Certifierad Lovable expert på webb och appar · SaaS & betalningar med Stripe · DevOps och molnbakgrund")}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{tr("Trusted by clients in Sweden and the UK", "Anlitad av kunder i Sverige och Storbritannien")}</p>
                 </div>
               </div>
@@ -118,7 +118,7 @@ const TradeFairLanding = () => {
               {[
                 {
                   t: tr("Websites", "Webbplatser"),
-                  d: tr("Fast, mobile-first sites that bring in customers.", "Snabba, mobilanpassade webbplatser som tar in kunder."),
+                  d: tr("Fast sites built for mobile that bring in customers.", "Snabba, mobilanpassade webbplatser som tar in kunder."),
                 },
                 {
                   t: tr("Web apps & booking systems", "Webbappar & bokningssystem"),
@@ -126,11 +126,11 @@ const TradeFairLanding = () => {
                 },
                 {
                   t: tr("SaaS products", "SaaS-produkter"),
-                  d: tr("User accounts, subscriptions and payments with Stripe, multi-currency, admin panels.", "Användarkonton, prenumerationer och betalningar med Stripe, flervaluta, adminpaneler."),
+                  d: tr("User accounts, subscriptions and payments with Stripe, support for several currencies, admin panels.", "Användarkonton, prenumerationer och betalningar med Stripe, stöd för flera valutor, adminpaneler."),
                 },
                 {
                   t: tr("Business tools", "Affärsverktyg"),
-                  d: tr("Inventory, staff hours and time tracking that replace messy spreadsheets.", "Lager, personal­tider och tidsregistrering som ersätter röriga kalkylblad."),
+                  d: tr("Inventory, staff hours and time tracking that replace messy spreadsheets.", "Lager, arbetstider och tidsregistrering som ersätter röriga kalkylblad."),
                 },
               ].map((item) => (
                 <div key={item.t} className="bg-background p-8 transition-colors duration-300 hover:bg-secondary md:p-10">
@@ -147,8 +147,8 @@ const TradeFairLanding = () => {
             <p className="eyebrow mb-4">{tr("Built on solid foundations", "Byggt på stadig grund")}</p>
             <p className="max-w-3xl text-lg font-light leading-relaxed text-foreground/80">
               {tr(
-                "Before building products, our founder worked in DevOps – CI/CD pipelines, Kubernetes, monitoring and secure cloud infrastructure. That means your product isn't just good-looking; it's reliable, secure and built to grow.",
-                "Innan vi började bygga produkter arbetade vår grundare med DevOps – CI/CD-pipelines, Kubernetes, övervakning och säker molninfrastruktur. Det betyder att din produkt inte bara ser bra ut; den är pålitlig, säker och byggd för att växa."
+                "Before building products, our founder worked in DevOps, with CI/CD pipelines, Kubernetes, monitoring and secure cloud infrastructure. That means your product isn't just beautiful; it's reliable, secure and built to grow.",
+                "Innan vi började bygga produkter arbetade vår grundare med DevOps, med pipelines för CI/CD, Kubernetes, övervakning och säker molninfrastruktur. Det betyder att din produkt inte bara ser bra ut; den är pålitlig, säker och byggd för att växa."
               )}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
