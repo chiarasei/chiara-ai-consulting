@@ -211,7 +211,6 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.home": "Hem",
     "nav.recentwork": "Lösningar",
     "nav.services": "Tjänster",
-    "nav.industries": "Så arbetar vi",
     "nav.pricing": "Priser",
     "nav.contact": "Kontakt",
 
@@ -373,7 +372,6 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.carePlans": "Serviceavtal",
     "footer.copyright": "© 2026 ChiaraAI Consulting. Alla rättigheter förbehållna.",
     "footer.home": "Hem",
-    "footer.industries": "Så arbetar vi",
     "footer.pricing": "Priser",
     "footer.about": "Om Oss",
 
