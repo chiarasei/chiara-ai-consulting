@@ -11,7 +11,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import motherImage from "@/assets/projects/mother-fm.webp";
 import qrMenyImage from "@/assets/projects/qr-meny.webp";
 import sheRisesImage from "@/assets/projects/she-rises.webp";
-import lovableBadge from "@/assets/lovable-certified-expert-badge.png.asset.json";
+import lovableBadge from "@/assets/lovable-certified-expert-badge.png";
 
 const TradeFairLanding = () => {
   const { language } = useLanguage();
