@@ -103,7 +103,6 @@ const TradeFairLanding = () => {
                 </div>
               </div>
             </div>
-            </div>
 
             <div className="relative mx-auto w-full max-w-xl animate-fade-in-up [animation-delay:200ms] lg:col-span-6" aria-hidden="true">
               <div className="rotate-[-2deg] overflow-hidden rounded-xl border border-border bg-card shadow-2xl">
