@@ -11,7 +11,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import motherImage from "@/assets/projects/mother-fm.webp";
 import qrMenyImage from "@/assets/projects/qr-meny.webp";
 import sheRisesImage from "@/assets/projects/she-rises.webp";
-import lovableBadge from "@/assets/lovable-certified-expert-badge.png.asset.json";
+import lovableBadge from "@/assets/lovable-certified-expert-badge.png";
 
 const TradeFairLanding = () => {
   const { language } = useLanguage();
@@ -54,7 +54,7 @@ const TradeFairLanding = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-hidden bg-background">
       <SEOHead title="Web & App Development in Gothenburg | ChiaraAI Consulting" description="Custom websites, web apps and digital products built in Gothenburg for startups and established businesses. Fixed quote, free first consultation." canonicalPath="/" jsonLd={localBusinessJsonLd} />
       <Navigation />
       <main>
@@ -67,7 +67,10 @@ const TradeFairLanding = () => {
                 <em className="italic text-muted-foreground">{tr("built with care.", "byggda med omsorg.")}</em>
               </h1>
               <p className="mt-8 max-w-xl text-base font-light leading-relaxed text-foreground/75 md:text-lg">
-                {tr("We design and build custom websites, apps and business tools for founders, startups and established companies, from first idea to live product.", "Vi designar och bygger skräddarsydda webbplatser, appar och affärsverktyg för grundare, startups och etablerade företag, från första idé till färdig produkt.")}
+                {tr(
+                  "We design and build custom websites, web apps and SaaS products with Stripe payments – for founders, startups and established companies. Backed by real DevOps experience, so what we build is fast, secure and ready to scale.",
+                  "Vi designar och bygger skräddarsydda webbplatser, webbappar och SaaS-produkter med Stripe-betalningar – för grundare, startups och etablerade företag. Med verklig DevOps-erfarenhet i ryggen blir det vi bygger snabbt, säkert och redo att skala."
+                )}
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg" className="h-12 rounded-none px-8">
@@ -78,9 +81,9 @@ const TradeFairLanding = () => {
                 </Button>
               </div>
               <div className="mt-9 flex items-center gap-4">
-                <img src={lovableBadge.url} alt="Lovable Certified Expert badge" className="h-auto w-28 shrink-0 md:w-32" loading="eager" />
+                <img src={lovableBadge} alt="Lovable Certified Expert badge" className="h-auto w-28 shrink-0 md:w-32" loading="eager" />
                 <div>
-                  <p className="text-sm font-medium text-primary">{tr("Certified Lovable Website & App Expert", "Certifierad Lovable-expert för webb och appar")}</p>
+                  <p className="text-sm font-medium text-primary">{tr("Certified Lovable Website & App Expert · SaaS & Stripe payments · DevOps & cloud background", "Certifierad Lovable-expert för webb och appar · SaaS & Stripe-betalningar · DevOps och molnbakgrund")}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{tr("Trusted by clients in Sweden and the UK", "Anlitad av kunder i Sverige och Storbritannien")}</p>
                 </div>
               </div>
@@ -101,6 +104,59 @@ const TradeFairLanding = () => {
               <div className="absolute -bottom-10 -right-2 w-[24%] rotate-[4deg] overflow-hidden rounded-[1.25rem] border-4 border-primary bg-card shadow-2xl md:-right-6">
                 <img src={sheRisesImage} alt="" className="aspect-[9/19] w-full object-cover object-[30%_40%]" />
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="fade-in-section border-t border-border px-5 py-16 md:px-8 md:py-20">
+          <div className="container mx-auto max-w-6xl">
+            <div className="mb-10">
+              <p className="eyebrow mb-4">{tr("What we build", "Vad vi bygger")}</p>
+              <h2 className="text-balance text-4xl md:text-5xl">{tr("From a first website to a full product.", "Från första webbplatsen till en hel produkt.")}</h2>
+            </div>
+            <div className="grid gap-px border border-border bg-border sm:grid-cols-2">
+              {[
+                {
+                  t: tr("Websites", "Webbplatser"),
+                  d: tr("Fast, mobile-first sites that bring in customers.", "Snabba, mobilanpassade webbplatser som tar in kunder."),
+                },
+                {
+                  t: tr("Web apps & booking systems", "Webbappar & bokningssystem"),
+                  d: tr("Client portals, bookings, dashboards.", "Kundportaler, bokningar, dashboards."),
+                },
+                {
+                  t: tr("SaaS products", "SaaS-produkter"),
+                  d: tr("User accounts, subscriptions and payments with Stripe, multi-currency, admin panels.", "Användarkonton, prenumerationer och betalningar med Stripe, flervaluta, adminpaneler."),
+                },
+                {
+                  t: tr("Business tools", "Affärsverktyg"),
+                  d: tr("Inventory, staff hours and time tracking that replace messy spreadsheets.", "Lager, personal­tider och tidsregistrering som ersätter röriga kalkylblad."),
+                },
+              ].map((item) => (
+                <div key={item.t} className="bg-background p-8 transition-colors duration-300 hover:bg-secondary md:p-10">
+                  <h3 className="mb-3 text-2xl">{item.t}</h3>
+                  <p className="font-light leading-relaxed text-foreground/75">{item.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="fade-in-section bg-secondary px-5 py-16 md:px-8 md:py-20">
+          <div className="container mx-auto max-w-6xl">
+            <p className="eyebrow mb-4">{tr("Built on solid foundations", "Byggt på stadig grund")}</p>
+            <p className="max-w-3xl text-lg font-light leading-relaxed text-foreground/80">
+              {tr(
+                "Before building products, our founder worked in DevOps – CI/CD pipelines, Kubernetes, monitoring and secure cloud infrastructure. That means your product isn't just good-looking; it's reliable, secure and built to grow.",
+                "Innan vi började bygga produkter arbetade vår grundare med DevOps – CI/CD-pipelines, Kubernetes, övervakning och säker molninfrastruktur. Det betyder att din produkt inte bara ser bra ut; den är pålitlig, säker och byggd för att växa."
+              )}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {["Lovable", "React", "Supabase", "Stripe", "Cloudflare", "GitHub Actions", "Kubernetes"].map((tag) => (
+                <span key={tag} className="rounded-full border border-border bg-background px-4 py-1.5 text-[13px] font-medium tracking-wide text-foreground/70">
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
         </section>
