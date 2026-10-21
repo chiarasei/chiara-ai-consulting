@@ -185,17 +185,50 @@ const TradeFairLanding = () => {
                   d: tr("Custom tools that replace messy spreadsheets and paperwork. For example, a staff hours and inventory system where employees log hours from their phone and managers export monthly reports.", "Skreddarsydda verktyg som ersätter röriga kalkylblad och papper. Till exempel ett system för arbetstider och lager där personalen registrerar timmar från sin telefon och chefer exporterar månadsrapporter."),
                   cls: "",
                 },
-                {
-                  t: tr("AI features", "Funktioner med AI"),
-                  d: tr("Practical AI where it genuinely helps, such as smart search, chat assistants and automating repetitive tasks.", "Praktisk AI där den verkligen hjälper, som smart sökning, chatassistenter och automatisering av återkommande uppgifter."),
-                  cls: "sm:col-span-2",
-                },
               ].map((item) => (
                 <div key={item.t} className={`bg-background p-6 transition-colors duration-300 hover:bg-secondary sm:p-8 md:p-10 ${item.cls}`}>
                   <h3 className="mb-3 text-2xl">{item.t}</h3>
                   <p className="font-light leading-relaxed text-foreground/75">{item.d}</p>
                 </div>
               ))}
+              <div className="bg-background p-6 transition-colors duration-300 hover:bg-secondary sm:col-span-2 sm:p-8 md:p-10">
+                <h3 className="mb-3 text-2xl">{tr("AI features", "Funktioner med AI")}</h3>
+                <p className="font-light leading-relaxed text-foreground/75">
+                  {tr(
+                    "Practical AI built into your website or app, only where it genuinely saves time or helps your customers.",
+                    "Praktisk AI inbyggd i din webbplats eller app, bara där den verkligen sparar tid eller hjälper dina kunder."
+                  )}
+                </p>
+                <ul className="mt-5 grid gap-x-10 gap-y-2.5 sm:grid-cols-2">
+                  {[
+                    tr(
+                      "Chat assistants that answer customer questions, summarise information, translate and analyse",
+                      "Chatassistenter som svarar på kundfrågor, sammanfattar information, översätter och analyserar"
+                    ),
+                    tr(
+                      "Smart search that finds answers in your own business information, such as prices, services and documents",
+                      "Smart sökning som hittar svar i din egen verksamhetsinformation, som priser, tjänster och dokument"
+                    ),
+                    tr(
+                      "Automatic sorting of incoming enquiries, so each one reaches the right person",
+                      "Automatisk sortering av inkommande förfrågningar, så att varje förfrågan når rätt person"
+                    ),
+                    tr(
+                      "Voice features: text read aloud, speech turned into text, and spoken conversations with an assistant",
+                      "Röstfunktioner: text som läses upp, tal som omvandlas till text och talade samtal med en assistent"
+                    ),
+                    tr(
+                      "Image creation and editing, such as product visuals and marketing images",
+                      "Bildskapande och bildredigering, som produktbilder och marknadsföringsbilder"
+                    ),
+                  ].map((b) => (
+                    <li key={b} className="flex gap-2 text-sm leading-relaxed text-muted-foreground">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" aria-hidden />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
           </div>
