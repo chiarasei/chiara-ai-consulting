@@ -108,6 +108,59 @@ const TradeFairLanding = () => {
           </div>
         </section>
 
+        <section className="fade-in-section border-t border-border px-5 py-16 md:px-8 md:py-20">
+          <div className="container mx-auto max-w-6xl">
+            <div className="mb-10">
+              <p className="eyebrow mb-4">{tr("What we build", "Vad vi bygger")}</p>
+              <h2 className="text-balance text-4xl md:text-5xl">{tr("From a first website to a full product.", "Från första webbplatsen till en hel produkt.")}</h2>
+            </div>
+            <div className="grid gap-px border border-border bg-border sm:grid-cols-2">
+              {[
+                {
+                  t: tr("Websites", "Webbplatser"),
+                  d: tr("Fast, mobile-first sites that bring in customers.", "Snabba, mobilanpassade webbplatser som tar in kunder."),
+                },
+                {
+                  t: tr("Web apps & booking systems", "Webbappar & bokningssystem"),
+                  d: tr("Client portals, bookings, dashboards.", "Kundportaler, bokningar, dashboards."),
+                },
+                {
+                  t: tr("SaaS products", "SaaS-produkter"),
+                  d: tr("User accounts, subscriptions and payments with Stripe, multi-currency, admin panels.", "Användarkonton, prenumerationer och betalningar med Stripe, flervaluta, adminpaneler."),
+                },
+                {
+                  t: tr("Business tools", "Affärsverktyg"),
+                  d: tr("Inventory, staff hours and time tracking that replace messy spreadsheets.", "Lager, personal­tider och tidsregistrering som ersätter röriga kalkylblad."),
+                },
+              ].map((item) => (
+                <div key={item.t} className="bg-background p-8 transition-colors duration-300 hover:bg-secondary md:p-10">
+                  <h3 className="mb-3 text-2xl">{item.t}</h3>
+                  <p className="font-light leading-relaxed text-foreground/75">{item.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="fade-in-section bg-secondary px-5 py-16 md:px-8 md:py-20">
+          <div className="container mx-auto max-w-6xl">
+            <p className="eyebrow mb-4">{tr("Built on solid foundations", "Byggt på stadig grund")}</p>
+            <p className="max-w-3xl text-lg font-light leading-relaxed text-foreground/80">
+              {tr(
+                "Before building products, our founder worked in DevOps – CI/CD pipelines, Kubernetes, monitoring and secure cloud infrastructure. That means your product isn't just good-looking; it's reliable, secure and built to grow.",
+                "Innan vi började bygga produkter arbetade vår grundare med DevOps – CI/CD-pipelines, Kubernetes, övervakning och säker molninfrastruktur. Det betyder att din produkt inte bara ser bra ut; den är pålitlig, säker och byggd för att växa."
+              )}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {["Lovable", "React", "Supabase", "Stripe", "Cloudflare", "GitHub Actions", "Kubernetes"].map((tag) => (
+                <span key={tag} className="rounded-full border border-border bg-background px-4 py-1.5 text-[13px] font-medium tracking-wide text-foreground/70">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="portfolio" className="fade-in-section scroll-mt-24 px-5 pb-24 pt-12 md:px-8 md:pb-32 md:pt-14">
           <div className="container mx-auto max-w-6xl">
             <div className="mb-12 flex items-end justify-between border-t border-border pt-10">
