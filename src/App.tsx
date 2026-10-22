@@ -1,29 +1,32 @@
-import { Suspense, lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import type { ReactNode } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ScrollToTop from "@/components/ScrollToTop";
 
-const TradeFairLanding = lazy(() => import("./pages/TradeFairLanding"));
-const ServicesPage = lazy(() => import("./pages/ServicesPage"));
-const PricingPage = lazy(() => import("./pages/PricingPage"));
-const ContactPage = lazy(() => import("./pages/ContactPage"));
-const NotFound = lazy(() => import("./pages/NotFound"));
-const RecentWorkPage = lazy(() => import("./pages/RecentWorkPage"));
-const BookingDemoPage = lazy(() => import("./pages/BookingDemoPage"));
-const PsychologyRoutes = lazy(() => import("./pages/psychology/PsychologyRoutes"));
+// Pages are imported directly (no lazy loading) so the whole site ships as
+// one bundle and page switches never need to fetch extra code files.
+import TradeFairLanding from "./pages/TradeFairLanding";
+import ServicesPage from "./pages/ServicesPage";
+import PricingPage from "./pages/PricingPage";
+import ContactPage from "./pages/ContactPage";
+import NotFound from "./pages/NotFound";
+import RecentWorkPage from "./pages/RecentWorkPage";
+import BookingDemoPage from "./pages/BookingDemoPage";
+import PsychologyRoutes from "./pages/psychology/PsychologyRoutes";
 
 const queryClient = new QueryClient();
 
-const PageLoader = () => (
-  <div className="flex min-h-screen items-center justify-center bg-background" role="status" aria-label="Loading page">
-    <div className="h-8 w-8 animate-spin rounded-full border-2 border-border border-t-[hsl(var(--brass))]" />
-  </div>
-);
+// Give the error screen a fresh start on every page change, so one failed
+// page never leaves "Something went wrong" stuck on the next page.
+const RouteErrorBoundary = ({ children }: { children: ReactNode }) => {
+  const { pathname } = useLocation();
+  return <ErrorBoundary key={pathname}>{children}</ErrorBoundary>;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -33,21 +36,19 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
-          <ErrorBoundary>
-            <Suspense fallback={<PageLoader />}>
-              <Routes>
-                <Route path="/" element={<TradeFairLanding />} />
-                <Route path="/recent-work" element={<RecentWorkPage />} />
-                <Route path="/services" element={<ServicesPage />} />
-                <Route path="/industries" element={<Navigate to="/services" replace />} />
-                <Route path="/pricing" element={<PricingPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/demo/psychology/*" element={<PsychologyRoutes />} />
-                <Route path="/demo/booking" element={<BookingDemoPage />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
-          </ErrorBoundary>
+          <RouteErrorBoundary>
+            <Routes>
+              <Route path="/" element={<TradeFairLanding />} />
+              <Route path="/recent-work" element={<RecentWorkPage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/industries" element={<Navigate to="/services" replace />} />
+              <Route path="/pricing" element={<PricingPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/demo/psychology/*" element={<PsychologyRoutes />} />
+              <Route path="/demo/booking" element={<BookingDemoPage />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </RouteErrorBoundary>
         </BrowserRouter>
       </TooltipProvider>
     </LanguageProvider>
