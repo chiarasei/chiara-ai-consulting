@@ -25,7 +25,7 @@ const queryClient = new QueryClient();
 // page never leaves "Something went wrong" stuck on the next page.
 const RouteErrorBoundary = ({ children }: { children: ReactNode }) => {
   const { pathname } = useLocation();
-  return <ErrorBoundary key={pathname}>{children}</RouteErrorBoundary>;
+  return <ErrorBoundary key={pathname}>{children}</ErrorBoundary>;
 };
 
 const App = () => (
