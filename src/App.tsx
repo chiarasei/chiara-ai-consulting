@@ -29,19 +29,17 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <ErrorBoundary>
-            <Suspense fallback={<PageLoader />}>
-              <Routes>
-                <Route path="/" element={<TradeFairLanding />} />
-                <Route path="/recent-work" element={<RecentWorkPage />} />
-                <Route path="/services" element={<ServicesPage />} />
-                <Route path="/industries" element={<Navigate to="/services" replace />} />
-                <Route path="/pricing" element={<PricingPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/demo/psychology/*" element={<PsychologyRoutes />} />
-                <Route path="/demo/booking" element={<BookingDemoPage />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
+            <Routes>
+              <Route path="/" element={<TradeFairLanding />} />
+              <Route path="/recent-work" element={<RecentWorkPage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/industries" element={<Navigate to="/services" replace />} />
+              <Route path="/pricing" element={<PricingPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/demo/psychology/*" element={<PsychologyRoutes />} />
+              <Route path="/demo/booking" element={<BookingDemoPage />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
           </ErrorBoundary>
         </BrowserRouter>
       </TooltipProvider>
