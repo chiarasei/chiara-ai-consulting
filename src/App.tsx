@@ -1,4 +1,3 @@
-import { Suspense, lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,22 +7,18 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ScrollToTop from "@/components/ScrollToTop";
 
-const TradeFairLanding = lazy(() => import("./pages/TradeFairLanding"));
-const ServicesPage = lazy(() => import("./pages/ServicesPage"));
-const PricingPage = lazy(() => import("./pages/PricingPage"));
-const ContactPage = lazy(() => import("./pages/ContactPage"));
-const NotFound = lazy(() => import("./pages/NotFound"));
-const RecentWorkPage = lazy(() => import("./pages/RecentWorkPage"));
-const BookingDemoPage = lazy(() => import("./pages/BookingDemoPage"));
-const PsychologyRoutes = lazy(() => import("./pages/psychology/PsychologyRoutes"));
+// Pages are imported directly (no lazy loading) so the whole site ships as
+// one bundle and page switches never need to fetch extra code files.
+import TradeFairLanding from "./pages/TradeFairLanding";
+import ServicesPage from "./pages/ServicesPage";
+import PricingPage from "./pages/PricingPage";
+import ContactPage from "./pages/ContactPage";
+import NotFound from "./pages/NotFound";
+import RecentWorkPage from "./pages/RecentWorkPage";
+import BookingDemoPage from "./pages/BookingDemoPage";
+import PsychologyRoutes from "./pages/psychology/PsychologyRoutes";
 
 const queryClient = new QueryClient();
-
-const PageLoader = () => (
-  <div className="flex min-h-screen items-center justify-center bg-background" role="status" aria-label="Loading page">
-    <div className="h-8 w-8 animate-spin rounded-full border-2 border-border border-t-[hsl(var(--brass))]" />
-  </div>
-);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
