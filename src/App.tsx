@@ -2,7 +2,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import type { ReactNode } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -20,6 +21,13 @@ import PsychologyRoutes from "./pages/psychology/PsychologyRoutes";
 
 const queryClient = new QueryClient();
 
+// Give the error screen a fresh start on every page change, so one failed
+// page never leaves "Something went wrong" stuck on the next page.
+const RouteErrorBoundary = ({ children }: { children: ReactNode }) => {
+  const { pathname } = useLocation();
+  return <ErrorBoundary key={pathname}>{children}</RouteErrorBoundary>;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <LanguageProvider>
@@ -28,7 +36,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
-          <ErrorBoundary>
+          <RouteErrorBoundary>
             <Routes>
               <Route path="/" element={<TradeFairLanding />} />
               <Route path="/recent-work" element={<RecentWorkPage />} />
@@ -40,7 +48,7 @@ const App = () => (
               <Route path="/demo/booking" element={<BookingDemoPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </ErrorBoundary>
+          </RouteErrorBoundary>
         </BrowserRouter>
       </TooltipProvider>
     </LanguageProvider>
