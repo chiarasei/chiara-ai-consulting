@@ -1,5 +1,6 @@
 import { Component, ErrorInfo, ReactNode } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Button } from "@/components/ui/button";
 
 const CHUNK_ERROR_PATTERN =
   /loading chunk|dynamically imported module|importing a module script failed|failed to fetch/i;
@@ -25,7 +26,12 @@ class ErrorBoundaryInner extends Component<ErrorBoundaryProps, ErrorBoundaryStat
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error("Page error:", error, info);
+    console.error("Page error:", error.message, {
+      name: error.name,
+      path: window.location.pathname,
+      stack: error.stack,
+      componentStack: info.componentStack,
+    });
 
     // After a new publish, an open tab can reference code files that no
     // longer exist. Reload once automatically to fetch the fresh version.
@@ -48,12 +54,12 @@ class ErrorBoundaryInner extends Component<ErrorBoundaryProps, ErrorBoundaryStat
         <div className="flex min-h-screen flex-col items-center justify-center bg-background px-6 text-center">
           <h1 className="text-3xl text-foreground md:text-4xl">{this.props.title}</h1>
           <p className="mt-4 max-w-md text-muted-foreground">{this.props.message}</p>
-          <button
+          <Button
             onClick={() => window.location.reload()}
             className="mt-8 inline-flex h-12 items-center rounded-none bg-primary px-8 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
           >
             {this.props.reloadLabel}
-          </button>
+          </Button>
         </div>
       );
     }

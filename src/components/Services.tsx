@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 type Card = { icon: React.ReactElement; title: string; description: string; example?: string; bullets: string[] };
+type ServiceContent = { cards: Card[]; cta: string; ctaLink: string };
 
-const content: Record<string, { cards: Card[]; cta: string; ctaLink: string }> = {
+const content: Record<string, ServiceContent> = {
   en: {
     cards: [
       {
@@ -116,9 +117,37 @@ const content: Record<string, { cards: Card[]; cta: string; ctaLink: string }> =
   },
 };
 
+// Validate runtime content too: TypeScript alone cannot protect missing translations.
+export const normalizeServiceContent = (value: unknown): ServiceContent => {
+  const fallback = content.en;
+  const candidate = value && typeof value === "object" ? value as Partial<ServiceContent> : {};
+  const cards = Array.isArray(candidate.cards) ? candidate.cards : fallback.cards;
+  const text = (value: unknown, fallbackText: string) =>
+    typeof value === "string" && value.trim() ? value : fallbackText;
+
+  return {
+    cta: text(candidate.cta, fallback.cta),
+    ctaLink: text(candidate.ctaLink, fallback.ctaLink),
+    cards: fallback.cards.map((defaultCard, index) => {
+      const card = cards[index] && typeof cards[index] === "object" ? cards[index] : defaultCard;
+      return {
+        icon: React.isValidElement(card.icon) ? card.icon : defaultCard.icon,
+        title: text(card.title, defaultCard.title),
+        description: text(card.description, defaultCard.description),
+        example: defaultCard.example ? text(card.example, defaultCard.example) : undefined,
+        bullets: Array.isArray(card.bullets)
+          ? card.bullets.filter((bullet): bullet is string => typeof bullet === "string" && Boolean(bullet.trim()))
+          : defaultCard.bullets,
+      };
+    }),
+  };
+};
+
+export const getServiceContent = (language: string): ServiceContent => normalizeServiceContent(content[language]);
+
 const Services = () => {
   const { t, language } = useLanguage();
-  const c = content[language] ?? content.en;
+  const c = getServiceContent(language);
 
   return (
     <section id="services" className="py-12 md:py-20 px-4 md:px-6 bg-muted/50">
