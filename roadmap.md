@@ -1,5 +1,5 @@
 # Roadmap
-- [ ] Add bilingual privacy policy, footer and form links, and verify language switching
+- [x] Add bilingual privacy policy, footer and form links, and verify language switching
 
 - [x] Add bilingual Services mega menu, mobile expandable list, and matching quote sections; verify all links
 
