@@ -145,15 +145,14 @@ const Navigation = () => {
             {navLinks.map((link) => link.path === lp("/services") ? (
               <div key={link.path} ref={servicesRef} className="static"
                 onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}
-                onFocus={() => setServicesOpen(true)}
                 onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setServicesOpen(false); }}>
                 <div className="flex items-center">
-                  <Link to={link.path} onClick={() => setServicesOpen(false)} className={`text-sm font-semibold py-1 ${isActive(link.path) ? "text-accent" : "text-primary/80 hover:text-accent"}`}>{link.label}</Link>
+                  <Link to={link.path} onFocus={() => setServicesOpen(true)} onClick={() => setServicesOpen(false)} className={`text-sm font-semibold py-1 ${isActive(link.path) ? "text-accent" : "text-primary/80 hover:text-accent"}`}>{link.label}</Link>
                   <Button variant="ghost" size="icon" className="h-7 w-7" aria-label={language === "sv" ? "Visa tjänster" : "Show services"} aria-expanded={servicesOpen} aria-controls="desktop-services" onClick={() => setServicesOpen(!servicesOpen)}>
                     <ChevronDown className={servicesOpen ? "rotate-180" : ""} />
                   </Button>
                 </div>
-                {servicesOpen && <div id="desktop-services" className="absolute top-full left-0 right-0 pt-0">
+                {servicesOpen && <div id="desktop-services" className="absolute top-[calc(100%-0.75rem)] left-0 right-0 pt-3">
                   <div className="grid grid-cols-3 gap-5 border border-border bg-card p-6 lg:p-8 shadow-medium rounded-b-lg">{serviceColumns(false)}</div>
                 </div>}
               </div>
