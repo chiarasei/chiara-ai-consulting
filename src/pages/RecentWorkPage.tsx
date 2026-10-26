@@ -26,6 +26,7 @@ const RecentWorkPage = () => {
     domain: string;
     image: string;
     tags?: string[];
+    visitLabel?: string;
   };
 
   const liveProjects: LiveProject[] = [
@@ -106,7 +107,7 @@ const RecentWorkPage = () => {
                     </div>
                   )}
                   <Button asChild className="mt-7 rounded-none">
-                    <a href={project.href} target="_blank" rel="noopener noreferrer">{tr("Visit project", "Besök projektet")} <ExternalLink /></a>
+                    <a href={project.href} target="_blank" rel="noopener noreferrer">{project.visitLabel ?? tr("Visit project", "Besök projektet")} <ExternalLink /></a>
                   </Button>
                 </div>
               </article>
