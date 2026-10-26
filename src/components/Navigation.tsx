@@ -176,7 +176,7 @@ const Navigation = () => {
 
           {/* Mobile menu */}
           <div
-            className={`md:hidden absolute top-full left-0 right-0 grid bg-card/98 backdrop-blur-xl shadow-medium transition-all duration-300 ease-out ${
+            className={`md:hidden absolute top-full left-0 right-0 grid bg-card shadow-medium ${
               isMobileMenuOpen ? "grid-rows-[1fr] opacity-100 border-b border-border" : "grid-rows-[0fr] opacity-0 pointer-events-none"
             }`}
             aria-hidden={!isMobileMenuOpen}
