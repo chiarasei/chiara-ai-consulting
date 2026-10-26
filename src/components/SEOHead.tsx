@@ -27,7 +27,7 @@ const SEOHead = ({ title: titleEn, description: descEn, titleSv, descriptionSv, 
 
   useEffect(() => {
     // hreflang alternates
-    document.querySelectorAll('link[data-seo-hreflang]').forEach((el) => el.remove());
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
     if (isLocalized) {
       const alts: [string, string][] = [
         ["en", localizePath("en", basePath)],
