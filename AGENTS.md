@@ -8,3 +8,5 @@
 - Contact enquiries go through the send-contact-email function, which saves to contact_enquiries first and emails second, so a mail outage never loses an enquiry.
 - Conversions go through `trackConversion` in src/lib/conversions.ts, so the Google tag can be added later in one place.
 - Keep Services menu entries and page section anchors in the shared service catalog so both languages link to the same stable destinations.
+
+- Use the scaffolded managed auth email handler and SDK for custom authentication emails; no queue infrastructure is used because delivery is platform managed.
