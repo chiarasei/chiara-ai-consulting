@@ -1,10 +1,13 @@
-import { Mail, Phone, MapPin, Calendar, MessageSquare, ChevronDown, ChevronUp } from "lucide-react";
+import { Mail, Phone, MessageCircle, MapPin, Calendar, MessageSquare, ChevronDown, ChevronUp } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ContactForm from "@/components/ContactForm";
+import { trackConversion, listenForCalendlyBookings, type ConversionEvent } from "@/lib/conversions";
 
 const Contact = () => {
   const { t } = useLanguage();
-  const [activeTab, setActiveTab] = useState<"book" | "message" | null>(null);
+  const [activeTab, setActiveTab] = useState<"book" | "message" | null>("message");
+  useEffect(() => listenForCalendlyBookings(), []);
 
   const contactInfo = [
     {
@@ -12,17 +15,28 @@ const Contact = () => {
       label: t("contact.email"),
       value: "info@chiaraaiconsulting.se",
       href: "mailto:info@chiaraaiconsulting.se",
+      event: "email_click" as ConversionEvent,
     },
     {
       icon: <Phone size={20} />,
       label: t("contact.phone"),
       value: "+46 73 531 69 50",
       href: "tel:+46735316950",
+      event: "phone_click" as ConversionEvent,
+    },
+    {
+      icon: <MessageCircle size={20} />,
+      label: "WhatsApp",
+      value: "+46 73 531 69 50",
+      href: "https://wa.me/46735316950",
+      event: "whatsapp_click" as ConversionEvent,
     },
     {
       icon: <MapPin size={20} />,
       label: t("contact.location"),
       value: t("contact.locationValue"),
+      href: undefined as string | undefined,
+      event: undefined as ConversionEvent | undefined,
     },
   ];
 
@@ -81,24 +95,13 @@ const Contact = () => {
 
           {activeTab === "message" && (
             <div className="animate-in slide-in-from-top-2 duration-300">
-              <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSfrecdm7q5R7w0vfZ70gxxBzJX2Px41jIWQzQi0ghufJgCfRA/viewform?usp=header&embedded=true"
-                width="100%"
-                height="800"
-                frameBorder={0}
-                marginHeight={0}
-                marginWidth={0}
-                className="rounded-xl border border-border shadow-soft bg-card"
-                title="Contact Form"
-              >
-                Loading…
-              </iframe>
+              <ContactForm />
             </div>
           )}
         </div>
 
         {/* Contact info cards below */}
-        <div className="grid md:grid-cols-3 gap-4 md:gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {contactInfo.map((item, index) => (
             <div
               key={index}
@@ -111,6 +114,8 @@ const Contact = () => {
               {item.href ? (
                 <a
                   href={item.href}
+                  onClick={() => item.event && trackConversion(item.event)}
+                  {...(item.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="text-primary hover:text-primary/80 transition-colors text-sm font-medium break-all"
                 >
                   {item.value}

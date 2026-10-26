@@ -189,7 +189,7 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.title1": "Ready to ",
     "contact.title2": "Get Started",
     "contact.title3": "?",
-    "contact.subtitle": "Book a call or send us an email. No commitment required.",
+    "contact.subtitle": "Send us a message or book a free call. No commitment required.",
     "contact.email": "Email",
     "contact.phone": "Phone",
     "contact.location": "Location",
@@ -361,10 +361,10 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Contact
     "contact.title1": "Redo att ",
-    "contact.title2": "Komma Igång",
+    "contact.title2": "komma igång",
     "contact.title3": "?",
-    "contact.subtitle": "Boka ett samtal eller skicka ett mejl. Helt utan åtagande.",
-    "contact.email": "E-post",
+    "contact.subtitle": "Skicka ett meddelande eller boka ett gratis samtal. Helt utan förpliktelser.",
+    "contact.email": "Mejl",
     "contact.phone": "Telefon",
     "contact.location": "Plats",
     "contact.locationValue": "Göteborg, Sverige",
