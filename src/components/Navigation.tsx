@@ -182,7 +182,7 @@ const Navigation = () => {
             }`}
             aria-hidden={!isMobileMenuOpen}
           >
-            <div className="overflow-hidden" inert={!isMobileMenuOpen ? true : undefined}>
+            <div className="overflow-hidden" hidden={!isMobileMenuOpen}>
               <div className="px-4 py-4 space-y-1 max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain">
                 {navLinks.map((link) => link.path === lp("/services") ? (
                   <div key={link.path}>
