@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import { trackConversion, listenForCalendlyBookings, type ConversionEvent } from "@/lib/conversions";
 
 const Contact = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [activeTab, setActiveTab] = useState<"book" | "message" | null>("message");
   useEffect(() => listenForCalendlyBookings(), []);
 
@@ -95,6 +95,9 @@ const Contact = () => {
 
           {activeTab === "message" && (
             <div className="animate-in slide-in-from-top-2 duration-300">
+              <p className="mb-3 text-center text-sm font-medium text-primary">
+                {language === "sv" ? "Vi svarar inom 24 timmar, oftast samma dag." : "We reply within 24 hours, usually the same day."}
+              </p>
               <ContactForm />
             </div>
           )}

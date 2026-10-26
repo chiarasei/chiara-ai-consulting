@@ -10,12 +10,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
 const NEEDS = [
-  ["website", "A website", "En hemsida"],
-  ["webapp", "A web app or booking system", "En webbapp eller ett bokningssystem"],
-  ["saas", "A SaaS product", "En SaaS tjänst"],
-  ["tool", "A business tool", "Ett verktyg för verksamheten"],
-  ["fix", "Help with an existing site or app", "Hjälp med en befintlig sida eller app"],
-  ["other", "Something else", "Något annat"],
+  ["new-website", "New website", "Ny hemsida"],
+  ["rebuild", "Rebuild or fix my current site", "Bygga om eller fixa min nuvarande sida"],
+  ["booking", "Booking system", "Bokningssystem"],
+  ["webapp-saas", "Web app or SaaS", "Webbapp eller SaaS"],
+  ["tool", "Business tool", "Verktyg för verksamheten"],
+  ["ai", "AI features", "AI funktioner"],
+  ["other", "Other", "Annat"],
 ] as const;
 
 const BUDGETS = [
@@ -91,7 +92,7 @@ const ContactForm = () => {
         <CheckCircle2 className="mx-auto mb-4 h-12 w-12 text-[hsl(var(--brass))]" />
         <h3 className="mb-2 text-2xl md:text-3xl">{tr("Thank you, your message is sent!", "Tack, ditt meddelande är skickat!")}</h3>
         <p className="mx-auto max-w-md text-muted-foreground">
-          {tr("We have received your enquiry and will reply by email within one working day.", "Vi har fått din förfrågan och svarar via mejl inom en arbetsdag.")}
+          {tr("We have received your enquiry. We reply within 24 hours, usually the same day.", "Vi har fått din förfrågan. Vi svarar inom 24 timmar, oftast samma dag.")}
         </p>
         <Button variant="outline" className="mt-6 h-11" onClick={() => setStatus("idle")}>
           {tr("Send another message", "Skicka ett till meddelande")}

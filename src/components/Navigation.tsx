@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { switchLanguagePath } from "@/lib/i18nRoutes";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe, MessageCircle } from "lucide-react";
+import { trackConversion } from "@/lib/conversions";
 import logoImage from "@/assets/chiara-ai-logo-brain.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -71,6 +72,16 @@ const Navigation = () => {
             </button>
 
             <div className="hidden md:flex items-center gap-2">
+              <a
+                href="https://wa.me/46735316950"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackConversion("whatsapp_click")}
+                className="flex h-9 items-center gap-1.5 px-3 text-sm font-semibold text-primary hover:text-[hsl(var(--brass))]"
+              >
+                <MessageCircle size={15} />
+                +46 73 531 69 50
+              </a>
               <Button
                 variant="ghost"
                 size="sm"
@@ -143,6 +154,16 @@ const Navigation = () => {
           </div>
         </div>
       </nav>
+      <a
+        href="https://wa.me/46735316950"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => trackConversion("whatsapp_click")}
+        aria-label={language === "sv" ? "Skriv till oss på WhatsApp" : "Message us on WhatsApp"}
+        className="md:hidden fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-medium"
+      >
+        <MessageCircle size={26} />
+      </a>
     </header>
   );
 };

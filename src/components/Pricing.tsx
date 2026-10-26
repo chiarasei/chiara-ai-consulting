@@ -86,6 +86,9 @@ const Pricing = () => {
               "Varje projekt börjar med en kostnadsfri konsultation. Du får en fast offert innan arbetet börjar."
             )}
           </p>
+          <p className="inline-block rounded-full border border-[hsl(var(--brass))]/40 px-4 py-1.5 text-sm font-semibold text-[hsl(var(--brass))]">
+            {L("Fixed price, no surprises", "Fast pris, inga överraskningar")}
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8 md:items-stretch">
