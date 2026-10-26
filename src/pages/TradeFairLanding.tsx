@@ -126,16 +126,16 @@ const TradeFairLanding = () => {
               </div>
               <Link to={lp("/recent-work")} className="story-link hidden items-center gap-2 pb-1 text-sm sm:inline-flex">{tr("All projects", "Alla projekt")} <ArrowRight className="h-4 w-4" /></Link>
             </div>
-            <div className="grid gap-16 md:gap-10">
+            <div className="grid gap-16 lg:gap-20">
               {selectedWork.map((project) => (
                 <article
                   key={project.name}
-                  className="group grid items-center gap-6 md:grid-cols-12 md:gap-16"
+                  className="group grid items-start gap-6 lg:grid-cols-12 lg:gap-16"
                 >
-                  <div className="min-w-0 md:col-span-7">
+                  <div className="min-w-0 lg:col-span-7">
                     <ProjectBrowser src={project.image} alt={`${project.name} homepage`} href={project.href} domain={project.domain} priority={project.featured} />
                   </div>
-                  <div className="min-w-0 md:col-span-5">
+                  <div className="min-w-0 lg:col-span-5">
                     <p className="eyebrow mb-2">{project.kind}</p>
                     <h3 className={project.featured ? "text-4xl sm:text-5xl md:text-6xl" : "text-4xl md:text-5xl"}>{project.name}</h3>
                     <p className="mt-5 max-w-lg text-base font-light leading-relaxed text-foreground/75">{project.description}</p>
