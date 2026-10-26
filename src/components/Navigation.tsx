@@ -68,8 +68,8 @@ const Navigation = () => {
 
   const navLinks = [
     { label: t("nav.home"), path: lp("/") },
-    { label: t("nav.recentwork"), path: lp("/recent-work") },
     { label: t("nav.services"), path: lp("/services") },
+    { label: t("nav.recentwork"), path: lp("/recent-work") },
     { label: t("nav.pricing"), path: lp("/pricing") },
     { label: t("nav.contact"), path: lp("/contact") },
   ];
