@@ -128,7 +128,7 @@ const Pricing = () => {
               </ul>
               <Button
                 asChild
-                className={`w-full h-12 gap-2 font-semibold ${
+                className={`w-full h-auto min-h-12 py-2.5 gap-1.5 font-semibold whitespace-normal text-center leading-tight px-3 sm:px-2.5 sm:text-[11px] lg:px-6 lg:text-sm ${
                   p.highlighted
                     ? "bg-background text-primary hover:bg-background/90"
                     : "bg-primary text-primary-foreground hover:bg-primary/90"
@@ -136,7 +136,7 @@ const Pricing = () => {
               >
                 <Link to={lp("/contact")}>
                   {p.cta}
-                  <ArrowRight size={16} />
+                  <ArrowRight size={16} className="inline-block sm:hidden lg:inline-block" />
                 </Link>
               </Button>
             </div>
