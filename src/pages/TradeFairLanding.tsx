@@ -93,6 +93,7 @@ const TradeFairLanding = () => {
                 <img src={lovableBadge} alt="Lovable Certified Expert badge" width={615} height={176} className="h-auto w-32 shrink-0" loading="eager" decoding="async" />
                 <div>
                   <p className="text-sm font-medium leading-relaxed text-primary">{tr("Certified Lovable Website & App Expert · SaaS & Stripe payments · DevOps & cloud background", "Certifierad Lovable expert på webb och appar · SaaS & betalningar med Stripe · DevOps och molnbakgrund")}</p>
+                  <p className="mt-1 text-sm font-semibold text-[hsl(var(--brass))]">{tr("Fixed price, no surprises", "Fast pris, inga överraskningar")}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{tr("Trusted by clients in Sweden and the UK", "Anlitad av kunder i Sverige och Storbritannien")}</p>
                 </div>
               </div>
@@ -291,6 +292,7 @@ const TradeFairLanding = () => {
             <h2 className="text-balance text-4xl md:col-span-8 md:text-6xl">{tr("Have something in mind?", "Funderar du på en ny hemsida eller app?")} {" "}<em className="italic text-muted-foreground">{tr("Let's talk.", "Hör av dig.")}</em></h2>
             <div className="md:col-span-4 md:text-right">
               <Button asChild size="lg" className="h-12 w-full rounded-none px-8 sm:w-auto"><Link to={lp("/contact")}>{tr("Get in touch", "Kontakta oss")} <ArrowRight /></Link></Button>
+              <p className="mt-3 text-sm text-muted-foreground">{tr("We reply within 24 hours, usually the same day.", "Vi svarar inom 24 timmar, oftast samma dag.")}</p>
             </div>
           </div>
         </section>
