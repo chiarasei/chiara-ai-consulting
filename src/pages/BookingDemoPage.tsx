@@ -91,7 +91,7 @@ const BookingDemoPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead title="Online Booking Demo | ChiaraAI Consulting Gothenburg" description="Try a live online booking calendar demo built by ChiaraAI Consulting, a web and app development studio in Gothenburg." canonicalPath="/demo/booking" />
+      <SEOHead title="Online Booking Demo | ChiaraAI Consulting Gothenburg" description="Try a live online booking calendar demo built by ChiaraAI Consulting, a web and app development studio in Gothenburg." canonicalPath="/demo/booking" localized={false} />
       <Navigation />
 
       <main className="pt-24 md:pt-28 pb-16 px-4 md:px-6">

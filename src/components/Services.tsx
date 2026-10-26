@@ -146,7 +146,7 @@ export const normalizeServiceContent = (value: unknown): ServiceContent => {
 export const getServiceContent = (language: string): ServiceContent => normalizeServiceContent(content[language]);
 
 const Services = () => {
-  const { t, language } = useLanguage();
+  const { t, language, lp } = useLanguage();
   const c = getServiceContent(language);
 
   return (
@@ -189,7 +189,7 @@ const Services = () => {
 
         <p className="mt-10 text-center text-sm text-muted-foreground">
           {c.cta}{" "}
-          <Link to="/contact" className="font-medium text-foreground underline underline-offset-4 hover:text-accent">
+          <Link to={lp("/contact")} className="font-medium text-foreground underline underline-offset-4 hover:text-accent">
             {c.ctaLink}
           </Link>
         </p>

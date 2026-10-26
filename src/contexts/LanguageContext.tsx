@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { langFromPath, detectLanguage, localizePath } from "@/lib/i18nRoutes";
 
 export type Language = "en" | "sv";
 
@@ -6,6 +7,8 @@ type LanguageContextType = {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  /** Prefix an internal path with the current language, e.g. "/contact" => "/sv/contact". */
+  lp: (path: string) => string;
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -18,14 +21,22 @@ export const useLanguage = () => {
 };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, setLanguage] = useState<Language>(() =>
+    typeof window === "undefined" ? "en" : langFromPath(window.location.pathname) ?? detectLanguage()
+  );
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
+  const lp = (path: string) => localizePath(language, path);
 
   const t = (key: string): string => {
     return translations[language]?.[key] ?? key;
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, lp }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -178,7 +189,7 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.title1": "Ready to ",
     "contact.title2": "Get Started",
     "contact.title3": "?",
-    "contact.subtitle": "Book a call or send us an email. No commitment required.",
+    "contact.subtitle": "Send us a message or book a free call. No commitment required.",
     "contact.email": "Email",
     "contact.phone": "Phone",
     "contact.location": "Location",
@@ -350,10 +361,10 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Contact
     "contact.title1": "Redo att ",
-    "contact.title2": "Komma Igång",
+    "contact.title2": "komma igång",
     "contact.title3": "?",
-    "contact.subtitle": "Boka ett samtal eller skicka ett mejl. Helt utan åtagande.",
-    "contact.email": "E-post",
+    "contact.subtitle": "Skicka ett meddelande eller boka ett gratis samtal. Helt utan förpliktelser.",
+    "contact.email": "Mejl",
     "contact.phone": "Telefon",
     "contact.location": "Plats",
     "contact.locationValue": "Göteborg, Sverige",

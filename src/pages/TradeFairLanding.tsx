@@ -14,7 +14,7 @@ import sheRisesImage from "@/assets/projects/she-rises.webp";
 import lovableBadge from "@/assets/lovable-certified-expert-badge.png";
 
 const TradeFairLanding = () => {
-  const { language } = useLanguage();
+  const { language, lp } = useLanguage();
   const tr = (en: string, sv: string) => (language === "sv" ? sv : en);
   useScrollFade();
 
@@ -64,26 +64,26 @@ const TradeFairLanding = () => {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background">
-      <SEOHead title="Web & App Development in Gothenburg | ChiaraAI Consulting" description="Custom websites, web apps and digital products built in Gothenburg for startups and established businesses. Fixed quote, free first consultation." canonicalPath="/" jsonLd={localBusinessJsonLd} />
+      <SEOHead title="Web & App Development in Gothenburg | ChiaraAI Consulting" description="Custom websites, web apps and digital products built in Gothenburg for startups and established businesses. Fixed quote, free first consultation." titleSv="Webbyrå i Göteborg: hemsida och webbapp för företag | ChiaraAI" descriptionSv="Vi bygger hemsidor för företag, webbappar och bokningssystem i Göteborg. Fast pris innan vi börjar och ett gratis första samtal." canonicalPath="/" jsonLd={localBusinessJsonLd} />
       <Navigation />
       <main>
         <section className="overflow-hidden px-5 pb-14 pt-28 md:px-8 md:pb-20 md:pt-36">
           <div className="container mx-auto px-0 sm:px-8 grid max-w-6xl items-center gap-14 lg:grid-cols-12 lg:gap-10">
             <div className="animate-fade-in-up lg:col-span-6">
-              <p className="eyebrow mb-7">{tr("Web & App Studio · Gothenburg · Working Worldwide", "Webbyrå · Göteborg · Kunder i hela världen")}</p>
+              <p className="eyebrow mb-7">{tr("Web & App Studio · Gothenburg · Working Worldwide", "Webbyrå i Göteborg · Kunder i hela världen")}</p>
               <h1 className="text-balance text-[2.6rem] leading-[1.08] text-foreground sm:text-5xl md:text-7xl">
-                {tr("Digital products,", "Digitala produkter,")}{" "}
+                {tr("Digital products,", "Hemsidor och webbappar")}{" "}
                 <em className="italic text-muted-foreground">{tr("built with care.", "byggda med omsorg.")}</em>
               </h1>
               <p className="mt-8 max-w-xl text-base font-light leading-relaxed text-foreground/75 md:text-lg">
                 {tr(
                   "We design and build custom websites, web apps and SaaS products with Stripe payments for founders, startups and established companies. Backed by real DevOps experience, so what we build is fast, secure and ready to scale.",
-                  "Vi designar och bygger skräddarsydda webbplatser, webbappar och produkter för SaaS med betalningar via Stripe för grundare, startups och etablerade företag. Med verklig erfarenhet inom DevOps i ryggen blir det vi bygger snabbt, säkert och redo att skala."
+                  "Vi är en webbyrå i Göteborg som bygger hemsidor för företag, webbappar och SaaS tjänster med betalning via Stripe. Oavsett om du startar något nytt eller driver ett etablerat företag får du en lösning som är snabb, säker och klar att växa, tack vare vår bakgrund inom drift och moln."
                 )}
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg" className="h-12 w-full rounded-none px-8 sm:w-auto">
-                  <Link to="/contact">{tr("Start a project", "Starta ett projekt")} <ArrowRight /></Link>
+                  <Link to={lp("/contact")}>{tr("Start a project", "Starta ett projekt")} <ArrowRight /></Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="h-12 w-full rounded-none bg-transparent px-8 sm:w-auto">
                   <a href="#portfolio">{tr("See our work", "Se vårt arbete")}</a>
@@ -123,7 +123,7 @@ const TradeFairLanding = () => {
               <div>
                 <h2 className="text-4xl md:text-6xl">{tr("Portfolio", "Portfolio")}</h2>
               </div>
-              <Link to="/recent-work" className="story-link hidden items-center gap-2 pb-1 text-sm sm:inline-flex">{tr("All projects", "Alla projekt")} <ArrowRight className="h-4 w-4" /></Link>
+              <Link to={lp("/recent-work")} className="story-link hidden items-center gap-2 pb-1 text-sm sm:inline-flex">{tr("All projects", "Alla projekt")} <ArrowRight className="h-4 w-4" /></Link>
             </div>
             <div className="grid gap-16 md:gap-10">
               {selectedWork.map((project) => (
@@ -161,28 +161,28 @@ const TradeFairLanding = () => {
           <div className="container mx-auto px-0 sm:px-8 max-w-6xl">
             <div className="mb-10">
               <p className="eyebrow mb-4">{tr("What we build", "Vad vi bygger")}</p>
-              <h2 className="text-balance text-4xl md:text-5xl">{tr("From a first website to a full product.", "Från första webbplatsen till en hel produkt.")}</h2>
+              <h2 className="text-balance text-4xl md:text-5xl">{tr("From a first website to a full product.", "Från en enkel hemsida till en färdig produkt.")}</h2>
             </div>
             <div className="grid gap-px border border-border bg-border sm:grid-cols-2">
               {[
                 {
-                  t: tr("Websites", "Webbplatser"),
-                  d: tr("Fast, mobile friendly websites that make your business look professional and bring in customers. Includes booking calendars, Google Maps, contact forms and WhatsApp buttons.", "Snabba, mobilvänliga webbplatser som får ditt företag att se professionellt ut och tar in kunder. Här ingår bokningskalendrar, Google Maps, kontaktformulär och knappar till WhatsApp."),
+                  t: tr("Websites", "Hemsida för företag"),
+                  d: tr("Fast, mobile friendly websites that make your business look professional and bring in customers. Includes booking calendars, Google Maps, contact forms and WhatsApp buttons.", "En snabb hemsida som fungerar lika bra i mobilen och ger nya kunder. Med bokningskalender, karta, kontaktformulär och WhatsApp knapp om du vill."),
                   cls: "",
                 },
                 {
                   t: tr("Web apps & booking systems", "Webbappar & bokningssystem"),
-                  d: tr("Online systems your customers or team log into, like client portals, booking systems and dashboards. Bookings sync with Google Calendar and confirmations go out automatically.", "Onlinesystem som dina kunder eller din personal loggar in i, som kundportaler, bokningssystem och dashboards. Bokningar synkas med Google Kalender och bekräftelser skickas automatiskt."),
+                  d: tr("Online systems your customers or team log into, like client portals, booking systems and dashboards. Bookings sync with Google Calendar and confirmations go out automatically.", "Vi bygger webbappar som dina kunder eller anställda loggar in i, till exempel kundportaler, bokningssystem och översikter. Bokningar hamnar direkt i Google Kalender och bekräftelser skickas automatiskt."),
                   cls: "",
                 },
                 {
-                  t: tr("SaaS products", "Produkter för SaaS"),
-                  d: tr("Complete subscription products, from idea to launch. User accounts, Stripe payments in several currencies, admin panels and automatic emails, all built to scale.", "Kompletta prenumerationsprodukter, från idé till lansering. Användarkonton, betalningar med Stripe i flera valutor, adminpaneler och automatiska mejl, allt byggt för att skala."),
+                  t: tr("SaaS products", "SaaS tjänster"),
+                  d: tr("Complete subscription products, from idea to launch. User accounts, Stripe payments in several currencies, admin panels and automatic emails, all built to scale.", "Hela prenumerationstjänsten, från idé till lansering. Inloggning, betalning med Stripe i flera valutor, adminpanel och automatiska mejl, byggt för att klara fler kunder."),
                   cls: "",
                 },
                 {
-                  t: tr("Business tools", "Affärsverktyg"),
-                  d: tr("Custom tools that replace messy spreadsheets and paperwork. For example, a staff hours and inventory system where employees log hours from their phone and managers export monthly reports.", "Skreddarsydda verktyg som ersätter röriga kalkylblad och papper. Till exempel ett system för arbetstider och lager där personalen registrerar timmar från sin telefon och chefer exporterar månadsrapporter."),
+                  t: tr("Business tools", "Verktyg för verksamheten"),
+                  d: tr("Custom tools that replace messy spreadsheets and paperwork. For example, a staff hours and inventory system where employees log hours from their phone and managers export monthly reports.", "Egna verktyg som ersätter röriga Excelark och pappershögar. Till exempel ett system för tidrapportering och lager där personalen rapporterar timmar i mobilen och chefen tar ut månadsrapporten med ett klick."),
                   cls: "",
                 },
               ].map((item) => (
@@ -236,7 +236,7 @@ const TradeFairLanding = () => {
 
         <section className="fade-in-section bg-secondary px-5 py-16 md:px-8 md:py-20">
           <div className="container mx-auto px-0 sm:px-8 max-w-6xl">
-            <p className="eyebrow mb-4">{tr("Built on solid foundations", "Byggt på stadig grund")}</p>
+            <p className="eyebrow mb-4">{tr("Built on solid foundations", "Byggt för att hålla")}</p>
             <p className="max-w-3xl text-lg font-light leading-relaxed text-foreground/80">
               {tr(
                 "Before building products, our founder worked in DevOps, with CI/CD pipelines, Kubernetes, monitoring and secure cloud infrastructure. That means your product isn't just beautiful; it's reliable, secure and built to grow.",
@@ -257,8 +257,8 @@ const TradeFairLanding = () => {
           <div className="container mx-auto px-0 sm:px-8 grid max-w-6xl grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {[
               { value: "3", label: tr("Live products", "Liveprodukter") },
-              { value: "2", label: tr("Demos ready for clients", "Kundklara demos") },
-              { value: "EN + SV", label: tr("Bilingual builds", "Tvåspråkiga byggen") },
+              { value: "2", label: tr("Demos ready for clients", "Färdiga demos") },
+              { value: "EN + SV", label: tr("Bilingual builds", "Svenska och engelska") },
             ].map((stat) => (
               <div key={stat.label} className="px-6 py-7 text-center sm:py-3">
                 <p className="font-serif text-4xl text-foreground md:text-5xl">{stat.value}</p>
@@ -274,8 +274,8 @@ const TradeFairLanding = () => {
             <div className="grid gap-8 sm:grid-cols-3 md:col-span-8">
               {[
                 { t: tr("Understand", "Förstå"), d: tr("We start with your goals, your users and what success looks like.", "Vi börjar med dina mål, dina användare och hur framgång ser ut.") },
-                { t: tr("Design & build", "Design & bygge"), d: tr("Short cycles, working previews and honest progress throughout.", "Korta cykler, fungerande förhandsvisningar och ärliga framsteg.") },
-                { t: tr("Launch & grow", "Lansera & växa"), d: tr("We ship, measure and keep improving after go live.", "Vi lanserar, mäter och fortsätter förbättra efter lansering.") },
+                { t: tr("Design & build", "Design & bygge"), d: tr("Short cycles, working previews and honest progress throughout.", "Du ser bygget växa fram steg för steg och vet alltid var vi står.") },
+                { t: tr("Launch & grow", "Lansera & växa"), d: tr("We ship, measure and keep improving after go live.", "Vi lanserar, följer upp och fortsätter förbättra när sidan är live.") },
               ].map((step) => (
                 <div key={step.t} className="group border-t border-foreground pt-5 transition-transform duration-300 hover:-translate-y-1">
                   <h3 className="mb-2 text-2xl">{step.t}</h3>
@@ -288,9 +288,9 @@ const TradeFairLanding = () => {
 
         <section className="fade-in-section px-5 pb-24 md:px-8 md:pb-32">
           <div className="container mx-auto px-0 sm:px-8 grid max-w-6xl items-end gap-8 bg-secondary p-6 sm:p-10 md:grid-cols-12 md:p-16">
-            <h2 className="text-balance text-4xl md:col-span-8 md:text-6xl">{tr("Have something in mind?", "Har du något i tankarna?")} {" "}<em className="italic text-muted-foreground">{tr("Let's talk.", "Låt oss prata.")}</em></h2>
+            <h2 className="text-balance text-4xl md:col-span-8 md:text-6xl">{tr("Have something in mind?", "Funderar du på en ny hemsida eller app?")} {" "}<em className="italic text-muted-foreground">{tr("Let's talk.", "Hör av dig.")}</em></h2>
             <div className="md:col-span-4 md:text-right">
-              <Button asChild size="lg" className="h-12 w-full rounded-none px-8 sm:w-auto"><Link to="/contact">{tr("Get in touch", "Kontakta oss")} <ArrowRight /></Link></Button>
+              <Button asChild size="lg" className="h-12 w-full rounded-none px-8 sm:w-auto"><Link to={lp("/contact")}>{tr("Get in touch", "Kontakta oss")} <ArrowRight /></Link></Button>
             </div>
           </div>
         </section>

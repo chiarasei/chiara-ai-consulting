@@ -1,4 +1,8 @@
 import { useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { localizePath } from "@/lib/i18nRoutes";
+
+const SITE = "https://chiaraaiconsulting.se";
 
 interface SEOHeadProps {
   title: string;
@@ -7,10 +11,39 @@ interface SEOHeadProps {
   image?: string;
   canonicalPath: string;
   jsonLd?: object;
+  titleSv?: string;
+  descriptionSv?: string;
+  /** Pages under /en and /sv. Demo pages are not localized. */
+  localized?: boolean;
 }
 
-const SEOHead = ({ title, description, keywords, canonicalPath, jsonLd, image = "https://chiaraaiconsulting.se/og-image.jpg" }: SEOHeadProps) => {
+const SEOHead = ({ title: titleEn, description: descEn, titleSv, descriptionSv, keywords, canonicalPath: basePath, jsonLd, localized, image = "https://chiaraaiconsulting.se/og-image.jpg" }: SEOHeadProps) => {
+  const { language } = useLanguage();
+  const isLocalized = localized ?? !basePath.startsWith("/demo");
+  const sv = isLocalized && language === "sv";
+  const title = sv && titleSv ? titleSv : titleEn;
+  const description = sv && descriptionSv ? descriptionSv : descEn;
+  const canonicalPath = isLocalized ? localizePath(sv ? "sv" : "en", basePath) : basePath;
+
   useEffect(() => {
+    // hreflang alternates
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
+    if (isLocalized) {
+      const alts: [string, string][] = [
+        ["en", localizePath("en", basePath)],
+        ["sv", localizePath("sv", basePath)],
+        ["x-default", localizePath("en", basePath)],
+      ];
+      alts.forEach(([lang, path]) => {
+        const l = document.createElement("link");
+        l.rel = "alternate";
+        l.hreflang = lang;
+        l.href = `${SITE}${path}`;
+        l.setAttribute("data-seo-hreflang", "true");
+        document.head.appendChild(l);
+      });
+    }
+
     document.title = title;
 
     const setMeta = (name: string, content: string, property = false) => {
@@ -36,6 +69,7 @@ const SEOHead = ({ title, description, keywords, canonicalPath, jsonLd, image = 
     setMeta("og:url", `https://chiaraaiconsulting.se${canonicalPath}`, true);
     setMeta("twitter:title", title);
     setMeta("twitter:description", description);
+    setMeta("og:locale", sv ? "sv_SE" : "en_GB", true);
 
     // Canonical
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
@@ -61,7 +95,7 @@ const SEOHead = ({ title, description, keywords, canonicalPath, jsonLd, image = 
       const s = document.querySelector('script[data-seo-jsonld]');
       if (s) s.remove();
     };
-  }, [title, description, keywords, canonicalPath, jsonLd, image]);
+  }, [title, description, keywords, canonicalPath, basePath, isLocalized, sv, jsonLd, image]);
 
   return null;
 };

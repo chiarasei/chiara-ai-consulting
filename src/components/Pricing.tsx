@@ -5,7 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import lovableBadge from "@/assets/lovable-certified-expert-badge.png";
 
 const Pricing = () => {
-  const { language } = useLanguage();
+  const { language, lp } = useLanguage();
   const sv = language === "sv";
   const L = (en: string, s: string) => (sv ? s : en);
 
@@ -131,7 +131,7 @@ const Pricing = () => {
                     : "bg-primary text-primary-foreground hover:bg-primary/90"
                 }`}
               >
-                <Link to="/contact">
+                <Link to={lp("/contact")}>
                   {p.cta}
                   <ArrowRight size={16} />
                 </Link>
@@ -152,7 +152,7 @@ const Pricing = () => {
               )}
             </p>
           </div>
-          <Link to="/contact" className="text-sm font-semibold text-[hsl(39_49%_36%)] hover:underline whitespace-nowrap">
+          <Link to={lp("/contact")} className="text-sm font-semibold text-[hsl(39_49%_36%)] hover:underline whitespace-nowrap">
             {L("Ask about care plans →", "Fråga om serviceavtal →")}
           </Link>
         </div>
