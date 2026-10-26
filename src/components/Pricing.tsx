@@ -20,7 +20,7 @@ const Pricing = () => {
       features: [
         L("Custom design (not a template)", "Egen design (ingen mall)"),
         L("Up to 5 pages", "Upp till 5 sidor"),
-        L("Mobile-optimised and fast", "Mobilanpassad och snabb"),
+        L("Fast and built for mobile", "Mobilanpassad och snabb"),
         L("Basic SEO so customers can find you", "Grundläggande SEO så att kunder hittar dig"),
         L("Contact form", "Kontaktformulär"),
         L("Online booking synced with Google Calendar", "Onlinebokning synkad med Google Kalender"),
