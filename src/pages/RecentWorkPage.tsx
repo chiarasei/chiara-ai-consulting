@@ -42,6 +42,19 @@ const RecentWorkPage = () => {
       tags: ["Stripe", "Supabase", "Cloudflare R2", "Lovable"],
     },
     {
+      name: "Klarvyi Bilservice",
+      badge: tr("Car care · Online booking · Local business", "Bilvård · Onlinebokning · Lokalt företag"),
+      description: tr(
+        "A website for a car care, workshop and tyre service in Hisings Backa, Gothenburg. Customers see all services with photos and prices, book a time online and get a confirmation by email. Every booking lands straight in the owners' Google Calendar, so they never double book. Includes Google Maps directions, WhatsApp contact and Swedish and English versions.",
+        "En hemsida för bilvård, verkstad och däckservice i Hisings Backa, Göteborg. Kunderna ser alla tjänster med bilder och priser, bokar en tid direkt på sidan och får en bekräftelse via mejl. Varje bokning hamnar direkt i ägarnas Google Kalender, så att det aldrig blir dubbelbokat. Med vägbeskrivning via Google Maps, kontakt via WhatsApp och versioner på svenska och engelska."
+      ),
+      href: "https://klarvyibilservice.se",
+      domain: "klarvyibilservice.se",
+      image: klarvyiImage,
+      tags: ["Lovable", "Supabase", "Google Calendar", "Google Maps"],
+      visitLabel: tr("Visit klarvyibilservice.se", "Besök klarvyibilservice.se"),
+    },
+    {
       name: "QR-Meny",
       badge: tr("SaaS product", "SaaS-produkt"),
       description: tr("A digital menu and ordering platform for restaurants, bars and cafés. Guests scan at the table and browse instantly on their phone.", "En digital meny- och beställningsplattform för restauranger, barer och kaféer. Gäster skannar vid bordet och ser menyn direkt i mobilen."),
