@@ -9,3 +9,4 @@
 - [x] Investigate reported Services failure on preview and published site in both languages (not reproduced; both sites rendered successfully)
 - [x] Protect service lists and missing translations, and improve error diagnostics
 - [x] Run regression tests and verify all main page navigation in both languages
+- [ ] Google Ads: Sweden campaign (Swedish, /sv pages) and International campaign (English), separate budgets. Blockers: no separate Swedish address, contact form is a Google Form so enquiries cannot be counted.
