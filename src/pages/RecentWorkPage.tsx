@@ -10,6 +10,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import motherImage from "@/assets/projects/mother-fm.webp";
 import qrMenyImage from "@/assets/projects/qr-meny.webp";
 import sheRisesImage from "@/assets/projects/she-rises.webp";
+import klarvyiImage from "@/assets/projects/klarvyi.webp";
 
 const RecentWorkPage = () => {
   const { t, language } = useLanguage();
