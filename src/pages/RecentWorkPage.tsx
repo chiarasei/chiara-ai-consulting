@@ -63,7 +63,7 @@ const RecentWorkPage = () => {
       <SEOHead title="Portfolio: Websites & Web Apps | ChiaraAI Consulting" description="Websites and web apps we built in Gothenburg, including mother.fm, QR-Meny and She Rises. See our web and app development work." canonicalPath="/recent-work" titleSv="Våra projekt: hemsidor och webbappar | ChiaraAI Göteborg" descriptionSv="Hemsidor och webbappar vi har byggt, bland annat mother.fm, QR-Meny och She Rises. Se vad vår webbyrå i Göteborg kan bygga åt dig." />
       <Navigation />
       <main>
-        <section className="px-5 pb-20 pt-36 md:px-8 md:pb-28 md:pt-48">
+        <section className="px-5 pb-8 pt-36 md:px-8 md:pb-12 md:pt-48">
           <div className="container mx-auto max-w-6xl">
             <p className="eyebrow mb-6">{tr("Selected work", "Utvalda projekt")}</p>
             <h1 className="max-w-4xl text-balance text-5xl text-foreground md:text-7xl">{t("recentwork.title")}</h1>
@@ -72,13 +72,13 @@ const RecentWorkPage = () => {
         </section>
 
         <section className="px-5 pb-28 md:px-8 md:pb-36">
-          <div className="container mx-auto max-w-6xl space-y-24 md:space-y-36">
+          <div className="container mx-auto max-w-6xl space-y-16 lg:space-y-24">
             {liveProjects.map((project, index) => (
-              <article key={project.name} className="grid items-center gap-10 md:grid-cols-12 md:gap-16">
-                <div className={`md:col-span-7 ${index % 2 === 1 ? "md:order-2" : ""}`}>
+              <article key={project.name} className="grid items-start gap-8 lg:grid-cols-12 lg:gap-16">
+                <div className={`lg:col-span-7 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                   <ProjectBrowser src={project.image} alt={`${project.name} website homepage`} href={project.href} domain={project.domain} priority={index === 0} />
                 </div>
-                <div className={`md:col-span-5 ${index % 2 === 1 ? "md:order-1" : ""}`}>
+                <div className={`lg:col-span-5 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
                   <p className="eyebrow mb-4">{project.badge}</p>
                   <h2 className="text-4xl md:text-5xl">{project.name}</h2>
                   <p className="mt-5 font-light leading-relaxed text-muted-foreground">{project.description}</p>
