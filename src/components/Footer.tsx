@@ -4,13 +4,14 @@ import logoImage from "@/assets/chiara-ai-logo-brain.png";
 import lovableBadge from "@/assets/lovable-certified-expert-badge.png";
 
 const Footer = () => {
-  const { t, lp } = useLanguage();
+  const { t, lp, language } = useLanguage();
 
   const navItems = [
     { label: t("footer.home"), path: lp("/") },
     { label: t("footer.services"), path: lp("/services") },
     { label: t("footer.pricing"), path: lp("/pricing") },
     { label: t("footer.contact"), path: lp("/contact") },
+    { label: language === "sv" ? "Integritetspolicy" : "Privacy policy", path: lp("/privacy") },
   ];
 
   return (

@@ -15,6 +15,7 @@ import TradeFairLanding from "./pages/TradeFairLanding";
 import ServicesPage from "./pages/ServicesPage";
 import PricingPage from "./pages/PricingPage";
 import ContactPage from "./pages/ContactPage";
+import PrivacyPage from "./pages/PrivacyPage";
 import NotFound from "./pages/NotFound";
 import RecentWorkPage from "./pages/RecentWorkPage";
 import BookingDemoPage from "./pages/BookingDemoPage";
@@ -63,6 +64,8 @@ const App = () => (
               <Route path="/industries" element={<LanguageRedirect to="/services" />} />
               <Route path="/pricing" element={<LanguageRedirect to="/pricing" />} />
               <Route path="/contact" element={<LanguageRedirect to="/contact" />} />
+              <Route path="/privacy" element={<LanguageRedirect to="/privacy" />} />
+              <Route path="/integritetspolicy" element={<LanguageRedirect to="/privacy" />} />
               <Route path="/:lang" element={<LanguageGate />}>
                 <Route index element={<TradeFairLanding />} />
                 <Route path="recent-work" element={<RecentWorkPage />} />
@@ -70,6 +73,8 @@ const App = () => (
                 <Route path="industries" element={<Navigate to="../services" replace />} />
                 <Route path="pricing" element={<PricingPage />} />
                 <Route path="contact" element={<ContactPage />} />
+                <Route path="privacy" element={<PrivacyPage />} />
+                <Route path="integritetspolicy" element={<PrivacyPage />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
               <Route path="/demo/psychology/*" element={<PsychologyRoutes />} />

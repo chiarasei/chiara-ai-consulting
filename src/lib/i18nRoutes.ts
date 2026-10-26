@@ -14,7 +14,10 @@ export const langFromPath = (pathname: string): Lang | null => {
 
 /** "/contact" + "sv" => "/sv/contact"; "/" => "/sv". */
 export const localizePath = (lang: Lang, path: string): string => {
-  const clean = path === "/" || path === "" ? "" : path.startsWith("/") ? path : `/${path}`;
+  let clean = path === "/" || path === "" ? "" : path.startsWith("/") ? path : `/${path}`;
+  if (clean === "/privacy" || clean === "/integritetspolicy") {
+    clean = lang === "sv" ? "/integritetspolicy" : "/privacy";
+  }
   return `/${lang}${clean}`;
 };
 

@@ -1,0 +1,1 @@
+export const ENQUIRY_RETENTION_MONTHS = 12;
