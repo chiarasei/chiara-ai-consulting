@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { switchLanguagePath } from "@/lib/i18nRoutes";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Globe, MessageCircle } from "lucide-react";
+import { Menu, X, Globe, MessageCircle, ChevronDown } from "lucide-react";
+import { serviceGroups, serviceText } from "@/lib/serviceCatalog";
 import { trackConversion } from "@/lib/conversions";
 import logoImage from "@/assets/chiara-ai-logo-brain.png";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -10,9 +11,54 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const { language, t, lp } = useLanguage();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setServicesOpen(false);
+    setIsMobileMenuOpen(false);
+  }, [location.pathname, location.hash]);
+
+  useEffect(() => {
+    const closeOutside = (event: PointerEvent) => {
+      if (window.matchMedia("(min-width: 768px)").matches && event.target instanceof Node && !servicesRef.current?.contains(event.target)) setServicesOpen(false);
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setServicesOpen(false);
+        setIsMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener("pointerdown", closeOutside);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeOutside);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, []);
+
+  const serviceColumns = (mobile: boolean) => serviceGroups.map((group) => (
+    <div key={group.en} className="min-w-0">
+      <h3 className={`${mobile ? "text-xl px-3 mb-1" : "text-2xl mb-3"} text-primary`}>{language === "sv" ? group.sv : group.en}</h3>
+      <ul className="space-y-1">
+        {group.services.map((service) => {
+          const Icon = service.icon;
+          return (
+            <li key={service.id}>
+              <Link to={`${lp("/services")}#${service.id}`} onClick={() => { setServicesOpen(false); setIsMobileMenuOpen(false); }}
+                className="flex min-h-11 items-center gap-3 rounded px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                <Icon size={17} className="shrink-0 text-accent" aria-hidden="true" />
+                <span>{serviceText(service, language).title}</span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  ));
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -62,14 +108,14 @@ const Navigation = () => {
                 </span>
             </Link>
 
-            <button
-              className="md:hidden -mr-2 flex h-11 w-11 items-center justify-center text-foreground"
+            <Button variant="ghost" size="icon"
+              className="md:hidden -mr-2 h-11 w-11 text-foreground"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
+              aria-label={language === "sv" ? "Öppna meny" : "Toggle menu"}
               aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            </Button>
 
             <div className="hidden md:flex items-center gap-2">
               <a
@@ -95,8 +141,22 @@ const Navigation = () => {
           </div>
 
           {/* Nav links row */}
-          <div className="hidden md:flex items-center justify-center gap-8 pb-3">
-            {navLinks.map((link) => (
+          <div className="relative hidden md:flex items-center justify-center gap-8 pb-3">
+            {navLinks.map((link) => link.path === lp("/services") ? (
+              <div key={link.path} ref={servicesRef} className="static"
+                onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}
+                onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setServicesOpen(false); }}>
+                <div className="flex items-center">
+                  <Link to={link.path} onFocus={() => setServicesOpen(true)} onClick={() => setServicesOpen(false)} className={`text-sm font-semibold py-1 ${isActive(link.path) ? "text-accent" : "text-primary/80 hover:text-accent"}`}>{link.label}</Link>
+                  <Button variant="ghost" size="icon" className="h-7 w-7" aria-label={language === "sv" ? "Visa tjänster" : "Show services"} aria-expanded={servicesOpen} aria-controls="desktop-services" onClick={() => setServicesOpen(!servicesOpen)}>
+                    <ChevronDown className={servicesOpen ? "rotate-180" : ""} />
+                  </Button>
+                </div>
+                {servicesOpen && <div id="desktop-services" className="absolute top-[calc(100%-0.75rem)] left-0 right-0 pt-3">
+                  <div className="grid grid-cols-3 gap-5 border border-border bg-card p-6 lg:p-8 shadow-medium rounded-b-lg">{serviceColumns(false)}</div>
+                </div>}
+              </div>
+            ) : (
               <Link
                 key={link.path}
                 to={link.path}
@@ -116,14 +176,22 @@ const Navigation = () => {
 
           {/* Mobile menu */}
           <div
-            className={`md:hidden absolute top-full left-0 right-0 grid bg-card/98 backdrop-blur-xl shadow-medium transition-all duration-300 ease-out ${
+            className={`md:hidden absolute top-full left-0 right-0 grid bg-card shadow-medium ${
               isMobileMenuOpen ? "grid-rows-[1fr] opacity-100 border-b border-border" : "grid-rows-[0fr] opacity-0 pointer-events-none"
             }`}
             aria-hidden={!isMobileMenuOpen}
           >
-            <div className="overflow-hidden">
-              <div className="px-4 py-4 space-y-1">
-                {navLinks.map((link) => (
+            <div className="overflow-hidden" hidden={!isMobileMenuOpen}>
+              <div className="px-4 py-4 space-y-1 max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain">
+                {navLinks.map((link) => link.path === lp("/services") ? (
+                  <div key={link.path}>
+                    <div className="flex items-center">
+                      <Link to={link.path} onClick={() => setIsMobileMenuOpen(false)} className={`flex min-h-12 flex-1 items-center px-3 text-base font-medium ${isActive(link.path) ? "text-accent" : "text-foreground"}`}>{link.label}</Link>
+                      <Button variant="ghost" size="icon" className="h-12 w-12" aria-label={language === "sv" ? "Visa tjänster" : "Show services"} aria-expanded={servicesOpen} aria-controls="mobile-services" onClick={() => setServicesOpen(!servicesOpen)}><ChevronDown className={servicesOpen ? "rotate-180" : ""} /></Button>
+                    </div>
+                    {servicesOpen && <div id="mobile-services" className="space-y-5 border-l border-border ml-3 py-3">{serviceColumns(true)}</div>}
+                  </div>
+                ) : (
                   <Link
                     key={link.path}
                     to={link.path}
