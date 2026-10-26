@@ -7,3 +7,4 @@
 - Ship no app shell service worker; main.tsx unregisters leftover workers so returning visitors always load the current build.- Site pages live under /en and /sv (`:lang` route + LanguageGate); unprefixed paths redirect by browser language, and internal links use `lp()` from LanguageContext, so every page has one address per language for ads and hreflang.
 - Contact enquiries go through the send-contact-email function, which saves to contact_enquiries first and emails second, so a mail outage never loses an enquiry.
 - Conversions go through `trackConversion` in src/lib/conversions.ts, so the Google tag can be added later in one place.
+- Keep Services menu entries and page section anchors in the shared service catalog so both languages link to the same stable destinations.
