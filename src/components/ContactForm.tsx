@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { z } from "zod";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -43,7 +44,7 @@ const selectCls =
   "flex h-11 w-full rounded-md border border-input bg-background px-3 text-base md:text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 const ContactForm = () => {
-  const { language } = useLanguage();
+  const { language, lp } = useLanguage();
   const tr = (en: string, sv: string) => (language === "sv" ? sv : en);
   const [f, setF] = useState<Fields>(empty);
   const [errors, setErrors] = useState<Partial<Record<keyof Fields, string>>>({});
@@ -150,6 +151,12 @@ const ContactForm = () => {
         {status === "sending" && <Loader2 className="animate-spin" />}
         {tr("Send message", "Skicka meddelande")}
       </Button>
+      <p className="text-sm text-muted-foreground">
+        {tr("By sending this form you agree to our ", "Genom att skicka formuläret godkänner du vår ")}
+        <Link to={lp("/privacy")} className="inline-flex min-h-11 items-center underline hover:text-primary">
+          {tr("privacy policy", "integritetspolicy")}
+        </Link>.
+      </p>
     </form>
   );
 };

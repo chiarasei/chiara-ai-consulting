@@ -10,3 +10,4 @@
 - Keep Services menu entries and page section anchors in the shared service catalog so both languages link to the same stable destinations.
 
 - Use the scaffolded managed auth email handler and SDK for custom authentication emails; no queue infrastructure is used because delivery is platform managed.
+- Map translated privacy slugs through localizePath so links, language switching and canonical alternates stay consistent.
