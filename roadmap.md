@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Add bilingual Services mega menu, mobile expandable list, and matching quote sections; verify all links
+- [x] Add bilingual Services mega menu, mobile expandable list, and matching quote sections; verify all links
 
 - [x] Remove OPECON from the homepage and portfolio
 - [x] Add She Rises to selected work
