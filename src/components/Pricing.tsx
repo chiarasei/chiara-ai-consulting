@@ -29,7 +29,7 @@ const Pricing = () => {
       ],
       cta: L("Start a project", "Starta ett projekt"),
       highlighted: false,
-      order: "order-2 md:order-1",
+      order: "order-2 lg:order-1",
     },
     {
       key: "webapp",
@@ -51,7 +51,7 @@ const Pricing = () => {
       ],
       cta: L("Book a free call", "Boka ett gratis samtal"),
       highlighted: true,
-      order: "order-1 md:order-2",
+      order: "order-1 lg:order-2",
     },
     {
       key: "custom",
