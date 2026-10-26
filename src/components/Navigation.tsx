@@ -24,7 +24,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const closeOutside = (event: PointerEvent) => {
-      if (event.target instanceof Node && !servicesRef.current?.contains(event.target)) setServicesOpen(false);
+      if (window.matchMedia("(min-width: 768px)").matches && event.target instanceof Node && !servicesRef.current?.contains(event.target)) setServicesOpen(false);
     };
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
