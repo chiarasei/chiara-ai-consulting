@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { switchLanguagePath } from "@/lib/i18nRoutes";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Globe } from "lucide-react";
 import logoImage from "@/assets/chiara-ai-logo-brain.png";
@@ -9,7 +10,8 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const { language, setLanguage, t } = useLanguage();
+  const { language, t, lp } = useLanguage();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -18,15 +20,18 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { label: t("nav.home"), path: "/" },
-    { label: t("nav.recentwork"), path: "/recent-work" },
-    { label: t("nav.services"), path: "/services" },
-    { label: t("nav.pricing"), path: "/pricing" },
-    { label: t("nav.contact"), path: "/contact" },
+    { label: t("nav.home"), path: lp("/") },
+    { label: t("nav.recentwork"), path: lp("/recent-work") },
+    { label: t("nav.services"), path: lp("/services") },
+    { label: t("nav.pricing"), path: lp("/pricing") },
+    { label: t("nav.contact"), path: lp("/contact") },
   ];
 
   const isActive = (path: string) => location.pathname === path;
-  const toggleLanguage = () => setLanguage(language === "en" ? "sv" : "en");
+  const toggleLanguage = () => {
+    setIsMobileMenuOpen(false);
+    navigate(switchLanguagePath(location.pathname, language === "en" ? "sv" : "en") + location.hash);
+  };
 
   return (
     <header>
@@ -40,7 +45,7 @@ const Navigation = () => {
         <div className="container mx-auto px-4 md:px-6">
           {/* Top row */}
           <div className="flex items-center justify-between h-16 md:h-18">
-            <Link to="/" className="flex items-center gap-2.5 group" aria-label="ChiaraAI Consulting - Home">
+            <Link to={lp("/")} className="flex items-center gap-2.5 group" aria-label="ChiaraAI Consulting - Home">
               <img
                 src={logoImage}
                 alt="ChiaraAI Consulting Logo"
