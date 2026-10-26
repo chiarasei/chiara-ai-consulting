@@ -14,7 +14,7 @@ import sheRisesImage from "@/assets/projects/she-rises.webp";
 import lovableBadge from "@/assets/lovable-certified-expert-badge.png";
 
 const TradeFairLanding = () => {
-  const { language } = useLanguage();
+  const { language, lp } = useLanguage();
   const tr = (en: string, sv: string) => (language === "sv" ? sv : en);
   useScrollFade();
 
@@ -64,7 +64,7 @@ const TradeFairLanding = () => {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background">
-      <SEOHead title="Web & App Development in Gothenburg | ChiaraAI Consulting" description="Custom websites, web apps and digital products built in Gothenburg for startups and established businesses. Fixed quote, free first consultation." canonicalPath="/" jsonLd={localBusinessJsonLd} />
+      <SEOHead title="Web & App Development in Gothenburg | ChiaraAI Consulting" description="Custom websites, web apps and digital products built in Gothenburg for startups and established businesses. Fixed quote, free first consultation." titleSv="Webbyrå i Göteborg: hemsida och webbapp för företag | ChiaraAI" descriptionSv="Vi bygger hemsidor för företag, webbappar och bokningssystem i Göteborg. Fast pris innan vi börjar och ett gratis första samtal." canonicalPath="/" jsonLd={localBusinessJsonLd} />
       <Navigation />
       <main>
         <section className="overflow-hidden px-5 pb-14 pt-28 md:px-8 md:pb-20 md:pt-36">
@@ -83,7 +83,7 @@ const TradeFairLanding = () => {
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg" className="h-12 w-full rounded-none px-8 sm:w-auto">
-                  <Link to="/contact">{tr("Start a project", "Starta ett projekt")} <ArrowRight /></Link>
+                  <Link to={lp("/contact")}>{tr("Start a project", "Starta ett projekt")} <ArrowRight /></Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="h-12 w-full rounded-none bg-transparent px-8 sm:w-auto">
                   <a href="#portfolio">{tr("See our work", "Se vårt arbete")}</a>
@@ -123,7 +123,7 @@ const TradeFairLanding = () => {
               <div>
                 <h2 className="text-4xl md:text-6xl">{tr("Portfolio", "Portfolio")}</h2>
               </div>
-              <Link to="/recent-work" className="story-link hidden items-center gap-2 pb-1 text-sm sm:inline-flex">{tr("All projects", "Alla projekt")} <ArrowRight className="h-4 w-4" /></Link>
+              <Link to={lp("/recent-work")} className="story-link hidden items-center gap-2 pb-1 text-sm sm:inline-flex">{tr("All projects", "Alla projekt")} <ArrowRight className="h-4 w-4" /></Link>
             </div>
             <div className="grid gap-16 md:gap-10">
               {selectedWork.map((project) => (
@@ -290,7 +290,7 @@ const TradeFairLanding = () => {
           <div className="container mx-auto px-0 sm:px-8 grid max-w-6xl items-end gap-8 bg-secondary p-6 sm:p-10 md:grid-cols-12 md:p-16">
             <h2 className="text-balance text-4xl md:col-span-8 md:text-6xl">{tr("Have something in mind?", "Har du något i tankarna?")} {" "}<em className="italic text-muted-foreground">{tr("Let's talk.", "Låt oss prata.")}</em></h2>
             <div className="md:col-span-4 md:text-right">
-              <Button asChild size="lg" className="h-12 w-full rounded-none px-8 sm:w-auto"><Link to="/contact">{tr("Get in touch", "Kontakta oss")} <ArrowRight /></Link></Button>
+              <Button asChild size="lg" className="h-12 w-full rounded-none px-8 sm:w-auto"><Link to={lp("/contact")}>{tr("Get in touch", "Kontakta oss")} <ArrowRight /></Link></Button>
             </div>
           </div>
         </section>
