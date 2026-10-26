@@ -2,6 +2,8 @@ import { Globe, Bot, MessageSquare, CalendarCheck } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Button } from "@/components/ui/button";
+import { existingServiceIds, serviceGroups, serviceText } from "@/lib/serviceCatalog";
 
 type Card = { icon: React.ReactElement; title: string; description: string; example?: string; bullets: string[] };
 type ServiceContent = { cards: Card[]; cta: string; ctaLink: string };
@@ -165,7 +167,8 @@ const Services = () => {
           {c.cards.map((service, index) => (
             <div
               key={index}
-              className="group p-5 md:p-7 rounded-xl border border-border bg-card hover:shadow-medium transition-all duration-300 hover:-translate-y-0.5"
+              id={existingServiceIds[index]}
+              className="group scroll-mt-36 p-5 md:p-7 rounded-xl border border-border bg-card hover:shadow-medium transition-all duration-300 hover:-translate-y-0.5"
             >
               <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 {React.cloneElement(service.icon, { size: 20 })}
@@ -183,6 +186,29 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
+              <Button asChild variant="outline" className="mt-5 min-h-11 whitespace-normal">
+                <Link to={lp("/contact")}>{language === "sv" ? "Be om offert" : "Get a quote"}</Link>
+              </Button>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 md:mt-16">
+          {serviceGroups.map((group) => (
+            <div key={group.en}>
+              {group.services.filter((service) => !existingServiceIds.includes(service.id)).map((service) => {
+                const text = serviceText(service, language);
+                const Icon = service.icon;
+                return (
+                  <section key={service.id} id={service.id} className="scroll-mt-36 border-t border-border py-7 md:py-9 grid md:grid-cols-[1fr_auto] gap-5 items-start">
+                    <div className="max-w-2xl">
+                      <div className="flex items-center gap-3 mb-3"><Icon size={21} className="text-accent shrink-0" aria-hidden="true" /><h3 className="text-2xl md:text-3xl text-foreground">{text.title}</h3></div>
+                      <p className="text-sm md:text-base leading-relaxed text-muted-foreground">{text.description}</p>
+                    </div>
+                    <Button asChild variant="outline" className="min-h-11 justify-self-start whitespace-normal"><Link to={lp("/contact")}>{language === "sv" ? "Be om offert" : "Get a quote"}</Link></Button>
+                  </section>
+                );
+              })}
             </div>
           ))}
         </div>
