@@ -11,6 +11,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import motherImage from "@/assets/projects/mother-fm.webp";
 import qrMenyImage from "@/assets/projects/qr-meny.webp";
 import sheRisesImage from "@/assets/projects/she-rises.webp";
+import klarvyiImage from "@/assets/projects/klarvyi.webp";
 import lovableBadge from "@/assets/lovable-certified-expert-badge.png";
 
 const TradeFairLanding = () => {
@@ -43,6 +44,18 @@ const TradeFairLanding = () => {
       image: motherImage,
       tags: ["Stripe", "Supabase", "Cloudflare R2", "Lovable"],
       featured: true,
+    },
+    {
+      name: "Klarvyi Bilservice",
+      kind: tr("Car care · Online booking · Local business", "Bilvård · Onlinebokning · Lokalt företag"),
+      description: tr(
+        "A website for a car care, workshop and tyre service in Hisings Backa, Gothenburg. Customers see all services with photos and prices, book a time online and get a confirmation by email. Every booking lands straight in the owners' Google Calendar, so they never double book. Includes Google Maps directions, WhatsApp contact and Swedish and English versions.",
+        "En hemsida för bilvård, verkstad och däckservice i Hisings Backa, Göteborg. Kunderna ser alla tjänster med bilder och priser, bokar en tid direkt på sidan och får en bekräftelse via mejl. Varje bokning hamnar direkt i ägarnas Google Kalender, så att det aldrig blir dubbelbokat. Med vägbeskrivning via Google Maps, kontakt via WhatsApp och versioner på svenska och engelska."
+      ),
+      href: "https://klarvyibilservice.se",
+      domain: "klarvyibilservice.se",
+      image: klarvyiImage,
+      tags: ["Lovable", "Supabase", "Google Calendar", "Google Maps"],
     },
     {
       name: "QR-Meny",
