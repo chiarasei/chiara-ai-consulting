@@ -91,11 +91,11 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 md:items-stretch">
+        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 lg:items-stretch max-w-xl lg:max-w-none mx-auto">
           {plans.map((p) => (
             <div
               key={p.key}
-              className={`${p.order} relative rounded-lg p-7 md:p-8 lg:p-10 flex flex-col transition-all duration-300 hover:-translate-y-1 ${
+              className={`${p.order} relative min-w-0 break-words rounded-lg p-6 md:p-8 lg:p-7 xl:p-10 flex flex-col transition-all duration-300 hover:-translate-y-1 ${
                 p.highlighted
                   ? "bg-primary text-primary-foreground shadow-medium"
                   : "bg-card text-card-foreground border border-border shadow-soft"
@@ -110,7 +110,7 @@ const Pricing = () => {
               <p className={`text-sm leading-relaxed mb-6 ${p.highlighted ? "text-primary-foreground/80" : "text-foreground/70"}`}>
                 {p.desc}
               </p>
-              <p className="text-3xl lg:text-4xl font-medium whitespace-nowrap tracking-tight">{p.price}</p>
+              <p className="text-[clamp(1.5rem,2.4vw,2.25rem)] leading-tight font-medium tracking-tight text-balance">{p.price}</p>
               <p className={`text-sm mt-1 mb-6 ${p.highlighted ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
                 {p.timeline}
               </p>
