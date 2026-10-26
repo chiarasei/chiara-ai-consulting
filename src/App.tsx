@@ -2,9 +2,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
-import type { ReactNode } from "react";
-import { LanguageProvider } from "@/contexts/LanguageContext";
+import { BrowserRouter, Routes, Route, Navigate, Outlet, useLocation, useParams } from "react-router-dom";
+import { useEffect, type ReactNode } from "react";
+import { LanguageProvider, useLanguage } from "@/contexts/LanguageContext";
+import { detectLanguage, isLang, langFromPath, localizePath } from "@/lib/i18nRoutes";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -28,6 +29,24 @@ const RouteErrorBoundary = ({ children }: { children: ReactNode }) => {
   return <ErrorBoundary key={pathname}>{children}</ErrorBoundary>;
 };
 
+// Keeps the site language in step with the /en or /sv address.
+const LanguageGate = () => {
+  const { lang } = useParams();
+  const { language, setLanguage } = useLanguage();
+  useEffect(() => {
+    if (isLang(lang) && lang !== language) setLanguage(lang);
+  }, [lang, language, setLanguage]);
+  if (!isLang(lang)) return <NotFound />;
+  return <Outlet />;
+};
+
+// Old addresses without a language (/, /services ...) go to the visitor's language.
+const LanguageRedirect = ({ to }: { to: string }) => {
+  const { hash, search } = useLocation();
+  const lang = langFromPath(window.location.pathname) ?? detectLanguage();
+  return <Navigate to={localizePath(lang, to) + search + hash} replace />;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <LanguageProvider>
@@ -38,12 +57,21 @@ const App = () => (
           <ScrollToTop />
           <RouteErrorBoundary>
             <Routes>
-              <Route path="/" element={<TradeFairLanding />} />
-              <Route path="/recent-work" element={<RecentWorkPage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/industries" element={<Navigate to="/services" replace />} />
-              <Route path="/pricing" element={<PricingPage />} />
-              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/" element={<LanguageRedirect to="/" />} />
+              <Route path="/recent-work" element={<LanguageRedirect to="/recent-work" />} />
+              <Route path="/services" element={<LanguageRedirect to="/services" />} />
+              <Route path="/industries" element={<LanguageRedirect to="/services" />} />
+              <Route path="/pricing" element={<LanguageRedirect to="/pricing" />} />
+              <Route path="/contact" element={<LanguageRedirect to="/contact" />} />
+              <Route path="/:lang" element={<LanguageGate />}>
+                <Route index element={<TradeFairLanding />} />
+                <Route path="recent-work" element={<RecentWorkPage />} />
+                <Route path="services" element={<ServicesPage />} />
+                <Route path="industries" element={<Navigate to="../services" replace />} />
+                <Route path="pricing" element={<PricingPage />} />
+                <Route path="contact" element={<ContactPage />} />
+                <Route path="*" element={<NotFound />} />
+              </Route>
               <Route path="/demo/psychology/*" element={<PsychologyRoutes />} />
               <Route path="/demo/booking" element={<BookingDemoPage />} />
               <Route path="*" element={<NotFound />} />
