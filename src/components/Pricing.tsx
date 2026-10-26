@@ -102,15 +102,15 @@ const Pricing = () => {
               }`}
             >
               {p.highlighted && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-accent text-accent-foreground text-[13px] font-semibold tracking-[0.08em] uppercase px-4 py-1 rounded-full">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-accent text-accent-foreground text-[13px] sm:text-[11px] lg:text-[13px] font-semibold tracking-[0.08em] uppercase px-4 sm:px-3 lg:px-4 py-1 rounded-full">
                   {L("Most popular", "Mest populär")}
                 </span>
               )}
-              <h3 className="text-2xl lg:text-3xl mb-2">{p.name}</h3>
+              <h3 className="text-2xl sm:text-xl lg:text-3xl mb-2">{p.name}</h3>
               <p className={`text-sm leading-relaxed mb-6 ${p.highlighted ? "text-primary-foreground/80" : "text-foreground/70"}`}>
                 {p.desc}
               </p>
-              <p className="text-[clamp(1.05rem,2.2vw,2.25rem)] leading-tight font-medium tracking-tight break-words">{p.price}</p>
+              <p className="text-[1.75rem] sm:text-[clamp(1.15rem,2.7vw,2.25rem)] leading-tight font-medium tracking-tight break-words">{p.price}</p>
               <p className={`text-sm mt-1 mb-6 ${p.highlighted ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
                 {p.timeline}
               </p>
