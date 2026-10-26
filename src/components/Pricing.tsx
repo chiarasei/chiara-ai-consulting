@@ -15,7 +15,7 @@ const Pricing = () => {
       name: L("Website", "Webbplats"),
       desc: L("A professional website that makes your business look its best.", "En professionell webbplats som får ditt företag att synas från sin bästa sida."),
       price: L("from 14,900 kr", "från 14 900 kr"),
-      timeline: L("2–3 weeks", "2–3 veckor"),
+      timeline: L("2 to 3 weeks", "2 till 3 veckor"),
       label: L("Includes", "Ingår"),
       features: [
         L("Custom design (not a template)", "Egen design (ingen mall)"),
@@ -29,14 +29,14 @@ const Pricing = () => {
       ],
       cta: L("Start a project", "Starta ett projekt"),
       highlighted: false,
-      order: "order-2 lg:order-1",
+      order: "order-1",
     },
     {
       key: "webapp",
       name: L("Web App", "Webbapp"),
       desc: L("Turn your idea into a working product people can use.", "Gör din idé till en fungerande produkt som människor kan använda."),
       price: L("from 49,900 kr", "från 49 900 kr"),
-      timeline: L("4–8 weeks", "4–8 veckor"),
+      timeline: L("4 to 8 weeks", "4 till 8 veckor"),
       label: L("Can include", "Kan inkludera"),
       features: [
         L("User accounts and login", "Användarkonton och inloggning"),
@@ -51,7 +51,7 @@ const Pricing = () => {
       ],
       cta: L("Book a free call", "Boka ett gratis samtal"),
       highlighted: true,
-      order: "order-1 lg:order-2",
+      order: "order-2",
     },
     {
       key: "custom",
@@ -91,11 +91,11 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 lg:items-stretch max-w-xl lg:max-w-none mx-auto">
+        <div className="grid sm:grid-cols-3 gap-4 md:gap-6 lg:gap-8 items-stretch">
           {plans.map((p) => (
             <div
               key={p.key}
-              className={`${p.order} relative min-w-0 break-words rounded-lg p-6 md:p-8 lg:p-7 xl:p-10 flex flex-col transition-all duration-300 hover:-translate-y-1 ${
+              className={`${p.order} relative min-w-0 break-words rounded-lg p-5 sm:p-6 lg:p-7 xl:p-10 flex flex-col transition-all duration-300 hover:-translate-y-1 ${
                 p.highlighted
                   ? "bg-primary text-primary-foreground shadow-medium"
                   : "bg-card text-card-foreground border border-border shadow-soft"
@@ -106,11 +106,11 @@ const Pricing = () => {
                   {L("Most popular", "Mest populär")}
                 </span>
               )}
-              <h3 className="text-3xl mb-2">{p.name}</h3>
+              <h3 className="text-2xl lg:text-3xl mb-2">{p.name}</h3>
               <p className={`text-sm leading-relaxed mb-6 ${p.highlighted ? "text-primary-foreground/80" : "text-foreground/70"}`}>
                 {p.desc}
               </p>
-              <p className="text-[clamp(1.5rem,2.4vw,2.25rem)] leading-tight font-medium tracking-tight text-balance">{p.price}</p>
+              <p className="text-[clamp(1.05rem,2.2vw,2.25rem)] leading-tight font-medium tracking-tight break-words">{p.price}</p>
               <p className={`text-sm mt-1 mb-6 ${p.highlighted ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
                 {p.timeline}
               </p>
@@ -146,7 +146,7 @@ const Pricing = () => {
         <div className="mt-8 rounded-lg border border-border bg-card p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <h3 className="text-2xl md:text-3xl mb-2">
-              {L("Care plan – 500 kr/mån", "Serviceavtal – 500 kr/mån")}
+              {L("Care plan: 500 kr/mån", "Serviceavtal: 500 kr/mån")}
             </h3>
             <p className="text-sm text-foreground/75 max-w-2xl">
               {L(
