@@ -15,5 +15,5 @@
 - [ ] Google Ads: Sweden campaign (Swedish, /sv pages) and International campaign (English), separate budgets. Blockers: no separate Swedish address, contact form is a Google Form so enquiries cannot be counted.
 - [x] /en and /sv addresses with hreflang and per language titles
 - [x] Built in contact form saved to database, conversion events wired
-- [ ] Email notifications: blocked, Zoho mail password is rejected (needs new app password)
+- [ ] Verify notify.chiaraaiconsulting.se after Loopia added NS records; if verified, switch form notifications to Lovable email with visitor Reply to and send a real test enquiry
 - [ ] Google Ads: connect account, install tag with consent, then build the two campaigns
