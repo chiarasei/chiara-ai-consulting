@@ -16,7 +16,9 @@ const RecentWorkPage = () => {
   const { t, language, lp } = useLanguage();
   const tr = (en: string, sv: string) => (language === "sv" ? sv : en);
 
-  useEffect(() => window.scrollTo(0, 0), []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   type LiveProject = {
     name: string;

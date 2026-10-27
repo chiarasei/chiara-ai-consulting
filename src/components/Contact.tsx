@@ -7,7 +7,9 @@ import { trackConversion, listenForCalendlyBookings, type ConversionEvent } from
 const Contact = () => {
   const { t, language } = useLanguage();
   const [activeTab, setActiveTab] = useState<"book" | "message" | null>("message");
-  useEffect(() => listenForCalendlyBookings(), []);
+  useEffect(() => {
+    listenForCalendlyBookings();
+  }, []);
 
   const contactInfo = [
     {
