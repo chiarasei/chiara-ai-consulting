@@ -13,7 +13,7 @@ import sheRisesImage from "@/assets/projects/she-rises.webp";
 import klarvyiImage from "@/assets/projects/klarvyi.webp";
 
 const RecentWorkPage = () => {
-  const { t, language } = useLanguage();
+  const { t, language, lp } = useLanguage();
   const tr = (en: string, sv: string) => (language === "sv" ? sv : en);
 
   useEffect(() => window.scrollTo(0, 0), []);
