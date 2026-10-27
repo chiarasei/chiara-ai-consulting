@@ -270,8 +270,8 @@ const TradeFairLanding = () => {
         <section className="fade-in-section border-y border-border px-5 py-12 md:px-8 md:py-16">
           <div className="container mx-auto px-0 sm:px-8 grid max-w-6xl grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {[
-              { value: "3", label: tr("Live products", "Liveprodukter") },
-              { value: "2", label: tr("Demos ready for clients", "Färdiga demos") },
+              { value: "4", label: tr("Live projects", "Liveprojekt") },
+              { value: tr("24h", "24 h"), label: tr("Reply time", "Svarstid") },
               { value: "EN + SV", label: tr("Bilingual builds", "Svenska och engelska") },
             ].map((stat) => (
               <div key={stat.label} className="px-6 py-7 text-center sm:py-3">
