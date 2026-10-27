@@ -28,6 +28,11 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <button type="button" onClick={() => window.dispatchEvent(new Event("open-cookie-settings"))} className="text-muted-foreground hover:text-primary transition-colors duration-200">
+                  {language === "sv" ? "Cookieinställningar" : "Cookie settings"}
+                </button>
+              </li>
             </ul>
           </div>
 

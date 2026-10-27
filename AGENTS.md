@@ -6,7 +6,7 @@
 - Import route pages statically (no React.lazy or dynamic imports) and key the route error boundary by pathname, so page switches never fetch missing code files after a publish and one error never sticks across pages.
 - Ship no app shell service worker; main.tsx unregisters leftover workers so returning visitors always load the current build.- Site pages live under /en and /sv (`:lang` route + LanguageGate); unprefixed paths redirect by browser language, and internal links use `lp()` from LanguageContext, so every page has one address per language for ads and hreflang.
 - Contact enquiries go through the send-contact-email function, which saves to contact_enquiries first and emails second, so a mail outage never loses an enquiry.
-- Conversions go through `trackConversion` in src/lib/conversions.ts, so the Google tag can be added later in one place.
+- Conversions go through `trackConversion` in src/lib/conversions.ts, which loads the Google tag only when src/lib/consent.ts allows it, so every event respects the visitor cookie choice.
 - Keep Services menu entries and page section anchors in the shared service catalog so both languages link to the same stable destinations.
 
 - Use the scaffolded managed auth email handler and SDK for custom authentication emails; no queue infrastructure is used because delivery is platform managed.

@@ -8,6 +8,7 @@ import { LanguageProvider, useLanguage } from "@/contexts/LanguageContext";
 import { detectLanguage, isLang, langFromPath, localizePath } from "@/lib/i18nRoutes";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ScrollToTop from "@/components/ScrollToTop";
+import CookieBanner from "@/components/CookieBanner";
 
 // Pages are imported directly (no lazy loading) so the whole site ships as
 // one bundle and page switches never need to fetch extra code files.
@@ -56,6 +57,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <CookieBanner />
           <RouteErrorBoundary>
             <Routes>
               <Route path="/" element={<LanguageRedirect to="/" />} />
