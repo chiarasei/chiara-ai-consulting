@@ -70,7 +70,7 @@ const StillaDemoPage = () => {
     e.preventDefault();
     const errs: Record<string, string> = {};
     if (form.name.trim().length < 2) errs.name = tr("Please enter your name", "Skriv ditt namn");
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) errs.email = tr("Please enter a valid email", "Skriv en giltig e‑postadress".replace("‑", ""));
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) errs.email = tr("Please enter a valid email", "Skriv en giltig mejladress");
     if (form.phone.replace(/\D/g, "").length < 6) errs.phone = tr("Please enter a phone number", "Skriv ett telefonnummer");
     setErrors(errs);
     if (Object.keys(errs).length === 0) setDone(true);
@@ -299,7 +299,7 @@ const StillaDemoPage = () => {
           <h2 className="st-serif mt-3 text-3xl md:text-4xl">{tr("In the heart of Vasastan", "Mitt i Vasastan")}</h2>
           <p className="mt-5 flex items-start gap-3"><MapPin className="mt-1 h-4 w-4 shrink-0 text-stilla-sage" /> {ADDRESS} ({tr("demo address", "demoadress")})</p>
           <dl className="mt-6 space-y-2 text-sm">
-            <div className="flex justify-between border-b border-stilla-line pb-2"><dt>{tr("Monday to Friday", "Måndag till fredag")}</dt><dd>09:00 to 17:00</dd></div>
+            <div className="flex justify-between border-b border-stilla-line pb-2"><dt>{tr("Monday to Friday", "Måndag till fredag")}</dt><dd>{tr("09:00 to 17:00", "09:00 till 17:00")}</dd></div>
             <div className="flex justify-between border-b border-stilla-line pb-2"><dt>{tr("Saturday and Sunday", "Lördag och söndag")}</dt><dd>{tr("Closed", "Stängt")}</dd></div>
           </dl>
           <a href={DIRECTIONS} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex min-h-[48px] items-center rounded-full bg-stilla-sage px-8 font-semibold text-stilla-ivory hover:bg-stilla-sage-dark">
