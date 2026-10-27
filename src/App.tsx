@@ -20,7 +20,7 @@ import PrivacyPage from "./pages/PrivacyPage";
 import NotFound from "./pages/NotFound";
 import RecentWorkPage from "./pages/RecentWorkPage";
 import BookingDemoPage from "./pages/BookingDemoPage";
-import PsychologyRoutes from "./pages/psychology/PsychologyRoutes";
+import StillaDemoPage from "./pages/StillaDemoPage";
 
 const queryClient = new QueryClient();
 
@@ -77,9 +77,11 @@ const App = () => (
                 <Route path="contact" element={<ContactPage />} />
                 <Route path="privacy" element={<PrivacyPage />} />
                 <Route path="integritetspolicy" element={<PrivacyPage />} />
+                <Route path="demos/psychology" element={<StillaDemoPage />} />
+                <Route path="demos/psykolog" element={<StillaDemoPage />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
-              <Route path="/demo/psychology/*" element={<PsychologyRoutes />} />
+              <Route path="/demo/psychology/*" element={<LanguageRedirect to="/demos/psychology" />} />
               <Route path="/demo/booking" element={<BookingDemoPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

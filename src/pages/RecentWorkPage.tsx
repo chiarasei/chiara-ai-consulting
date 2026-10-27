@@ -13,7 +13,7 @@ import sheRisesImage from "@/assets/projects/she-rises.webp";
 import klarvyiImage from "@/assets/projects/klarvyi.webp";
 
 const RecentWorkPage = () => {
-  const { t, language } = useLanguage();
+  const { t, language, lp } = useLanguage();
   const tr = (en: string, sv: string) => (language === "sv" ? sv : en);
 
   useEffect(() => window.scrollTo(0, 0), []);
@@ -123,14 +123,14 @@ const RecentWorkPage = () => {
             </div>
             <div className="grid gap-px overflow-hidden rounded-md bg-primary-foreground/15">
               {[
-                { icon: Leaf, title: t("recentwork.psych.title"), description: t("recentwork.psych.desc"), href: "/demo/psychology" },
+                { icon: Leaf, title: t("recentwork.psych.title"), description: t("recentwork.psych.desc"), href: lp("/demos/psychology") },
               ].map((demo) => (
                 <article key={demo.href} className="group bg-primary p-8 transition-colors duration-300 hover:bg-primary/80 md:p-10">
                   <demo.icon className="h-5 w-5 text-accent" />
                   <h3 className="mt-8 text-3xl">{demo.title}</h3>
                   <p className="mt-4 max-w-lg font-light leading-relaxed text-primary-foreground/70">{demo.description}</p>
                   <Button asChild variant="outline" className="mt-7 rounded-none border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                    <Link to={demo.href}>{t("recentwork.viewproject")} <ExternalLink /></Link>
+                    <Link to={demo.href}>{tr("View demo →", "Visa demo →")}</Link>
                   </Button>
                 </article>
               ))}
