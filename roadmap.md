@@ -17,4 +17,5 @@
 - [x] Built in contact form saved to database, conversion events wired
 - [x] Verify notify.chiaraaiconsulting.se, switch form notifications to Lovable email with visitor Reply to, and send a real test enquiry (provider confirmed sent 27 October 2026)
 - [x] Google Ads: connect account 479-347-9156 (billing done)
-- [ ] Install Google tag + regional cookie banner (EN/SV), wire 5 conversions, publish and verify
+- [x] Install Google tag + regional cookie banner (EN/SV), wire 5 conversions (verified in preview)
+- [ ] Publish so the tag is live, then create both campaigns PAUSED after keyword, copy and budget approval
