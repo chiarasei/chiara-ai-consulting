@@ -118,7 +118,7 @@ const StillaDemoPage = () => {
       {/* Practice header */}
       <header className="border-b border-stilla-line bg-stilla-ivory/95">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
-          <span className="st-serif text-xl">Stilla <span className="text-stilla-muted">{tr("Psychology", "Psykologmottagning")}</span></span>
+          <span className="st-serif text-xl">Stilla <span className="hidden text-stilla-muted sm:inline">{tr("Psychology", "Psykologmottagning")}</span></span>
           <nav className="hidden gap-6 text-sm text-stilla-muted md:flex">
             <a href="#om" className="hover:text-stilla-ink">{tr("About", "Om mig")}</a>
             <a href="#tjanster" className="hover:text-stilla-ink">{tr("Services", "Tjänster")}</a>
