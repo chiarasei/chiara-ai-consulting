@@ -16,4 +16,5 @@
 - [x] /en and /sv addresses with hreflang and per language titles
 - [x] Built in contact form saved to database, conversion events wired
 - [x] Verify notify.chiaraaiconsulting.se, switch form notifications to Lovable email with visitor Reply to, and send a real test enquiry (provider confirmed sent 27 October 2026)
-- [ ] Google Ads: connect account (connection card interrupted by email verification request), install tag after agreeing consent choice, and verify published tracking
+- [x] Google Ads: connect account 479-347-9156 (billing done)
+- [ ] Install Google tag + regional cookie banner (EN/SV), wire 5 conversions, publish and verify
