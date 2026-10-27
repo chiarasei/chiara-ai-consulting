@@ -1,14 +1,13 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
-import { SMTPClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
+import { sendTemplateEmail } from "../_shared/transactional-email-templates/send-email.ts";
+import { CONTACT_NOTIFICATION_TO, contactNotificationOptions } from "../_shared/contact-notification.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
-
-const NOTIFY_TO = "info@chiaraaiconsulting.se";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1).max(100),
@@ -33,9 +32,6 @@ function checkRateLimit(ip: string): boolean {
   r.count++;
   return true;
 }
-
-const escapeHtml = (t: string) =>
-  t.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!));
 
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", ...corsHeaders } });
@@ -66,29 +62,22 @@ serve(async (req) => {
     }
 
     // Email is best effort: the enquiry is already saved.
+    let emailSent = false;
     try {
-      const user = Deno.env.get("ZOHO_SMTP_USER");
-      const pass = Deno.env.get("ZOHO_SMTP_PASSWORD");
-      const from = Deno.env.get("ZOHO_FROM_EMAIL");
-      if (!user || !pass || !from) throw new Error("SMTP credentials not configured");
-      const client = new SMTPClient({
-        connection: { hostname: "smtppro.zoho.eu", port: 465, tls: true, auth: { username: user, password: pass } },
-      });
-      const rows: [string, string][] = [
-        ["Name", d.name], ["Email", d.email], ["Company", d.company || "Not provided"],
-        ["Needs", d.need], ["Budget", d.budget || "Not provided"], ["Site language", d.language.toUpperCase()],
-      ];
-      const html = `<h2>New enquiry from chiaraaiconsulting.se</h2>
-        ${rows.map(([k, v]) => `<p><strong>${k}:</strong> ${escapeHtml(v)}</p>`).join("")}
-        <p><strong>Message:</strong></p><p style="white-space:pre-wrap">${escapeHtml(d.message)}</p>`;
-      await client.send({ from, to: NOTIFY_TO, replyTo: d.email, subject: `New enquiry: ${d.name} (${d.need})`, html });
-      await client.close();
-      await supabase.from("contact_enquiries").update({ email_sent: true }).eq("id", row.id);
+      if (!row) throw new Error("Saved enquiry ID missing");
+      const result = await sendTemplateEmail("contact-enquiry", CONTACT_NOTIFICATION_TO, contactNotificationOptions(row.id, d.email, d));
+      emailSent = result.sent;
+      if (result.sent) {
+        const { error: updateError } = await supabase.from("contact_enquiries").update({ email_sent: true }).eq("id", row.id);
+        if (updateError) console.error("Email sent but status update failed:", updateError);
+      } else {
+        console.warn("Notification not sent:", result.reason);
+      }
     } catch (mailError) {
       console.error("Notification email failed:", mailError);
     }
 
-    return json({ success: true });
+    return json({ success: true, email_sent: emailSent });
   } catch (error) {
     console.error("send-contact-email error:", error);
     return json({ error: "Failed to send message. Please try again later." }, 500);
