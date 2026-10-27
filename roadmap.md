@@ -12,8 +12,8 @@
 - [x] Investigate reported Services failure on preview and published site in both languages (not reproduced; both sites rendered successfully)
 - [x] Protect service lists and missing translations, and improve error diagnostics
 - [x] Run regression tests and verify all main page navigation in both languages
-- [ ] Google Ads: Sweden campaign (Swedish, /sv pages) and International campaign (English), separate budgets. Blockers: no separate Swedish address, contact form is a Google Form so enquiries cannot be counted.
+- [ ] Prepare two paused Google Search campaigns: Sweden in Swedish to /sv and International in English to /en, with separate keywords, copy and budgets pending approval
 - [x] /en and /sv addresses with hreflang and per language titles
 - [x] Built in contact form saved to database, conversion events wired
-- [ ] Verify notify.chiaraaiconsulting.se after Loopia added NS records; if verified, switch form notifications to Lovable email with visitor Reply to and send a real test enquiry
-- [ ] Google Ads: connect account, install tag with consent, then build the two campaigns
+- [x] Verify notify.chiaraaiconsulting.se, switch form notifications to Lovable email with visitor Reply to, and send a real test enquiry (provider confirmed sent 27 October 2026)
+- [ ] Google Ads: connect account (connection card interrupted by email verification request), install tag after agreeing consent choice, and verify published tracking
