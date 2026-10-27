@@ -114,3 +114,17 @@
     transition: none;
   }
 }
+
+/* Stilla demo website palette (fictional client, own visual identity) */
+.stilla {
+  --st-sage: 140 14% 42%;
+  --st-sage-dark: 145 18% 24%;
+  --st-sage-soft: 120 16% 88%;
+  --st-beige: 36 33% 88%;
+  --st-ivory: 40 40% 97%;
+  --st-ink: 150 12% 16%;
+  --st-muted: 150 6% 40%;
+  --st-line: 36 20% 82%;
+  font-family: "Nunito Sans", system-ui, sans-serif;
+}
+.stilla .st-serif { font-family: "Lora", Georgia, serif; }

@@ -18,6 +18,16 @@ export default {
     },
     extend: {
       colors: {
+        stilla: {
+          sage: "hsl(var(--st-sage))",
+          "sage-dark": "hsl(var(--st-sage-dark))",
+          "sage-soft": "hsl(var(--st-sage-soft))",
+          beige: "hsl(var(--st-beige))",
+          ivory: "hsl(var(--st-ivory))",
+          ink: "hsl(var(--st-ink))",
+          muted: "hsl(var(--st-muted))",
+          line: "hsl(var(--st-line))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

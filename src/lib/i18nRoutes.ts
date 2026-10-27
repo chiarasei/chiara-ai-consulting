@@ -18,6 +18,9 @@ export const localizePath = (lang: Lang, path: string): string => {
   if (clean === "/privacy" || clean === "/integritetspolicy") {
     clean = lang === "sv" ? "/integritetspolicy" : "/privacy";
   }
+  if (clean === "/demos/psychology" || clean === "/demos/psykolog") {
+    clean = lang === "sv" ? "/demos/psykolog" : "/demos/psychology";
+  }
   return `/${lang}${clean}`;
 };
 
