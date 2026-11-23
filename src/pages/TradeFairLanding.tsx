@@ -12,6 +12,7 @@ import motherImage from "@/assets/projects/mother-fm.webp";
 import qrMenyImage from "@/assets/projects/qr-meny.webp";
 import sheRisesImage from "@/assets/projects/she-rises.webp";
 import klarvyiImage from "@/assets/projects/klarvyi.webp";
+import hhpImage from "@/assets/projects/hhp-login.webp";
 import lovableBadge from "@/assets/lovable-certified-expert-badge.png";
 
 const TradeFairLanding = () => {
@@ -29,6 +30,8 @@ const TradeFairLanding = () => {
     image: string;
     featured?: boolean;
     tags?: string[];
+    visitLabel?: string;
+    caseStudyHref?: string;
   };
 
   const selectedWork: Project[] = [
@@ -56,6 +59,20 @@ const TradeFairLanding = () => {
       domain: "klarvyibilservice.se",
       image: klarvyiImage,
       tags: ["Lovable", "Supabase", "Google Calendar", "Google Maps"],
+    },
+    {
+      name: "HHP Hours",
+      kind: tr("Time reporting · Web app", "Tidrapportering · Webbapp"),
+      description: tr(
+        "A simple time reporting app that replaced a broken Excel system for a cleaning and construction services company. Workers log their hours on their phones, and the owners get ready made reports for invoicing.",
+        "En enkel tidrapporteringsapp som ersatte ett trasigt Excel system åt ett städ och byggföretag. Arbetarna rapporterar timmar i mobilen och ägarna får färdiga underlag för fakturering."
+      ),
+      href: "https://hhphours.se",
+      domain: "hhphours.se",
+      image: hhpImage,
+      tags: ["Lovable", "Supabase"],
+      visitLabel: tr("Live app, staff login only", "Live app, bara för personal"),
+      caseStudyHref: lp("/projects/hhp-hours"),
     },
     {
       name: "QR-Meny",
@@ -161,9 +178,16 @@ const TradeFairLanding = () => {
                         ))}
                       </div>
                     )}
-                    <a href={project.href} target="_blank" rel="noopener noreferrer" className="story-link mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium">
-                      {tr("Visit " + project.domain, "Besök " + project.domain)} <ArrowUpRight className="h-4 w-4" />
-                    </a>
+                    <div className="mt-5 flex flex-wrap items-center gap-5">
+                      <a href={project.href} target="_blank" rel="noopener noreferrer" className="story-link inline-flex min-h-11 items-center gap-2 text-sm font-medium">
+                        {project.visitLabel ?? tr("Visit " + project.domain, "Besök " + project.domain)} <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                      {project.caseStudyHref && (
+                        <Link to={project.caseStudyHref} className="story-link inline-flex min-h-11 items-center gap-2 text-sm font-medium">
+                          {tr("Read the full story", "Läs hela historien")}
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </article>
               ))}

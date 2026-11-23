@@ -19,6 +19,7 @@ import ContactPage from "./pages/ContactPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import NotFound from "./pages/NotFound";
 import RecentWorkPage from "./pages/RecentWorkPage";
+import HhpHoursProjectPage from "./pages/HhpHoursProjectPage";
 import BookingDemoPage from "./pages/BookingDemoPage";
 import StillaDemoPage from "./pages/StillaDemoPage";
 
@@ -71,6 +72,8 @@ const App = () => (
               <Route path="/:lang" element={<LanguageGate />}>
                 <Route index element={<TradeFairLanding />} />
                 <Route path="recent-work" element={<RecentWorkPage />} />
+                <Route path="projects/hhp-hours" element={<HhpHoursProjectPage />} />
+                <Route path="projekt/hhp-hours" element={<HhpHoursProjectPage />} />
                 <Route path="services" element={<ServicesPage />} />
                 <Route path="industries" element={<Navigate to="../services" replace />} />
                 <Route path="pricing" element={<PricingPage />} />

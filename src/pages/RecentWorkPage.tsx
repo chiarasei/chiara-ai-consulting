@@ -11,6 +11,7 @@ import motherImage from "@/assets/projects/mother-fm.webp";
 import qrMenyImage from "@/assets/projects/qr-meny.webp";
 import sheRisesImage from "@/assets/projects/she-rises.webp";
 import klarvyiImage from "@/assets/projects/klarvyi.webp";
+import hhpImage from "@/assets/projects/hhp-login.webp";
 
 const RecentWorkPage = () => {
   const { t, language, lp } = useLanguage();
@@ -29,6 +30,7 @@ const RecentWorkPage = () => {
     image: string;
     tags?: string[];
     visitLabel?: string;
+    caseStudyHref?: string;
   };
 
   const liveProjects: LiveProject[] = [
@@ -56,6 +58,20 @@ const RecentWorkPage = () => {
       image: klarvyiImage,
       tags: ["Lovable", "Supabase", "Google Calendar", "Google Maps"],
       visitLabel: tr("Visit klarvyibilservice.se", "Besök klarvyibilservice.se"),
+    },
+    {
+      name: "HHP Hours",
+      badge: tr("Time reporting · Web app · Gothenburg", "Tidrapportering · Webbapp · Göteborg"),
+      description: tr(
+        "A simple time reporting app that replaced a broken Excel system for a cleaning and construction services company. Workers log their hours on their phones, and the owners get ready made reports for invoicing.",
+        "En enkel tidrapporteringsapp som ersatte ett trasigt Excel system åt ett städ och byggföretag. Arbetarna rapporterar timmar i mobilen och ägarna får färdiga underlag för fakturering."
+      ),
+      href: "https://hhphours.se",
+      domain: "hhphours.se",
+      image: hhpImage,
+      tags: ["Lovable", "Supabase"],
+      visitLabel: tr("Live app, staff login only", "Live app, bara för personal"),
+      caseStudyHref: lp("/projects/hhp-hours"),
     },
     {
       name: "QR-Meny",
@@ -108,9 +124,16 @@ const RecentWorkPage = () => {
                       ))}
                     </div>
                   )}
-                  <Button asChild className="mt-7 rounded-none">
-                    <a href={project.href} target="_blank" rel="noopener noreferrer">{project.visitLabel ?? tr("Visit project", "Besök projektet")} <ExternalLink /></a>
-                  </Button>
+                  <div className="mt-7 flex flex-wrap items-center gap-5">
+                    <Button asChild className="rounded-none">
+                      <a href={project.href} target="_blank" rel="noopener noreferrer">{project.visitLabel ?? tr("Visit project", "Besök projektet")} <ExternalLink /></a>
+                    </Button>
+                    {project.caseStudyHref && (
+                      <Link to={project.caseStudyHref} className="story-link inline-flex min-h-11 items-center gap-2 text-sm font-medium">
+                        {tr("Read the full story", "Läs hela historien")}
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </article>
             ))}

@@ -21,6 +21,9 @@ export const localizePath = (lang: Lang, path: string): string => {
   if (clean === "/demos/psychology" || clean === "/demos/psykolog") {
     clean = lang === "sv" ? "/demos/psykolog" : "/demos/psychology";
   }
+  if (clean === "/projects/hhp-hours" || clean === "/projekt/hhp-hours") {
+    clean = lang === "sv" ? "/projekt/hhp-hours" : "/projects/hhp-hours";
+  }
   return `/${lang}${clean}`;
 };
 
