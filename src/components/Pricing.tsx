@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import lovableBadge from "@/assets/lovable-certified-expert-badge.png";
+import { WEB_APP_STARTING_PRICE_KR } from "@/lib/pricing";
 
 const Pricing = () => {
   const { language, lp } = useLanguage();
@@ -35,7 +36,7 @@ const Pricing = () => {
       key: "webapp",
       name: L("Web App", "Webbapp"),
       desc: L("Turn your idea into a working product people can use.", "Gör din idé till en fungerande produkt som människor kan använda."),
-      price: L("from 49,900 kr", "från 49 900 kr"),
+      price: L(`from ${WEB_APP_STARTING_PRICE_KR.toLocaleString("en-GB")} kr`, `från ${WEB_APP_STARTING_PRICE_KR.toLocaleString("sv-SE")} kr`),
       timeline: L("4 to 8 weeks", "4 till 8 veckor"),
       label: L("Can include", "Kan inkludera"),
       features: [
@@ -111,6 +112,9 @@ const Pricing = () => {
                 {p.desc}
               </p>
               <p className="text-[1.75rem] sm:text-[clamp(1.15rem,2.7vw,2.25rem)] leading-tight font-medium tracking-tight break-words">{p.price}</p>
+              <p className={`text-xs mt-1 ${p.highlighted ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
+                {L("excl. VAT", "exkl. moms")}
+              </p>
               <p className={`text-sm mt-1 mb-6 ${p.highlighted ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
                 {p.timeline}
               </p>
@@ -148,6 +152,7 @@ const Pricing = () => {
             <h3 className="text-2xl md:text-3xl mb-2">
               {L("Care plan: 500 kr/mån", "Serviceavtal: 500 kr/mån")}
             </h3>
+            <p className="mb-2 text-xs text-muted-foreground">{L("excl. VAT", "exkl. moms")}</p>
             <p className="text-sm text-foreground/75 max-w-2xl">
               {L(
                 "Hosting, security updates, backups and small changes every month, so your website or app keeps running smoothly.",

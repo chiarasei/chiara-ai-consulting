@@ -13,3 +13,4 @@
 - Use the scaffolded managed auth email handler and SDK for custom authentication emails; no queue infrastructure is used because delivery is platform managed.
 - Send contact notifications through the registered Lovable email template after saving the enquiry, using its ID for deduplication and the validated visitor email for Reply to, so email failures never lose enquiries.
 - Map translated privacy slugs through localizePath so links, language switching and canonical alternates stay consistent.
+- Keep the Web App starting amount numeric in the pricing module so both language displays use the tested price.

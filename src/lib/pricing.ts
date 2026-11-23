@@ -1,0 +1,1 @@
+export const WEB_APP_STARTING_PRICE_KR = 25_000;
