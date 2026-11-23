@@ -64,8 +64,8 @@ const TradeFairLanding = () => {
       name: "HHP Hours",
       kind: tr("Time reporting · Web app", "Tidrapportering · Webbapp"),
       description: tr(
-        "A simple time reporting app that replaced a broken Excel system for a cleaning and construction services company. Workers log their hours on their phones, and the owners get ready made reports for invoicing.",
-        "En enkel tidrapporteringsapp som ersatte ett trasigt Excel system åt ett städ och byggföretag. Arbetarna rapporterar timmar i mobilen och ägarna får färdiga underlag för fakturering."
+        "A private time reporting app for a cleaning and construction services company with staff across four companies. Workers log hours on their phones under the right company and address, months are submitted and locked, and the owners get PDF reports per worker plus invoicing reports grouped by company and location, ready to send to each client.",
+        "En privat tidrapporteringsapp för ett städ och byggföretag med anställda i fyra bolag. Arbetarna rapporterar timmar i mobilen under rätt bolag och adress, månaderna skickas in och låses, och ägarna får PDF rapporter per arbetare samt faktureringsunderlag grupperade per bolag och plats, klara att skicka till varje kund."
       ),
       href: "https://hhphours.se",
       domain: "hhphours.se",
