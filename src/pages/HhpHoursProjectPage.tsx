@@ -7,9 +7,9 @@ import Footer from "@/components/Footer";
 import ProjectBrowser from "@/components/ProjectBrowser";
 import SEOHead from "@/components/SEOHead";
 import { useLanguage } from "@/contexts/LanguageContext";
-import hhpLoginImage from "@/assets/projects/hhp-login.webp";
-import hhpWelcomeImage from "@/assets/projects/hhp-welcome.webp";
-import hhpMobileImage from "@/assets/projects/hhp-mobile.webp";
+import hhpReportingAsset from "@/assets/projects/hhp-hours-reporting.png.asset.json";
+import hhpAdminAsset from "@/assets/projects/hhp-hours-admin.png.asset.json";
+import hhpCategoriesAsset from "@/assets/projects/hhp-hours-categories.png.asset.json";
 
 const HhpHoursProjectPage = () => {
   const { language, lp } = useLanguage();
@@ -31,19 +31,19 @@ const HhpHoursProjectPage = () => {
 
   const gallery = [
     {
-      src: hhpLoginImage,
-      alt: tr("HHP Hours login screen on a laptop", "Inloggningssidan i HHP Hours på en dator"),
-      caption: tr("Staff log in with their own account, on laptop or phone", "Personalen loggar in med sitt eget konto, på dator eller mobil"),
+      src: hhpReportingAsset.url,
+      alt: tr("HHP Hours time reporting table with company totals", "Tidrapportering i HHP Hours med summor per bolag"),
+      caption: tr("Hours by company and location, with monthly totals, PDF download and month submission", "Timmar per bolag och arbetsplats, med månadssummor, PDF nedladdning och inlämning av månaden"),
     },
     {
-      src: hhpWelcomeImage,
-      alt: tr("HHP Hours welcome screen with email code sign in", "Välkomstsidan i HHP Hours med inloggning via mejlkod"),
-      caption: tr("New workers get in with a code sent to their email", "Nya arbetare kommer in med en kod som skickas till mejlen"),
+      src: hhpAdminAsset.url,
+      alt: tr("HHP Hours admin form for inviting a worker", "Adminformulär i HHP Hours för att bjuda in en arbetare"),
+      caption: tr("Owners invite workers and choose their role and language", "Ägarna bjuder in arbetare och väljer deras roll och språk"),
     },
     {
-      src: hhpMobileImage,
-      alt: tr("HHP Hours login screen on a phone", "Inloggningssidan i HHP Hours på en mobil"),
-      caption: tr("Built for phones first, and it can be saved to the home screen like a normal app", "Byggd för mobilen i första hand och kan sparas på hemskärmen som en vanlig app"),
+      src: hhpCategoriesAsset.url,
+      alt: tr("HHP Hours company categories and hour types in English and Swedish", "Bolagskategorier och timtyper på svenska och engelska i HHP Hours"),
+      caption: tr("Company categories and hour types, managed in English and Swedish", "Bolagskategorier och timtyper som hanteras på svenska och engelska"),
     },
   ];
 
@@ -96,7 +96,7 @@ const HhpHoursProjectPage = () => {
 
         <section className="px-5 pb-16 md:px-8 md:pb-20">
           <div className="container mx-auto max-w-6xl">
-            <ProjectBrowser src={hhpLoginImage} alt={tr("HHP Hours login screen", "Inloggningssidan i HHP Hours")} href="https://hhphours.se" domain="hhphours.se" priority />
+            <ProjectBrowser src={hhpReportingAsset.url} alt={gallery[0].alt} href="https://hhphours.se" domain="hhphours.se" priority fullImage />
           </div>
         </section>
 
@@ -165,10 +165,8 @@ const HhpHoursProjectPage = () => {
             <h2 className="text-3xl md:text-4xl">{tr("Inside the app", "Så här ser appen ut")}</h2>
             <div className="mt-12 grid gap-10 md:grid-cols-2">
               {gallery.map((shot, i) => (
-                <figure key={shot.alt} className={i === 2 ? "md:col-span-2 md:mx-auto md:max-w-sm" : ""}>
-                  <div className="overflow-hidden rounded-md border border-border bg-card shadow-medium">
-                    <img src={shot.src} alt={shot.alt} loading="lazy" decoding="async" className="w-full object-cover object-top" />
-                  </div>
+                <figure key={shot.alt} className={i === 0 ? "md:col-span-2" : ""}>
+                  <ProjectBrowser src={shot.src} alt={shot.alt} href="https://hhphours.se" domain="hhphours.se" fullImage />
                   <figcaption className="mt-4 text-sm font-light text-muted-foreground">{shot.caption}</figcaption>
                 </figure>
               ))}

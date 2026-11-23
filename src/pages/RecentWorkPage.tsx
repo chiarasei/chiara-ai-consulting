@@ -11,7 +11,7 @@ import motherImage from "@/assets/projects/mother-fm.webp";
 import qrMenyImage from "@/assets/projects/qr-meny.webp";
 import sheRisesImage from "@/assets/projects/she-rises.webp";
 import klarvyiImage from "@/assets/projects/klarvyi.webp";
-import hhpImage from "@/assets/projects/hhp-login.webp";
+import hhpAsset from "@/assets/projects/hhp-hours-reporting.png.asset.json";
 
 const RecentWorkPage = () => {
   const { t, language, lp } = useLanguage();
@@ -68,7 +68,7 @@ const RecentWorkPage = () => {
       ),
       href: "https://hhphours.se",
       domain: "hhphours.se",
-      image: hhpImage,
+      image: hhpAsset.url,
       tags: ["Lovable", "Supabase"],
       visitLabel: tr("Live app, staff login only", "Live app, bara för personal"),
       caseStudyHref: lp("/projects/hhp-hours"),

@@ -6,9 +6,10 @@ interface ProjectBrowserProps {
   href: string;
   domain: string;
   priority?: boolean;
+  fullImage?: boolean;
 }
 
-const ProjectBrowser = ({ src, alt, href, domain, priority = false }: ProjectBrowserProps) => (
+const ProjectBrowser = ({ src, alt, href, domain, priority = false, fullImage = false }: ProjectBrowserProps) => (
   <a
     href={href}
     target="_blank"
@@ -25,7 +26,7 @@ const ProjectBrowser = ({ src, alt, href, domain, priority = false }: ProjectBro
       <span className="min-w-0 flex-1 truncate text-center text-[11px] text-muted-foreground">{domain}</span>
       <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground transition-all duration-300 group-hover/browser:-translate-y-0.5 group-hover/browser:translate-x-0.5 group-hover/browser:text-accent" />
     </div>
-    <div className="aspect-[16/10] overflow-hidden bg-muted">
+    <div className={fullImage ? "overflow-hidden bg-muted" : "aspect-[16/10] overflow-hidden bg-muted"}>
       <img
         src={src}
         alt={alt}
@@ -33,7 +34,7 @@ const ProjectBrowser = ({ src, alt, href, domain, priority = false }: ProjectBro
         height={800}
         loading={priority ? "eager" : "lazy"}
         decoding="async"
-        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover/browser:scale-[1.015]"
+        className={fullImage ? "h-auto w-full" : "h-full w-full object-cover transition-transform duration-700 ease-out group-hover/browser:scale-[1.015]"}
       />
     </div>
   </a>
